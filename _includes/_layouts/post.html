@@ -1,0 +1,18 @@
+---
+layout: _layouts/raw-base.html
+---
+
+<a class="backto" href="{{ backto }}">Go Back</a>
+
+<h1 id="main-content">{{ title }}</h1>
+
+<small class="date">
+{% if updated %}
+    Last Updated: 
+{% else %}
+  Posted:
+{% endif %}
+        {{ page.date | postDate }}
+</small>
+
+{{ content }}

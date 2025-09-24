@@ -1,0 +1,14 @@
+---
+author: Martin Meredith
+book-title: 'The State of Africa: A History of the Continent Since Independence' 
+tags: ["long informational text", "review"]
+date: 2023-04-10
+---
+
+This book is a popular history, and isn't an academic resource per se. However, I've read a lot of flashy, mainstream European historical texts, and a lot of flashy Asian history texts intended for a general audience as well. The most I knew about African history going into this text by Meredith was confined to European interventions during the height of the colonial era (read: the Belgian Congo). I haven't really ever been exposed to African history on its own terms. And this shouldn't be the case, as I've taken a course titled 'Modern History of Africa and Asia, 1750-Present.'
+
+So here I am, sitting down with Meredith, and boy is it a wild ride. Each chapter focuses on a different African national history and have flashy titles like "The Graves are Not Yet Full," used for the chapter on Rwanda. Some chapters give a more individual-driven perspective on history, others feature histories that are more from the bottom-up. Meredith's goal doesn't seem to be to provide one continuous, long and coherent story. Instead, Meredith teases the reader with quick introductions to the most juicy, bloody, scandalous, portions of modern African history. In doing so, it certainly piques interest, but I question to what extent such an introduction is appropriate to a general audience.
+
+For example, I wonder how appropriate it would be to include this selection on a reading list for Black History Month. I personally would be very against it-- I experience Black History Month as a time to celebrate Black excellence and stories that have been excluded from popular narratives of 'history' for generations. It's also a time to support Black creators and initiatives, historians as well. Reading a sensational history of Africa written by a white scholar does not at all meet that perogative. Surely there must be another book out there that takes on the same subject matter but is more understanding of BIPOC readers that read not for a sensationalized history of the other, but read to better understand themselves and their position in the world.
+
+This is not to say that I didn't derive anything of value from this book. I don't think I appreciated the extent of ramifications that were brought to bear when the European powers carved up a map of Africa that without any respect to existing sociopolitical geographies, how that resulted in the collapsing and formations of new ethnic identities. Race is an ongoing research interest of mine and I'm especially curious about how new racial identies and ethnic identities can first emerge. When I return to reading more about African history, this is one area that I plan to zero in on. 

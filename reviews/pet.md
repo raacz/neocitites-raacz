@@ -1,0 +1,11 @@
+---
+author: Akwaeke Emezi
+book-title: Pet
+tags: ["long creative text", "review"]
+date: 2023-02-23
+---
+This was the first YA book I read in a while, and my second time reading Akwaeke Emezi. I was really impressed by the extensive range that Emezi has, and reading Pet made me want to read more of their work.
+
+The protagonist, Jam, is a Black and nonverbal trans girl who grows up in the post-revolution city of Lucille, which has supposedly been cleared of all wrongdoers and corruption. When she accidentally bleeds on her mother's painting, Jam summons a monstrosity called Pet into the world who has been tasked with finding an evildoer that still resides, hidden, in their community. My primary complaint is regarding Jam's nonverbal status. Jam uses sign to communicate, but from reading the text, I get the feeling that Emezi themself does not know a lot about the differences between signed and spoken language. There was an opportunity here to really explore signed language's richness and depth, but Emezi simply has Jam speak in italics to indicate when she's signing vs the occasional moment when she voices, and assumes that most people in her community are capable of understanding her. Jam's nonverbalness just seems like the publishers wanted a box for representation of nonverbal people ticked, and so Emezi ticked it. This isn't necessarily a bad thing; we need more nonverbal representation. But it just feels superficial, and doesn't engage with the full richness of the subject matter, unlike Jam's transness which is fully and beautifully explored.
+
+The mystery elements of this book are engaging and an eerie atmosphere seeps through all third-person narration. It's a good book, and I would recommend it, but I wouldn't read it again myself. Maybe its just because I have a thing against YA and prefer more literary fiction. The themes didn't resonate with me very much, the performativity of Jam's nonverbal status was a bit disparaging, but it did make me want to read the prequel, which is apparently more in line with the narrative style that the author uses in their other book, the Death of Vivek Oji, which I enjoyed very much. 

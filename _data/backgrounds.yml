@@ -1,0 +1,21 @@
+toki-pona: 
+  bg-cc: contain
+  bg-img: '/assets/len-kule-musi-kin.png'
+  bg-external: 'https://commons.wikimedia.org/wiki/File:Toki_pona_arcade_carpet_tile.svg'
+  bg-name: toki pona arcade carpet tile by Neonpixxi
+  adapted: true
+
+crane-fabric:
+  bg-cc: repeat
+  bg-img: '/assets/len-nijon.jpg'
+  bg-external: 'https://commons.wikimedia.org/wiki/File:Bedcover_(Japan),_early_19th_century_(CH_18407501).jpg'
+  bg-name: Bedcover (Japan), early 19th century
+  adapted: false
+  bg-license: CC0
+
+clear-lake:
+  bg-cc: cover
+  bg-img: '/assets/wasagaming.jpeg'
+  bg-external: 'https://commons.wikimedia.org/wiki/File:Clear_Lake,_Wasagaming,_Manitoba.jpg'
+  bg-name: Clear Lake, Wasagaming, Manitoba by JoannaPoe
+  adapted: false

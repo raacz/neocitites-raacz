@@ -1,0 +1,25 @@
+---
+layout: _layouts/base.html
+title: Status Log
+---
+
+
+<table class="status-log">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Message</th>
+        </tr>
+    </thead>
+    <tbody>
+
+  {% for status in status %}
+        <tr>
+            <td>{{ status.date}} </td>
+            <td>{{ status.message}} </td>
+
+        </tr>
+  {% endfor %}
+      </tbody>
+
+</table>

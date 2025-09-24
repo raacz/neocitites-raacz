@@ -1,0 +1,18 @@
+---
+author: Chelsea Vowel
+book-title: Buffalo Bird
+tags: ["short story", "review"]
+date: 2022-12-09
+---
+
+ Imagine that Germany won WWII. Imagine that the USSR won the space race. Imagine that Canada's expansionist efforts were thwarted by the Iron Confederacy, and that they never breached the praries. This piece of speculative fiction, highly annotated with research notes and the writer's own analysis, recreates the tedious genre of speculative fiction using a otpeyimisow-itapisiniwin, a Metis worldview.
+
+"Buffalo Bird" is the first short story in a collection (Buffalo is the New Buffalo 2022) that explores this new speculative genre. Chelsea Vowel is a Metis scholar and writer and I have read selections of her theoretical work. I saw her name on a CBC reading list for best reads of 2022 and nearly jumped out of my bed with excitement. I haven't even finished the whole collection but I wanted to write a review based on what I've learned from her approach to short-story writing.
+
+But before I talk about the stories, a quick note on the introductory chapter. Vowel's introduction is directed, primarily, to her kin. It reminds me of Leanne Betasamosake Simpson's reframing of BIPOC writers as those who do not write 'for' their kin, but those who write 'to' their kin. Vowel's introduction has a lot of scholarly ideas but I always find her writing style to be so accessible to even those that have little familiarity with what she's talking about. But onto the story.
+
+Vowel's stories each consist of the story, and then a whole bunch of paratext. Each story is preceeded by a small description in the introductory chapter and each story is very rigorously annotated with endnotes. Vowel follows each story with a short analysis of the story, trying to clarify what she was advocating for. The notes demonstrate an extremely large amount of effort put into the research behind every word she puts down. For example, one note in 'Buffalo Bird' confirms that yes, the moon's position as described in the narrative would indeed be accurate to the date portrayed. It's a full demonstration of what Morrison calls 'literary archaeology' and the extensive notes makes it very self-aware of this fact.
+
+Buffalo Bird tells the story of Gabriella, a Metis two-spirited person living at the height of Canada's western expansion project. She is a rougarou, capable of transforming into a horse. One might expect that Gabriella herself thwarts the western expansion under this premise, but you'd be mistaken. Vowel's story does not treat Gabriella's powers like the typical superhero narrative might have. She does play a small part as a translator at the negotiation table, but Vowel's story emphasizes community above all. The story shifts between Gabriella's childhood and present and tells the story of her community as they attempt to keep both Gabriella and the local Catholic priest who believes she is a devil in the village at the same time.
+
+I like this approach to storytelling. Should Vowel have made the notes footnotes instead of endnotes, I wonder how that would change how I experienced the story. I'm also interested reading subsequent stories to better understand otpeyimisow-itapisiniwin. I'm doing research right now regarding the 'short story cycle' as a postcolonial form and am very interested in how many small pieces contribute to a larger argument, so this can feed into that. 

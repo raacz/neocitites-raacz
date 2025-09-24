@@ -1,0 +1,54 @@
+---
+layout: _layouts/base.html
+title: Book Reviews
+---
+
+
+<p>I am quite forgetful so I've made some notes on some things I've written and thrown them up here.</p>
+
+<div class="toc">
+  <h2>Index</h2>
+  
+  <h3>Long Creative Works</h3>
+  <ul>
+  {%- for post in collections["long creative text"] -%}
+    <li> <a href="#{{ post.data.book-title | slugify }}">{{ post.data.book-title }} by {{ post.data.author }}</a></li>
+  {%- endfor -%}
+  </ul>
+  <h3>Long Informational Works</h3>
+  <ul>
+  {%- for post in collections["long informational text"] -%}
+    <li> <a href="#{{ post.data.book-title | slugify }}">{{ post.data.book-title }} by {{ post.data.author }}</a></li>
+  {%- endfor -%}
+  </ul>
+
+
+<h3>Short Stories</h3>
+<ul>
+{%- for post in collections["short story"] -%}
+  <li> <a href="#{{ post.data.book-title | slugify }}">{{ post.data.book-title }} by {{ post.data.author }}</a></li>
+{%- endfor -%}
+</ul>
+
+<h3>Poetry</h3>
+<ul>
+{%- for post in collections["poetry"] -%}
+  <li> <a href="#{{ post.data.book-title | slugify }}">{{ post.data.book-title }} by {{ post.data.author }}</a></li>
+{%- endfor -%}
+</ul>
+</div>
+<hr class="intro-end"> 
+
+
+
+
+<h2>Reviews</h2>
+
+{%- for post in collections.review -%}
+  <h3 id="{{ post.data.book-title | slugify }}">{{ post.data.book-title }} by {{ post.data.author }}</h3>
+  {{ post.content }}
+  <hr>
+
+{%- endfor -%}
+
+

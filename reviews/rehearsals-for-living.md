@@ -1,0 +1,10 @@
+---
+author: Robyn Maynard and Leanne Betasamosake Simpson
+book-title: Rehearsals for Living
+tags: ["long informational text", "review"]
+---
+This is a really great primer on all the prominent issues of our day through the eyes of two scholar-activists who share a genuine comraderie and interest in Living, with the capital L, as Black and Indigenous in their respective communities.
+
+Robyn and Leanne are stuck in their respective houses because of the covid-19 pandemic, and decide to continue to write letters to each other through isolation, waves of covid, the George Floyd summer and increasing panic around climate change. However, if you go into this book thinking that it's going to be a huge Debbie downer, you'd be gravely mistaken. In this intimate space, Robyn and Leanne outline a manifesto for Black and Indigenous resilience, imagining the absolute paradise that awaits their respective peoples who have already been through 'the apocolypse' countless times. They are both radicals who believe wholeheartedly in the dismantling of the nation state but they are also two very different people. Robyn is a black feminist and prison abolitionist, while Leanne is a Michi Saagiig Nishnaabeg who operates mostly within the spheres of Indigenous activism. Together, they blend the line between Black issues and Indigenous issues and question the narrative that seeks to separate these two stories from each other. They learn from each other. Robyn reconceptualizes blackness and the black diaspora as indigenous "to the lands, of more lands than could ever be counted." Leanne reexamines her obligations to Black liberation as a Nishnaabeg and the role she must play to highlight the legacy of slavery in Canada.
+
+This book accurately identifies and acknowledges the very precarious position the project of Black liberation has within Canadian liberal discourse. It calls out the idea that "Canadians were all good abolitionists, and slavery did not exist in Canada" as being complete and utter bullshit. Extremely valuable as a book that talks about all the horrors of capitalism and colonialism with an eye towards a more optimistic future. 

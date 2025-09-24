@@ -1,0 +1,70 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | RAACZ </title>
+    <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+   
+    <header>
+        <a href="#main-content" id="skip">Skip Navigation</a>
+        <div class="introtext">
+            <p>Welcome to Lakuse's website.</p>
+            <p>Lakuse also goes by jan Lakuse, Lak, raacz, and Chelsea.</p>
+        </div>
+         <div class="status">
+{% assign latest = status | sort: "date" | reverse | first %}
+<p>Status: {{ latest.message }}</p>
+<a href="/status-log">Log</a>
+        </div>
+      
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/toki-pona">Toki Pona</a></li>
+                <li><a href="/tsugaru-teodori">Tsugaru Teodori</a></li>
+                <li><a href="/cranes/">Cranes</a></li>
+                <li><a href="/blog/">Writing</a></li>
+                <li><a href="/reviews/">Reviews</a></li>
+                <li><a href="/miscellaneous/">Misc</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+       {{ content }}
+    </main>
+    <footer>
+        <div>
+
+<p>Hosted on <a href="https://neocities.org/site/raacz">Neocities</a>, made with <a href="https://www.11ty.dev/">Eleventy</a>, a simpler static site generator. </p>
+
+<p>Content is <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA 4.0</a> Lakuse unless stated otherwise. </p>
+
+
+{% if bg %}
+  <a class="{{ bg.bg-cc }}" href="{{ bg.bg-img }}">Background</a>
+  {% if bg.adapted %}
+    adapted from 
+  {% endif %}
+  <a href="{{ bg.bg-external }}">{{ bg.bg-name }}</a> (CC-BY-SA 4.0).
+{% endif %}
+
+
+{% assign bg = backgrounds[background] %}
+{% if bg %}
+    <p class="background">
+    <a class="{{ bg.bg-cc }}" href="{{ bg.bg-img }}">Background</a>
+    {% if bg.adapted %}adapted {% endif %}
+    from <a href="{{ bg.bg-external }}">{{ bg.bg-name }}</a> 
+    ({{ bg.bg-license | default: "CC-BY-SA 4.0" }}).
+    </p>
+{% endif %}
+        </div>
+    </footer>
+</body>
+<script src="/scripts/background-detector.js"></script>
+</html>
