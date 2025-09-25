@@ -7,12 +7,11 @@ layout: _layouts/raw-base.html
 <h1 id="main-content">{{ title }}</h1>
 
 <small class="date">
+Posted:
+{{ page.date | postDate }}
 {% if updated %}
-    Last Updated: 
-{% else %}
-  Posted:
+| Last Updated: {{ updated | postDate }}
 {% endif %}
-        {{ page.date | postDate }}
 </small>
 
 {{ content }}

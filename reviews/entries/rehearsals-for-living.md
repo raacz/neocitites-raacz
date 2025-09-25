@@ -1,6 +1,6 @@
 ---
 author: Robyn Maynard and Leanne Betasamosake Simpson
-book-title: Rehearsals for Living
+book_title: Rehearsals for Living
 tags: ["long informational text", "review"]
 ---
 This is a really great primer on all the prominent issues of our day through the eyes of two scholar-activists who share a genuine comraderie and interest in Living, with the capital L, as Black and Indigenous in their respective communities.

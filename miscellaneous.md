@@ -5,13 +5,6 @@ title: Miscellaneous
 
 <hr class="intro-end">
 
-## Potentially Relevant Details
-- my timezone is utc-5
-- i am not fluent in esperanto, french, japanese or asl
-- i am allergic to walnuts and pecans and cats and birch pollen
-
-<hr>
-
 ## Non-extensive List of Cool People:
 
 <ul>

@@ -1,6 +1,6 @@
 ---
 author: Jenny Zhang
-book-title: Why Were They Throwing Bricks?
+book_title: Why Were They Throwing Bricks?
 tags: ["short story", "review"]
 date: 2022-07-24
 ---

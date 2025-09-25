@@ -1,6 +1,6 @@
 ---
 author: Toni Morrison
-book-title: 'Playing in the Dark: Whiteness and the Literary Imagination'
+book_title: 'Playing in the Dark: Whiteness and the Literary Imagination'
 tags: ["long informational text", "review"]
 date: 2022-12-08
 ---

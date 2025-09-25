@@ -1,6 +1,6 @@
 ---
 author: M. E. O'Brien and Eman Abdelhadi
-book-title: 'Everything for Everyone: An Oral History of the New York Commune 2052-2072'
+book_title: 'Everything for Everyone: An Oral History of the New York Commune 2052-2072'
 tags: ["long creative text", "review"]
 date: 2023-02-23
 ---

@@ -1,6 +1,6 @@
 ---
 author: Da'Shaun L. Harrison
-book-title: Belly of the Beast 
+book_title: Belly of the Beast 
 tags: ["long informational text", "review"]
 date: 2023-04-20
 ---

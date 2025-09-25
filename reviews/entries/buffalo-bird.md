@@ -1,6 +1,6 @@
 ---
 author: Chelsea Vowel
-book-title: Buffalo Bird
+book_title: Buffalo Bird
 tags: ["short story", "review"]
 date: 2022-12-09
 ---

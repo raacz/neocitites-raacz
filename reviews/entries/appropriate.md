@@ -1,6 +1,6 @@
 ---
 author: Paisley Rekdal
-book-title: 'Appropriate: A Provocation'
+book_title: 'Appropriate: A Provocation'
 tags: ["long informational text", "review"]
 date: 2023-04-28
 ---

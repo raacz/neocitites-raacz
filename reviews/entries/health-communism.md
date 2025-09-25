@@ -1,6 +1,6 @@
 ---
 author: Beatrice Adler-Bolten and Artie Vierkant
-book-title: Health Communism
+book_title: Health Communism
 tags: ["long informational text", "review"]
 date: 2023-01-12
 ---

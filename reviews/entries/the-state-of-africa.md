@@ -1,6 +1,6 @@
 ---
 author: Martin Meredith
-book-title: 'The State of Africa: A History of the Continent Since Independence' 
+book_title: 'The State of Africa: A History of the Continent Since Independence' 
 tags: ["long informational text", "review"]
 date: 2023-04-10
 ---

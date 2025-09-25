@@ -1,6 +1,6 @@
 ---
 author: Ed Yong
-book-title: 'An Immense World: How Animal Senses Reveal the Hidden Realms Around Us'
+book_title: 'An Immense World: How Animal Senses Reveal the Hidden Realms Around Us'
 tags: ["long informational text", "review"]
 date: 2023-01-04
 ---

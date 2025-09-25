@@ -1,6 +1,6 @@
 ---
 author: Lidia Yuknavitch
-book-title: The Chronology of Water
+book_title: The Chronology of Water
 tags: ["long creative text", "review"]
 ---
 

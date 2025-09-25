@@ -1,6 +1,6 @@
 ---
 author: Madeline Vosch
-book-title: Prepare a Table Before Me, Anoint My Head with Oil
+book_title: Prepare a Table Before Me, Anoint My Head with Oil
 tags: ["short story", "review"]
 ---
 

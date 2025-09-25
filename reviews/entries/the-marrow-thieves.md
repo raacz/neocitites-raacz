@@ -1,6 +1,6 @@
 ---
 author:  Cherie Dimaline
-book-title: The Marrow Thieves 
+book_title: The Marrow Thieves 
 tags: ["long creative text", "review"]
 date: 2022-11-29
 ---

@@ -1,6 +1,6 @@
 ---
 author: Akwaeke Emezi
-book-title: The Death of Vivek Oji
+book_title: The Death of Vivek Oji
 tags: ["long creative text", "review"]
 date: 2022-12-24
 ---

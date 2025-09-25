@@ -1,6 +1,6 @@
 ---
 author: Akwaeke Emezi
-book-title: Pet
+book_title: Pet
 tags: ["long creative text", "review"]
 date: 2023-02-23
 ---

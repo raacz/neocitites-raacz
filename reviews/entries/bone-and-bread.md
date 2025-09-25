@@ -1,6 +1,6 @@
 ---
 author: Saleema Nawaz
-book-title: Bone and Bread
+book_title: Bone and Bread
 tags: ["long creative text", "review"]
 ---
 

@@ -19,3 +19,10 @@ clear-lake:
   bg-external: 'https://commons.wikimedia.org/wiki/File:Clear_Lake,_Wasagaming,_Manitoba.jpg'
   bg-name: Clear Lake, Wasagaming, Manitoba by JoannaPoe
   adapted: false
+
+telo:
+  bg-cc: repeat
+  bg-img: '/assets/telo.jpeg'
+  bg-external: 'https://commons.wikimedia.org/wiki/File:Abstract_-_Water_(Imagicity_998).jpg'
+  bg-name: Abstract - Water (Imagicity 998) by Graham Crumb
+  adapted: false

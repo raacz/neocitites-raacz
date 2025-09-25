@@ -1,6 +1,6 @@
 ---
 author: Lizard Luck
-book-title: K-Ming Chang
+book_title: K-Ming Chang
 tags: ["short story", "review"]
 date: 2022-12-31
 ---

@@ -1,6 +1,6 @@
 ---
 author: Hala Alyan
-book-title: No Good
+book_title: No Good
 tags: ["short story", "review"]
 date: 2023-01-08
 ---

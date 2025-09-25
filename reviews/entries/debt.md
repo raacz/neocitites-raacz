@@ -1,6 +1,6 @@
 ---
 author: 'David Graeber'
-book-title: 'Debt: The First 5000 Years'
+book_title: 'Debt: The First 5000 Years'
 tags: ["long creative text", "review"]
 date: 2023-07-25
 ---

@@ -1,6 +1,6 @@
 ---
 author: Omar El Akkad
-book-title: What Strange Paradise
+book_title: What Strange Paradise
 tags: ["long creative text", "review"]
 ---
 This novel shines an unforgiving light at the refugee crisis.

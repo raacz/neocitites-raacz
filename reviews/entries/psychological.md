@@ -1,6 +1,6 @@
 ---
 author: NISIOISIN
-book-title: 'Zaregoto Vol.4-5: Psycho Logical'
+book_title: 'Zaregoto Vol.4-5: Psycho Logical'
 tags: ["long creative text", "review"]
 date: 2022-12-17
 ---

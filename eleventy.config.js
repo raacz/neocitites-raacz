@@ -1,4 +1,4 @@
-import yaml from "yaml";
+import YAML from "yaml";
 
 
 export default function (eleventyConfig) {
@@ -25,7 +25,8 @@ export default function (eleventyConfig) {
     "html",
     "liquid",
     "njk",
-    "md"
+    "md",
+    "json"
   ]);
 
 
@@ -36,11 +37,22 @@ export default function (eleventyConfig) {
     day: "numeric",
   });
   });
-    
-  eleventyConfig.addDataExtension("yml,yaml", (contents, filePath) => {
-		return {};
-	});
 
+eleventyConfig.addFilter("shortDate", (dateObj) => {
+  const d = new Date(dateObj);
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+});
+
+
+	eleventyConfig.addDataExtension("yml", (contents) => YAML.parse(contents));
+
+
+eleventyConfig.addFilter('sortByTitle', values => {
+  return values.slice().sort((a, b) => a.data.title.localeCompare(b.data.title))
+})
 
 
 };

@@ -2,9 +2,11 @@
 title: I bought an IdeaPad Flex 5
 
 date: 2023-12-03
-updated: true
+updated: 2023-07-01
 ---
 
+
+As the title indicates, I bought an IdeaPad Flex 5. It cost me $1000 CAD. It's still serving me well, but it has some rocky days, and it was a truly rocky start.
 
 
 
@@ -29,8 +31,6 @@ updated: true
 
 
 </div>
-
-As the title indicates, I bought an IdeaPad Flex 5. It cost me $1000 CAD. It's still serving me well, but it has some rocky days, and it was a truly rocky start.
 
 
 

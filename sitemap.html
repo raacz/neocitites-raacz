@@ -1,0 +1,46 @@
+---
+layout: _layouts/base.html
+title: Site Map
+backto: /miscellaneous/
+---
+
+<h2>Pages</h2>
+<ul>
+{% assign pages = collections.all | sort: "data.title" %}
+{% for post in pages %}
+{% if post.data.title %}
+    {% if post.data.tags %}
+    {% else %}
+
+    <li><a href="{{ post.url }}">{{ post.data.title }}</a>
+{% endif %}
+</li>
+{% endif %}
+{%- endfor -%}
+</ul>
+<h2>Posts</h2>
+<ul>
+{% for post in pages %}
+{% if post.data.title %}
+{% if post.data.tags %}
+    
+    {% if post.data.slug %}
+    <li>
+        <a href="/reviews/index.html#{{ post.data.slug }}">{{ post.data.title }}</a> tagged: {{ post.data.tags | join: ", " }} </a>
+    </li>
+    {% else %}
+        <li>
+            <a href="{{ post.url }}">{{ post.data.title }}</a> tagged: {{ post.data.tags | join: ", " }} 
+        </li>
+    {% endif %}
+
+
+
+
+
+    {% endif %}
+{% endif %}
+{%- endfor -%}
+</ul>
+
+

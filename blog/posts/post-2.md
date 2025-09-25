@@ -1,8 +1,9 @@
 ---
 title: In Vision And
+date: 2023-08-30
 ---
 
-
+<hr class="intro-end">
 
 "There's not enough for next week."
 

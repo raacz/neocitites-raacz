@@ -1,6 +1,6 @@
 ---
 author: Alicia Elliott
-book-title: A Mind Spread Out On The Ground
+book_title: A Mind Spread Out On The Ground
 tags: ["long creative text", "review"]
 date: 2022-12-07
 ---
