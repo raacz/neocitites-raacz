@@ -1,0 +1,5 @@
+---
+title: five.
+date: 2024-02-15
+---
+a word is a clap is a chuckle is a colour of red that rises to your cheeks. our bodies our words. are bodies are words? we like to think one-hundred and twenty or maybe one times one hundred plus twenty and twenty and twenty and twenty and one and we still think about that ZhongGuo woman that intrudes our more serene moments. with a finger i point to the sky. that's a word, that's squiggly allah, that's Him air dancing in the breaths, in the 'between,' in the space between 'e ni:' and 'la' i feel your heartbeat. it [points upwards]s to meet mine. we aren't alone in this world of ours, are we? i wonder what words of ours of are(s) that i should use to describe the softness of your lips... maybe i don't need to. are words our bodies? can this poem selo your s[ij]elo?

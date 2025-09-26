@@ -8,6 +8,10 @@
     font-family: Jost;
     src: url(/assets/Jost/Jost-VariableFont_wght.ttf);
 }
+@font-face {
+    font-family: Atkinson;
+    src: url(/assets/Atkinson_Hyperlegible_Next/AtkinsonHyperlegibleNext-VariableFont_wght.ttf);
+}
 
 :root {
     --walo: rgb(162, 178, 240);
@@ -181,10 +185,6 @@ footer{
     padding-block: 0.5em;
     padding-inline: 1em;
 }
-footer div{
-   
-
-}
 footer a:is(:visited,:not(:visited)){
     color: var(--walo);
 }
@@ -291,4 +291,30 @@ small {
     border: 0.1em solid black;
     border-collapse: collapse;
     padding: 0.5em;
+}
+
+
+/*beginner text portal*/
+
+html:has(.back-to-main){
+    --walo: rgb(235, 233, 225);
+    --pimeja: rgb(0, 0, 0);
+    --walo-lili: rgb(230, 138, 138);
+    --walo-pimeja: rgb(139, 205, 103);
+    --laso: rgb(36, 36, 157);
+    --pimeja-lili: rgb(40, 16, 16);
+
+    --main-padding: 2em;
+    --main-max-width: 45rem;
+
+    font-family: Atkinson, sans;
+}
+body:has(.back-to-main) .status {
+    display: block;
+    text-align: center;
+}
+body:has(.back-to-main) .introtext {
+    display: flex;
+    justify-content: center;
+    background-color: var(--walo-pimeja);
 }

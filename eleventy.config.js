@@ -1,8 +1,13 @@
 import YAML from "yaml";
+import path from "path";
+import fs from "fs";
+
+
 
 
 export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("assets");
+    eleventyConfig.addPassthroughCopy("toki-pona/beginner-material/assets");
 
     eleventyConfig.addPassthroughCopy("scripts");
 
@@ -53,6 +58,15 @@ eleventyConfig.addFilter("shortDate", (dateObj) => {
 eleventyConfig.addFilter('sortByTitle', values => {
   return values.slice().sort((a, b) => a.data.title.localeCompare(b.data.title))
 })
+
+
+
+ 
+
+
+
+
+
 
 
 };

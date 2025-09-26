@@ -8,11 +8,8 @@ is a language that has less than 200 words and was made by a French Canadian wom
 
 <hr class="intro-end"> 
 
-See the following subpages:
+[Beginner Texts](beginner-material/) I've recently created some pieces intended for people who are just starting to read Toki Pona. 
 
-<ul>
-{%- for post in collections.tok -%}
-<li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
-{%- endfor -%}
-</ul>
-
+Other:
+- [mooooooooooooooo.](mooooooooooooooo/), six random English language poetic outbursts about Toki Pona. 
+- [(Outdated) My Toki Pona Work](pali/). an (outdated) index of some work I've done within the community

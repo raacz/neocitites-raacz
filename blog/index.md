@@ -7,7 +7,8 @@ background: clear-lake
 Bits and bobs, composed in English. 
 
 <ul>
-{%- for post in collections.writing -%}
-<li>{{ post.date | shortDate }} <a href="{{ post.url }}">{{ post.data.title }}</a></li>
+{% assign pages = collections.writing | reverse %}
+  {% for post in pages %}
+  <li>{{ post.date | shortDate }} <a href="{{ post.url }}">{{ post.data.title }}</a></li>
   {%- endfor -%}
-  </ul>
+</ul>
