@@ -1,0 +1,348 @@
+/*This is the general CSS for reading mode entries that feature: English/SL/SP and an image
+
+It is active on pages with the reading-mode.html layout. Note that there are several configurable options for the layout of this page. Here is how we handle all of them:
+
+
+Language/Script: Show English/Show Sitelen Pona/Show Sitelen Lasina: via CSS by checking for status of :checked
+
+Image Settings: via CSS by checking for status of :checked
+
+Modes:
+- Regular Mode is the normal view of the text. 
+
+- Quiz mode is a stripped version of the text with ONLY sitelen Lasina and sitlen pona toggleable. Options for 'Show English' and 'Show image' disappear. 
+
+- Line by Line mode hides the language/scrip panel and replaces it with a new toggle between sitelen pona and sitelen lasina, it hides the regular mode texts.
+
+- Table Mode does similar behaviour.
+
+*/
+
+@font-face {
+    font-family: "nasin nanpa";
+    src: url(/assets/nasin-nanpa-4.0.2.otf);
+}
+.sp{
+    font-family: "nasin nanpa";
+}
+
+body{
+    grid-template-rows: auto auto 1fr auto;/*ensuring additional space is added to main container, not to the control section*/
+}
+
+main{
+    max-width: 100%;
+}
+
+/*The configurable menu.*/
+.menu {
+    background-color: var(--walo-lili);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-block-end: 0.1em solid var(--pimeja);
+
+
+}
+.menu label {
+    white-space: nowrap;
+}
+
+.menu fieldset {
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1em;
+    margin: inherit;
+    align-items: flex-start;
+    flex: 1;
+    max-width: 35em;
+}
+.menu legend {
+    text-transform: uppercase;
+    width:fit-content;
+    flex-grow: 0;
+    padding-inline-start: 1em;
+
+    display: inline;
+    flex: 100%;
+    float: left;
+    box-shadow: inset 0 0 0 0.1em var(--pimeja);
+}
+.menu p{
+    margin: 0;
+    padding: 0;
+}
+
+
+/*logic for hiding different versions of menu*/
+/*In regular mode, hide table and line*/
+:has( :is(input[id="rc-2a"]:checked)) fieldset:is(.by-line, .table){
+    display: none;
+}
+/*In quiz mode, hide table and line*/
+:has( :is(input[id="rc-2b"]:checked)) fieldset:is(.by-line, .table){
+    display: none;
+}
+/*In line mode, hide regular and table*/
+:has( :is(input[id="rc-2c"]:checked)) fieldset:is(.regular, .table){
+    display: none;
+}
+/*In table mode, hide regular and line*/
+:has(:is(input[id="rc-2d"]:checked)) fieldset:is(.regular, .by-line){
+    display: none;
+}
+
+/*logic for hiding aspects of image*/
+    /*hide image if box is not checked*/
+:has(input[id="rc-3a"]:not(:checked))  .context img{
+    display: none;
+}
+/*also ensure that the caption does not get pushed to the side on its own*/
+:has(input[id="rc-3a"]:not(:checked)) figure.context{
+    max-width: 100%; 
+    width: 100%;
+    align-items: center;
+    border: none;
+}
+:has(input[id="rc-3a"]:not(:checked)) figcaption{
+    max-width: fit-content;
+    width: 100%;
+    border: 0.1em solid var(--pimeja); /*shifting border is required to keep the width at 100% while maintaing the clean look of the original*/
+}
+:has(input[id="rc-3b"]:not(:checked))  .caption{
+    display: none;
+}
+:has(input[id="rc-3c"]:not(:checked))  .context a:is(:visited, :not(:visited)){
+    display: none;
+}
+/*for spacing reasons, ensure the entire component gets erased when*/
+/*all elements are supposed to be gone are hidden*/
+:has(input[id="rc-3b"]:not(:checked)):has(input[id="rc-3c"]:not(:checked)):has(input[id="rc-3a"]:not(:checked)) figure{
+    display: none;
+}
+
+
+
+
+/*'shows english logic*/ /* WILL BE UPDATED TO INCLUDE SP*/
+/*regular mode*/
+/*if box is not checked, english hidden*/
+body:has(input[id="rc-1a"]:not(:checked)) .regular .en {
+    display: none;
+}
+/*if box is not checked, tok hidden*/
+body:has(input[id="rc-1c"]:not(:checked)) .regular .tok {
+    display: none;
+}
+
+/*line mode*/
+/*if box is not checked, english hidden*/
+body:has(input[id="rc-bl-1a"]:not(:checked)) .line [lang="en"] {
+    display: none;
+}
+/*if box is not checked, tok hidden*/
+body:has(input[id="rc-bl-1c"]:not(:checked)) .line [lang="tok"] {
+    display: none;
+}
+
+/*table mode*/
+/*if box is not checked, english hidden*/
+body:has(input[id="rc-t-1a"]:not(:checked)) .table [lang="en"] {
+    display: none;
+}
+/*if box is not checked, tok hidden*/
+body:has(input[id="rc-t-1c"]:not(:checked)) .table [lang="tok"] {
+    display: none;
+}
+
+
+/*logic for hiding different modes*/
+/*In regular mode, hide table and line*/
+:has( :is(input[id="rc-2a"]:checked)) :is(.lines, .table){
+    display: none;
+}
+/*In quiz mode, hide table and line*/
+:has( :is(input[id="rc-2b"]:checked)) 
+:is(.lines, .table, 
+label:has(input[id="rc-1a"]), /* as well as English toggle*/
+fieldset[id="rc-3"], /* image settings*/
+figure /* and the image itself*/
+){
+    display: none;
+}
+
+/*In quiz mode, hide table and line*/
+:has( :is(input[id="rc-2b"]:checked)) p{
+    line-height: 1.1em;
+
+} 
+
+/*In line mode, hide regular and table*/
+:has( :is(input[id="rc-2c"]:checked)) :is(.regular, .table){
+    display: none;
+}
+/*In table mode, hide regular and line*/
+:has(:is(input[id="rc-2d"]:checked)) :is(.regular, .lines){
+    display: none;
+}
+
+
+
+
+
+/*mode-agnostic styles*/
+.selo {
+    border: 0.2em solid var(--pimeja);
+    padding: 2em;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    column-gap: 1em;
+    row-gap: 1em;
+
+}
+
+h1{
+    width: 100%;
+    text-align: center;
+    margin-block-end: 1em;
+}
+
+figure {
+    max-width: 20em;
+    line-height: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    border: 0.1em solid var(--pimeja);
+    align-self: first baseline;
+}
+figure img {
+    max-width: 100%;
+}
+figcaption p{
+    background-color: var(--walo-pimeja);
+    margin: 0;
+    line-height: 1.6em;
+}
+figcaption a:is(:visited, :not(:visited)){
+    display: block;
+    color: var(--pimeja);
+
+}
+figcaption{
+    border-bottom: 0.1em solid var(--pimeja);
+
+}
+p:last-of-type{
+    margin-bottom: 0;
+
+}
+
+
+/*regular mode styling*/
+
+.regular {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 1em;
+  }
+
+.regular p:empty{
+    display: none;
+  }
+.regular .tok {
+    flex: 1;
+    max-width: 20em;
+}
+.regular .en {
+    flex: 1;
+    max-width: 20em;
+}
+
+
+
+
+
+/*line mode styling*/   
+
+.line{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    column-gap: 1em;
+    border-bottom: 0.1em solid var(--pimeja);
+    position: relative;
+}
+.line details[open] summary{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.line summary::after{
+    content: '';
+    position: absolute;
+    top: 0;    content: '';
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+/*.line details[open] summary::after {
+    content: 'Close';
+    text-align: right;
+    position: static;
+    display: block;
+    width: 200vw;
+    height: 5em;
+    margin-block-start:-2em;
+    background: transparent; 
+}*/
+.line:focus-within{
+    outline: 0.2em solid var(--pimeja);
+    border-radius: 0.1em;
+}
+summary:focus{
+    outline: none;
+}
+.line p:not(.detail p) {
+    position: relative;
+}
+
+.line details[open] {
+    padding-top: 2em;
+    flex: 50%;
+}
+.line:has(details[open]){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/*table mode styling*/
+
+.table :is(tr){
+    display: flex;
+    column-gap: 1em;
+    border-bottom: 0.1em solid var(--pimeja);
+}
+.table :is(td, th){
+    flex: 1;
+
+}
+  
+/*utility*/
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}

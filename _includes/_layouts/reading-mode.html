@@ -1,191 +1,101 @@
 ---
-layout: _layouts/texts-base.html
+layout: _layouts/bt/texts-base.html
 
 ---
 
-<style>
+<section class="menu" aria-labelledby="rc">
+    <h2 id="rc" class="visually-hidden">Reading Controls</h2>
+    <fieldset id="rc-1" class="regular">
+        <legend>Version</legend>
+        <label for="rc-1a">
+                    <input type="checkbox" name="english" id="rc-1a">
 
-figure {
-    max-width: 20em;
-    line-height: 0;
-    display: flex;
-    flex-direction: column-reverse;
-    border: 0.1em solid var(--pimeja);
-    grid-area: reading-context;
+            Show English</label>
 
+        <label for="rc-1b">
+                    <input type="checkbox" name="sp-show" id="rc-1b">
 
-
-
-}
-figure img {
-    max-width: 100%;
-}
-figcaption, figcaption p{
-    background-color: var(--walo-pimeja);
-    margin: 0;
-    line-height: 1.6em;
-}
-figcaption a:is(:visited, :not(:visited)){
-    display: block;
-    color: var(--pimeja);
-
-}
-figcaption{
-    border-bottom: 0.1em solid var(--pimeja);
-
-}
-.lili {
-    border: 0.2em solid var(--pimeja);
-    padding: 2em;
-    /*
-    display: grid; 
-    grid-template-areas: 
-    "reading-heading reading-heading"
-    "reading-context reading-text";
-    column-gap: 1em;*/
-    display: flex;
-    flex-wrap: wrap;
-}
-main:has(.lili){
-    max-width: 100%;
-}
-
-
-.lili h1{
-    grid-area: reading-heading;
-    width: 100%;
-    
-}
-.lili-text {
-    display: flex;
-    grid-area: reading-text;
-  }
-  .lili-text p{
-    margin-block-end: 0;
-  }
-  .lili-text p:empty{
-    display: none;
-  }
-  .lili .tok {
-    grid-area: tok;
-    flex: 1;
-    max-width: 20em;
-  }
-  .lili .en {
-    grid-area: eng;
-    flex: 1;
-    display: none;
-    max-width: 20em;
-
-  }
-
-
-
-    section[aria-labelledby="rc"] p{
-        margin: 0;
-    }
-    /*'shows english styles*/
-    
-        body:has(input[id="rc-1a"]:checked) .en {
-        display: block;
-    }
-
-
-    /*quiz mode styles*/
-    body:has(input[id="rc-2b"]:checked) figure {
-        display: none;
-    }
-    body:has(input[id="rc-2b"]:checked) .en {
-        display: none !important;
-
-    }
-    body:has(input[id="rc-2b"]:checked) .tok {
-        display: block !important;
-    }
-
-    /*line mode*/
-
-    body:has(input[id="rc-2c"]:checked) .tok p:not(:empty)::after{
-        content: "show English";
-        position: absolute;
-        right: 0;
-    }
-    body:has(input[id="rc-2c"]:checked)  .en {
-        display: none !important;
-
-    }
-    body:has(input[id="rc-2c"]:checked)  .tok {
-        display: block !important;
-    }
-    body:has(input[id="rc-2c"]:checked) .tok p{
-        position: relative;
-        width: 100%;
-        border-bottom: 0.1em solid black;
-    }
-    body:has(input[id="rc-2c"]:checked) .lili-text{
-        display: block !important;
-    }
-
-
-    /*image settings*/
-    body:has(input[id="rc-3a"]:checked)  figure img{
-        display: block;
-    }
-    body:has(input[id="rc-3b"]:checked) figure .caption{
-        display: block;
-    }
-    body:has(input[id="rc-3c"]:checked) figcaption a:is(:visited, :not(:visited)){
-        display: block;
-
-    }
-
-    figure img{
-        display: none;
-    }
-    figure .caption {
-        display: none;
-    }
-    figcaption a:is(:visited, :not(:visited)) {
-        display: none;
-    }
-   
-    
-  
-    
-</style>
-
-<section aria-labelledby="rc">
-    <p id="rc">Reading Controls</p>
-    <fieldset>
-        <legend>Language/Script</legend>
-        <input type="checkbox" name="english" id="rc-1a">
-        <label for="rc-1a">Show English</label>
-
-        <input type="checkbox" name="sp-show" id="rc-1b">
-        <label for="rc-1b">Show Sitelen Pona</label>
+            Show Sitelen Pona</label>
         
-        <input type="checkbox" name="sp-hide" id="rc-1c" checked>
-        <label for="rc-1c">Show Sitelen Lasina</label>
+        <label for="rc-1c">
+                    <input type="checkbox" name="sp-hide" id="rc-1c" checked>
+
+            Show Sitelen Lasina</label>
     </fieldset>
-    <fieldset>
+     <fieldset id="rc-bl-1b" class="by-line">
+        <legend>LIne/Script</legend>
+        <label for="rc-bl-1a">
+                    <input type="checkbox" name="english" id="rc-bl-1a">
+
+            Show English</label>
+
+        <label for="rc-bl-1b">
+                    <input type="checkbox" name="sp-show" id="rc-bl-1b">
+
+            Show Sitelen Pona</label>
+        
+        <label for="rc-bl-1c">
+                    <input type="checkbox" name="sp-hide" id="rc-bl-1c" checked>
+
+            Show Sitelen Lasina</label>
+    </fieldset>
+    <fieldset id="rc-t-1" class="table">
+        <legend>Table/Script</legend>
+        <label for="rc-t-1a">
+                    <input type="checkbox" name="english" id="rc-t-1a">
+
+            Show English</label>
+
+        <label for="rc-t-1b">
+                    <input type="checkbox" name="sp-show" id="rc-t-1b">
+
+            Show Sitelen Pona</label>
+        
+        <label for="rc-t-1c">
+                    <input type="checkbox" name="sp-hide" id="rc-t-1c" checked>
+
+            Show Sitelen Lasina</label>
+    </fieldset>
+    
+
+    <fieldset id="rc-2">
         <legend>Mode</legend>
-        <input type="radio" name="mode" id="rc-2a" value="rc-2a" checked>
-        <label for="rc-2a">Regular Mode</label>
-        <input type="radio" name="mode" id="rc-2b" value="rc-2b">
-        <label for="rc-2b">Quiz Mode</label>
-        <input type="radio" name="mode" id="rc-2c" value="rc-2c" >
-        <label for="rc-2c">Line Mode</label>
-    </fieldset>
-    <fieldset>
-        <legend>Image Settings</legend>
-        <input type="checkbox" name="image" id="rc-3a" checked>
-        <label for="rc-3a">Show Image</label>
+        <label for="rc-2a">
+                    <input type="radio" name="mode" id="rc-2a" value="rc-2a" checked>
 
-        <input type="checkbox" name="description" id="rc-3b" checked>
-        <label for="rc-3b">Show Description</label>
-        
-        <input type="checkbox" name="attribution" id="rc-3c" checked>
-        <label for="rc-3c">Show Attribution</label>
+            Regular Mode</label>
+        <label for="rc-2b">
+                    <input type="radio" name="mode" id="rc-2b" value="rc-2b">
+
+            Quiz Mode</label>
+        <label for="rc-2c">
+                    <input type="radio" name="mode" id="rc-2c" value="rc-2c" >
+
+            Line by Line Mode</label>
+        <label for="rc-2d">
+                    <input type="radio" name="mode" id="rc-2d" value="rc-2d" >
+
+            Table Mode</label>
+
+    </fieldset>
+    <fieldset id="rc-3">
+        <legend>Image Settings</legend>
+        <label for="rc-3a">
+                    <input type="checkbox" name="image" id="rc-3a" checked>
+
+            Show Image</label>
+
+        <label for="rc-3b">
+                    <input type="checkbox" name="description" id="rc-3b" checked>
+
+            Show Description</label>
+        {% if external %}
+        <label for="rc-3c">
+                    <input type="checkbox" name="attribution" id="rc-3c" checked>
+
+            Show Attribution</label>
+        {% endif %}
+
     </fieldset>
     
 
@@ -196,3 +106,5 @@ main:has(.lili){
 <main>
 {{ content }}
 </main>
+
+

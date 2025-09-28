@@ -1,7 +1,10 @@
 *{
     box-sizing: border-box;
-    margin: 0;
+}
+*:not(fieldset){
     padding: 0;
+    margin: 0;
+
 }
 
 @font-face {
@@ -299,7 +302,7 @@ small {
 html:has(.back-to-main){
     --walo: rgb(235, 233, 225);
     --pimeja: rgb(0, 0, 0);
-    --walo-lili: rgb(230, 138, 138);
+    --walo-lili: rgb(233, 243, 184);
     --walo-pimeja: rgb(139, 205, 103);
     --laso: rgb(36, 36, 157);
     --pimeja-lili: rgb(40, 16, 16);

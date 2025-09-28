@@ -1,5 +1,5 @@
 ---
-layout: _layouts/texts.html
+layout: _layouts/bt/texts.html
 title: Home
 ---
 
