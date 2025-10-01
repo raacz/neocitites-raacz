@@ -1,0 +1,25 @@
+---
+layout: _layouts/reading-mode.html
+stylesheet: "/assets/css/reading-mode.css"
+---
+
+
+  {% render "partials/lili-block2.liquid", 
+    fileSlug: page.fileSlug,
+    page: page,
+    title: title,
+    external: external,
+    name: name,
+    source: source,
+    license: license,
+    alt: alt,
+    media: media,
+    collections: collections,
+    content: content,
+    en : story.en,
+    tok : story.tok,
+    sp : story.sp,
+    enLines : story.enLines,
+    tokLines : story.tokLines,
+    spLines : story.spLines    
+  %}

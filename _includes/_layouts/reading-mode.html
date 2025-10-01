@@ -22,22 +22,22 @@ layout: _layouts/bt/texts-base.html
 
             Show Sitelen Lasina</label>
     </fieldset>
-     <fieldset id="rc-bl-1b" class="by-line">
+     <fieldset id="rc-bl-1" class="by-line">
         <legend>LIne/Script</legend>
         <label for="rc-bl-1a">
-                    <input type="checkbox" name="english" id="rc-bl-1a">
+                    <input type="radio" name="version" id="rc-bl-1a">
 
-            Show English</label>
+            Toki Pona/English</label>
 
         <label for="rc-bl-1b">
-                    <input type="checkbox" name="sp-show" id="rc-bl-1b">
+                    <input type="radio" name="version" id="rc-bl-1b">
 
-            Show Sitelen Pona</label>
+            Sitelen Pona/Sitelen Lasina</label>
         
         <label for="rc-bl-1c">
-                    <input type="checkbox" name="sp-hide" id="rc-bl-1c" checked>
+                    <input type="radio" name="version" id="rc-bl-1c" checked>
 
-            Show Sitelen Lasina</label>
+            Sitelen Pona/English</label>
     </fieldset>
     <fieldset id="rc-t-1" class="table">
         <legend>Table/Script</legend>
@@ -91,7 +91,7 @@ layout: _layouts/bt/texts-base.html
             Show Description</label>
         {% if external %}
         <label for="rc-3c">
-                    <input type="checkbox" name="attribution" id="rc-3c" checked>
+                    <input type="checkbox" name="attribution" id="rc-3c">
 
             Show Attribution</label>
         {% endif %}

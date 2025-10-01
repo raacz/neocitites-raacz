@@ -2,6 +2,8 @@
 title: one.
 date: 2022-11-22
 ---
+{{mu}}
+
 oh, toki pona!
 
 toki pona o!

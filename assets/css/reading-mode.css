@@ -135,16 +135,45 @@ body:has(input[id="rc-1a"]:not(:checked)) .regular .en {
 body:has(input[id="rc-1c"]:not(:checked)) .regular .tok {
     display: none;
 }
+/*if box is not checked, sp hidden*/
+body:has(input[id="rc-1b"]:not(:checked)) .regular .sp {
+    display: none;
+}
 
 /*line mode*/
-/*if box is not checked, english hidden*/
-body:has(input[id="rc-bl-1a"]:not(:checked)) .line [lang="en"] {
+/*Toki Pona/English Mode*/
+/*all sitelen pona hidden*/
+body:has(input[id="rc-bl-1a"]:checked) .line .sp {
     display: none;
 }
-/*if box is not checked, tok hidden*/
-body:has(input[id="rc-bl-1c"]:not(:checked)) .line [lang="tok"] {
+body:has(input[id="rc-bl-1a"]:checked) .line details[lang="tok"] {
     display: none;
 }
+
+
+/*sp/sl mode*/
+/*sitelen Lasina hidden*/
+body:has(input[id="rc-bl-1b"]:checked) .line p[lang="tok"] {
+    display: none;
+}
+/*hide english details*/
+body:has(input[id="rc-bl-1b"]:checked) .line details[lang="en"] {
+    display: none;
+}
+
+
+/*sp/en mode*/
+/*sitelen Lasina hidden*/
+body:has(input[id="rc-bl-1c"]:checked) .line p[lang="tok"] {
+    display: none;
+}
+/*hide tok details*/
+body:has(input[id="rc-bl-1c"]:checked) .line details[lang="tok"]  {
+    display: none;
+}
+
+
+
 
 /*table mode*/
 /*if box is not checked, english hidden*/
@@ -155,6 +184,11 @@ body:has(input[id="rc-t-1a"]:not(:checked)) .table [lang="en"] {
 body:has(input[id="rc-t-1c"]:not(:checked)) .table [lang="tok"] {
     display: none;
 }
+/*if box is not checked, sp hidden*/
+body:has(input[id="rc-1b"]:not(:checked)) .table .sp {
+    display: none;
+}
+
 
 
 /*logic for hiding different modes*/
@@ -162,12 +196,12 @@ body:has(input[id="rc-t-1c"]:not(:checked)) .table [lang="tok"] {
 :has( :is(input[id="rc-2a"]:checked)) :is(.lines, .table){
     display: none;
 }
-/*In quiz mode, hide table and line*/
+/*In quiz mode, hide table, line, and english*/
 :has( :is(input[id="rc-2b"]:checked)) 
 :is(.lines, .table, 
 label:has(input[id="rc-1a"]), /* as well as English toggle*/
 fieldset[id="rc-3"], /* image settings*/
-figure /* and the image itself*/
+figure, .en /* and the image itself*/
 ){
     display: none;
 }

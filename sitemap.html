@@ -2,6 +2,8 @@
 layout: _layouts/base.html
 title: Site Map
 backto: /miscellaneous/
+eleventyImport:
+  collections: ["moo"]
 ---
 
 <h2>Pages</h2>
@@ -26,7 +28,13 @@ backto: /miscellaneous/
     
     {% if post.data.slug %}
     <li>
-        <a href="/reviews/index.html#{{ post.data.slug }}">{{ post.data.title }}</a> tagged: {{ post.data.tags | join: ", " }} </a>
+        <a href="
+        {%- if post.data.tags contains 'review' -%}
+        /reviews/index.html
+        {%- elsif post.data.tags contains 'moo' -%}
+        /toki-pona/mooooooooooooooo/index.html
+        {%- endif -%}
+        #{{ post.data.slug }}">{{ post.data.title }}</a> tagged: {{ post.data.tags | join: ", " }} </a>
     </li>
     {% else %}
         <li>
