@@ -12,9 +12,7 @@ taso, mama li wile ala e ni.
 
 mi awen, mi awen, mi awen.
 
-tenpo ni la, mama li lukin ala. 
-
-mi tawa ilo. mi wile kama jo e ilo. 
+tenpo ni la, mama li lukin ala. mi tawa ilo. mi wile kama jo e ilo. 
 
 taso ilo li suli! luka mi li lili. 
 

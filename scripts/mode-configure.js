@@ -1,3 +1,8 @@
+function store(key, value) {
+  sessionStorage.setItem(key, value);
+  console.log(value + " stored to " + key);
+}
+
 // Checkbox pairs that should stay synced
 
 let isActive = false;
@@ -29,21 +34,29 @@ function calculateRcBlStates() {
   const pona = checkboxes['rc-1b'].checked;
   const lasina = checkboxes['rc-1c'].checked;
 
-    checkboxes['rc-bl-1a'].checked = false;
-    checkboxes['rc-bl-1b'].checked = false;
-    checkboxes['rc-bl-1c'].checked = false;
+  checkboxes['rc-bl-1a'].checked = false;
+  checkboxes['rc-bl-1b'].checked = false;
+  checkboxes['rc-bl-1c'].checked = false;
 
   //tokipona/english
-  if((english && !pona && lasina) || (!english && !pona && lasina) || (english && !pona && !lasina)){
-    checkboxes['rc-bl-1a'].checked = true;
-
+  if ((english && !pona && lasina) || (!english && !pona && lasina) || (english && !pona && !lasina)) {
+    let change = 'rc-bl-1a';
+    checkboxes[change].checked = true;
+    store("line", change);
   }
-  else if((!english && pona && lasina) || (!english && pona && !lasina)){
-      checkboxes['rc-bl-1b'].checked = true;
+  else if ((!english && pona && lasina) || (!english && pona && !lasina)) {
+
+    let change = 'rc-bl-1b';
+    checkboxes[change].checked = true;
+    store("line", change);
+
 
   }
   else {
-    checkboxes['rc-bl-1c'].checked = true;
+    let change = 'rc-bl-1c';
+    checkboxes[change].checked = true;
+    store("line", change);
+
 
   }
 }
@@ -83,7 +96,7 @@ function handleUncheckedBehavior() {
     checkboxes['rc-1a'].checked = true;
     checkboxes['rc-1b'].checked = true;
   }
-  
+
   // Sync rc-1x to rc-t-1x
   syncPairs.forEach(pair => {
     syncCheckboxPair(pair.main, pair.twin);
@@ -112,3 +125,111 @@ checkboxes['rc-2c'].addEventListener('change', () => {
 syncPairs.forEach(pair => {
   syncCheckboxPair(pair.main, pair.twin);
 });
+
+
+
+
+/** 000000000000000000000000000000000000000 */
+
+//session storage 
+document.addEventListener('DOMContentLoaded', () => {
+  let menu = document.getElementsByTagName("input");
+  let numerator = 1;
+  for (let item of menu) {
+    console.log(item.id);
+    item.addEventListener('change', (event) => {
+      console.log("change event on" + event.id);
+      if (event.target.type !== "radio") {
+        console.log(event.target.id + event.target.checked);
+        store(event.target.id, event.target.checked);
+        console.log("non-radio");
+      }
+      else if (event.target.name === "version") {
+        console.log("line" + event.target.id);
+        store("line", event.target.id);
+        console.log("line");
+      }
+      else if (event.target.name === "mode") {
+        console.log("radio" + event.target.id);
+        store("radio", event.target.id);
+        console.log("radio");
+      }
+    });
+  }
+
+  const modes = {
+    'rc-2a': document.getElementById('rc-2a'),
+    'rc-2b': document.getElementById('rc-2b'),
+    'rc-2c': document.getElementById('rc-2c'),
+    'rc-2d': document.getElementById('rc-2d')
+  };
+
+  const versions = {
+    'rc-bl-1a': document.getElementById('rc-bl-1a'),
+    'rc-bl-1b': document.getElementById('rc-bl-1b'),
+    'rc-bl-1c': document.getElementById('rc-bl-1c')
+  };
+
+
+
+  window.addEventListener("load", (event) => {
+    for (let i = 0; i < menu.length; i++) {
+      console.log(menu[i] + "is preprocessing");
+      if (menu[i].type !== "radio") {
+        let change = sessionStorage.getItem(menu[i].id);
+        menu[i].checked = JSON.parse(change);
+        console.log(change + "was changed");
+      }
+      else if(menu[i].name === "version"){
+      /*logic for line-by-line storing and restoration*/
+        let change = sessionStorage.getItem("line");
+        for (let mode of Object.values(versions)) {
+          if (mode.id === change) {
+            mode.checked = true;
+          }
+          else {
+            mode.checked = false;
+          }
+        }
+      }
+      else if (menu[i].type === "radio") {
+        let change = sessionStorage.getItem("radio");
+        for (let mode of Object.values(modes)) {
+          if (mode.id === change) {
+            mode.checked = true;
+            if(mode.id === "rc-2c"){
+              handleUncheckedBehavior();
+            }
+          }
+          else {
+            mode.checked = false;
+          }
+        }
+      }
+    }
+  });
+
+
+
+
+ 
+});
+
+function storageAvailable(type) {
+  let storage;
+  try {
+    storage = window[type];
+    const x = "__storage_test__";
+    storage.setItem(x, x);
+    storage.removeItem(x);
+    return true;
+  } catch (e) {
+    return (
+      e instanceof DOMException &&
+      e.name === "QuotaExceededError" &&
+      // acknowledge QuotaExceededError only if there's something already stored
+      storage &&
+      storage.length !== 0
+    );
+  }
+}

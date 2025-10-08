@@ -1,0 +1,31 @@
+---
+layout: _layouts/bt/texts.html
+---
+{% assign currentDir = page.filePathStem | split: "/" | slice: 0, -1 | join: "/" %}
+
+{% assign subpages = collections.all 
+  | where_exp: "item", "item.filePathStem contains currentDir" 
+  | where_exp: "item", "item.filePathStem != page.filePathStem" 
+  | where_exp: "item", "item.filePathStem contains 'index'"
+%}
+
+{% assign number = 1 %}
+
+{{ content }}
+
+
+<ul class="cards">
+{% for sub in subpages %}
+<li class="card">
+  <a href="{{ sub.url }}">
+  <img src="{{ sub.data.media }}" alt="">
+  <span>Page {{ number }}</span>
+  </a>
+</li>
+{% assign number = number | plus: 1 %}
+
+{% endfor %}
+
+</ul>
+
+

@@ -245,7 +245,7 @@ figure, .en /* and the image itself*/
 h1{
     width: 100%;
     text-align: center;
-    margin-block-end: 1em;
+    margin-block: 0.5em 1em;
 }
 
 figure {
@@ -290,15 +290,10 @@ p:last-of-type{
 .regular p:empty{
     display: none;
   }
-.regular .tok {
+.regular :is(.tok, .en, .sp) {
     flex: 1;
     max-width: 20em;
 }
-.regular .en {
-    flex: 1;
-    max-width: 20em;
-}
-
 
 
 
@@ -379,4 +374,20 @@ summary:focus{
     position: absolute;
     white-space: nowrap;
     width: 1px;
+}
+
+
+.back-forth{
+    display: flex;
+    justify-content: space-between;
+    margin-block-start: -3em;
+}
+.back-forth a:is(:visited, :not(:visited)){
+    background-color: var(--walo);
+    color: var(--pimeja);
+    text-decoration: none;
+    box-shadow: 0 0 0 0.1em var(--pimeja);
+    text-transform: uppercase;
+    padding-inline: 0.25em;
+
 }

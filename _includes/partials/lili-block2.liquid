@@ -15,12 +15,14 @@
 
 
 
-
-
 <div class="selo">
-<h1>{{ title }}</h1>
+  <div class="back-forth">
+  <a href="">Go Back</a>
+  <a href="">Go Forward</a>
 
+  </div>
 
+  <h1 id="main-content">{{ title }}</h1>
   <div class="content">
     <figure class="context">
     <img alt="{{ alt }}" src="{{ media }}">
@@ -29,7 +31,6 @@
       {% if external %}
       <a href="{{ external }}">{{ name }} by {{ source }}</a>
       {% endif %}
-
       </p>
     
     </figcaption>
@@ -62,7 +63,7 @@
         </tr>
       </thead>
       <tbody>
-      {% for i in (1..size) %}
+      {% for i in (0..size) %}
       <tr>
       <td lang="tok">{{ tokLines[i] }}</td>
       <td lang="en">{{ enLines[i] }}</td>
@@ -79,7 +80,7 @@
       </div>
       <div class="inject2 lines">
 
-{% for i in (1..size) %}
+{% for i in (0..size) %}
 
 
 <div class="line">

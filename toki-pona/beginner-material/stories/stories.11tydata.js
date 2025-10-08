@@ -1,355 +1,213 @@
-// matchers.js
+// Revised matcher: paragraph-aligned, tok-driven (never drop tok/en lines)
 
-// --------------------
-// TOK SENTENCE SPLITTER
-// --------------------
-function splitTokSentences(text) {
-  // split into paragraphs
-  const paragraphs = text.split(/\n{2,}/).map(p => p.trim()).filter(Boolean);
+function splitParagraphs(text) {
+  if (!text) return [];
+  return text
+    .replace(/\r/g, "")                 // normalize CRLF
+    .replace(/\n[ \t]*\n/g, "\n\n")     // collapse whitespace-only lines into paragraph breaks
+    .split(/\n{2,}/)                    // split on 2+ newlines
+    .map(p => p.trim())
+    .filter(p => p.length > 0);         // remove empty paragraphs
+}
+
+
+// Sentence splitter that respects double quotes and curly single quotes (‘ ’ and “ ”)
+// NOTE: ASCII apostrophe (') is NOT treated as a quote marker (so contractions are safe).
+function splitSentencesRespectQuotes(paragraph) {
+  if (!paragraph) return [];
+
+  const doubleQuoteChars = new Set(['"', '\u201C', '\u201D']); // " and curly double
+  /*const singleQuoteChars = new Set(['\u2018', '\u2019']);*/      // ‘ ’ (curly single)
 
   let sentences = [];
-  for (let p of paragraphs) {
-    // split on . ? !
-    let parts = p.split(/([.?!])/).filter(Boolean);
-    let buffer = "";
-    for (let part of parts) {
-      buffer += part;
-      if (/[.?!]/.test(part)) {
-        sentences.push(buffer.trim());
-        buffer = "";
+  let buf = '';
+  let inDouble = false;
+
+  for (let i = 0; i < paragraph.length; i++) {
+    const ch = paragraph[i];
+    buf += ch;
+
+    if (doubleQuoteChars.has(ch)) {
+      inDouble = !inDouble;
+      continue;
+    }
+
+    // Only split on sentence punctuation if we're not inside any quote
+    if (!inDouble && (ch === '.' || ch === '!' || ch === '?')) {
+      // consume any following punctuation/closing quotes/closing parens
+      let j = i + 1;
+      while (j < paragraph.length && /[.!?'"”’)\]]/.test(paragraph[j])) {
+        buf += paragraph[j];
+        // toggle quote states if we see curly/double closers inside the run
+        if (doubleQuoteChars.has(paragraph[j])) inDouble = !inDouble;
+        j++;
       }
-    }
-    if (buffer.trim()) {
-      sentences.push(buffer.trim());
+      i = j - 1;
+      sentences.push(buf.trim());
+      buf = '';
     }
   }
+
+  if (buf.trim()) sentences.push(buf.trim());
   return sentences;
 }
 
-// --------------------
-// EN SENTENCE SPLITTER
-// --------------------
-function splitEnSentences(text) {
-  const paragraphs = text.split(/\n{2,}/).map(p => p.trim()).filter(Boolean);
-
-  let sentences = [];
-  for (let p of paragraphs) {
-    let parts = p.split(/([.?!])/).filter(Boolean);
-    let buffer = "";
-    for (let part of parts) {
-      buffer += part;
-      if (/[.?!]/.test(part)) {
-        sentences.push(buffer.trim());
-        buffer = "";
-      }
-    }
-    if (buffer.trim()) {
-      sentences.push(buffer.trim());
-    }
-  }
-  return sentences;
+// SP splitter: paragraphs -> split on single newline (line breaks)
+function splitSpFragments(paragraph) {
+  if (!paragraph) return [];
+  return paragraph
+    .split(/\n/)
+    .map(s => s.trim())
+    .filter(Boolean);
 }
 
-// --------------------
-// SP SENTENCE SPLITTER
-// --------------------
-function splitSpSentences(text) {
-  const paragraphs = text.split(/\n{2,}/).map(p => p.trim()).filter(Boolean);
-
-  let sentences = [];
-  for (let p of paragraphs) {
-    let parts = p.split(/\n/).map(s => s.trim()).filter(Boolean);
-    sentences.push(...parts);
-  }
-  return sentences;
-}
-
-// --------------------
-// WORD COUNT HELPER
-// --------------------
+// Word-count helper that ignores 'zz' and tokens that are only ligature punctuation.
+// Strips leading/trailing punctuation for counting but preserves square-bracket groups.
 function wordCount(str) {
-  return str.split(/[\s+-]+/).filter(Boolean).length;
+  if (!str) return 0;
+  return str
+    .split(/[\s+\-]+/)          // split on whitespace, +, or -
+    .map(tok => tok.replace(/^[^A-Za-z0-9\[]+|[^A-Za-z0-9\]]+$/g, '')) // trim punctuation except []
+    .filter(Boolean)
+    .filter(tok => {
+      const lower = tok.toLowerCase();
+      if (lower === 'zz') return false;       // ignore zz entirely
+      if (/^[\^+\-\[\]]+$/.test(tok)) return false; // ignore pure ligature tokens
+      return true;
+    }).length;
 }
 
-// --------------------
-// TOK-EN PAIRING
-// --------------------
-function pairTokEn(tokText, enText) {
-  const tokSentences = splitTokSentences(tokText);
-  const enSentences = splitEnSentences(enText);
+// Merge fragments so that for each base sentence we produce one merged fragment.
+// Always returns an array with the same length as baseSents. If fragments run out,
+// remaining base items get empty strings. Any leftover fragments after filling
+// all baseSents are appended to the last result (to avoid dropping them).
+function pairByWordCount(baseSents, frags, options = {}) {
+  const threshold = options.threshold ?? 0.8;
+  const overshoot = options.overshoot ?? 1.6;
 
-  let pairs = [];
-  let count = Math.max(tokSentences.length, enSentences.length);
+  const pairs = [];
+  let fragIndex = 0;
 
-  for (let i = 0; i < count; i++) {
-    pairs.push({
-      tok: tokSentences[i] || "",
-      en: enSentences[i] || ""
-    });
-  }
+  for (let b = 0; b < baseSents.length; b++) {
+    const base = baseSents[b] || '';
+    const baseCount = Math.max(1, wordCount(base)); // avoid zero denominator
 
-  if (tokSentences.length !== enSentences.length) {
-    console.warn(
-      `⚠️ Tok/EN mismatch: ${tokSentences.length} tok vs ${enSentences.length} en`
-    );
-  }
+    if (fragIndex >= frags.length) {
+      // no fragments left — produce empty string for this base sentence
+      pairs.push('');
+      continue;
+    }
 
-  return pairs;
-}
-
-// --------------------
-// TOK-SP PAIRING
-// --------------------
-function pairTokSp(tokText, spText) {
-  const tokSentences = splitTokSentences(tokText);
-  const spSentences = splitSpSentences(spText);
-
-  let pairs = [];
-  let spIndex = 0;
-
-  for (let t of tokSentences) {
-    let tCount = wordCount(t);
-
-    // grab at least one sp sentence
-    let current = spSentences[spIndex] || "";
-    let combined = current;
+    // start with current fragment
+    let combined = frags[fragIndex] || '';
     let combinedCount = wordCount(combined);
 
-    while (
-      combinedCount < tCount * 0.6 && // allow fuzziness
-      spIndex + 1 < spSentences.length
-    ) {
-      spIndex++;
-      combined += " " + spSentences[spIndex];
+    // Merge until we reach threshold or run out
+    while (combinedCount < baseCount * threshold && fragIndex + 1 < frags.length) {
+      fragIndex++;
+      combined = (combined ? (combined + ' ') : '') + (frags[fragIndex] || '');
       combinedCount = wordCount(combined);
+      if (combinedCount > baseCount * overshoot) break; // avoid runaway overshoot
     }
 
-    pairs.push({ tok: t, sp: combined.trim() });
-    spIndex++;
+    pairs.push(combined.trim());
+    fragIndex++;
   }
 
-  if (tokSentences.length !== pairs.length) {
-    console.warn(
-      `⚠️ Tok/SP mismatch: ${tokSentences.length} tok vs ${spSentences.length} sp`
-    );
+  // If fragments remain, append them to the last pair (do not drop them)
+  if (fragIndex < frags.length) {
+    const tail = frags.slice(fragIndex).join(' ');
+    if (pairs.length === 0) {
+      pairs.push(tail.trim());
+    } else {
+      pairs[pairs.length - 1] = ((pairs[pairs.length - 1] || '') + ' ' + tail).trim();
+    }
   }
 
   return pairs;
 }
 
-// --------------------
-// COMBINED TRIPLE MATCHER
-// --------------------
-function pairTokEnSp(tokText, enText, spText) {
-  const tokEnPairs = pairTokEn(tokText, enText);
-  const tokSpPairs = pairTokSp(tokText, spText);
 
-  let triples = tokEnPairs.map((pair, i) => ({
-    tok: pair.tok,
-    en: pair.en,
-    sp: tokSpPairs[i] ? tokSpPairs[i].sp : ""
-  }));
+/**
+ * High-level: paragraph-aligned triple matcher.
+ * - Uses tok paragraph count as authoritative (tok/en must not be chopped).
+ * - If en or sp have fewer paragraphs, uses empty string / empty fragments.
+ *
+ * Returns: array of { tok, en, sp } in order (one object per tok sentence).
+ */
+function pairTokEnSpByParagraph(tokText, enText, spText) {
+  const tokPars = splitParagraphs(tokText);
+  const enPars = splitParagraphs(enText);
+  const spPars = splitParagraphs(spText);
+
+  if (tokPars.length !== enPars.length || tokPars.length !== spPars.length) {
+    console.warn(
+      `⚠️ Paragraph-count mismatch (tok=${tokPars.length}, en=${enPars.length}, sp=${spPars.length})`
+    );
+  }
+
+  const triples = [];
+
+  // iterate over paragraphs (using tok count as anchor)
+  for (let pi = 0; pi < tokPars.length; pi++) {
+    const tokPara = tokPars[pi] || "";
+    const enPara = enPars[pi] || "";
+    const spPara = spPars[pi] || "";
+
+    // step 1: sentence-level pairing tok ↔ en
+    const tokSents = splitSentencesRespectQuotes(tokPara);
+    const enSents = splitSentencesRespectQuotes(enPara);
+    /* debug sentence fragments
+    console.log(pi+":")
+    console.log(tokSents);
+    console.log(enSents);
+    */
+
+
+    let tokEnPairs = [];
+    let sentCount = Math.max(tokSents.length, enSents.length);
+    for (let si = 0; si < sentCount; si++) {
+      tokEnPairs.push({
+        tok: tokSents[si] || "",
+        en: enSents[si] || "",
+        sp: "" // fill later
+      });
+    }
+
+    if (tokSents.length !== enSents.length) {
+      console.warn(`⚠️ Tok/EN mismatch in paragraph ${pi}: tok=${tokSents.length}, en=${enSents.length}`);
+    }
+
+    // step 2: merge SP fragments into the existing tokEnPairs
+    const spFrags = splitSpFragments(spPara);
+    const spMerged = pairByWordCount(tokSents, spFrags, { threshold: 0.7, overshoot: 1.8 });
+
+    // assign sp into the same indexes as tok/en
+    for (let si = 0; si < tokEnPairs.length; si++) {
+      tokEnPairs[si].sp = spMerged[si] || "";
+      triples.push(tokEnPairs[si]);
+    }
+
+    // warning if sp doesn’t align
+    if (tokEnPairs.length !== spMerged.length) {
+      console.warn(`⚠️ Tok/SP mismatch in paragraph ${pi}: tokEnPairs=${tokEnPairs.length}, spMerged=${spMerged.length}`);
+    }
+  }
 
   return triples;
-
 }
 
 
-
-
-module.exports = function() {
-  const baseDir = __dirname;
-  const dirs = fs.readdirSync(baseDir).filter(d => fs.statSync(path.join(baseDir, d)).isDirectory());
-
-  let allData = {};
-
-  for (let dir of dirs) {
-    const files = fs.readdirSync(path.join(baseDir, dir));
-    let entry = {};
-
-    for (let f of files) {
-      if (f.endsWith(".md")) {
-        const slug = f.replace(".md", "");
-        entry[slug] = fs.readFileSync(path.join(baseDir, dir, f), "utf8");
-      }
-    }
-    let tokLine = splitTokSentences(entry["tok"]);
-    let enLine = pairTokEn(entry["tok"], entry["en"]); 
-    let spLine = pairTokSp(entry["tok"], entry["sp"]);
-
-
-    allData[dir] = {
-      en: entry["en"] || "",
-      sp: entry["sp"] || "",
-      tok: entry["tok"] || "",
-      enLine: enLine || "",
-      spLine: spLine || "",
-      tokLine: tokLine || ""
-    };
-    console.log(allData[dir]);
-  }
-
-  return {
-    eleventyComputed: {
-      story: data => allData[data.page.fileSlug] || {}
-    }
-  };
+// Export
+module.exports = {
+  splitParagraphs,
+  splitSentencesRespectQuotes,
+  splitSpFragments,
+  wordCount,
+  pairByWordCount,
+  pairTokEnSpByParagraph
 };
-// matchers.js
 
-// --------------------
-// TOK SENTENCE SPLITTER
-// --------------------
-function splitTokSentences(text) {
-  // split into paragraphs
-  const paragraphs = text.split(/\n{2,}/).map(p => p.trim()).filter(Boolean);
-
-  let sentences = [];
-  for (let p of paragraphs) {
-    // split on . ? !
-    let parts = p.split(/([.?!])/).filter(Boolean);
-    let buffer = "";
-    for (let part of parts) {
-      buffer += part;
-      if (/[.?!]/.test(part)) {
-        sentences.push(buffer.trim());
-        buffer = "";
-      }
-    }
-    if (buffer.trim()) {
-      sentences.push(buffer.trim());
-    }
-  }
-  return sentences;
-}
-
-// --------------------
-// EN SENTENCE SPLITTER
-// --------------------
-function splitEnSentences(text) {
-  const paragraphs = text.split(/\n{2,}/).map(p => p.trim()).filter(Boolean);
-
-  let sentences = [];
-  for (let p of paragraphs) {
-    let parts = p.split(/([.?!])/).filter(Boolean);
-    let buffer = "";
-    for (let part of parts) {
-      buffer += part;
-      if (/[.?!]/.test(part)) {
-        sentences.push(buffer.trim());
-        buffer = "";
-      }
-    }
-    if (buffer.trim()) {
-      sentences.push(buffer.trim());
-    }
-  }
-  return sentences;
-}
-
-// --------------------
-// SP SENTENCE SPLITTER
-// --------------------
-function splitSpSentences(text) {
-  const paragraphs = text.split(/\n{2,}/).map(p => p.trim()).filter(Boolean);
-
-  let sentences = [];
-  for (let p of paragraphs) {
-    let parts = p.split(/\n/).map(s => s.trim()).filter(Boolean);
-    sentences.push(...parts);
-  }
-  return sentences;
-}
-
-// --------------------
-// WORD COUNT HELPER
-// --------------------
-function wordCount(str) {
-  return str.split(/[\s+-]+/).filter(Boolean).length;
-}
-
-// --------------------
-// TOK-EN PAIRING
-// --------------------
-function pairTokEn(tokText, enText) {
-  const tokSentences = splitTokSentences(tokText);
-  const enSentences = splitEnSentences(enText);
-
-  let pairs = [];
-  let count = Math.max(tokSentences.length, enSentences.length);
-
-  for (let i = 0; i < count; i++) {
-    pairs.push({
-      tok: tokSentences[i] || "",
-      en: enSentences[i] || ""
-    });
-  }
-
-  if (tokSentences.length !== enSentences.length) {
-    console.warn(
-      `⚠️ Tok/EN mismatch: ${tokSentences.length} tok vs ${enSentences.length} en`
-    );
-  }
-
-  return pairs;
-}
-
-// --------------------
-// TOK-SP PAIRING
-// --------------------
-function pairTokSp(tokText, spText) {
-  const tokSentences = splitTokSentences(tokText);
-  const spSentences = splitSpSentences(spText);
-
-  let pairs = [];
-  let spIndex = 0;
-
-  for (let t of tokSentences) {
-    let tCount = wordCount(t);
-
-    // grab at least one sp sentence
-    let current = spSentences[spIndex] || "";
-    let combined = current;
-    let combinedCount = wordCount(combined);
-
-    while (
-      combinedCount < tCount * 0.6 && // allow fuzziness
-      spIndex + 1 < spSentences.length
-    ) {
-      spIndex++;
-      combined += " " + spSentences[spIndex];
-      combinedCount = wordCount(combined);
-    }
-
-    pairs.push({ tok: t, sp: combined.trim() });
-    spIndex++;
-  }
-
-  if (tokSentences.length !== pairs.length) {
-    console.warn(
-      `⚠️ Tok/SP mismatch: ${tokSentences.length} tok vs ${spSentences.length} sp`
-    );
-  }
-
-  return pairs;
-}
-
-// --------------------
-// COMBINED TRIPLE MATCHER
-// --------------------
-function pairTokEnSp(tokText, enText, spText) {
-  const tokEnPairs = pairTokEn(tokText, enText);
-  const tokSpPairs = pairTokSp(tokText, spText);
-
-  let triples = tokEnPairs.map((pair, i) => ({
-    tok: pair.tok,
-    en: pair.en,
-    sp: tokSpPairs[i] ? tokSpPairs[i].sp : ""
-  }));
-
-  return triples;
-
-}
 
 
 
@@ -357,9 +215,29 @@ function pairTokEnSp(tokText, enText, spText) {
 const fs = require("fs");
 const path = require("path");
 
-module.exports = function() {
+module.exports = function () {
   const baseDir = __dirname;
-  const dirs = fs.readdirSync(baseDir).filter(d => fs.statSync(path.join(baseDir, d)).isDirectory());
+  const dirs = [];
+
+  fs.readdirSync(baseDir).forEach(d => {
+    const fullPath = path.join(baseDir, d);
+    if (!fs.statSync(fullPath).isDirectory()) return;
+
+    // Check if this directory has an index.md file
+    if (fs.existsSync(path.join(fullPath, 'en.md'))) {
+      dirs.push(d);
+    }
+
+    // Check subdirectories one level down for index.md
+    fs.readdirSync(fullPath).forEach(sd => {
+      const subPath = path.join(fullPath, sd);
+      if (fs.statSync(subPath).isDirectory() &&
+        fs.existsSync(path.join(subPath, 'en.md'))) {
+        dirs.push(path.join(d, sd));
+      }
+    });
+  });
+  console.log(dirs);
 
   let allData = {};
 
@@ -373,11 +251,11 @@ module.exports = function() {
         entry[slug] = fs.readFileSync(path.join(baseDir, dir, f), "utf8");
       }
     }
-    let triples = pairTokEnSp(entry["tok"], entry["en"], entry["sp"]);
+    let triples = pairTokEnSpByParagraph(entry["tok"], entry["en"], entry["sp"]);
     let [tokLines, enLines, spLines] = [
-    triples.map(t => t.tok),
-    triples.map(t => t.en),
-    triples.map(t => t.sp)
+      triples.map(t => t.tok),
+      triples.map(t => t.en),
+      triples.map(t => t.sp)
     ];
 
     allData[dir] = {
@@ -388,16 +266,36 @@ module.exports = function() {
       spLines: spLines || "",
       tokLines: tokLines || "",
     };
-    console.log(allData[dir]);
   }
-return {
-  eleventyComputed: {
-    story: data => {
-      // data.page.inputPath might be './test/test-1/index.md'
-      const folderName = path.basename(path.dirname(data.page.inputPath));
-      return allData[folderName] || {};
+
+
+  return {
+    eleventyComputed: {
+      story: data => {
+        // data.page.inputPath might be './test/test-1/index.md'
+        const inputPath = data.page.inputPath;
+
+        // Get the directory of the index.md file
+        const dir = path.dirname(inputPath);
+
+        // Get relative path from baseDir
+        const relativePath = path.relative(baseDir, dir);
+
+
+        return allData[relativePath] || {};
+      }
     }
-  }
+  };
 };
 
-};
+/*
+// ---------- Quick test (if run directly) ----------
+if (require.main === module) {
+  const tok = `mi wile e kala e kasi ala e waso ala.\n\nmi moku.`;
+  const en = `I want fish and no tree and no bird.\n\nI eat.`;
+  const sp = `mi wile e kala\nzz zz e pan suwi\nzz zz e kasi ala\nzz zz e waso ala\n\nmi moku\n`;
+
+  console.log(JSON.stringify(pairTokEnSpByParagraph(tok, en, sp), null, 2));
+}*/
+
+

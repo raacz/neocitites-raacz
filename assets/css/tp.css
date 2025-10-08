@@ -1,0 +1,30 @@
+.cards {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card a{
+    display: flex;
+    flex-direction: column;
+    border: 0.3em solid var(--walo-pimeja);
+    border-radius: 0.2em;
+    position: relative;
+}
+.card span{
+    position: absolute;
+    background-color: var(--pimeja);
+    color: var(--walo);
+    padding: 0.75em;
+    opacity: 0.75;
+    bottom: 0;
+}
+
+.card img {
+    max-width: 10em;
+    max-height: 10em;
+    height: 10em;
+    width: 10em;
+    object-fit: cover;
+}
+
+

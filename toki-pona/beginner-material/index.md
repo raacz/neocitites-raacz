@@ -3,24 +3,34 @@ layout: _layouts/bt/texts.html
 title: Home
 ---
 
+
 A collection of free Beginner Texts in Toki Pona authored by jan Lakuse. 
 
 Each text features literal English translations and notes to help you follow along. Most texts also have pictures!
 
  
-
-
+## Bite-Sized
+<ul class="cards">
 {% for item in collections.lili %}
-  {% render "partials/lili-block.liquid", 
-    fileSlug: item.fileSlug,
-    title: item.data.title,
-    external: item.data.external,
-    name: item.data.name,
-    source: item.data.source,
-    license: item.data.license,
-    alt: item.data.alt,
-    media: item.data.media,
-    collections: collections,
-    content: item.content %}
+<li class="card">
+  <a href="{{ item.url }}">
+  <img src="{{ item.data.media }}" alt="">
+  <span lang="tok">{{ item.data.title }}</span>
+  </a>
+</li>
 {% endfor %}
+</ul>
+
+## Stories
+
+<ul class="cards">
+{% for item in collections.suli %}
+<li class="card">
+  <a href="{{ item.url }}">
+  <img src="{{ item.data.media }}" alt="">
+  <span lang="tok">{{ item.data.title }}</span>
+  </a>
+</li>
+{% endfor %}
+</ul>
 
