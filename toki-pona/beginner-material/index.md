@@ -51,7 +51,9 @@ The reading experience is highly customizable. Each text has Toki Pona, Sitelen 
 
 Additionally, each contextualizing image also comes with a contextualizing description and attribution. The visibility of these can toggled on and off as needed. 
 
-## English Translations
+## Notes on the English Translations
+
+### Literal Translations
 
 You may notice that some of the English translations appear to be ungrammatical, strange, or uncanny. This is because I've tried hard to reflect Toki Pona syntax and semantics in the English itself.
 
@@ -63,8 +65,14 @@ For example, I might translate something like, "I arrive in the large building's
 
 I hope this style of translation, while being slightly ungraceful, helps emphasize the language's unique structure and tendencies to learners.
 
-There are lots of Toki Pona words that have no English equivelant.  I am often forced to pick just one English word, even though the Toki Pona word is more broad. If some of my word choice puzzles you, having a [good dictionary](https://nimi.li) in a secondary tab is a good idea, especially if you are just getting used to the words. 
+### No One 'Right' Answer
 
-## Feedback
+My English translations offer *one* correct interpretation of the material, but *other correct interpretations are possible*.
 
-We're open for feedback. 
+For example, a **<span lang="tok">tomo suli</span>** can be a large structure, an important home, and old mansion, a large bus. 
+
+When I translate a Toki Pona word, I am often forced to pick just one, specific, English word, even though the Toki Pona word is more broad. If you happen to think of a different word than the one I pick, it doesn't necessarily mean that you were wrong. 
+
+For example, if your translation is **'big house'** and my translation is  **'old structure,'** and the picture is of a large, old mansion, **we are both right.** 
+
+Consulting a [good dictionary](https://nimi.li) is one way to confirm your own interpretation, especially if you are just getting used to the words. 

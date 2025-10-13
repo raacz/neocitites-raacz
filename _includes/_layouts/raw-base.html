@@ -44,7 +44,7 @@
 
 <p>Hosted on <a href="https://neocities.org/site/raacz">Neocities</a>, made with <a href="https://www.11ty.dev/">Eleventy</a>, a simpler static site generator. </p>
 
-<p>Content is <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA 4.0</a> Lakuse unless stated otherwise. </p>
+<p>Content is <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA-4.0</a> Lakuse unless stated otherwise. </p>
 
 
 {% if bg %}
@@ -52,7 +52,7 @@
   {% if bg.adapted %}
     adapted from 
   {% endif %}
-  <a href="{{ bg.bg-external }}">{{ bg.bg-name }}</a> (CC-BY-SA 4.0).
+  <a href="{{ bg.bg-external }}">{{ bg.bg-name }}</a> (CC-BY-SA-4.0).
 {% endif %}
 
 
@@ -62,7 +62,7 @@
     <a class="{{ bg.bg-cc }}" href="{{ bg.bg-img }}">Background</a>
     {% if bg.adapted %}adapted {% endif %}
     from <a href="{{ bg.bg-external }}">{{ bg.bg-name }}</a> 
-    ({{ bg.bg-license | default: "CC-BY-SA 4.0" }}).
+    ({{ bg.bg-license | default: "CC-BY-SA-4.0" }}).
     </p>
 {% endif %}
 

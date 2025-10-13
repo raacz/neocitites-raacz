@@ -29,9 +29,34 @@
     <figure class="context">
     <img alt="{{ alt }}" src="{{ media }}">
     <figcaption>
-      <p><span class="caption">{{ alt }}</span> 
+      <p>
+      <span class="caption">{{ alt }}</span> 
+
+
       {% if external %}
-      <a href="{{ external }}">{{ name }} by {{ source }}</a>
+      <span class="attr"> 
+          <a href="{{ external }}">Image: {{ name }}</a>
+        |
+          by <strong>{{ source }}</strong>.
+
+            {% assign license_match = false %}
+
+            {% for linked_license in licenses %}
+              {% if linked_license.key == license %}
+                {% assign license_match = true %}
+                {% assign license_link = linked_license.link %}
+              {% endif %}
+            {% endfor %}  
+        |   
+            {% if license_match %}
+
+          <a href="{{ license_link }}"> {{ license }}</a>
+            
+            {% else %}
+
+          <span>{{ license }} (This link is broken)</span>
+            
+            {% endif %}
       {% endif %}
       </p>
     

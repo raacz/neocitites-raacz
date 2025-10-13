@@ -4,7 +4,8 @@ stylesheet: "/assets/css/reading-mode.css"
 ---
 
 
-  {% render "partials/lili-block2.liquid", 
+  {% render "partials/lili-block2.liquid",
+    licenses: licenses, 
     fileSlug: page.fileSlug,
     page: page,
     title: title,
@@ -27,4 +28,5 @@ stylesheet: "/assets/css/reading-mode.css"
     beforeLink : beforeLink,
     nextText : nextText,
     nextLink : nextLink 
+
   %}

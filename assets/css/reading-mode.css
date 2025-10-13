@@ -113,7 +113,7 @@ main{
 :has(input[id="rc-3b"]:not(:checked))  .caption{
     display: none;
 }
-:has(input[id="rc-3c"]:not(:checked))  .context a:is(:visited, :not(:visited)){
+:has(input[id="rc-3c"]:not(:checked)) .attr{
     display: none;
 }
 /*for spacing reasons, ensure the entire component gets erased when*/
@@ -265,9 +265,10 @@ figcaption p{
     line-height: 1.6em;
 }
 figcaption a:is(:visited, :not(:visited)){
-    display: block;
     color: var(--pimeja);
-
+}
+figcaption .attr{
+    display: block;
 }
 figcaption{
     border-bottom: 0.1em solid var(--pimeja);
@@ -276,6 +277,12 @@ figcaption{
 p:last-of-type{
     margin-bottom: 0;
 
+}
+.attr {
+    border-top: 0.1em solid black;
+    background-color: var(--walo-lili);
+    font-size: 0.8em;
+    line-height: 1em;
 }
 
 
