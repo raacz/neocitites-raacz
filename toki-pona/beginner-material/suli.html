@@ -1,0 +1,20 @@
+---
+layout: _layouts/bt/texts.html
+title: Theme Texts
+---
+
+<ul class="stories">
+  {% for item in collections.suli %}
+  <li>
+    <a href="{{ item.url }}">
+      <span lang="tok">{{ item.data.title }}</span>
+    </a>
+    {{ item.content }}
+    <div role="img" aria-label="{{ item.data.alt }}" class="collage">
+      {% for link in item.data.mediaFiles %}
+      <img aria-hidden="true" src="{{ link }}" alt="">
+      {% endfor %}
+    </div>
+  </li>
+  {% endfor %}
+</ul>

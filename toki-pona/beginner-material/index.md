@@ -12,20 +12,20 @@ Each text features literal English translations and notes to help you follow alo
 <ul class="circles">
 
 <li class="circle">
-  <a href="{{ item.url }}">
+  <a href="suli/">
   <span> Theme<span>
   </a>
 </li>
 
 <li class="circle">
-  <a href="{{ item.url }}">
+  <a href="lili/">
   <span> Bite-Sized<span>
   </a>
 </li>
 
 
 <li class="circle">
-  <a href="{{ item.url }}">
+  <a href="">
   <span> Longer<span>
   </a>
 </li>

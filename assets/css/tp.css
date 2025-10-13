@@ -1,6 +1,4 @@
-:has(.cards) :is(h1,h2,h3){
-    text-align: center;
-}
+
 .cards {
     list-style-type: none;
     display: flex;
@@ -72,3 +70,14 @@ ul.circles{
     width: 6em;
 }
 
+
+
+.collage{
+    display: flex;
+    max-width: 100%;
+}
+.collage img{
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+}
