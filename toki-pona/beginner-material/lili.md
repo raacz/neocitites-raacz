@@ -22,10 +22,3 @@ These texts are short, simple, stand-alone narratives featuring a single context
 {% endfor %}
 </ul>
 
-{% assign known_licenses = licenses %}
-
-<h2> known licenses:{{ known_licenses }}</h2>
-
-<ul>
-
-</ul>
