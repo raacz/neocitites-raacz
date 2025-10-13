@@ -206,55 +206,91 @@ const fs = require("fs");
 const path = require("path");
 
 module.exports = function () {
-  const baseDir = __dirname;
-  let dirs = fs.globSync('**/en.md', {cwd: baseDir});
+  /*let dirs = fs.globSync('*en.md', { cwd: baseDir });
   dirs = dirs.map(en_md => path.dirname(en_md));
   dirs = dirs.filter(dir => path.basename(dir) !== "story-x");
 
   let allData = {};
 
   for (let dir of dirs) {
-    const files = fs.readdirSync(path.join(baseDir, dir));
-    let entry = {};
+                  let hi = path.join(baseDir, dir);
 
-    for (let f of files) {
-      if (f.endsWith(".md")) {
-        const slug = f.replace(".md", "");
-        entry[slug] = fs.readFileSync(path.join(baseDir, dir, f), "utf8");
-      }
-    }
-    let triples = pairTokEnSpByParagraph(entry["tok"], entry["en"], entry["sp"]);
-    let [tokLines, enLines, spLines] = [
-      triples.map(t => t.tok),
-      triples.map(t => t.en),
-      triples.map(t => t.sp)
-    ];
 
-    allData[dir] = {
-      en: entry["en"] || "",
-      sp: entry["sp"] || "",
-      tok: entry["tok"] || "",
-      enLines: enLines || "",
-      spLines: spLines || "",
-      tokLines: tokLines || "",
-    };
-  }
+  }*/
+
 
 
   return {
     eleventyComputed: {
       story: data => {
-        // data.page.inputPath might be './test/test-1/index.md'
-        const inputPath = data.page.inputPath;
+        if (data.tags !== undefined && data.page.inputPath !== undefined) {
+          for (let tag of data.tags) {
+            //list all tags that need to be multilingually processed here
+            //using the tag file means only index.md will be caught for each
+            let dir = path.join(data.eleventy.env.root, path.normalize(data.page.inputPath));
+            dir = dir.replace("index.md", "");
+            if (tag === "lili" || tag === "sequence") {
 
-        // Get the directory of the index.md file
-        const dir = path.dirname(inputPath);
+              //this grabs the root name from eleventy.env.root
+              // eg) /home/lakuse/VSCodium/new-neocities/
+              // and merges it with the input path
+              // eg) ./toki-pona/beginner-material/stories/story-29/page-5/index.md
+              // normalizing it ensures it merges properly 
+              // eg) toki-pona/beginner-material/stories/story-29/page-5/index.md
 
-        // Get relative path from baseDir
-        const relativePath = path.relative(baseDir, dir);
+              //below grabs all multilngual files of this dir and merges them 
+              const files = fs.readdirSync(dir);
+
+              let entry = {};
+
+              for (let f of files) {
+                if (f.endsWith(".md")) {
+                  const slug = f.replace(".md", "");
+                  entry[slug] = fs.readFileSync(path.join(dir, f), "utf8");
+                }
+              }
+              let triples = pairTokEnSpByParagraph(entry["tok"], entry["en"], entry["sp"]);
+              let [tokLines, enLines, spLines] = [
+                triples.map(t => t.tok),
+                triples.map(t => t.en),
+                triples.map(t => t.sp)
+              ];
+              const allData = {
+                en: entry["en"] || "",
+                sp: entry["sp"] || "",
+                tok: entry["tok"] || "",
+                enLines: enLines || "",
+                spLines: spLines || "",
+                tokLines: tokLines || "",
+              };
+              return allData;
+            }
+            //this returns all media from 
+            if (tag === "suli") {
+              console.log("\n///////////SULI ENTRY/////////////")
+
+              const mediaFiles = [];
+              //grab fileslug 
 
 
-        return allData[relativePath] || {};
+              storynumber = data.page.fileSlug.match(/\d+/g)[0];
+              console.log(storynumber);
+              let regex = 'toki-pona/beginner-material/assets/suli-'+storynumber+'*.jpg';
+              console.log(regex);
+              let pages = fs.globSync(regex, { cwd: data.eleventy.env.root});
+              
+              for (let image of pages){
+                mediaFiles.push(image);
+              }
+              
+              return true;
+            }
+            else {
+
+              return true;
+            }
+          }
+        }
       }
     }
   };
