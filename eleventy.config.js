@@ -1,18 +1,12 @@
 import YAML from "yaml";
-import path from "path";
-import fs from "fs";
-
-
-
 
 export default function (eleventyConfig) {
-    eleventyConfig.addPassthroughCopy("assets");
-    eleventyConfig.addPassthroughCopy("toki-pona/beginner-material/assets");
+  eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("toki-pona/beginner-material/assets");
 
-    eleventyConfig.addPassthroughCopy("scripts");
+  eleventyConfig.addPassthroughCopy("scripts");
 
-
-    eleventyConfig.addFilter("slugify", function(str) {
+  eleventyConfig.addFilter("slugify", function (str) {
     if (!str) return "";
 
     return str
@@ -34,30 +28,79 @@ export default function (eleventyConfig) {
     "json"
   ]);
 
+  eleventyConfig.addFilter("wordcount", (content) => {
+    const wordCount = content
+      .split(/\s+/)
+      .filter((word) => word.length > 0).length;
+    return wordCount;
+  });
+
+  eleventyConfig.addCollection("liliwc", async (collectionsApi) => {
+    // ensures that bite sized pieces can be sorted/sequenced by word count 
+    
+    function compareNumbers(a, b) {
+      return a.data.wordcount - b.data.wordcount;
+    }
+    const lilicol = collectionsApi.getFilteredByTag("lili");
+    for(let lili of lilicol){
+      lili.data.wordcount = lili.data.story.tok.split(/\s+/)
+      .filter((word) => word.length > 0).length;
+    }
+    lilicol.sort(compareNumbers);
+    
+    for (let i = 0; i < lilicol.length; i++) {
+      let beforeText = "Previous";
+      let nextText = "Next";
+      let beforeLink = "";
+      let nextLink = "";
+      if(i == 0){
+        beforeLink = "/toki-pona/beginner-material/lili/";
+        beforeText = "All Bite Sized";
+      }else{
+        beforeLink = lilicol[i - 1].url;
+      }
+      if(i == lilicol.length - 1){
+        nextLink = "/toki-pona/beginner-material/lili/";
+        nextText = "All Bite Sized";
+
+      }else{
+        nextLink = lilicol[i + 1].url;
+      }
+      lilicol[i].data.beforeLink = beforeLink;
+      lilicol[i].data.beforeText = beforeText;
+      lilicol[i].data.nextText = nextText;
+      lilicol[i].data.nextLink = nextLink;
+
+      
+    }
+
+    return lilicol;
+  });
+
 
   eleventyConfig.addFilter("postDate", (dateObj) => {
-  return dateObj.toLocaleString(undefined, {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
+    return dateObj.toLocaleString(undefined, {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
   });
+
+  eleventyConfig.addFilter("shortDate", (dateObj) => {
+    const d = new Date(dateObj);
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
   });
 
-eleventyConfig.addFilter("shortDate", (dateObj) => {
-  const d = new Date(dateObj);
-  const year = d.getFullYear();
-  const month = String(d.getMonth() + 1).padStart(2, "0");
-  const day = String(d.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
-});
+
+  eleventyConfig.addDataExtension("yml", (contents) => YAML.parse(contents));
 
 
-	eleventyConfig.addDataExtension("yml", (contents) => YAML.parse(contents));
-
-
-eleventyConfig.addFilter('sortByTitle', values => {
-  return values.slice().sort((a, b) => a.data.title.localeCompare(b.data.title))
-})
+  eleventyConfig.addFilter('sortByTitle', values => {
+    return values.slice().sort((a, b) => a.data.title.localeCompare(b.data.title))
+  })
 
 
 
@@ -65,13 +108,60 @@ eleventyConfig.addFilter('sortByTitle', values => {
 
 
 
- 
+  eleventyConfig.addCollection("stories", function (collectionApi) {
+    let pages = collectionApi.getFilteredByGlob('**/story-[0-9][0-9]/page-[0-9]/index.md');
+    let stories = new Set(); //ensures unique values
+    for (let story of pages) {
 
+      //page num used for title and child index
+      let pagenum = story.fileSlug.match(/\d+/g)[0];
 
+      story.data.title = "Page " + pagenum;
+      story.data.childIndex = pagenum;
 
+      //story # used for parent index
+      let storynum = story.url.match(/\d+/g)[0];
 
-
-
-
+      story.data.parentIndex = storynum; // reads the first number in the url
+      stories.add(storynum);
+    }
+    //ensure set numbers are ordered
+    const parentindices = Array.from(stories); parentindices.sort((a, b) => a - b);
+    for (let i = 0; i < parentindices.length; i++) {
+      let filteredpages = pages.filter((page) => page.data.parentIndex == parentindices[i]);
+      for (let page of filteredpages) {
+        page.data.beforeText = "Previous Page";
+        let beforeChild = parseInt(page.data.childIndex) - 1;
+        let beforeParent = parentindices[i];
+        page.data.nextText = "Next Page";
+        let nextChild = parseInt(page.data.childIndex) + 1;
+        let nextParent = parentindices[i];
+        let ci = parseInt(page.data.childIndex);
+        if (ci == 1) {
+          page.data.beforeText = "Previous Story";
+          beforeChild = 1;
+          if (i !== 0) {
+            beforeParent = parentindices[i - 1];
+          } else {
+            beforeParent = parentindices[parentindices.length - 1];
+          }
+        }
+        if (ci == filteredpages.length) {
+          page.data.nextText = "Next Story";
+          nextChild = 1;
+          if (i !== parentindices.length - 1) {
+            nextParent = parentindices[i + 1];
+          } else {
+            nextParent = parentindices[0];
+          }
+        }
+        page.data.beforeLink = "/toki-pona/beginner-material/stories/story-" + beforeParent + "/page-" + beforeChild + "/";
+        page.data.nextLink = "/toki-pona/beginner-material/stories/story-" + nextParent + "/page-" + nextChild + "/";
+      }
+    }
+    return pages;
+  });
 };
+
+
 

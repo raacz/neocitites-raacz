@@ -10,15 +10,3 @@ media: "/toki-pona/beginner-material/assets/lili-1.jpg"
 tags: lili
 ---
 
-
-
-<ol>
-{% for post in story.enLines %}
-<li>{{ post }}</li>
-{% endfor %}
-</ol>
-
-
-
-
-

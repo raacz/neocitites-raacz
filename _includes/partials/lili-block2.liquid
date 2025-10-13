@@ -16,11 +16,13 @@
 
 
 <div class="selo">
-  <div class="back-forth">
-  <a href="">Go Back</a>
-  <a href="">Go Forward</a>
 
+{% if beforeText %}
+  <div class="back-forth">
+  <a href="{{ beforeLink }}">{{ beforeText }}</a>
+  <a href="{{ nextLink }}">{{ nextText }}</a>
   </div>
+{% endif %}
 
   <h1 id="main-content">{{ title }}</h1>
   <div class="content">

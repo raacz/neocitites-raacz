@@ -197,47 +197,19 @@ function pairTokEnSpByParagraph(tokText, enText, spText) {
   return triples;
 }
 
-
-// Export
-module.exports = {
-  splitParagraphs,
-  splitSentencesRespectQuotes,
-  splitSpFragments,
-  wordCount,
-  pairByWordCount,
-  pairTokEnSpByParagraph
-};
-
-
-
-
+//--------------------------------------------------------------------------//
+// ^ NI LI IJO WAN
+// v ni li IJO ANTE
+// ona li TU. pali anpa li kepeken ilo sewi
 
 const fs = require("fs");
 const path = require("path");
 
 module.exports = function () {
   const baseDir = __dirname;
-  const dirs = [];
-
-  fs.readdirSync(baseDir).forEach(d => {
-    const fullPath = path.join(baseDir, d);
-    if (!fs.statSync(fullPath).isDirectory()) return;
-
-    // Check if this directory has an index.md file
-    if (fs.existsSync(path.join(fullPath, 'en.md'))) {
-      dirs.push(d);
-    }
-
-    // Check subdirectories one level down for index.md
-    fs.readdirSync(fullPath).forEach(sd => {
-      const subPath = path.join(fullPath, sd);
-      if (fs.statSync(subPath).isDirectory() &&
-        fs.existsSync(path.join(subPath, 'en.md'))) {
-        dirs.push(path.join(d, sd));
-      }
-    });
-  });
-  console.log(dirs);
+  let dirs = fs.globSync('**/en.md', {cwd: baseDir});
+  dirs = dirs.map(en_md => path.dirname(en_md));
+  dirs = dirs.filter(dir => path.basename(dir) !== "story-x");
 
   let allData = {};
 

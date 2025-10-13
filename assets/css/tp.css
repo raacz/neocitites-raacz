@@ -1,16 +1,20 @@
+:has(.cards) :is(h1,h2,h3){
+    text-align: center;
+}
 .cards {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
-.card a{
+.card a:is(:visited,:not(:visited)){
     display: flex;
     flex-direction: column;
     border: 0.3em solid var(--walo-pimeja);
     border-radius: 0.2em;
     position: relative;
 }
-.card span{
+.card div{
     position: absolute;
     background-color: var(--pimeja);
     color: var(--walo);
@@ -18,13 +22,53 @@
     opacity: 0.75;
     bottom: 0;
 }
+.card div:has(.wordcount){
+    padding: 0.2em;
+    padding-block: 0;
+}
+.card .wordcount{
+    background-color: var(--pimeja);
+    color: var(--walo);
+    display: block;
+    font-size: 0.7em;
+
+
+}
+.card {
+    flex: 25%;
+    flex-grow: 0;
+}
+.card:last-of-type{
+    justify-self: first baseline;
+}
 
 .card img {
-    max-width: 10em;
-    max-height: 10em;
-    height: 10em;
-    width: 10em;
+    max-width: 100%;
+    min-width: 8em;
+    aspect-ratio: 1/1;
     object-fit: cover;
 }
 
+
+ul.circles{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 30em;
+    margin: 0 auto;
+
+}
+.circle {
+    margin: 0;
+    border-radius: 50%;
+    border: 0.4em solid var(--pimeja-lili);
+    box-shadow: inset 0 0 0 0.5em var(--walo-pimeja);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6em;
+    width: 6em;
+}
 
