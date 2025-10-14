@@ -1,6 +1,6 @@
 ---
 layout: _layouts/child.html
-title: mooooooooooooooo.
+title: mooooooooo.
 backto: ..
 background: toki-pona
 eleventyImport:

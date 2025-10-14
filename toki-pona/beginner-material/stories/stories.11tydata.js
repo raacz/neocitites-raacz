@@ -276,19 +276,15 @@ module.exports = function () {
           for (let tag of data.tags) {
             //this returns all media from 
             if (tag === "suli") {
-              console.log("\n///////////SULI ENTRY/////////////")
               const mediaFiles = [];
               //grab fileslug 
               storynumber = data.page.fileSlug.match(/\d+/g)[0];
-              console.log(storynumber);
               let regex = 'toki-pona/beginner-material/assets/suli-'+storynumber+'*.jpg';
-              console.log(regex);
               let pages = fs.globSync(regex, { cwd: data.eleventy.env.root});
               
               for (let image of pages){
                 mediaFiles.push("/"+image);
               }
-              console.log(mediaFiles);
               
               return mediaFiles;
             }

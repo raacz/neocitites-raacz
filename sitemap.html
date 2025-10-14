@@ -6,10 +6,18 @@ eleventyImport:
   collections: ["moo"]
 ---
 
-<h2>Pages</h2>
+
+
+
+
+
+
+
 <ul>
-{% assign pages = collections.all | sort: "data.title" %}
+<h2>Site Pages</h2>
+{% assign pages = collections.laksite | sort: "data.title" %}
 {% for post in pages %}
+
 {% if post.data.title %}
     {% if post.data.tags %}
     {% else %}
@@ -25,6 +33,9 @@ eleventyImport:
 {% for post in pages %}
 {% if post.data.title %}
 {% if post.data.tags %}
+
+
+
     
     {% if post.data.slug %}
     <li>

@@ -6,10 +6,12 @@ title: Theme Texts
 <ul class="stories">
   {% for item in collections.suli %}
   <li>
-    <a href="{{ item.url }}">
-      <span lang="tok">{{ item.data.title }}</span>
-    </a>
-    {{ item.content }}
+    <div>
+      <a href="{{ item.url }}">
+        <h2 lang="tok">{{ item.data.title }}</h2>
+      </a>
+      {{ item.content }}
+    </div>
     <div role="img" aria-label="{{ item.data.alt }}" class="collage">
       {% for link in item.data.mediaFiles %}
       <img aria-hidden="true" src="{{ link }}" alt="">

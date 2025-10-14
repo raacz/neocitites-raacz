@@ -1,2 +1,4 @@
-- redo attribution
-- ensure licenses link
+- ensure mobile styling works.
+- fix local storage
+- separate sitemaps
+- fix weird sorting algorithmns on sorting collation page

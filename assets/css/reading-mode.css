@@ -191,6 +191,8 @@ body:has(input[id="rc-1b"]:not(:checked)) .table .sp {
 
 
 
+
+
 /*logic for hiding different modes*/
 /*In regular mode, hide table and line*/
 :has( :is(input[id="rc-2a"]:checked)) :is(.lines, .table){
@@ -284,7 +286,12 @@ p:last-of-type{
     font-size: 0.8em;
     line-height: 1em;
 }
-
+nav ul{
+    padding: 0;
+}
+.introtext{
+    padding: 0.5em;
+}
 
 /*regular mode styling*/
 
@@ -398,3 +405,6 @@ summary:focus{
     padding-inline: 0.25em;
 
 }
+
+
+

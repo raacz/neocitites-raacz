@@ -1,10 +1,20 @@
 import YAML from "yaml";
 
 export default function (eleventyConfig) {
+
+
+
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("toki-pona/beginner-material/assets");
-
   eleventyConfig.addPassthroughCopy("scripts");
+  eleventyConfig.addDataExtension("yml", (contents) => YAML.parse(contents));
+  eleventyConfig.setTemplateFormats([
+    "html",
+    "liquid",
+    "njk",
+    "md",
+    "json"
+  ]);
 
   eleventyConfig.addFilter("slugify", function (str) {
     if (!str) return "";
@@ -20,14 +30,7 @@ export default function (eleventyConfig) {
       .replace(/-+/g, "-");              // collapse multiple dashes
   });
 
-  eleventyConfig.setTemplateFormats([
-    "html",
-    "liquid",
-    "njk",
-    "md",
-    "json"
-  ]);
-
+  //used primarily for liliwc collection below
   eleventyConfig.addFilter("wordcount", (content) => {
     const wordCount = content
       .split(/\s+/)
@@ -35,49 +38,7 @@ export default function (eleventyConfig) {
     return wordCount;
   });
 
-  eleventyConfig.addCollection("liliwc", async (collectionsApi) => {
-    // ensures that bite sized pieces can be sorted/sequenced by word count 
-    
-    function compareNumbers(a, b) {
-      return a.data.wordcount - b.data.wordcount;
-    }
-    const lilicol = collectionsApi.getFilteredByTag("lili");
-    for(let lili of lilicol){
-      lili.data.wordcount = lili.data.story.tok.split(/\s+/)
-      .filter((word) => word.length > 0).length;
-    }
-    lilicol.sort(compareNumbers);
-    
-    for (let i = 0; i < lilicol.length; i++) {
-      let beforeText = "Previous";
-      let nextText = "Next";
-      let beforeLink = "";
-      let nextLink = "";
-      if(i == 0){
-        beforeLink = "/toki-pona/beginner-material/lili/";
-        beforeText = "All Bite Sized";
-      }else{
-        beforeLink = lilicol[i - 1].url;
-      }
-      if(i == lilicol.length - 1){
-        nextLink = "/toki-pona/beginner-material/lili/";
-        nextText = "All Bite Sized";
-
-      }else{
-        nextLink = lilicol[i + 1].url;
-      }
-      lilicol[i].data.beforeLink = beforeLink;
-      lilicol[i].data.beforeText = beforeText;
-      lilicol[i].data.nextText = nextText;
-      lilicol[i].data.nextLink = nextLink;
-
-      
-    }
-
-    return lilicol;
-  });
-
-
+  //filters a date to appear as March 16, 2020
   eleventyConfig.addFilter("postDate", (dateObj) => {
     return dateObj.toLocaleString(undefined, {
       year: "numeric",
@@ -86,6 +47,7 @@ export default function (eleventyConfig) {
     });
   });
 
+  //filters a date to appear as 2020-20-20
   eleventyConfig.addFilter("shortDate", (dateObj) => {
     const d = new Date(dateObj);
     const year = d.getFullYear();
@@ -94,20 +56,44 @@ export default function (eleventyConfig) {
     return `${year}-${month}-${day}`;
   });
 
+  // ensures that bite sized pieces can be sorted/sequenced by word count 
+  eleventyConfig.addCollection("liliwc", async (collectionsApi) => {
+    function compareNumbers(a, b) {
+      return a.data.wordcount - b.data.wordcount;
+    }
+    const lilicol = collectionsApi.getFilteredByTag("lili");
+    for (let lili of lilicol) {
+      lili.data.wordcount = lili.data.story.tok.split(/\s+/)
+        .filter((word) => word.length > 0).length;
+    }
+    lilicol.sort(compareNumbers);
+    for (let i = 0; i < lilicol.length; i++) {
+      let beforeText = "Previous";
+      let nextText = "Next";
+      let beforeLink = "";
+      let nextLink = "";
+      if (i == 0) {
+        beforeLink = "/toki-pona/beginner-material/lili/";
+        beforeText = "All Bite Sized";
+      } else {
+        beforeLink = lilicol[i - 1].url;
+      }
+      if (i == lilicol.length - 1) {
+        nextLink = "/toki-pona/beginner-material/lili/";
+        nextText = "All Bite Sized";
 
-  eleventyConfig.addDataExtension("yml", (contents) => YAML.parse(contents));
+      } else {
+        nextLink = lilicol[i + 1].url;
+      }
+      lilicol[i].data.beforeLink = beforeLink;
+      lilicol[i].data.beforeText = beforeText;
+      lilicol[i].data.nextText = nextText;
+      lilicol[i].data.nextLink = nextLink;
+    }
+    return lilicol;
+  });
 
-
-  eleventyConfig.addFilter('sortByTitle', values => {
-    return values.slice().sort((a, b) => a.data.title.localeCompare(b.data.title))
-  })
-
-
-
-
-
-
-
+  //ensures that all theme stories are lumped in a box with their pages sorted so they can be shuffled through
   eleventyConfig.addCollection("stories", function (collectionApi) {
     let pages = collectionApi.getFilteredByGlob('**/story-[0-9][0-9]/page-[0-9]/index.md');
     let stories = new Set(); //ensures unique values
@@ -161,7 +147,43 @@ export default function (eleventyConfig) {
     }
     return pages;
   });
+
+
+  //excludes everything from btext site in order to preserve a second site map
+  eleventyConfig.addCollection("laksite", function (collectionApi) {
+    let bsite = collectionApi.getFilteredByGlob("!**/beginner-material/**");
+    return bsite;
+  });
+
+  //btextsite is intended to only get the 'information' pages in the beginner text site
+  eleventyConfig.addCollection("btextsite", function (collectionApi) {
+    let bsite = collectionApi.getFilteredByGlob("toki-pona/beginner-material/*");
+
+    //"toki-pona/beginner-material/**/!({en,sp,tok}).{md,html}" (glob file that returns all beginner site pages)
+
+
+    return bsite;
+  });
+
+  eleventyConfig.addCollection("allstories", function (collectionApi) {
+    let allstories = collectionApi.getFilteredByGlob(
+      ['toki-pona/beginner-material/stories/story-[0-9]+/**{index.md,index.html}']);
+
+
+    allstories =  allstories.sort((a, b) => {
+      let nanpaA = a.url.match(/\d+/g).map(Number);
+      let nanpaB = b.url.match(/\d+/g).map(Number);
+      if (nanpaA[0] < nanpaB[0]) return -1;
+      if (nanpaA[0] > nanpaB[0]) return 1;
+      if (nanpaA[1] === undefined) return -1;
+      if (nanpaB[1] === undefined) return 1;
+      if (nanpaA[1] < nanpaB[1]) return -1;
+      if (nanpaA[1] > nanpaB[1]) return 1;
+      return 0;
+    });
+    
+
+    return allstories;
+  });
 };
-
-
 

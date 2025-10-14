@@ -37,7 +37,7 @@ Each text features literal English translations and notes to help you follow alo
 ## Types
 
 There are a few different types of texts. 
-- [Theme](suli/) texts are a collection of very short pages. Each page has five lines of text and a contextualizing picture. As the name suggests, these texts usually discuss various aspects of a single unifying theme. 
+- Each [Theme](suli/) text is a collection of very short pages. Each page has five lines of text and a contextualizing picture. As the name suggests, these texts usually discuss various aspects of a single unifying theme. 
 - [Bite-Sized](lili/) texts are short, simple, stand-alone narratives featuring one contextualizing picture. While none of them are over 200 words, some feature more advanced language. 
 
 ## Reading Tools
@@ -65,7 +65,7 @@ For example, I might translate something like, "I arrive in the large building's
 
 I hope this style of translation, while being slightly ungraceful, helps emphasize the language's unique structure and tendencies to learners.
 
-### No One 'Right' Answer
+### Multiple 'Right' Answers
 
 My English translations offer *one* correct interpretation of the material, but *other correct interpretations are possible*.
 

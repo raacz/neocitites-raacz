@@ -1,0 +1,45 @@
+---
+layout: _layouts/bt/texts.html
+title: Site Map
+---
+
+<h2>General Pages</h2>
+
+{% assign pages = collections.btextsite | sort: "data.title" %}
+<ul>
+
+{% for post in pages %}
+    <li><a href="{{ post.url }} ">{{ post.data.title}}</a></li>
+
+{% endfor %}
+</ul>
+
+
+<h2>Stories</h2>
+
+{% assign pages = collections.allstories %}
+<ul>
+{% for post in pages %}
+    {% if post.data.tags contains 'sequence' %}
+        {% assign small = post.data %}
+
+        {% if post.data.beforeText == 'Previous Story' %}
+        <ul>
+        {% endif %}
+                    <li><a href="{{ post.url }} ">{{ post.data.title}}</a></li>
+
+
+        {% if post.data.nextText == 'Next Story' %}
+        </ul>
+        {% endif %}
+
+
+    {% else %}
+
+    <li><a href="{{ post.url }} ">{{ post.data.title}}</a></li>
+    {% endif %}
+{% endfor %}
+
+
+
+</ul>
