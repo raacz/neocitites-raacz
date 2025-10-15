@@ -294,6 +294,32 @@ module.exports = function () {
             }
           }
         }
+      },
+      pageURLs: data => {
+        if (data.tags !== undefined && data.page.inputPath !== undefined) {
+          for (let tag of data.tags) {
+            //this returns all media from 
+            if (tag === "suli") {
+              let pageURLs = [];
+              //grab fileslug 
+              storynumber = data.page.fileSlug.match(/\d+/g)[0];
+              let regex = 'toki-pona/beginner-material/stories/story-'+storynumber+'/page-[0-9]*/index.md';
+              let pages = fs.globSync(regex, { cwd: data.eleventy.env.root});
+            
+              for (let link of pages){
+                pageURLs.push(("/"+link).replace("md","html"));
+              }
+              pageURLs = pageURLs.sort();
+
+              
+              return pageURLs;
+            }
+            else {
+
+              return false;
+            }
+          }
+        }
       }
     }
   };
