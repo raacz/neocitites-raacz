@@ -105,7 +105,7 @@ function pairByWordCount(baseSents, frags, options = {}) {
     // Merge until we reach threshold or run out
     while (combinedCount < baseCount * threshold && fragIndex + 1 < frags.length) {
       fragIndex++;
-      combined = (combined ? (combined + ' ') : '') + (frags[fragIndex] || '');
+      combined = (combined ? (combined + ' ') : '') + ("<br>"+frags[fragIndex] || '');
       combinedCount = wordCount(combined);
       if (combinedCount > baseCount * overshoot) break; // avoid runaway overshoot
     }
@@ -120,7 +120,7 @@ function pairByWordCount(baseSents, frags, options = {}) {
     if (pairs.length === 0) {
       pairs.push(tail.trim());
     } else {
-      pairs[pairs.length - 1] = ((pairs[pairs.length - 1] || '') + ' ' + tail).trim();
+      pairs[pairs.length - 1] = ((pairs[pairs.length - 1] || '') + ' ' + "<br>"+tail).trim();
     }
   }
 

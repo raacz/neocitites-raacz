@@ -1,8 +1,9 @@
 - ensure mobile styling works.
-- fix local storage
 - separate sitemaps
 - fix weird sorting algorithmns on sorting collation page
 - correct browser title on pages
+
+- finish the sp article
 
 
 ideas for theme pages

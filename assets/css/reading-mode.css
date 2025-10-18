@@ -77,21 +77,17 @@ main{
 
 /*logic for hiding different versions of menu*/
 /*In regular mode, hide table and line*/
-:has( :is(input[id="rc-2a"]:checked)) fieldset:is(.by-line, .table){
+
+/*In line mode, hide regular*/
+:has( :is(input[id="rc-2c"]:checked)) fieldset:is(.texts){
     display: none;
 }
-/*In quiz mode, hide table and line*/
-:has( :is(input[id="rc-2b"]:checked)) fieldset:is(.by-line, .table){
+/*In not in line mode, hide regular and table*/
+:has(:is(input[id="rc-2c"]:not(:checked))) fieldset:is(.by-line){
     display: none;
 }
-/*In line mode, hide regular and table*/
-:has( :is(input[id="rc-2c"]:checked)) fieldset:is(.regular, .table){
-    display: none;
-}
-/*In table mode, hide regular and line*/
-:has(:is(input[id="rc-2d"]:checked)) fieldset:is(.regular, .by-line){
-    display: none;
-}
+
+
 
 /*logic for hiding aspects of image*/
     /*hide image if box is not checked*/
@@ -125,7 +121,7 @@ main{
 
 
 
-/*'shows english logic*/ /* WILL BE UPDATED TO INCLUDE SP*/
+/*'shows english logic*/
 /*regular mode*/
 /*if box is not checked, english hidden*/
 body:has(input[id="rc-1a"]:not(:checked)) .regular .en {
@@ -177,11 +173,11 @@ body:has(input[id="rc-bl-1c"]:checked) .line details[lang="tok"]  {
 
 /*table mode*/
 /*if box is not checked, english hidden*/
-body:has(input[id="rc-t-1a"]:not(:checked)) .table [lang="en"] {
+body:has(input[id="rc-1a"]:not(:checked)) .table [lang="en"] {
     display: none;
 }
 /*if box is not checked, tok hidden*/
-body:has(input[id="rc-t-1c"]:not(:checked)) .table [lang="tok"] {
+body:has(input[id="rc-1c"]:not(:checked)) .table [lang="tok"] {
     display: none;
 }
 /*if box is not checked, sp hidden*/
@@ -236,16 +232,14 @@ figure, .en /* and the image itself*/
 .content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-
     column-gap: 1em;
     row-gap: 1em;
+    max-width: fit-content;
 
 }
 
 h1{
-    width: 100%;
     text-align: center;
     margin-block: 0.5em 1em;
 }
@@ -299,13 +293,23 @@ nav ul{
     display: flex;
     align-items: flex-start;
     column-gap: 1em;
-  }
+    flex-wrap: wrap;
+}
+.regular div:is(.en, .tok){
+    min-width: 9em;
+}
+.regular div:is(.sp){
+    width: fit-content;
+    min-width: 6em;
+    max-width: max-content;
+    flex:1;
+}
 
 .regular p:empty{
     display: none;
   }
-.regular :is(.tok, .en, .sp) {
-    flex: 1;
+.regular :is(.tok, .en) {
+    flex: 1.5;
     max-width: 20em;
 }
 
@@ -373,10 +377,16 @@ summary:focus{
     column-gap: 1em;
     border-bottom: 0.1em solid var(--pimeja);
 }
-.table :is(td, th){
-    flex: 1;
-
+.table :is(td, th):not(:has(.sp)){
+    flex: 3;
+    max-width: 20em;
 }
+.table :is(td, th):has(.sp){
+    max-width: fit-content;
+    flex: 1;
+    flex: auto;
+}
+
   
 /*utility*/
 
@@ -388,6 +398,11 @@ summary:focus{
     position: absolute;
     white-space: nowrap;
     width: 1px;
+}
+
+h1{
+    font-size: 1.1em;
+    font-family: Jost;
 }
 
 
@@ -406,5 +421,12 @@ summary:focus{
 
 }
 
-
-
+@media (max-width: 32em) {
+    .selo{
+        padding-inline: 0;
+        padding-block-end: 0;
+        margin-inline: 0;
+        border-inline: none;
+        border-block-end: none;
+    }
+}

@@ -102,7 +102,6 @@ export default function (eleventyConfig) {
       //page num used for title and child index
       let pagenum = story.fileSlug.match(/\d+/g)[0];
 
-      story.data.title = "Page " + pagenum;
       story.data.childIndex = pagenum;
 
       //story # used for parent index
@@ -110,6 +109,13 @@ export default function (eleventyConfig) {
 
       story.data.parentIndex = storynum; // reads the first number in the url
       stories.add(storynum);
+
+      let parent = collectionApi.getFilteredByGlob('**/story-'+storynum+'/index.md');
+      let parentName = parent[0].data.title;
+      
+      story.data.parentName = parentName;
+      story.data.title = "Page " + pagenum;
+
     }
     //ensure set numbers are ordered
     const parentindices = Array.from(stories); parentindices.sort((a, b) => a - b);
