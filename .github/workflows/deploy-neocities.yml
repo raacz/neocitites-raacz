@@ -1,0 +1,22 @@
+name: "Deploy to Neocities"
+on:
+  push:
+    branches:
+      - main # run this job when I push to main
+  workflow_dispatch:
+jobs:
+  deploy:
+    name: "Deploy to Neocities"
+    runs-on: ubuntu-latest # the system the runner uses
+    steps:
+      - uses: actions/checkout@v4 # checkout the repo
+      - uses: actions/setup-node@v3 # install node.js
+        with:
+          node-version: "22"
+      - run: npm install # install dependencies
+      - run: npm run build # build my project
+      - uses: bcomnes/deploy-to-neocities@v1 # deploy!
+        with: # config for the action
+          api_token: ${{ secrets.NEOCITIES_TOKEN }}
+          dist_dir: "_site/" # my build output directory
+          cleanup: true # delete anything on neocities that's not in my dist_dir
