@@ -230,27 +230,31 @@ figure, .en /* and the image itself*/
 }
 
 .content {
-    display: flex;
+
+    display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     column-gap: 1em;
     row-gap: 1em;
-    max-width: fit-content;
+    width: auto;
 
 }
 
 h1{
+    width: 100%;
     text-align: center;
     margin-block: 0.5em 1em;
 }
 
 figure {
-    max-width: 20em;
+    max-width: 15em;
+    min-width: 15em;
+    width: 20em;
     line-height: 0;
-    display: flex;
+    display: inline-flex;
     flex-direction: column-reverse;
     border: 0.1em solid var(--pimeja);
-    align-self: first baseline;
 }
 figure img {
     max-width: 100%;
@@ -430,3 +434,5 @@ h1{
         border-block-end: none;
     }
 }
+
+
