@@ -1,0 +1,26 @@
+---
+layout: _layouts/bt/texts.html
+title: Quest Texts
+---
+
+<p>Each Quest Text. </p>
+
+
+
+<ul class="stories">
+  {% for item in collections.wawa %}
+  <li>
+    <div>
+      <a href="{{ item.url }}">
+        <h2 lang="tok">{{ item.data.title }}</h2>
+      </a>
+      {{ item.content }}
+    </div>
+    <div role="img" aria-label="{{ item.data.alt }}" class="collage">
+      {% for link in item.data.mediaFiles | log %}
+      <img aria-hidden="true" src="{{ link }}" alt="">
+      {% endfor %}
+    </div>
+  </li>
+  {% endfor %}
+</ul>

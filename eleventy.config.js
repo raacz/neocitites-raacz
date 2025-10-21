@@ -56,105 +56,154 @@ export default function (eleventyConfig) {
     return `${year}-${month}-${day}`;
   });
 
-  // ensures that bite sized pieces can be sorted/sequenced by word count 
-  eleventyConfig.addCollection("liliwc", async (collectionsApi) => {
+  //adds pagination data to a collection
+  //hubLink is the link that the starting text and ending text should link to, hubText defines the text for this link
+  //currently only used for bite-sized pieces
+  function sortByWordCount(toSort, hubLink, hubText) {
     function compareNumbers(a, b) {
       return a.data.wordcount - b.data.wordcount;
     }
-    const lilicol = collectionsApi.getFilteredByTag("lili");
-    for (let lili of lilicol) {
-      lili.data.wordcount = lili.data.story.tok.split(/\s+/)
+    let sortThis = toSort;
+    for (let entry of sortThis) {
+      entry.data.wordcount = entry.data.story.tok.split(/\s+/)
         .filter((word) => word.length > 0).length;
     }
-    lilicol.sort(compareNumbers);
-    for (let i = 0; i < lilicol.length; i++) {
+    sortThis.sort(compareNumbers);
+    for (let i = 0; i < sortThis.length; i++) {
       let beforeText = "Previous";
       let nextText = "Next";
       let beforeLink = "";
       let nextLink = "";
       if (i == 0) {
-        beforeLink = "/toki-pona/beginner-material/lili/";
-        beforeText = "All Bite Sized";
+        beforeLink = hubLink;
+        beforeText = hubText;
       } else {
-        beforeLink = lilicol[i - 1].url;
+        beforeLink = sortThis[i - 1].url;
       }
-      if (i == lilicol.length - 1) {
-        nextLink = "/toki-pona/beginner-material/lili/";
-        nextText = "All Bite Sized";
-
+      if (i == sortThis.length - 1) {
+        nextLink = hubLink;
+        nextText = hubText;
       } else {
-        nextLink = lilicol[i + 1].url;
+        nextLink = sortThis[i + 1].url;
       }
-      lilicol[i].data.beforeLink = beforeLink;
-      lilicol[i].data.beforeText = beforeText;
-      lilicol[i].data.nextText = nextText;
-      lilicol[i].data.nextLink = nextLink;
+      sortThis[i].data.beforeLink = beforeLink;
+      sortThis[i].data.beforeText = beforeText;
+      sortThis[i].data.nextText = nextText;
+      sortThis[i].data.nextLink = nextLink;
     }
-    return lilicol;
-  });
+    return sortThis;
+  }
 
-  //ensures that all theme stories are lumped in a box with their pages sorted so they can be shuffled through
-  eleventyConfig.addCollection("stories", function (collectionApi) {
-    let pages = collectionApi.getFilteredByGlob('**/story-[0-9][0-9]/page-[0-9]/index.md');
-    let stories = new Set(); //ensures unique values
-    for (let story of pages) {
+  //this adds pagination data and titles to a collection with subpages, as well as giving mediaFiles (used to create the 'collage') and pageURLs (used for the sitemap) to the parent story
+  //relies heavily on the stories and subpages being names properly
+  //currently used for both wawa and suli
+  function processPaginatedStory(tag, collectionsApi) {
 
-      //page num used for title and child index
-      let pagenum = story.fileSlug.match(/\d+/g)[0];
-
-      story.data.childIndex = pagenum;
-
-      //story # used for parent index
+    let stories = collectionsApi.getFilteredByTag(tag);
+    let storyNumbers = []; //this will be sent to sortBySequence- simply grabs indices of all stories that require this tretment
+    for (let story of stories) {
       let storynum = story.url.match(/\d+/g)[0];
-
-      story.data.parentIndex = storynum; // reads the first number in the url
-      stories.add(storynum);
-
-      let parent = collectionApi.getFilteredByGlob('**/story-'+storynum+'/index.md');
-      let parentName = parent[0].data.title;
-      
-      story.data.parentName = parentName;
-      story.data.title = "Page " + pagenum;
+      storyNumbers.push(storynum);
+      // insert a function here to process extra data (media and child pages)
 
     }
-    //ensure set numbers are ordered
-    const parentindices = Array.from(stories); parentindices.sort((a, b) => a - b);
-    for (let i = 0; i < parentindices.length; i++) {
-      let filteredpages = pages.filter((page) => page.data.parentIndex == parentindices[i]);
+    storyNumbers = storyNumbers.sort((a, b) => a - b);
+
+    //for each of the stories
+    for (let i = 0; i < storyNumbers.length; i++) {
+      let pageURLs = [];
+      let mediaFiles = [];
+
+      //retrieve all the pages related to that story
+      let filteredpages = collectionsApi.getFilteredByGlob('**/story-' + storyNumbers[i] + '/page-[0-9]/index.md');
+
+
+      //for each of the pages
       for (let page of filteredpages) {
-        page.data.beforeText = "Previous Page";
-        let beforeChild = parseInt(page.data.childIndex) - 1;
-        let beforeParent = parentindices[i];
-        page.data.nextText = "Next Page";
-        let nextChild = parseInt(page.data.childIndex) + 1;
-        let nextParent = parentindices[i];
-        let ci = parseInt(page.data.childIndex);
-        if (ci == 1) {
-          page.data.beforeText = "Previous Story";
-          beforeChild = 1;
+        pageURLs.push(page.url);
+        mediaFiles.push(page.data.media);
+
+
+        //typical Before and Next attributes
+
+        let childIndex = page.url.match(/\d+/g)[1];
+
+        let beforeText = "Previous Page"
+        let beforeChild = parseInt(childIndex) - 1;
+        let beforeParent = storyNumbers[i];
+
+        let nextText = "Next Page";
+        let nextChild = parseInt(childIndex) + 1;
+        let nextParent = storyNumbers[i];
+
+        let currentIndex = parseInt(childIndex);
+
+        if (currentIndex == 1) {
+          beforeText = "Previous Story";
+          beforeChild = -1;
           if (i !== 0) {
-            beforeParent = parentindices[i - 1];
+            beforeParent = storyNumbers[i - 1];
           } else {
-            beforeParent = parentindices[parentindices.length - 1];
+            beforeParent = storyNumbers[storyNumbers.length - 1];
           }
+          stories[i].data.beforeStory = "/toki-pona/beginner-material/stories/story-" + beforeParent + "/";
+
         }
-        if (ci == filteredpages.length) {
-          page.data.nextText = "Next Story";
-          nextChild = 1;
-          if (i !== parentindices.length - 1) {
-            nextParent = parentindices[i + 1];
+        if (currentIndex == filteredpages.length) {
+          nextText = "Next Story";
+          nextChild = -1;
+          if (i !== storyNumbers.length - 1) {
+            nextParent = storyNumbers[i + 1];
           } else {
-            nextParent = parentindices[0];
+            nextParent = storyNumbers[0];
           }
+          stories[i].data.nextStory = "/toki-pona/beginner-material/stories/story-" + nextParent + "/";
         }
-        page.data.beforeLink = "/toki-pona/beginner-material/stories/story-" + beforeParent + "/page-" + beforeChild + "/";
-        page.data.nextLink = "/toki-pona/beginner-material/stories/story-" + nextParent + "/page-" + nextChild + "/";
+        page.data.title = "Page " + childIndex;
+        page.data.parentTitle = stories[i].data.title;
+        page.data.childIndex = childIndex;
+        page.data.beforeText = beforeText;
+        page.data.nextText = nextText;
+
+        if (beforeChild == -1) {
+          page.data.beforeLink = "/toki-pona/beginner-material/stories/story-" + beforeParent + "/";
+        } else {
+          page.data.beforeLink = "/toki-pona/beginner-material/stories/story-" + beforeParent + "/page-" + beforeChild + "/";
+        }
+        if (nextChild == -1) {
+          page.data.nextLink = "/toki-pona/beginner-material/stories/story-" + nextParent + "/";
+        } else {
+          page.data.nextLink = "/toki-pona/beginner-material/stories/story-" + nextParent + "/page-" + nextChild + "/";
+        }
       }
+
+      stories[i].data.pageURLs = pageURLs.sort();
+      stories[i].data.mediaFiles = mediaFiles.sort();
     }
-    return pages;
+  }
+
+  eleventyConfig.addCollection("stories", async (collectionsApi) => {
+    processPaginatedStory('suli', collectionsApi);
+    processPaginatedStory('wawa', collectionsApi);
+    return false;
   });
 
 
+
+  // ensures that bite sized pieces can be sorted/sequenced by word count 
+  eleventyConfig.addCollection("liliwc", async (collectionsApi) => {
+    return sortByWordCount(collectionsApi.getFilteredByTag("lili"), "/toki-pona/beginner-material/lili/", "All Bite Sized");
+
+  });
+
+  //sets pagination data for all sequenced stories.
+
+
+
+
+
+
+  ////////////////////FOR THE SITEMAP////////////////////
   //excludes everything from btext site in order to preserve a second site map
   eleventyConfig.addCollection("laksite", function (collectionApi) {
     let bsite = collectionApi.getFilteredByGlob("!**/beginner-material/**");
@@ -165,9 +214,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addCollection("btextsite", function (collectionApi) {
     let bsite = collectionApi.getFilteredByGlob("toki-pona/beginner-material/*");
 
-    //"toki-pona/beginner-material/**/!({en,sp,tok}).{md,html}" (glob file that returns all beginner site pages)
-
-
+    //"toki-pona/beginner-material/**/!({en,sp,tok}).{md,html}" (glob file that returns all beginner site pages) in the main directory (not nested in stories)
     return bsite;
   });
 
@@ -176,7 +223,7 @@ export default function (eleventyConfig) {
       ['toki-pona/beginner-material/stories/story-[0-9]+/**{index.md,index.html}']);
 
 
-    allstories =  allstories.sort((a, b) => {
+    allstories = allstories.sort((a, b) => {
       let nanpaA = a.url.match(/\d+/g).map(Number);
       let nanpaB = b.url.match(/\d+/g).map(Number);
       if (nanpaA[0] < nanpaB[0]) return -1;
@@ -187,7 +234,7 @@ export default function (eleventyConfig) {
       if (nanpaA[1] > nanpaB[1]) return 1;
       return 0;
     });
-    
+
 
     return allstories;
   });

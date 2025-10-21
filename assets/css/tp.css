@@ -132,3 +132,27 @@ details:has(:is(h3,h4,h5)) p:first-of-type{
 
 
 
+
+.back-forth{
+    display: flex;
+    justify-content: space-between;
+    margin-block-start: -1em;
+}
+
+.back-forth a:is(:visited, :not(:visited)){
+    background-color: var(--walo);
+    color: var(--pimeja);
+    text-decoration: none;
+    box-shadow: 0 0 0 0.1em var(--pimeja);
+    text-transform: uppercase;
+    padding-inline: 0.25em;
+
+}
+
+@media (max-width: 32em) {
+
+    .back-forth{
+        justify-content: center;
+    }
+
+}

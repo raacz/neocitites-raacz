@@ -1,6 +1,6 @@
 ---
 layout: _layouts/bt/lili2.html
-title: moku lili
+title: wile moku
 external: https://commons.wikimedia.org/wiki/File:Open_refrigerator_with_food_at_night.jpg
 name: Open refrigerator with food at night
 source:  W.carter

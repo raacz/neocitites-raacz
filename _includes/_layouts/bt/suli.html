@@ -1,5 +1,7 @@
 ---
-layout: _layouts/bt/texts.html
+layout: _layouts/bt/texts-base.html
+stylesheet: /assets/css/tp.css
+
 ---
 {% assign currentDir = page.filePathStem | split: "/" | slice: 0, -1 | join: "/" %}
 
@@ -9,21 +11,55 @@ layout: _layouts/bt/texts.html
   | where_exp: "item", "item.filePathStem contains 'index'" | sort: "data.childIndex"
 %}
 
+<style>
+  .back-forth{
+    position: relative;
+    background-color: var(--walo);
+    z-index: 1;
+    margin-block-end: 2em;
+  }
+  .back-forth::after{
+    content: '';
+    height: 0.1em;
+    background-color: black;
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 1em;
+    z-index: -1;
+  }
+  main{
+    min-height: 100%;
+  }
+</style>
 
-{{ content }}
 
+<main>
+  {% if beforeStory %}
+  <div class="back-forth">
+  <a href="{{ beforeStory }}">Previous Story</a>
+  <a href="{{ nextStory }}">Next Story</a>
+  </div>
+{% endif %}
+    <h1 class="hub" id="main-content">{{ title }}</h1>
 
-<ul class="cards">
-{% for sub in subpages %}
-<li class="card">
-  <a href="{{ sub.url }}">
-  <img src="{{ sub.data.media }}" alt="">
-  <span>{{ sub.data.title }}</span>
-  </a>
-</li>
-
-{% endfor %}
-
-</ul>
-
-
+  
+  
+  {{ content }}
+  
+  
+  <ul class="cards">
+  {% for sub in subpages %}
+  <li class="card">
+    <a href="{{ sub.url }}">
+    <img src="{{ sub.data.media }}" alt="">
+    <span>{{ sub.data.title }}</span>
+    </a>
+  </li>
+  
+  {% endfor %}
+  
+  </ul>
+  
+  
+</main>

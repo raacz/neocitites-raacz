@@ -25,8 +25,8 @@ Each text features literal English translations and notes to help you follow alo
 
 
 <li class="circle">
-  <a href="">
-  <span> Longer<span>
+  <a href="wawa/">
+  <span>Quest<span>
   </a>
 </li>
 </ul>
@@ -38,7 +38,8 @@ Each text features literal English translations and notes to help you follow alo
 
 There are a few different types of texts. 
 - Each [Theme](suli/) text is a collection of very short pages. Each page has five lines of text and a contextualizing picture. As the name suggests, these texts usually discuss various aspects of a single unifying theme. 
-- [Bite-Sized](lili/) texts are short, simple, stand-alone narratives featuring one contextualizing picture. While none of them are over 200 words, some feature more advanced language. 
+- [Bite-Sized](lili/) texts are short, simple, stand-alone narratives featuring one contextualizing picture. While none of them are over 250 words, some feature more advanced language. 
+- [Quest](wawa/) texts consist of multiple pages that each span over 200 words, use more advanced language, and treat more technical subject matter. 
 
 ## Reading Tools
 

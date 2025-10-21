@@ -1,6 +1,6 @@
 ---
 layout: _layouts/bt/texts.html
-title: Bite-Sized
+title: Bite-Sized Texts
 ---
 
 These texts are short, simple, stand-alone narratives featuring a single contextualizing picture. Generally, bites-sized texts with a higher word count are more complex. 

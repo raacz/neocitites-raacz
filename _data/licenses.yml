@@ -10,9 +10,13 @@
   link: https://creativecommons.org/licenses/by/2.0/
 - key: CC-BY-SA-2.0
   link: https://creativecommons.org/licenses/by-sa/2.0/
+- key: CC-BY-SA-2.5
+  link: https://creativecommons.org/licenses/by-sa/2.5/
 - key: CC-BY-4.0
   link:  https://creativecommons.org/licenses/by/4.0/
 - key: CC-BY-SA-4.0
   link:  https://creativecommons.org/licenses/by-sa/4.0/
 - key: Public Domain
   link: https://creativecommons.org/public-domain/cc0/
+- key: GFDL-1.2
+  link: https://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html
