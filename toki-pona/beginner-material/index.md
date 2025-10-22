@@ -51,6 +51,25 @@ The reading experience is highly customizable. Each text has Toki Pona, Sitelen 
 - In **Table Mode**, directly compare English, toki pona, and sitelen pona lines. 
 
 Additionally, each contextualizing image also comes with a contextualizing description and attribution. The visibility of these can toggled on and off as needed. 
+ <h3>More Information</h3>
+
+
+<details markdown="1">
+  <summary> <h4>Storing Your Preferences</h4></summary>
+The settings that you've configured will be saved for the duration of your session. Opening Beginner Stories in a new tab or window will reset your preferences. 
+</details>
+<details markdown="1">
+  <summary> <h4>Accessibility</h4></summary>
+
+Beginner Texts is designed with technical accessibility considerations in mind. 
+
+The contexualizing descriptions are duplicated as alt text. If using a screenreader, you may prefer to turn either the contexualizing descriptions or the images off to prevent the presentation of duplicated information. These contextualizing descriptions contain all information that the story itself might reference. 
+
+
+
+</details>
+
+
 
 ## Notes on Language Use
 

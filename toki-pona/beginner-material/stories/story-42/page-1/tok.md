@@ -1,0 +1,15 @@
+tenpo pini weka la, jan tonsi Kikon li lon tomo pi lili mute. poka ona la jan olin meli Sansu en jan lili li lon. kulupu ona li taso li lon weka pi jan ante pi ijo ante. 
+
+jan Kikon li olin mute e jan olin Sansu e jan lili. o sona e ni: jan ale li toki e olin ona kepeken nasin ante. tenpo la jan li toki e olin kepeken nimi. tenpo la jan li toki e olin kepeken pana. taso jan Kikon li toki e olin ona tawa jan olin Sansu tawa jan lili kepeken pali. ona li ken ala pali ala. jan lili li lili mute li ken ala pali. jan olin Sansu li pakala sijelo li ken ala pali. ni la jan Kikon li pali a. ona li alasa e soweli e kili li mama e kasi e waso li kama e telo moku pona li pona e tomo li pali ale. taso ni li ike ala tawa jan Kikon. jan Kikon li wile a toki e olin tawa jan olin Sansu tawa jan lili. kepeken pali mute la jan Kikon li ken pana e olin suli ona tawa kulupu. 
+
+jan Kikon li pali la jan olin Sansu pi jan Kikon en jan lili li pali seme? tenpo sike pini tu la kiwen suli li pakala e monsi pi jan Sansu li kama e ni: ona li ken ala kepeken noka ona. taso awen la jan Sansu li pali pi ken ona. ona en jan lili li musi. jan Sansu li pana e sona toki e sona nasin tawa jan lili li pali e len tan linja kepeken luka. kin la ona li toki sewi mute. ona li toki tawa sewi lon tenpo ale. ona li toki pi wile pona li toki pi wile suwi li toki pi wile awen. jan olin Kikon li kama la ona li toki pi wile olin. jan olin Kikon li toki mute ala la ni li ike lili tawa jan Sansu. taso ona tu li awen olin wawa lon tomo lili ona lon insa pi ma kasi. 
+
+tenpo pimeja wan la, jan Kikon li alasa e waso suli pimeja. ona li pana wawa e palisa moli tawa sewi kepeken ilo pana. palisa moli li utala e noka waso la waso li tawa anpa. waso li awen moli ala. jan Kikon li kama lon poka waso li jo e ilo suli kipisi. taso waso li toki. "jan Kikon o." ona li mu. "o moli ala e mi. sina moli e mi la ike li kama." 
+
+taso jan Kikon li pilin monsuta tan toki waso li kute ala. kepeken tenpo lili la ona li moli e waso. moli la kon loje jelo laso li kama lon poka ale ona. jan Kikon li pilin e ni: selo ona li lete mute. lawa ona li pilin pakala. lukin ona li nasa. kute ona li wawa utala. pilin ike! ona li kama jo e sijelo waso li tawa sin tawa tomo ona. 
+
+suno li lon ala sewi. ale li pimeja. ona li kama sin lon tomo... taso a. waso suli pimeja li toki lon e ni: ike li kama. akesi Kikon li lukin e jan Sansu e jan lili la seli wawa li kama tan monsi pi uta ona. akesi Kikon li wile ala pana e seli. taso ona li lawa ala. jan Sansu en jan lili li kama moli lon seli. pilin pi akesi Kikon li pakala. ona li ken ala pilin e ni: ona li lon. 
+
+noka tu pi akesi laso Kikon li tawa lon ma ale. uta seli wawa pi akesi laso Kikon li moli e jan mute. jan Kikon li lon ala. ona li moli lon seli lon poka pi jan Sansu lon poka pi jan lili ona. 
+
+ike li taso.

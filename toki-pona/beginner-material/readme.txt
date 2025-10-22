@@ -1,17 +1,16 @@
 - ensure mobile styling works.
 
 - finish the sp article
-- change pagination so that it goes to the story home instead of the first page of the next story
-- ensure wawa gets caught in the stories loop
-- shift the media and the child collection into eleventy.config instead of in the data file
 - rate each theme by a percentage difficulty, sort and iterate by that percentage. 
 - add ariacurrent 
-
+- ensure proper language tagging throughout
+- consider making invisible headings
 -ability to check off texts
 
 
 ideas for theme pages
 - circus
+- Bekonscot Model Village
 - what's at the parade?
 - waso and kala but humans (mermaid performance)
 - robocup eindhoven 
@@ -19,3 +18,6 @@ ideas for theme pages
 - bartools like https://commons.wikimedia.org/wiki/File:Bartool1.jpg
 
 weird flashcard / multiple-choice thing maybe?
+
+
+https://commons.wikimedia.org/wiki/User:MichaelMaggs/Gallery see "mumming"

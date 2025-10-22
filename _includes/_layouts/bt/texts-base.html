@@ -2,76 +2,86 @@
 ---
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} 
+    <title>{{ title }}
 
-    {% if parentName %}
-    | {{ parentName }}
-    {% endif %}
-        
+        {% if parentName %}
+        | {{ parentName }}
+        {% endif %}
+
         | Beginner Stories </title>
     <link rel="stylesheet" href="/assets/css/styles.css">
     {% if stylesheet %}
-        <link rel="stylesheet" href="{{ stylesheet }}">
+    <link rel="stylesheet" href="{{ stylesheet }}">
     {% endif %}
 
 
 </head>
+
 <body>
-   
+
     <header>
         <a href="#main-content" id="skip">Skip Navigation</a>
         <div class="introtext">
-<p>Beginner Texts in Toki Pona</p>
+            <p>Beginner Texts in Toki Pona
+
+            </p>
         </div>
         <nav>
             <ul>
-                <li><a href="/toki-pona/beginner-material/">Home</a></li>
-                <li><a href="/toki-pona/beginner-material/suli/">Theme</a></li>
-                <li><a href="/toki-pona/beginner-material/lili/">Bite-Sized</a></li>
-                <li><a href="/toki-pona/beginner-material/wawa/">Quest</a></li>
+                <li><a {% if title=="Home" %} aria-current="page" {% endif %}
+                        href="/toki-pona/beginner-material/">Home</a></li>
+                <li><a {% if title=="Theme Texts" %} aria-current="page" {% endif %}
+                        href="/toki-pona/beginner-material/suli/">Theme</a></li>
+                <li><a {% if title=="Bit-Sized Texts" %} aria-current="page" {% endif %}
+                        href="/toki-pona/beginner-material/lili/">Bite-Sized</a></li>
+                <li><a {% if title=="Quest Texts" %} aria-current="page" {% endif %}
+                        href="/toki-pona/beginner-material/wawa/">Quest</a></li>
 
             </ul>
         </nav>
     </header>
-       {{ content }}
+    {{ content }}
     <footer>
         <div>
             <a href="/">Back to Lakuse's Site.</a>
 
-<p>Hosted on <a href="https://neocities.org/site/raacz">Neocities</a>, made with <a href="https://www.11ty.dev/">Eleventy</a>, a simpler static site generator. </p>
+            <p>Hosted on <a href="https://neocities.org/site/raacz">Neocities</a>, made with <a
+                    href="https://www.11ty.dev/">Eleventy</a>, a simpler static site generator. </p>
 
-<p>Content is <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA-4.0</a> Lakuse unless stated otherwise. </p>
-
-
-{% if bg %}
-  <a class="{{ bg.bg-cc }}" href="{{ bg.bg-img }}">Background</a>
-  {% if bg.adapted %}
-    adapted from 
-  {% endif %}
-  <a href="{{ bg.bg-external }}">{{ bg.bg-name }}</a> (CC-BY-SA-4.0).
-{% endif %}
+            <p>Content is <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA-4.0</a> Lakuse
+                unless stated otherwise. </p>
 
 
-{% assign bg = backgrounds[background] %}
-{% if bg %}
-    <p class="background">
-    <a class="{{ bg.bg-cc }}" href="{{ bg.bg-img }}">Background</a>
-    {% if bg.adapted %}adapted {% endif %}
-    from <a href="{{ bg.bg-external }}">{{ bg.bg-name }}</a> 
-    ({{ bg.bg-license | default: "CC-BY-SA-4.0" }}).
-    </p>
-{% endif %}
+            {% if bg %}
+            <a class="{{ bg.bg-cc }}" href="{{ bg.bg-img }}">Background</a>
+            {% if bg.adapted %}
+            adapted from
+            {% endif %}
+            <a href="{{ bg.bg-external }}">{{ bg.bg-name }}</a> (CC-BY-SA-4.0).
+            {% endif %}
 
-<p><a href="/toki-pona/beginner-material/sitemap/">Site Map.</a></p>
-                 <span class="back-to-main">
 
-        </span>
+            {% assign bg = backgrounds[background] %}
+            {% if bg %}
+            <p class="background">
+                <a class="{{ bg.bg-cc }}" href="{{ bg.bg-img }}">Background</a>
+                {% if bg.adapted %}adapted {% endif %}
+                from <a href="{{ bg.bg-external }}">{{ bg.bg-name }}</a>
+                ({{ bg.bg-license | default: "CC-BY-SA-4.0" }}).
+            </p>
+            {% endif %}
+
+            <p><a href="/toki-pona/beginner-material/sitemap/">Site Map.</a></p>
+            <span class="back-to-main">
+
+            </span>
         </div>
 
     </footer>
 </body>
-<script src="/scripts/background-detector.js"></script>
+
 </html>
