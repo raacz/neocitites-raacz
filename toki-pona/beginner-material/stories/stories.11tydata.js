@@ -65,26 +65,28 @@ function splitSpFragments(paragraph) {
 // Strips leading/trailing punctuation for counting but preserves square-bracket groups.
 function wordCount(str) {
   if (!str) return 0;
-  return str
-    .split(/[\s+\-]+/)          // split on whitespace, +, or -
+  
+  // First, replace bracketed content with a placeholder token
+  const normalized = str.replace(/\[[^\]]+\]/g, 'BRACKET');
+  
+  return normalized
+    .split(/[\s+\-]+/) // split on whitespace, +, or -
     .map(tok => tok.replace(/^[^A-Za-z0-9\[]+|[^A-Za-z0-9\]]+$/g, '')) // trim punctuation except []
     .filter(Boolean)
     .filter(tok => {
       const lower = tok.toLowerCase();
-      if (lower === 'zz') return false;       // ignore zz entirely
+      if (lower === 'zz') return false; // ignore zz entirely
       if (/^[\^+\-\[\]]+$/.test(tok)) return false; // ignore pure ligature tokens
       return true;
     }).length;
 }
-
 // Merge fragments so that for each base sentence we produce one merged fragment.
 // Always returns an array with the same length as baseSents. If fragments run out,
 // remaining base items get empty strings. Any leftover fragments after filling
 // all baseSents are appended to the last result (to avoid dropping them).
-function pairByWordCount(baseSents, frags, options = {}) {
+/*function pairByWordCount(baseSents, frags, options = {}) {
   const threshold = options.threshold ?? 0.8;
   const overshoot = options.overshoot ?? 1.6;
-
   const pairs = [];
   let fragIndex = 0;
 
@@ -101,6 +103,7 @@ function pairByWordCount(baseSents, frags, options = {}) {
     // start with current fragment
     let combined = frags[fragIndex] || '';
     let combinedCount = wordCount(combined);
+    console.log(combined, combinedCount);
 
     // Merge until we reach threshold or run out
     while (combinedCount < baseCount * threshold && fragIndex + 1 < frags.length) {
@@ -125,8 +128,132 @@ function pairByWordCount(baseSents, frags, options = {}) {
   }
 
   return pairs;
-}
+}*/
 
+function pairByWordCount(baseSents, frags, options = {}) {
+  const overshoot = options.overshoot ?? 1.6;
+  const undershoot = options.undershoot ?? 0.9; // Add undershoot parameter
+  const pairs = [];
+  let fragIndex = 0;
+
+  // Helper to normalize words for matching (a=aaa, n=nnn)
+  function normalizeWord(word) {
+    if (!word) return null;
+    const lower = word.toLowerCase();
+    // Normalize repeated a's to single 'a'
+    if (/^a+$/.test(lower)) return 'a';
+    // Normalize repeated n's to single 'n'
+    if (/^n+$/.test(lower)) return 'n';
+    return lower;
+  }
+
+  // Helper to get first/last meaningful word
+  function getFirstWord(str) {
+    if (!str) return null;
+    const words = str
+      .split(/[\s+\-]+/)
+      .map(tok => tok.replace(/^[^A-Za-z0-9\[]+|[^A-Za-z0-9\]]+$/g, ''))
+      .filter(Boolean)
+      .filter(tok => {
+        const lower = tok.toLowerCase();
+        if (lower === 'zz' || lower === 'te' || lower === 'to') return false;
+        if (/^[\^+\-\[\]]+$/.test(tok)) return false;
+        return true;
+      });
+    return words.length > 0 ? normalizeWord(words[0]) : null;
+  }
+
+  function getLastWord(str) {
+    if (!str) return null;
+    const words = str
+      .split(/[\s+\-]+/)
+      .map(tok => tok.replace(/^[^A-Za-z0-9\[]+|[^A-Za-z0-9\]]+$/g, ''))
+      .filter(Boolean)
+      .filter(tok => {
+        const lower = tok.toLowerCase();
+        if (lower === 'zz' || lower === 'te' || lower === 'to') return false;
+        if (/^[\^+\-\[\]]+$/.test(tok)) return false;
+        return true;
+      });
+    if (words.length === 0) return null;
+    const lastWord = words[words.length - 1];
+    return {
+      word: normalizeWord(lastWord),
+      isCapitalized: /^[A-Z]/.test(lastWord)
+    };
+  }
+
+  // Check if string contains any bracketed group [...]
+  function hasBracketedGroup(str) {
+    if (!str) return false;
+    return /\[/.test(str);
+  }
+
+  for (let b = 0; b < baseSents.length; b++) {
+    const base = baseSents[b] || '';
+    const baseFirstWord = getFirstWord(base);
+    const baseLastWordObj = getLastWord(base);
+    const baseCount = Math.max(1, wordCount(base));
+
+    if (fragIndex >= frags.length) {
+      // no fragments left — produce empty string for this base sentence
+      console.warn(`Warning: Ran out of fragments at base sentence ${b}. Remaining base sentences: ${baseSents.length - b} \n${baseSents}`);
+      pairs.push('');
+      continue;
+    }
+
+    // start with current fragment
+    let combined = frags[fragIndex] || '';
+
+    // Merge until first and last words match the base
+    while (fragIndex + 1 < frags.length) {
+      const currentFirstWord = getFirstWord(combined);
+      const currentLastWordObj = getLastWord(combined);
+      const combinedCount = wordCount(combined);
+
+      let firstMatches = currentFirstWord === baseFirstWord;
+      let lastMatches = false;
+
+      if (baseLastWordObj.isCapitalized) {
+        // If base last word is capitalized, match any bracketed group in combined
+        lastMatches = hasBracketedGroup(combined);
+      } else {
+        // Normal matching - last word must match
+        lastMatches = currentLastWordObj && currentLastWordObj.word === baseLastWordObj.word;
+      }
+
+      // Check if we've matched both first and last words
+      if (firstMatches && lastMatches) {
+        // Check undershoot protection - don't accept if too short
+        if (combinedCount >= baseCount * undershoot) {
+          break;
+        }
+        // If undershooting, continue merging
+      }
+
+      // Check overshoot protection
+      if (combinedCount > baseCount * overshoot) break;
+
+      fragIndex++;
+      combined = (combined ? (combined + ' ') : '') + ("<br>" + frags[fragIndex] || '');
+    }
+
+    pairs.push(combined.trim());
+    fragIndex++;
+  }
+
+  // If fragments remain, append them to the last pair (do not drop them)
+  if (fragIndex < frags.length) {
+    const tail = frags.slice(fragIndex).join(' ');
+    if (pairs.length === 0) {
+      pairs.push(tail.trim());
+    } else {
+      pairs[pairs.length - 1] = ((pairs[pairs.length - 1] || '') + ' ' + "<br>" + tail).trim();
+    }
+  }
+
+  return pairs;
+}
 
 /**
  * High-level: paragraph-aligned triple matcher.
@@ -142,8 +269,9 @@ function pairTokEnSpByParagraph(tokText, enText, spText) {
 
   if (tokPars.length !== enPars.length || tokPars.length !== spPars.length) {
     console.warn(
-      `⚠️ Paragraph-count mismatch (tok=${tokPars.length}, en=${enPars.length}, sp=${spPars.length})`
+      `⚠️ Paragraph-count mismatch (tok=${tokPars.length}, en=${enPars.length}, sp=${spPars.length}) ${tokPars}`
     );
+
   }
 
   const triples = [];
@@ -174,9 +302,6 @@ function pairTokEnSpByParagraph(tokText, enText, spText) {
       });
     }
 
-    if (tokSents.length !== enSents.length) {
-      console.warn(`⚠️ Tok/EN mismatch in paragraph ${pi}: tok=${tokSents.length}, en=${enSents.length}`);
-    }
 
     // step 2: merge SP fragments into the existing tokEnPairs
     const spFrags = splitSpFragments(spPara);
@@ -223,13 +348,13 @@ module.exports = function () {
   return {
     eleventyComputed: {
       story: data => {
-        if (data.tags !== undefined && data.page.inputPath !== undefined) {
+        if ((data.tags !== undefined && data.page.inputPath !== undefined) && !data.tags.includes("dnp")) {
           for (let tag of data.tags) {
             //list all tags that need to be multilingually processed here
             //using the tag file means only index.md will be caught for each
             let dir = path.join(data.eleventy.env.root, path.normalize(data.page.inputPath));
             dir = dir.replace("index.md", "");
-            if (tag === "lili" || tag === "sequence") {
+            if ((tag === "lili" | tag === "sequence")) {
 
               //this grabs the root name from eleventy.env.root
               // eg) /home/lakuse/VSCodium/new-neocities/

@@ -1,11 +1,20 @@
+responsive:
 - ensure mobile styling works.
+- all pages get a word count use word count to determine if the thing needs to not reflow as rows.
 
+content:
 - finish the sp article
-- rate each theme by a percentage difficulty, sort and iterate by that percentage. 
-- add ariacurrent 
+- make three quest stories
+
+accessibility:
 - ensure proper language tagging throughout
 - consider making invisible headings
--ability to check off texts
+- ability to check off texts
+
+technical:
+- ensure that tok [!] can be replaced with sp [a] in sorting algo
+- convert the partial to just a normal ass layout file
+- rate each theme by a percentage difficulty, sort and iterate by that percentage. 
 
 
 ideas for theme pages

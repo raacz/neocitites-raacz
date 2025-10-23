@@ -7,5 +7,6 @@ source: Michael Maggs
 license: CC-BY-SA-4.0
 alt: 
 media: "/toki-pona/beginner-material/assets/wawa-42a.jpg"
-tags: sequence
+tags: 
+- sequence
 ---

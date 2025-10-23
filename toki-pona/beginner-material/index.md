@@ -132,9 +132,9 @@ tldr; try not to treat the English Translations too authoritatively.
 
   
 
-
-
   I use a punctuation-less indented style of Sitelen Pona, and the site uses the <span lang="tok"><a href="https://github.com/etbcor/nasin-nanpa">nasin nanpa</a></span> font throughout.
+
+  I regularly make use of the directional <span lang="tok">ni</span> to indicate <span lang="tok">e ni: </span>clauses. 
 
 
 
@@ -149,10 +149,16 @@ tldr; try not to treat the English Translations too authoritatively.
 
   In this texts, I've decided to use some of these grammatical styles:
 
+  Extensions:
   - extended <span lang="tok">li</span> style with <span lang="tok">mi</span> and <span lang="tok">sina</span>. 
+  - multiple <span lang="tok">pi</span> phrases can be used subsequently (used only in Quest texts)
+  - <span lang="tok">lukin</span> is used as a preverb meaning 'to try to' instead of <span lang="tok">alasa</span>
+
+Restrictions:
   - <span lang="tok">kepeken</span> cannot be used as a content word
   - prepositional phrases cannot modify the subject
   - prepositional phrases cannot be used as transitive predicates
+  - <span lang="tok">open</span> and <span lang="tok">pini</span> cannot be used as preverbs
 
 
 

@@ -123,30 +123,30 @@ suno li lon ala sewi
 ale li pimeja  
 ona li kama sin lon tomo  
 taso a  
-waso suli pimeja l  
-zz i toki lon e ni>  
+waso suli pimeja 
+zz li toki lon e ni>  
 zz zz ike li kama  
-akesi [ken ike kepeken ona ni]   
+akesi [kama ike kon o nimi ]   
 zz li lukin   
 zz zz e jan [suno ala nasin sin uta]   
 zz zz e jan lili la   
 zz zz zz seli wawa li kama   
 zz zz zz tan monsi pi uta ona  
-akesi [ken ike kepeken ona ni]   
+akesi [kama ike kon o nimi ]   
 zz li wile ala pana e seli  
 taso   
 ona li lawa ala  
 jan [suno ala nasin sin uta] en jan lili   
 zz li kama moli   
 zz zz lon seli  
-pilin pi akesi [ken ike kepeken ona ni]   
+pilin pi akesi [kama ike kon o nimi ]   
 zz li pakala  
 ona li ken ala pilin e ni>  
 zz ona li lon  
   
-noka tu pi akesi laso [ken ike kepeken ona ni]   
+noka tu pi akesi laso [kama ike kon o nimi]   
 zz li tawa lon ma ale  
-uta seli wawa pi akesi laso [ken ike kepeken ona ni]   
+uta seli wawa pi akesi laso [kama ike kon o nimi]   
 zz li moli e jan mute  
 jan [ken ike kepeken ona ni]   
 zz li lon ala  

@@ -30,13 +30,6 @@ export default function (eleventyConfig) {
       .replace(/-+/g, "-");              // collapse multiple dashes
   });
 
-  //used primarily for liliwc collection below
-  eleventyConfig.addFilter("wordcount", (content) => {
-    const wordCount = content
-      .split(/\s+/)
-      .filter((word) => word.length > 0).length;
-    return wordCount;
-  });
 
   //filters a date to appear as March 16, 2020
   eleventyConfig.addFilter("postDate", (dateObj) => {
@@ -56,7 +49,17 @@ export default function (eleventyConfig) {
     return `${year}-${month}-${day}`;
   });
 
-  //adds pagination data to a collection
+
+    //used primarily for liliwc collection below
+  eleventyConfig.addFilter("wordcount", (content) => {
+    const wordCount = content
+      .split(/\s+/)
+      .filter((word) => word.length > 0).length;
+    return wordCount;
+  });
+
+
+  //adds pagination data to a text type with no subpages
   //hubLink is the link that the starting text and ending text should link to, hubText defines the text for this link
   //currently only used for bite-sized pieces
   function sortByWordCount(toSort, hubLink, hubText) {
@@ -94,7 +97,7 @@ export default function (eleventyConfig) {
     return sortThis;
   }
 
-  //this adds pagination data and titles to a collection with subpages, as well as giving mediaFiles (used to create the 'collage') and pageURLs (used for the sitemap) to the parent story
+  //this adds pagination data, titles and parentName to a collection with subpages, as well as giving mediaFiles (used to create the 'collage') and pageURLs (used for the sitemap) to the parent story
   //relies heavily on the stories and subpages being names properly
   //currently used for both wawa and suli
   function processPaginatedStory(tag, collectionsApi) {
@@ -147,7 +150,6 @@ export default function (eleventyConfig) {
             beforeParent = storyNumbers[storyNumbers.length - 1];
           }
           stories[i].data.beforeStory = "/toki-pona/beginner-material/stories/story-" + beforeParent + "/";
-
         }
         if (currentIndex == filteredpages.length) {
           nextText = "Next Story";
@@ -160,7 +162,7 @@ export default function (eleventyConfig) {
           stories[i].data.nextStory = "/toki-pona/beginner-material/stories/story-" + nextParent + "/";
         }
         page.data.title = "Page " + childIndex;
-        page.data.parentTitle = stories[i].data.title;
+        page.data.parentName = stories[i].data.title;
         page.data.childIndex = childIndex;
         page.data.beforeText = beforeText;
         page.data.nextText = nextText;

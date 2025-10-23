@@ -1,0 +1,124 @@
+---
+layout: _layouts/bt/texts.html
+title: Reading List
+---
+
+<style>
+    table *{
+    }
+    table{
+        width: 100%;
+    }
+    .lili tr{
+        display: grid;
+        grid-template-columns: 1fr 3.5em;
+
+    }
+    .suli tr{
+        display: grid;
+        grid-template-columns: 1fr 2em 3.5em;
+
+    }
+    .wawa tr {
+        display: grid;
+        grid-template-columns: 1fr 2em 3.5em;
+
+    }
+    tr{
+        border-bottom: 0.1em solid black;
+    }
+    tr[colspan]{
+        grid-column: 2;
+    }
+    :is(.suli, .wawa) tr:not(:has([colspan], th)){
+        display: grid;
+        grid-template-columns: 1em 1fr 3.5em;
+        background-color: pink;
+        font-size: 0.8em;
+
+
+    }
+    .blend-in{
+        color: var(--walo);
+    }
+
+
+</style>
+
+
+<table class="lili">
+<caption>
+    Theme
+</caption>
+<thead>
+    <th>Story</th>
+    <th>Status</th>
+
+</thead>
+
+<tbody>
+
+{% for post in collections.liliwc %}
+    <tr>
+        <td><a href="{{ post.url }} ">{{ post.data.title}}</a></td>
+        
+        <td>✔️</td>
+    </tr>
+{% endfor %}
+</tbody>
+</table>
+
+
+
+{% assign pages = collections.allstories | sort: "data.title" %}
+
+
+<table class="suli">
+<caption>
+    Theme
+</caption>
+<thead>
+    <th>Story</th>
+    <th class="blend-in">Subpages</th>
+    <th>Status</th>
+
+</thead>
+
+<tbody>
+
+{% for post in collections.suli %}
+    {% if post.data.tags contains 'sequence' %}
+    {% elsif post.data.tags contains 'suli' or  post.data.tags contains 'wawa' %}
+    <tr>
+        <td colspan="{{ post.data.pageURLs.length | plus: 1}}"><a href="{{ post.url }} ">{{ post.data.title}}</a></td>
+        <td class="blend-in">All</td>
+        <td>✔️</td>
+    </tr>
+                {% assign number = 1 %}
+
+        {% for link in post.data.pageURLs %}
+        <tr>
+        <td></td>
+
+        <td><a href="{{ link }} ">Page {{ number }}</a></td>
+        {% assign number = number | plus: 1 %}
+        <td>✔️</td>
+        </tr>
+
+        {% endfor %}
+
+    {% else %}
+
+    <tr>
+        <td><a href="{{ post.url }} ">{{ post.data.title}}</a></td>
+        <td></td>
+        <td>✔️</td>
+    </tr>
+    {% endif %}
+{% endfor %}
+</tbody>
+</table>
+
+
+
+
