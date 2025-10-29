@@ -50,7 +50,7 @@ export default function (eleventyConfig) {
   });
 
 
-    //used primarily for liliwc collection below
+  //used primarily for liliwc collection below
   eleventyConfig.addFilter("wordcount", (content) => {
     const wordCount = content
       .split(/\s+/)
@@ -220,6 +220,8 @@ export default function (eleventyConfig) {
     return bsite;
   });
 
+
+
   eleventyConfig.addCollection("allstories", function (collectionApi) {
     let allstories = collectionApi.getFilteredByGlob(
       ['toki-pona/beginner-material/stories/story-[0-9]+/**{index.md,index.html}']);
@@ -240,5 +242,89 @@ export default function (eleventyConfig) {
 
     return allstories;
   });
+  eleventyConfig.addCollection("wcdata", function (collectionApi) {
+    let allstories = collectionApi.getFilteredByGlob(
+      ['toki-pona/beginner-material/stories/story-[0-9]+/**{index.md,index.html}']);
+    allstories = allstories.sort((a, b) => {
+      let nanpaA = a.url.match(/\d+/g).map(Number);
+      let nanpaB = b.url.match(/\d+/g).map(Number);
+      if (nanpaA[0] < nanpaB[0]) return -1;
+      if (nanpaA[0] > nanpaB[0]) return 1;
+      if (nanpaA[1] === undefined) return -1;
+      if (nanpaB[1] === undefined) return 1;
+      if (nanpaA[1] < nanpaB[1]) return -1;
+      if (nanpaA[1] > nanpaB[1]) return 1;
+      return 0;
+    });
+
+    let data = [];
+    function addData(story, count, type) {
+      data.push({
+        url: story.page.url,
+        count: count,
+        type: type,
+      })
+    }
+
+
+    for (let story of allstories) {
+      let needswordcount = false;
+      if (story.data.tags.includes("sequence") || story.data.tags.includes("lili")){
+        needswordcount = story.data.story.tok.split(/\s+/).filter((word) => word.length > 0).length;
+      }else{
+        needswordcount = story.data.pageURLs.length;
+      }
+
+      addData(story, needswordcount, story.data.tags);
+    }
+    return data;
+
+    /*
+    A Calculator is something that has an array of something, and able to get calculatedData from that set of something that it has. 
+
+    There are two kinds of Calculator objects:
+    - Calculator objects that hold other Calculators, known as CalculateOverGroups
+    - Calculator objects that hold basic page data, known as CalculateOverSingles
+
+    The main object is called Story Stats. It is a Calculator of type CalculateOverGroups. The three Calculators that it holds each represent data from a type of text featured on the site: bite-sized, theme, and quest. 
+    
+    The Calculator holding Bite-Sized data is of type CalculateOverSingles. It's array holds page data.
+    
+    The Calculators holding Theme and Quest data are of type CalculateOverGroups. They each hold an array of MultiPageStory, a kind of CalculateOverSingles (the array of this MultiPageStory has all the page data for each story). MultiPageStories only differ in that they also have a URL identifier. 
+
+    When Stored in Eleventy, this is what it looks like
+
+    Story Stats
+        CalculateOverSingles
+            Single
+            Single
+            etc
+        CalculateOverGroups
+            MultiPageStories
+                Single
+                Single
+                etc
+            MultiPageStories
+                Single
+                Single
+                etc
+            etc
+        CalculateOverGroups
+            MultiPageStories
+                Single
+                Single
+                etc
+            MultiPageStories
+                Single
+                Single
+                etc
+            etc
+    The data cannot be calculated until all the localstoragedata has been fed into the machine. 
+    */
+
+
+  });
+
+
 };
 

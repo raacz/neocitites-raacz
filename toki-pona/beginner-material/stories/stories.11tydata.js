@@ -354,7 +354,7 @@ module.exports = function () {
             //using the tag file means only index.md will be caught for each
             let dir = path.join(data.eleventy.env.root, path.normalize(data.page.inputPath));
             dir = dir.replace("index.md", "");
-            if ((tag === "lili" | tag === "sequence")) {
+            if ((tag === "lili" || tag === "sequence")) {
 
               //this grabs the root name from eleventy.env.root
               // eg) /home/lakuse/VSCodium/new-neocities/

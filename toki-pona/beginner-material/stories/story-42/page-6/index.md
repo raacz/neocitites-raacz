@@ -1,4 +1,6 @@
 ---
+layout: _layouts/bt/lili2.html
+
 external: https://commons.wikimedia.org/wiki/File:St_Albans_Mummers_production_of_St_George_and_the_Dragon,_Boxing_Day_2015-11.jpg
 name: St Albans Mummers production of St George and the Dragon, Boxing Day 2015-11
 source: Michael Maggs

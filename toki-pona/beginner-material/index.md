@@ -43,7 +43,7 @@ There are a few different types of texts.
 
 ## Reading Tools
 
-The reading experience is highly customizable. Each text has Toki Pona, Sitelen Pona, and English versions. There are four reading modes:
+The reading experience is highly customizable. The Toki Pona texts are presented in the language's two writing systems: sitelen Lasina (the latin alphabet, which English also uses), and Sitelen Pona, where each word is represented by a single pictographic character. There are four reading modes:
 
 - In **Regular Mode**, texts are presented as they are. 
 - In **Quiz Mode**, the contextualizing image is hidden and the ability to toggle English is turned off. 

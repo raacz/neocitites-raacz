@@ -83,7 +83,7 @@ ona li lukin e ma
 zz zz zz e 
 zz zz zz zz kipisi tomo  
 tenpo pini la  
-zz tomo ni^ li lon  
+zz tomo ni^> li lon  
 zz taso akesi li seli pakala e ona  
 waso pimeja suli li kama tawa kipisi tomo   
 zz zz zz li mu   

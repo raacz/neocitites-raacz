@@ -9,12 +9,15 @@ content:
 accessibility:
 - ensure proper language tagging throughout
 - consider making invisible headings
-- ability to check off texts
+- enable character key shortcuts
 
 technical:
 - ensure that tok [!] can be replaced with sp [a] in sorting algo
-- convert the partial to just a normal ass layout file
 - rate each theme by a percentage difficulty, sort and iterate by that percentage. 
+
+reading list todo:
+- fix the group units because they are undefining HARD
+- add skiptable link
 
 
 ideas for theme pages

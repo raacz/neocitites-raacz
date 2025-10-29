@@ -87,8 +87,15 @@ layout: _layouts/bt/texts-base.html
 
 </section>
 
-<main>
+<main data-story-id="{{ page.url }}" >
 {{ content }}
+    <label class="reading-list-checkbox" for="reading-list">
+        <span id="reading-list-label-content"></span>
+        <input id="reading-list" type="checkbox"></input>
+    </label>
 </main>
+
+<script src="/scripts/store-reading-list.js"></script>
+
 
 

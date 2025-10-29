@@ -1,124 +1,438 @@
 ---
-layout: _layouts/bt/texts.html
+layout: _layouts/bt/texts-base.html
+stylesheet: /assets/css/tp.css
 title: Reading List
 ---
 
 <style>
-    table *{
+    .checklists {
+        display: flex;
+        flex-wrap: wrap;
+
     }
-    table{
+
+
+
+
+
+
+    tr {
+        border-bottom: 0.1em solid black;
+    }
+
+    tr td:last-child {
+        justify-self: flex-end;
+    }
+
+    tr th:first-child {
+        justify-self: flex-start;
+    }
+
+    table {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-width: 10em;
+    }
+
+    tbody,
+    thead {
+        padding-inline: 0.5em;
+
+        display: grid;
+        break-inside: auto;
+    }
+
+    tbody {
+        flex: 1;
+
+    }
+
+    thead {
+        flex-shrink: 0;
+
+    }
+
+    main {
         width: 100%;
     }
-    .lili tr{
+
+
+    .lili tr {
         display: grid;
         grid-template-columns: 1fr 3.5em;
 
     }
-    .suli tr{
+
+    :is(.suli, .wawa) tr {
         display: grid;
         grid-template-columns: 1fr 2em 3.5em;
 
     }
-    .wawa tr {
-        display: grid;
-        grid-template-columns: 1fr 2em 3.5em;
 
-    }
-    tr{
-        border-bottom: 0.1em solid black;
-    }
-    tr[colspan]{
+    :is(.suli, .wawa) tr[rowspan] {
         grid-column: 2;
     }
-    :is(.suli, .wawa) tr:not(:has([colspan], th)){
+
+    /*this exclusively targets 'page'rows*/
+    :is(.suli, .wawa) tbody tr:not(:has([rowspan])) {
         display: grid;
-        grid-template-columns: 1em 1fr 3.5em;
-        background-color: pink;
-        font-size: 0.8em;
-
-
+        grid-template-columns: 1fr 3.5em;
     }
-    .blend-in{
+
+    :is(.suli, .wawa) thead tr {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /*targeting 'page' cells*/
+    :is(.suli, .wawa) tbody tr:not(:has([rowspan])) td:first-child {
+        font-size: 0.8em;
+        padding-inline-start: 2em;
+    }
+
+    .blend-in {
         color: var(--walo);
     }
 
+    details h2 {
+        font-size: 1em;
+    }
 
+    button {
+        margin-top: 0.5em;
+        display: block;
+        font-size: 1em;
+        border: 0.1em solid black;
+        border-radius: 0.25em;
+        padding: 0.2em;
+        background-color: var(--walo);
+    }
+
+    button:is(:hover, :focus-visible) {
+        border-color: var(--walo-pimeja);
+    }
+
+    .postchallenge {
+        display: block;
+    }
+
+    .prechallenge {
+        display: none;
+
+    }
+
+    caption {
+        background-color: var(--pimeja);
+        color: var(--walo);
+    }
+
+    .easy-exit {
+        display: grid;
+    }
+
+    .easy-exit button {
+        font-size: 0.8em;
+        max-width: max-content;
+        justify-self: flex-end;
+        margin-block-start: -1em;
+        margin-block-end: 1em;
+
+    }
+
+    .easy-exit button:is(:hover, :focus-visible) {
+        border-color: var(--ike);
+
+    }
+
+    .achievements {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        column-gap: 0.5em;
+        margin: 0;
+        padding: 0;
+    }
+    .achievements li:not(:has(img)){
+        max-width: none;
+        display: block;
+    }
+
+    .achievements h3 {
+        font-size: 1em;
+    }
+
+    .achievements li {
+        max-width: 10em;
+        margin: 0;
+        display: grid;
+        justify-items: center;
+        align-items: first-baseline;
+        text-align: center;
+        grid-template-rows: 4em 5em;
+    }
+
+    .achievements span {
+        align-self: first baseline;
+        line-height: 1em;
+        margin-block-start: 1em;
+
+    }
+
+    .achievements img {
+        max-width: 5em;
+        z-index: 0;
+    }
+
+    .achievements .img-wrap {
+        width: 5em;
+        height: 5em;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 0.5em solid var(--walo-pimeja);
+        display: grid;
+        place-items: center;
+        z-index: 1;
+
+    }
+
+    .unearned li {
+        filter: grayscale(100%);
+    }
+
+    .dangerous {
+        border-block-start: 0.1em dashed black;
+        margin-block-start: 3em;
+    }
+    #progress-container{
+        border: 0.2em solid black;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    
+    }
+    #progress-bar{
+        height: 2em;
+        background-color: var(--walo-pimeja);
+    }
+    .stats-head{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    :is(.stats-head, .stats-tail) p{
+        font-size: 0.9em;
+
+    }
+    .stats-head :nth-child(2){
+        align-self: last baseline;
+        justify-self: flex-end;
+        text-align: right;
+    }
+    .stats-tail{
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+    .stats-tail p{
+        flex: 1;
+        min-width: 8em;
+
+    }
 </style>
 
 
-<table class="lili">
-<caption>
-    Theme
-</caption>
-<thead>
-    <th>Story</th>
-    <th>Status</th>
+<main>
+    <div class="easy-exit">
+        <button class="postchallenge" id="exit-challenge">Exit the Challenge <br>(Data is Saved)</button>
 
-</thead>
-
-<tbody>
-
-{% for post in collections.liliwc %}
-    <tr>
-        <td><a href="{{ post.url }} ">{{ post.data.title}}</a></td>
-        
-        <td>✔️</td>
-    </tr>
-{% endfor %}
-</tbody>
-</table>
+        <h1 id="main-content">Reading List</h1>
 
 
+    </div>
 
-{% assign pages = collections.allstories | sort: "data.title" %}
+
+    <div class="prechallenge">
+        <h2>About the Reading List</h2>
+        <p><strong>Do you enjoy gamification? Need motivation to read?</strong></p>
+        <p><strong>Your challenge, should you choose to accept it, is to read every single story on this
+                website.</strong> Upon enabling the reading list, this page will be filled with large charts listing
+            every single text, each with an 'X' next to them.</p>
+        <p>Additionally, when you visit any beginner text, a small checkbox will appear at the bottom of every page. You
+            can check that box. Returning to this page, it update that text from an 'X' to a checkmark!</p>
+        <p>You will also be able to view exactly how many words you've read, how many texts you've read, and what
+            percentage of the website you've completed!</p>
+        <p>Progress on your reading list will be saved to your device. You can choose to close the reading list at any
+            time and wipe out all your reading data.</p>
+
+        Do you accept?
+        <button id="challenge-accepted">I accept the challenge.</button>
+    </div>
+    <div class="postchallenge">
+
+        <p>
+            Beginner Texts in Toki Pona currently has {{ collections.lili.length | plus: collections.sequence.length }}
+            pages. Read pages to progress and unlock achievements!
+        </p>
 
 
-<table class="suli">
-<caption>
-    Theme
-</caption>
-<thead>
-    <th>Story</th>
-    <th class="blend-in">Subpages</th>
-    <th>Status</th>
-
-</thead>
-
-<tbody>
-
-{% for post in collections.suli %}
-    {% if post.data.tags contains 'sequence' %}
-    {% elsif post.data.tags contains 'suli' or  post.data.tags contains 'wawa' %}
-    <tr>
-        <td colspan="{{ post.data.pageURLs.length | plus: 1}}"><a href="{{ post.url }} ">{{ post.data.title}}</a></td>
-        <td class="blend-in">All</td>
-        <td>✔️</td>
-    </tr>
-                {% assign number = 1 %}
-
-        {% for link in post.data.pageURLs %}
-        <tr>
-        <td></td>
-
-        <td><a href="{{ link }} ">Page {{ number }}</a></td>
-        {% assign number = number | plus: 1 %}
-        <td>✔️</td>
-        </tr>
-
-        {% endfor %}
-
-    {% else %}
-
-    <tr>
-        <td><a href="{{ post.url }} ">{{ post.data.title}}</a></td>
-        <td></td>
-        <td>✔️</td>
-    </tr>
-    {% endif %}
-{% endfor %}
-</tbody>
-</table>
+        <div class="stats-head">
+            <h2>Stats</h2>
+                <p id="stats_percentDone">Your Progress:</p>
+                <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+        </div>
+        <div class="stats-tail">
+            <p id="stats_wordTotal">Total Words Read:</p>
+            <p id="stats_pageTotal">Total Pages Read:</p>
+            <p id="stats_storyTotal">Total Stories Read:</p>
+            <p id="stats_achievementsTotal">Achievements Secured:</p>
+        </div>
 
 
 
+        <h2>Checklists</h2>
 
+        <div class="checklists">
+            <table class="suli">
+                <caption>
+                    <span>Theme Texts</span>
+                    <span class="tally"> {{collections.suli.length}}/{{collections.suli.length}}</span>
+                </caption>
+                <thead>
+                    <th>Story</th>
+                    <th class="blend-in">Subpages</th>
+                    <th>Status</th>
+                </thead>
+                <tbody>
+                    {% for post in collections.suli %}
+                    {% if post.data.tags contains 'sequence' %}
+                    {% elsif post.data.tags contains 'suli' %}
+                    <tr>
+                        <td rowspan="{{ post.data.pageURLs.length | plus: 1}}"><a class="target"
+                                href="{{ post.url }} ">{{
+                                post.data.title}}</a></td>
+                        <td class="blend-in">All</td>
+                        <td class="delivery">{{ post.data.pageURLs.length }}/{{ post.data.pageURLs.length }}</td>
+                    </tr>
+                    {% assign number = 1 %}
+                    {% for link in post.data.pageURLs %}
+                    <tr>
+                        <td><a class="target" href="{{ link }} ">Page {{ number }}</a></td>
+                        {% assign number = number | plus: 1 %}
+                        <td class="delivery">✔️</td>
+                    </tr>
+                    {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td><a class="target" href="{{ post.url }} ">{{ post.data.title}}</a></td>
+                        <td></td>
+                        <td class="delivery">✔️</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+            <table class="lili">
+                <caption>
+                    <span>Bite-Sized</span>
+                    <span class="tally"> {{collections.liliwc.length}}/{{collections.liliwc.length}}</span>
+                </caption>
+                <thead>
+                    <th>Story</th>
+                    <th>Status</th>
+                </thead>
+                <tbody>
+                    {% for post in collections.liliwc %}
+                    <tr>
+                        <td><a class="target" href="{{ post.url }} ">{{ post.data.title}}</a></td>
+                        <td class="delivery">✔️</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <table class="wawa">
+                <caption>
+                    <span>Quest Texts</span>
+                    <span class="tally"> {{collections.wawa.length}}/{{collections.wawa.length}}</span>
+                </caption>
+                <thead>
+                    <th>Story</th>
+                    <th class="blend-in">Subpages</th>
+                    <th>Status</th>
+                </thead>
+                <tbody>
+                    {% for post in collections.wawa %}
+                    {% if post.data.tags contains 'sequence' %}
+                    {% elsif post.data.tags contains 'wawa' %}
+                    <tr>
+                        <td rowspan="{{ post.data.pageURLs.length | plus: 1}}"><a class="target"
+                                href="{{ post.url }} ">{{
+                                post.data.title}}</a></td>
+                        <td class="blend-in">All</td>
+                        <td class="delivery">{{ post.data.pageURLs.length }}/{{ post.data.pageURLs.length }}</td>
+                    </tr>
+                    {% assign number = 1 %}
+                    {% for link in post.data.pageURLs %}
+                    <tr>
+                        <td><a class="target" href="{{ link }} ">Page {{ number }}</a></td>
+                        {% assign number = number | plus: 1 %}
+                        <td class="delivery">✔️</td>
+                    </tr>
+                    {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td><a class="target" href="{{ post.url }} ">{{ post.data.title}}</a></td>
+                        <td></td>
+                        <td class="delivery">✔️</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+
+        <h2>Achievements</h2>
+
+        <!-- images from https://generator.opendoodles.com/ -->
+
+        <h3>Earned</h3>
+        <ul role="list" class="achievements earned"></ul>
+
+        <h3>Unearned</h3>
+
+        <ul role="list" class="achievements unearned">
+          
+
+        </ul>
+
+        <section aria-labelledby="danger-heading" class="dangerous">
+            <h2 id="danger-heading">DANGER ZONE</h2>
+            <p id="dangerous-warning">This action cannot be reversed!</p>
+
+            <button aria-haspopup="dialog" aria-describedby="dangerous-warning" class="danger" id="wipe-data">Reset My Reading Data</button>
+            <dialog id="confirmation" closedby="none">
+                <h3>Hold on There!</h3>
+                <fieldset>
+                    <p>Are you sure you want to wipe the names of all stories you have marked as 'Read' from your device's cache?</p>
+                    <button autofocus id="confirm-donot-wipe">No, do not wipe my data</button>
+                    <button id="confirm-wipe">Yes, wipe my data. I understand that my data cannot be retrieved.</button>
+                </fieldset>
+            </dialog>
+        </section>
+
+
+
+
+
+    </div>
+
+</main>
+<script>
+    const json = '{{ collections.wcdata | jsonify }}';
+    let storyData = JSON.parse(json);
+</script>
+<script src="/scripts/gamification.js"></script>

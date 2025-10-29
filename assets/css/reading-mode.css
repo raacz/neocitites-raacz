@@ -225,7 +225,7 @@ figure, .en /* and the image itself*/
 
 /*mode-agnostic styles*/
 .selo {
-    border: 0.2em solid var(--pimeja);
+    box-shadow: 0 0 0 0.2em var(--pimeja);
     padding: 2em;
 }
 
@@ -432,16 +432,29 @@ h1{
     width: 1px;
 }
 
+.reading-list-checkbox{
+    box-shadow: 0 0 0 0.2em var(--pimeja);
+    width: 100%;
+    display: none;
+    margin-block-start: 0.1em;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-inline: auto;
+}
+.reading-list-checkbox input{
+    margin-inline: 1em;
+}
 
 
 
 @media (max-width: 32em) {
     .selo{
         padding-inline: 0;
-        padding-block-end: 0;
+        padding-block-end: 2em;
         margin-inline: 0;
-        border-inline: none;
-        border-block-end: none;
+        border-block: 0.2em solid black;
+        box-shadow: none;
     }
     figure img {
         max-height: 100%;
