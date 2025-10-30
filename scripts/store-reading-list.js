@@ -12,49 +12,56 @@ const ENABLE_KEY = "reading mode is active";
 
 document.addEventListener('DOMContentLoaded', () => {
     const enabled = localStorage.getItem(ENABLE_KEY);
-    if (enabled){
-    //set display of checkbox to visible
-    const label = document.getElementById("reading-list-label-content");
-    document.getElementsByClassName("reading-list-checkbox")[0].style.display = "block";
-
-    const checkbox = document.getElementById("reading-list");
-    const storyId = document.querySelector('[data-story-id]').dataset.storyId;
-    let readStories = JSON.parse(localStorage.getItem(READ_KEY)) || [];
-
-
-
-
-    function setDisplayState(state) {
-        if (state) {
-            checkbox.checked = true;
-            label.innerText = "Marked as Read!";
+    console.log(enabled);
+    if (enabled === "true") {
+        //set display of checkbox to visible
+        console.log("hi i'm enabled");
+        const label = document.getElementById("reading-list-label-content");
+        const hiddenElements = document.getElementsByClassName("if-enabled");
+        for (let element of hiddenElements){
+           element.style.display = "inline";
         }
-        else {
-            checkbox.checked = false;
-            label.innerText = "Mark as Read";
 
+
+
+        const checkbox = document.getElementById("reading-list");
+        const storyId = document.querySelector('[data-story-id]').dataset.storyId;
+        let readStories = JSON.parse(localStorage.getItem(READ_KEY)) || [];
+
+
+
+
+        function setDisplayState(state) {
+            if (state) {
+                checkbox.checked = true;
+                label.innerText = "Marked as Read!";
+            }
+            else {
+                checkbox.checked = false;
+                label.innerText = "Mark as Read";
+            }
         }
-    }
-    function storeUpdate(state) {
-        if (state) {
-            readStories.push(storyId);
-        } else {
-            readStories.splice(readStories.indexOf(storyId), 1);
+        function storeUpdate(state) {
+            if (state) {
+                readStories.push(storyId);
+            } else {
+                readStories.splice(readStories.indexOf(storyId), 1);
+            }
+            localStorage.setItem(READ_KEY, JSON.stringify(readStories));
         }
-        localStorage.setItem(READ_KEY, JSON.stringify(readStories));
+
+        setDisplayState(readStories.includes(storyId));
+
+        function activated(state) {
+            setDisplayState(state);
+            storeUpdate(state);
+        }
+
+
+        checkbox.addEventListener('change', (event) => {
+            activated(event.target.checked);
+        });
     }
-
-    setDisplayState(readStories.includes(storyId));
-
-    function activated(state) {
-        setDisplayState(state);
-        storeUpdate(state);
-    }
-
-
-    checkbox.addEventListener('change', (event) => {
-        activated(event.target.checked);
-    });}
 
     //this is a test of using character key shortcuts to trigger pini
     //but heavily interferes with native sr mappings

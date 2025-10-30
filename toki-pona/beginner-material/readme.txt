@@ -1,10 +1,10 @@
 responsive:
 - ensure mobile styling works.
-- all pages get a word count use word count to determine if the thing needs to not reflow as rows.
 
 content:
 - finish the sp article
 - make three quest stories
+
 
 accessibility:
 - ensure proper language tagging throughout
@@ -18,6 +18,14 @@ technical:
 reading list todo:
 - fix the group units because they are undefining HARD
 - add skiptable link
+- all group units/single units need to be calculated better. just to deal with the overall page count, for example. this should be easy data. 
+- replace emojis with something more stylish.
+
+general ui improvements
+- all pages get a word count use word count to determine if the thing needs to not reflow as rows, so we never end up in a gross look situation
+- sp, alone on regular, should never reflow probably...
+- add some kind of quick access to the reading list
+- provide previous/next pages to the bottom of the page as well. 
 
 
 ideas for theme pages

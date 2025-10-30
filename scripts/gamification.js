@@ -2,61 +2,63 @@ const READ_KEY = "reading mode";
 const ENABLE_KEY = "reading mode is active";
 
 
- /*
-    So here's how this works. 
+/*
+   So here's how this works. 
 
-    All of the keys for the various urls are passed over through local storage.
-    A list of urls and associated word counts are passed through an inline script block. 
+   All of the keys for the various urls are passed over through local storage.
+   A list of urls and associated word counts are passed through an inline script block. 
 
-    First, using that list of urls and script block, this file makes a very complicated Story Stats object that represents all of the stories and files imaginable. 
-    Secondly, it reads in all of the files that are read. 
-    Thirdly, initializes and recursively performs all the calculations that it needs. It does so through inheritance. 
-    
+   First, using that list of urls and script block, this file makes a very complicated Story Stats object that represents all of the stories and files imaginable. 
+   Secondly, it reads in all of the files that are read. 
+   Thirdly, initializes and recursively performs all the calculations that it needs. It does so through inheritance. 
+   
 
-        A Calculator is something that has an array of something, and able to get calculatedData from that set of something that it has. 
+       A Calculator is something that has an array of something, and able to get calculatedData from that set of something that it has. 
 
-        There are two kinds of Calculator objects:
-        - Calculator objects that hold other Calculators, known as CalculateOverGroups
-        - Calculator objects that hold basic page data, known as CalculateOverSingles
+       There are two kinds of Calculator objects:
+       - Calculator objects that hold other Calculators, known as CalculateOverGroups
+       - Calculator objects that hold basic page data, known as CalculateOverSingles
 
-        The main object is called Story Stats. It is a Calculator of type CalculateOverGroups. The three Calculators that it holds each represent data from a type of text featured on the site: bite-sized, theme, and quest. 
-        
-        The Calculator holding Bite-Sized data is of type CalculateOverSingles. It's array holds page data.
-        
-        The Calculators holding Theme and Quest data are of type CalculateOverGroups. They each hold an array of MultiPageStory, a kind of CalculateOverSingles (the array of this MultiPageStory has all the page data for each story). MultiPageStories only differ in that they also have a URL identifier. 
+       The main object is called Story Stats. It is a Calculator of type CalculateOverGroups. The three Calculators that it holds each represent data from a type of text featured on the site: bite-sized, theme, and quest. 
+       
+       The Calculator holding Bite-Sized data is of type CalculateOverSingles. It's array holds page data.
+       
+       The Calculators holding Theme and Quest data are of type CalculateOverGroups. They each hold an array of MultiPageStory, a kind of CalculateOverSingles (the array of this MultiPageStory has all the page data for each story). MultiPageStories only differ in that they also have a URL identifier. 
 
-        this is how the structure might look like when populated
+       this is how the structure might look like when populated
 
-        Story Stats
-            CalculateOverSingles
-                Single
-                Single
-                etc
-            CalculateOverGroups
-                MultiPageStories
-                    Single
-                    Single
-                    etc
-                MultiPageStories
-                    Single
-                    Single
-                    etc
-                etc
-            CalculateOverGroups
-                MultiPageStories
-                    Single
-                    Single
-                    etc
-                MultiPageStories
-                    Single
-                    Single
-                    etc
-                etc
-    
-    New story types will need to be hardcoded in. One current pitfall is that there is no 'type name' or anything associated with the highest level of CalculateOverSingles and CalculateOverGroups objects. So many of the genre checking stuff is purely done based on assuming that themes will be the first type in, bitesized will be the second, and quest will be third. 
+       Story Stats
+           CalculateOverSingles
+               Single
+               Single
+               etc
+           CalculateOverGroups
+               MultiPageStories
+                   Single
+                   Single
+                   etc
+               MultiPageStories
+                   Single
+                   Single
+                   etc
+               etc
+           CalculateOverGroups
+               MultiPageStories
+                   Single
+                   Single
+                   etc
+               MultiPageStories
+                   Single
+                   Single
+                   etc
+               etc
+   
+   New story types will need to be hardcoded in. One current pitfall is that there is no 'type name' or anything associated with the highest level of CalculateOverSingles and CalculateOverGroups objects. So many of the genre checking stuff is purely done based on assuming that themes will be the first type in, bitesized will be the second, and quest will be third. 
 
-    Additionally, StoryStats's method called tally and achieve stores the achievements (names, pictures, evaluation logic) as a set of generic objects. 
-            
+   There is also currently no way for something to have both single and group types
+
+   Additionally, StoryStats's method called tally and achieve stores the achievements (names, pictures, evaluation logic) as a set of generic objects. 
+           
 */
 
 
@@ -64,8 +66,7 @@ class Single {
     constructor(url, wordcount) {
         this.url = url;
         this.wordcount = wordcount;
-        //this.hasAnimal;
-        //this.hasDeath;
+        this.specialWords = [];
         this.completed = false;
     }
 }
@@ -136,8 +137,8 @@ class Calculator {
         return true;
     }
     setAsRead(urls) {
-        if(!urls){
-            urls = ["nothing","nothing"]; //this is if its null, to get it going
+        if (!urls) {
+            urls = ["nothing", "nothing"]; //this is if its null, to get it going
         }
 
         for (let unit of this.units) {
@@ -201,6 +202,7 @@ class StoryStats extends CalculateOverGroups {
             name: "Well-Travelled Thematic",
             descriptionText: "Complete all the Theme Stories",
             image: "StrollingDoodle.svg",
+            alt: "Strollin' round town, your arms a-swingin,' you've seen some things and your confidence is growin'",
             logic: function (parent) {
                 if (parent.units[0].calculatedData.completedGroups == parent.units[0].units.length)
                     return true;
@@ -213,6 +215,7 @@ class StoryStats extends CalculateOverGroups {
             name: "Voracious Learner",
             descriptionText: "Complete all the Bite-Sized Stories",
             image: "IceCreamDoodle.svg",
+            alt: "Look at you luggin' round that massive ice cream cone, you're a cherry on top!",
             logic: function (parent) {
                 if (parent.units[1].calculatedData.completedUnits == parent.units[1].units.length)
                     return true;
@@ -227,6 +230,7 @@ class StoryStats extends CalculateOverGroups {
             name: "Dragon Slayer",
             descriptionText: "Complete all the Quest Stories",
             image: "MeditatingDoodle.svg",
+            alt: "Damn you're zen, lotus meditation hair swirlin' and whirlin' above you, warrior will-o-wisp.",
             logic: function (parent) {
                 if (parent.units[2].calculatedData.completedGroups == parent.units[2].units.length)
                     return true;
@@ -242,6 +246,7 @@ class StoryStats extends CalculateOverGroups {
             name: "Half In, Half Out",
             descriptionText: "Reach 50% progress",
             image: "UnboxingDoodle.svg",
+            alt: "Oooh caught in a fever dream, pulling your numb legs to climb outta that cardboard box, you are your own deliverer.",
             logic: function (parent) {
                 if (parent.calculatedData.completedPercentage >= 50)
                     return true;
@@ -255,6 +260,7 @@ class StoryStats extends CalculateOverGroups {
             name: "Hopefully, Time Well Spent",
             descriptionText: "Complete all stories released so far to the site",
             image: "ReadingDoodle.svg",
+            alt: "Nose so far in a book, smells so good, criss-cross applesauce, we'll resume daily life some other time.",
             logic: function (parent) {
                 if (parent.calculatedData.completedPercentage == 100)
                     return true;
@@ -321,25 +327,21 @@ document.addEventListener('DOMContentLoaded', () => {
     let exitChallengeButton = document.getElementById("exit-challenge");
     let enabled = localStorage.getItem(ENABLE_KEY);
 
-    
+    //wipe data function. dialog to confirm. 
     let wipe = document.getElementById("wipe-data");
-    wipe.addEventListener("click", function(){
+    wipe.addEventListener("click", function () {
         let confirmation = document.getElementById("confirmation");
         confirmation.showModal();
         let confirmwipe = document.getElementById("confirm-wipe");
         let actuallyno = document.getElementById("confirm-donot-wipe");
-        actuallyno.addEventListener("click", function(){
+        actuallyno.addEventListener("click", function () {
             confirmation.close();
         });
-        confirmwipe.addEventListener("click", function(){
+        confirmwipe.addEventListener("click", function () {
             localStorage.clear();
             window.location.reload(true);
         })
     });
-
-    /*wipeData.addEventListener(
-        //todo
-    );*/
 
 
     if (enabled) {
@@ -354,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
     */
 
 
-
+    //These four functions manage play/unplayed state. gameIsActive runs the game
     function exposeChallengeState(state) {
         if (state) {
             for (item of notActive) {
@@ -372,22 +374,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-
-    function gameIsActive() {
-
-        toggle(true);
-
-        exitChallengeButton.addEventListener("click", () => {
-            gameIsInactive();
-        });
-        storyStats = populateCalculator(storyData);
-        storyStats.setAsRead(localStorage.getItem(READ_KEY));
-        storyStats.initialize();
-        storyStats.tallyAndAchieve();
-        populateAchievements(storyStats);
-        populateDOM(storyStats);
-    }
-
     function gameIsInactive() {
         toggle(false);
         acceptChallengeButton.addEventListener("click", () => {
@@ -400,6 +386,21 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem(ENABLE_KEY, state);
         exposeChallengeState(state);
     }
+    function gameIsActive() {
+        toggle(true);
+        exitChallengeButton.addEventListener("click", () => {
+            gameIsInactive();
+        });
+        storyStats = populateCalculator(storyData);
+        storyStats.setAsRead(localStorage.getItem(READ_KEY));
+        storyStats.initialize();
+        storyStats.tallyAndAchieve();
+        populateAchievements(storyStats);
+        populateDOM(storyStats);
+    }
+
+    //tediously walks through and assigns wordcount and url data from the inlinescript JSON object.
+    //in the future this should also pass a list of objects with words and true/false values 
     function populateCalculator(storydata) {
         let allstats = new StoryStats();
         let bitesized = new CalculateOverSingles();
@@ -408,28 +409,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let i = 0
         while (i < storydata.length) {
-
+            //currently hardcoded by tag name
             if (storydata[i].type.includes("lili")) {
                 let lili = new Single(storydata[i].url, storydata[i].count);
                 bitesized.units.push(lili);
             }
             if (storydata[i].type.includes("suli")) {
 
-                let suli = new MultiPageStory(storydata[i].url);
+                let suli = new MultiPageStory(storydata[i].url); // hey this technically could also take story.data[i] as a total groups value
+
                 let numberOfChildren = storydata[i].count;
                 i++;
                 for (let j = 0; j < numberOfChildren; j++) {
-
                     let page = new Single(storydata[i].url, storydata[i].count);
                     suli.units.push(page);
                     i++;
                 }
                 theme.units.push(suli);
-                i--;
+                i--; //correction for overshooting
             }
             if (storydata[i].type.includes("wawa")) {
 
-                let wawa = new MultiPageStory(storydata[i].url);
+                let wawa = new MultiPageStory(storydata[i].url); //this too
                 let numberOfChildren = storydata[i].count;
                 i++;
                 for (let j = 0; j < numberOfChildren; j++) {
@@ -439,16 +440,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     i++;
                 }
                 quest.units.push(wawa);
-                i--;
+                i--; 
             }
             i++;
         }
+        //yeah this could be done better
         allstats.units.push(theme);
         allstats.units.push(bitesized);
         allstats.units.push(quest);
         return allstats;
     }
-
+    //populate achievements occurs after storyStats has been populated with 'read completion data', after all the CalculatedData objects have been initialized, and after all of the achievements have been loaded. 
+    //populateAchivements must run before populateDOM so that an accurate 'you've achieved this much' can be loaded into Stats. 
     function populateAchievements(storyStats) {
         let unachieved = document.getElementsByClassName("unearned")[0];
         unachieved.innerHTML = "";
@@ -473,7 +476,8 @@ document.addEventListener('DOMContentLoaded', () => {
             newDiv.classList.add("img-wrap");
             newDiv.appendChild(newImg);
             newImg.src = "../assets/achievements/open-doodles/svg/" + achievement.image;
-            newImg.alt = "";
+            newImg.alt = achievement.alt; 
+            
 
             newHeading.innerText = achievement.name;
             newSpan.innerText = achievement.descriptionText;
@@ -509,6 +513,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let keys = document.getElementsByClassName("target");
         let values = document.getElementsByClassName("delivery");
         let read = storyStats.getAsRead(new Map());
+
+
+
         for (let i = 0; i < keys.length; i++) {
             let key = keys[i].attributes.href.nodeValue.trim();
             let statData = read.get(key);
@@ -516,12 +523,29 @@ document.addEventListener('DOMContentLoaded', () => {
             if (typeof statData === 'string') {
                 values[i].innerText = statData;
             } else if (typeof statData === 'boolean') {
-                if (statData) values[i].innerText = "✅";
-                else values[i].innerText = "❌";
+                if (statData){
+                    values[i].innerText = "Read";
+                    values[i].classList.add("complete");
+                    values[i].classList.add("hidden");
+
+
+
+                } 
+                else {
+                    values[i].innerText = "Unread";
+                    values[i].classList.add("incomplete");
+                    values[i].classList.add("hidden");
+
+
+                }
             } else {
                 values[i].innerText = "🙆";
             }
             //console.log(read.get(keys[i].attributes.href));
+              /*                if (statData) values[i].replaceWith(cloneNode(completedNode));
+                else values[i].replaceWith(cloneNode(incompleteNode));
+
+            */
         }
 
         //all caption values populated (eg: Theme Texts 6/6)

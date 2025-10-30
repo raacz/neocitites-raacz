@@ -22,15 +22,17 @@ Modes:
     font-family: "nasin nanpa";
     src: url(/assets/nasin-nanpa-4.0.2.otf);
 }
-.sp{
+
+.sp {
     font-family: "nasin nanpa";
 }
 
-body{
-    grid-template-rows: auto auto 1fr auto;/*ensuring additional space is added to main container, not to the control section*/
+body {
+    grid-template-rows: auto auto 1fr auto;
+    /*ensuring additional space is added to main container, not to the control section*/
 }
 
-main{
+main {
     max-width: 100%;
 }
 
@@ -44,6 +46,7 @@ main{
 
 
 }
+
 .menu label {
     white-space: nowrap;
 }
@@ -58,9 +61,10 @@ main{
     flex: 1;
     max-width: 35em;
 }
+
 .menu legend {
     text-transform: uppercase;
-    width:fit-content;
+    width: fit-content;
     flex-grow: 0;
     padding-inline-start: 1em;
 
@@ -69,7 +73,8 @@ main{
     float: left;
     box-shadow: inset 0 0 0 0.1em var(--pimeja);
 }
-.menu p{
+
+.menu p {
     margin: 0;
     padding: 0;
 }
@@ -79,42 +84,49 @@ main{
 /*In regular mode, hide table and line*/
 
 /*In line mode, hide regular*/
-:has( :is(input[id="rc-2c"]:checked)) fieldset:is(.texts){
+:has( :is(input[id="rc-2c"]:checked)) fieldset:is(.texts) {
     display: none;
 }
+
 /*In not in line mode, hide regular and table*/
-:has(:is(input[id="rc-2c"]:not(:checked))) fieldset:is(.by-line){
+:has(:is(input[id="rc-2c"]:not(:checked))) fieldset:is(.by-line) {
     display: none;
 }
 
 
 
 /*logic for hiding aspects of image*/
-    /*hide image if box is not checked*/
-:has(input[id="rc-3a"]:not(:checked))  .context img{
+/*hide image if box is not checked*/
+:has(input[id="rc-3a"]:not(:checked)) .context img {
     display: none;
 }
+
 /*also ensure that the caption does not get pushed to the side on its own*/
-:has(input[id="rc-3a"]:not(:checked)) figure.context{
-    max-width: 100%; 
+:has(input[id="rc-3a"]:not(:checked)) figure.context {
+    max-width: 100%;
     width: 100%;
     align-items: center;
     border: none;
 }
-:has(input[id="rc-3a"]:not(:checked)) figcaption{
+
+:has(input[id="rc-3a"]:not(:checked)) figcaption {
     max-width: fit-content;
     width: 100%;
-    border: 0.1em solid var(--pimeja); /*shifting border is required to keep the width at 100% while maintaing the clean look of the original*/
+    border: 0.1em solid var(--pimeja);
+    /*shifting border is required to keep the width at 100% while maintaing the clean look of the original*/
 }
-:has(input[id="rc-3b"]:not(:checked))  .caption{
+
+:has(input[id="rc-3b"]:not(:checked)) .caption {
     display: none;
 }
-:has(input[id="rc-3c"]:not(:checked)) .attr{
+
+:has(input[id="rc-3c"]:not(:checked)) .attr {
     display: none;
 }
+
 /*for spacing reasons, ensure the entire component gets erased when*/
 /*all elements are supposed to be gone are hidden*/
-:has(input[id="rc-3b"]:not(:checked)):has(input[id="rc-3c"]:not(:checked)):has(input[id="rc-3a"]:not(:checked)) figure{
+:has(input[id="rc-3b"]:not(:checked)):has(input[id="rc-3c"]:not(:checked)):has(input[id="rc-3a"]:not(:checked)) figure {
     display: none;
 }
 
@@ -127,10 +139,12 @@ main{
 body:has(input[id="rc-1a"]:not(:checked)) .regular .en {
     display: none;
 }
+
 /*if box is not checked, tok hidden*/
 body:has(input[id="rc-1c"]:not(:checked)) .regular .tok {
     display: none;
 }
+
 /*if box is not checked, sp hidden*/
 body:has(input[id="rc-1b"]:not(:checked)) .regular .sp {
     display: none;
@@ -142,6 +156,7 @@ body:has(input[id="rc-1b"]:not(:checked)) .regular .sp {
 body:has(input[id="rc-bl-1a"]:checked) .line .sp {
     display: none;
 }
+
 body:has(input[id="rc-bl-1a"]:checked) .line details[lang="tok"] {
     display: none;
 }
@@ -152,6 +167,7 @@ body:has(input[id="rc-bl-1a"]:checked) .line details[lang="tok"] {
 body:has(input[id="rc-bl-1b"]:checked) .line p[lang="tok"] {
     display: none;
 }
+
 /*hide english details*/
 body:has(input[id="rc-bl-1b"]:checked) .line details[lang="en"] {
     display: none;
@@ -163,8 +179,9 @@ body:has(input[id="rc-bl-1b"]:checked) .line details[lang="en"] {
 body:has(input[id="rc-bl-1c"]:checked) .line p[lang="tok"] {
     display: none;
 }
+
 /*hide tok details*/
-body:has(input[id="rc-bl-1c"]:checked) .line details[lang="tok"]  {
+body:has(input[id="rc-bl-1c"]:checked) .line details[lang="tok"] {
     display: none;
 }
 
@@ -176,10 +193,12 @@ body:has(input[id="rc-bl-1c"]:checked) .line details[lang="tok"]  {
 body:has(input[id="rc-1a"]:not(:checked)) .table [lang="en"] {
     display: none;
 }
+
 /*if box is not checked, tok hidden*/
 body:has(input[id="rc-1c"]:not(:checked)) .table [lang="tok"] {
     display: none;
 }
+
 /*if box is not checked, sp hidden*/
 body:has(input[id="rc-1b"]:not(:checked)) .table .sp {
     display: none;
@@ -191,31 +210,36 @@ body:has(input[id="rc-1b"]:not(:checked)) .table .sp {
 
 /*logic for hiding different modes*/
 /*In regular mode, hide table and line*/
-:has( :is(input[id="rc-2a"]:checked)) :is(.lines, .table){
+:has( :is(input[id="rc-2a"]:checked)) :is(.lines, .table) {
     display: none;
 }
+
 /*In quiz mode, hide table, line, and english*/
-:has( :is(input[id="rc-2b"]:checked)) 
-:is(.lines, .table, 
-label:has(input[id="rc-1a"]), /* as well as English toggle*/
-fieldset[id="rc-3"], /* image settings*/
-figure, .en /* and the image itself*/
-){
+:has( :is(input[id="rc-2b"]:checked)):is(.lines, .table,
+    label:has(input[id="rc-1a"]),
+    /* as well as English toggle*/
+    fieldset[id="rc-3"],
+    /* image settings*/
+    figure, .en
+
+    /* and the image itself*/
+) {
     display: none;
 }
 
 /*In quiz mode, hide table and line*/
-:has( :is(input[id="rc-2b"]:checked)) p{
+:has( :is(input[id="rc-2b"]:checked)) p {
     line-height: 1.1em;
 
-} 
+}
 
 /*In line mode, hide regular and table*/
-:has( :is(input[id="rc-2c"]:checked)) :is(.regular, .table){
+:has( :is(input[id="rc-2c"]:checked)) :is(.regular, .table) {
     display: none;
 }
+
 /*In table mode, hide regular and line*/
-:has(:is(input[id="rc-2d"]:checked)) :is(.regular, .lines){
+:has(:is(input[id="rc-2d"]:checked)) :is(.regular, .lines) {
     display: none;
 }
 
@@ -241,7 +265,7 @@ figure, .en /* and the image itself*/
 
 }
 
-h1{
+h1 {
     width: 100%;
     text-align: center;
     margin-block: 0.5em 1em;
@@ -255,6 +279,7 @@ figure {
     row-gap: 1em;
 
 }
+
 figure img {
     max-width: 80%;
     max-height: 20em;
@@ -263,39 +288,47 @@ figure img {
 
 
 }
-figcaption{
+
+figcaption {
     width: 100%;
     max-width: 20em;
     border-bottom: none;
 
 
 }
-figcaption p{
+
+figcaption p {
     background-color: var(--walo-pimeja);
     margin: 0;
     line-height: 1.6em;
 }
-figcaption a:is(:visited, :not(:visited)){
+
+figcaption a:is(:visited, :not(:visited)) {
     color: var(--pimeja);
 }
-figcaption .attr{
+
+figcaption .attr {
     display: block;
 }
-figcaption{
-}
-p:last-of-type{
+
+figcaption {}
+
+p:last-of-type {
     margin-bottom: 0;
 
 }
+
 .attr {
     background-color: var(--walo-lili);
     font-size: 0.8em;
     line-height: 1em;
 }
-nav ul{
+
+nav ul {
     padding: 0;
 }
-.introtext{
+
+.introtext {
     padding: 0.5em;
 }
 
@@ -307,19 +340,22 @@ nav ul{
     column-gap: 1em;
     flex-wrap: wrap;
 }
-.regular div:is(.en, .tok){
+
+.regular div:is(.en, .tok) {
     min-width: 9em;
 }
-.regular div:is(.sp){
+
+.regular div:is(.sp) {
     width: fit-content;
     min-width: 6em;
     max-width: max-content;
-    flex:1;
+    flex: 1;
 }
 
-.regular p:empty{
+.regular p:empty {
     display: none;
-  }
+}
+
 .regular :is(.tok, .en) {
     flex: 1.5;
     max-width: 20em;
@@ -328,9 +364,9 @@ nav ul{
 
 
 
-/*line mode styling*/   
+/*line mode styling*/
 
-.line{
+.line {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -338,20 +374,24 @@ nav ul{
     border-bottom: 0.1em solid var(--pimeja);
     position: relative;
 }
-.line details[open] summary{
+
+.line details[open] summary {
     position: absolute;
     right: 0;
     top: 0;
 }
-.line summary::after{
+
+.line summary::after {
     content: '';
     position: absolute;
-    top: 0;    content: '';
+    top: 0;
+    content: '';
 
     bottom: 0;
     left: 0;
     right: 0;
 }
+
 /*.line details[open] summary::after {
     content: 'Close';
     text-align: right;
@@ -362,13 +402,15 @@ nav ul{
     margin-block-start:-2em;
     background: transparent; 
 }*/
-.line:focus-within{
+.line:focus-within {
     outline: 0.2em solid var(--pimeja);
     border-radius: 0.1em;
 }
-summary:focus{
+
+summary:focus {
     outline: none;
 }
+
 .line p:not(.detail p) {
     position: relative;
 }
@@ -377,43 +419,47 @@ summary:focus{
     padding-top: 2em;
     flex: 50%;
 }
-.line:has(details[open]){
+
+.line:has(details[open]) {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
 /*table mode styling*/
 
-.table :is(tr){
+.table :is(tr) {
     display: flex;
     column-gap: 1em;
     border-bottom: 0.1em solid var(--pimeja);
 }
-.table :is(td, th):not(:has(.sp)){
+
+.table :is(td, th):not(:has(.sp)) {
     flex: 3;
     max-width: 20em;
 }
-.table :is(td, th):has(.sp){
+
+.table :is(td, th):has(.sp) {
     max-width: fit-content;
     flex: 1;
     flex: auto;
 }
 
-  
 
 
-h1{
+
+h1 {
     font-size: 1.1em;
     font-family: Jost;
 }
 
 
-.back-forth{
+.back-forth {
     display: flex;
     justify-content: space-between;
     margin-block-start: -3em;
 }
-.back-forth a:is(:visited, :not(:visited)){
+
+.back-forth a:is(:visited, :not(:visited)) {
     background-color: var(--walo);
     color: var(--pimeja);
     text-decoration: none;
@@ -422,6 +468,7 @@ h1{
     padding-inline: 0.25em;
 
 }
+
 .visually-hidden {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
@@ -432,44 +479,69 @@ h1{
     width: 1px;
 }
 
-.reading-list-checkbox{
-    box-shadow: 0 0 0 0.2em var(--pimeja);
-    width: 100%;
-    display: none;
-    margin-block-start: 0.1em;
+.pseudo-footer {
     background-color: black;
-    color: white;
-    text-align: center;
+    width: 100%;
+    margin-block-start: 0.1em;
     margin-inline: auto;
+    box-shadow: 0 0 0 0.2em var(--pimeja);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
-.reading-list-checkbox input{
+.if-enabled{
+    display: none;
+}
+.pseudo-footer a:is(:visited, :not(:visited)){
+        color: white;
+        text-decoration: underline;
+}
+.hidden
+.pseudo-footer *{
+    flex: 1;
+    text-align: center;
+}
+
+.reading-list-checkbox {
+    display: none;
+    text-align: center;
+    line-height: 1em;
+}
+
+.reading-list-checkbox input {
     margin-inline: 1em;
 }
 
 
 
 @media (max-width: 32em) {
-    .selo{
+    .selo {
         padding-inline: 0;
         padding-block-end: 2em;
         margin-inline: 0;
         border-block: 0.2em solid black;
         box-shadow: none;
     }
+    .pseudo-footer {
+        margin-block-start: 0;
+    }
+
     figure img {
         max-height: 100%;
         width: 100%;
-        max-width: 100%;;
+        max-width: 100%;
 
     }
-    figcaption{
+
+    figcaption {
         max-width: 100%;
         width: 100%;
     }
-    .back-forth{
+
+    .back-forth {
         justify-content: center;
     }
 
 }
-
-

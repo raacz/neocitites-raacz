@@ -1,7 +1,7 @@
 ---
 layout: _layouts/bt/texts-base.html
 stylesheet: /assets/css/tp.css
-title: Reading List
+title: Reading Tracker
 ---
 
 <style>
@@ -232,12 +232,28 @@ title: Reading List
     }
     .stats-tail{
         display: flex;
+        column-gap: 0.2em;
         flex-wrap: wrap;
 
     }
     .stats-tail p{
         flex: 1;
         min-width: 8em;
+
+    }
+
+    .delivery svg{
+        max-width: 100%;
+        width: 2em;
+        height: 2em;
+    }
+    tr:has(.complete) {
+        background-color: rgb(227, 251, 227);
+
+    }
+    tr:has(.incomplete) {
+        background-color: rgb(247, 219, 219);
+
 
     }
 </style>
@@ -247,24 +263,45 @@ title: Reading List
     <div class="easy-exit">
         <button class="postchallenge" id="exit-challenge">Exit the Challenge <br>(Data is Saved)</button>
 
-        <h1 id="main-content">Reading List</h1>
+        <h1 id="main-content">Reading Tracker</h1>
+
+        <svg width="200" height="300" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+  <path 
+    d="M 45 160 L 75 230 L 150 45" 
+    fill="none" 
+    stroke="var(--pimeja-lili)" 
+    stroke-width="3" 
+    stroke-linecap="square" 
+    stroke-linejoin="miter"
+  />
+  <path 
+    d="M 45 160 L 75 230 L 150 45 L 155 45 L 80 235 L 40 160 Z" 
+    fill="var(--walo-pimeja)" 
+    stroke="var(--pimeja-lili)" 
+    stroke-width="2" 
+    stroke-linejoin="miter"
+  />
+</svg>
+
+
+
 
 
     </div>
 
 
     <div class="prechallenge">
-        <h2>About the Reading List</h2>
+        <h2>About the Reading Tracker</h2>
         <p><strong>Do you enjoy gamification? Need motivation to read?</strong></p>
         <p><strong>Your challenge, should you choose to accept it, is to read every single story on this
-                website.</strong> Upon enabling the reading list, this page will be filled with large charts listing
+                website.</strong> Upon enabling the reading tracker, this page will be filled with large charts listing
             every single text, each with an 'X' next to them.</p>
         <p>Additionally, when you visit any beginner text, a small checkbox will appear at the bottom of every page. You
             can check that box. Returning to this page, it update that text from an 'X' to a checkmark!</p>
         <p>You will also be able to view exactly how many words you've read, how many texts you've read, and what
             percentage of the website you've completed!</p>
-        <p>Progress on your reading list will be saved to your device. You can choose to close the reading list at any
-            time and wipe out all your reading data.</p>
+        <p>Progress on your reading tracker will be saved to your device. You can choose to pause the reading tracker at any
+            time if you find it distracting. You can also choose to wipe out all your reading data.</p>
 
         Do you accept?
         <button id="challenge-accepted">I accept the challenge.</button>
@@ -272,7 +309,7 @@ title: Reading List
     <div class="postchallenge">
 
         <p>
-            Beginner Texts in Toki Pona currently has {{ collections.lili.length | plus: collections.sequence.length }}
+            Beginner Texts in Toki Pona currently has TODO
             pages. Read pages to progress and unlock achievements!
         </p>
 
