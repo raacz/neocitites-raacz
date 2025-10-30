@@ -5,7 +5,7 @@ external: https://commons.wikimedia.org/wiki/File:Baggerwerkzaamheden_op_de_Lang
 name: Baggerwerkzaamheden op de Langwarder Wielen (03-30-2018) 16
 source:  Dominicus Johannes Bergsma
 license: CC-BY-SA-4.0
-alt:  
+alt:  The arm of a large red crane towers over trees to pick up an enormous pipe.
 media: "/toki-pona/beginner-material/assets/lili-54.jpg"
 tags: lili
 ---

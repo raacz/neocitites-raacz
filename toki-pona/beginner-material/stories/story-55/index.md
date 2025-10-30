@@ -5,7 +5,7 @@ external: https://commons.wikimedia.org/wiki/File:Krabbelurer.jpg
 name: Krabbelurer
 source:  Ricciarellis
 license: CC-BY-SA-4.0
-alt:  
+alt:  A towering plate of dime pancakes heaped until no more can physically be added.
 media: "/toki-pona/beginner-material/assets/lili-55.jpg"
 tags: lili
 ---
