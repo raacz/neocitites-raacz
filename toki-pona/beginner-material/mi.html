@@ -97,7 +97,7 @@ title: Reading Tracker
         color: var(--walo);
     }
 
-    details h2 {
+    details :is(h2) {
         font-size: 1em;
     }
 
@@ -156,7 +156,8 @@ title: Reading Tracker
         margin: 0;
         padding: 0;
     }
-    .achievements li:not(:has(img)){
+
+    .achievements li:not(:has(img)) {
         max-width: none;
         display: block;
     }
@@ -207,55 +208,117 @@ title: Reading Tracker
         border-block-start: 0.1em dashed black;
         margin-block-start: 3em;
     }
-    #progress-container{
+
+    #progress-container {
         border: 0.2em solid black;
         grid-column-start: 1;
         grid-column-end: 3;
-    
+
     }
-    #progress-bar{
+
+    #progress-bar {
         height: 2em;
         background-color: var(--walo-pimeja);
     }
-    .stats-head{
+
+    .stats-head {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
-    :is(.stats-head, .stats-tail) p{
+
+    :is(.stats-head, .stats-tail) p {
         font-size: 0.9em;
 
     }
-    .stats-head :nth-child(2){
+
+    .stats-head :nth-child(2) {
         align-self: last baseline;
         justify-self: flex-end;
         text-align: right;
     }
-    .stats-tail{
+
+    .stats-tail {
         display: flex;
         column-gap: 0.2em;
         flex-wrap: wrap;
 
     }
-    .stats-tail p{
+
+    .stats-tail p {
         flex: 1;
         min-width: 8em;
 
     }
 
-    .delivery svg{
+    .delivery svg {
         max-width: 100%;
         width: 2em;
         height: 2em;
     }
+
     tr:has(.complete) {
         background-color: rgb(227, 251, 227);
 
     }
+
     tr:has(.incomplete) {
         background-color: rgb(247, 219, 219);
 
 
     }
+
+    dialog:open {
+        position: fixed;
+        display: flex;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60vw;
+        flex-direction: column;
+        align-items: center;
+    }
+    .postchallenge details :is(figure,p) {
+        padding-inline: 1em;
+    }
+    .postchallenge details img {
+        max-width: 100%;
+    }
+    .postchallenge details h3{
+        font-size: 1em;
+        padding-inline: 0.75em;
+
+    }
+
+    dialog button {
+        margin: 0.5em auto;
+    }
+
+    dialog fieldset {
+        border: none;
+    }
+    .skip-in-main{
+        position:relative;
+    
+    }
+    :is(.skip-in-main a:not(:focus):not(:active), .blend-in){
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+    .skip-in-main a:focus-visible{
+        position: absolute;
+        display: block;
+        right: 0;
+        width: auto;
+        height: auto;
+        top: 0;
+        margin-block-start: -1em;
+    }
+
 </style>
 
 
@@ -265,23 +328,6 @@ title: Reading Tracker
 
         <h1 id="main-content">Reading Tracker</h1>
 
-        <svg width="200" height="300" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
-  <path 
-    d="M 45 160 L 75 230 L 150 45" 
-    fill="none" 
-    stroke="var(--pimeja-lili)" 
-    stroke-width="3" 
-    stroke-linecap="square" 
-    stroke-linejoin="miter"
-  />
-  <path 
-    d="M 45 160 L 75 230 L 150 45 L 155 45 L 80 235 L 40 160 Z" 
-    fill="var(--walo-pimeja)" 
-    stroke="var(--pimeja-lili)" 
-    stroke-width="2" 
-    stroke-linejoin="miter"
-  />
-</svg>
 
 
 
@@ -300,7 +346,8 @@ title: Reading Tracker
             can check that box. Returning to this page, it update that text from an 'X' to a checkmark!</p>
         <p>You will also be able to view exactly how many words you've read, how many texts you've read, and what
             percentage of the website you've completed!</p>
-        <p>Progress on your reading tracker will be saved to your device. You can choose to pause the reading tracker at any
+        <p>Progress on your reading tracker will be saved to your device. You can choose to pause the reading tracker at
+            any
             time if you find it distracting. You can also choose to wipe out all your reading data.</p>
 
         Do you accept?
@@ -309,15 +356,52 @@ title: Reading Tracker
     <div class="postchallenge">
 
         <p>
-            Beginner Texts in Toki Pona currently has TODO
+            Beginner Texts in Toki Pona currently has <span id="total-pages">?</span>
             pages. Read pages to progress and unlock achievements!
         </p>
+        <details>
+            <summary>
+                <h2>About</h2>
+
+            </summary>
+
+             <h3>How To Track</h3>
+
+            <figure>
+                <figcaption>
+                    When the Tracker is active, a link to the Tracker (the first element, circled in green) and a
+                    checkbox (the second element, squared off in red) will now be visible.
+                </figcaption>
+                <img src="/toki-pona/beginner-material/assets/tutorials/reading-tracker.png"
+                    alt="Screenshot of the reading interface, attention drawn to the bottom row of content.">
+            </figure>
+
+            <p>The stories that you mark as read will be saved directly to your browser. If you view Beginner Texts in Toki Pona in incognito mode, or using a different browser, or a different device, you will not be able to access your progress.</p>
+
+            <p>New stories being released to the site will not effect the stories that you've already read.</p>
+
+            
+
+            <h3>Philosophy Behind the Tracker</h3>
+            <p>Please use this site however you like. The Reading Tracker encourages you to read <em>every</em> text on the site, but not all the stories may be appealing or even enjoyable for you.</p>
+            <p>I've included this because I'm the kind of person who, as a voracious reader in my youth, liked to keep lists of books that I've read as a matter of principle.</p>
+            <p>I know that if I was just starting out on my reading journey, I would have appreciated something like this. But you might be a different kind of person, and that's totally okay! Feel free to use the Reading Tracker only to the extent that is motivating and sustainable. Also, feel free to take a break from it by pressing the 'Exit the Challenge' button in the top right of this page.</p>
+
+            <h3>Measuring Progress and Detailled Statistics</h3>
+            <p>Progress is measured as the amount of words you've read compared to the total amount of words available on the site.</p>
+
+            <p>If you are techy and are itching to get even more detailed statistics, take a look at the output from the console. Also, there is likely a way for you to download and upload your own localStorage if you are super keen on not losing your progress.</p>
+
+
+           
+        </details>
+
 
 
         <div class="stats-head">
             <h2>Stats</h2>
-                <p id="stats_percentDone">Your Progress:</p>
-                <div id="progress-container">
+            <p id="stats_percentDone">Your Progress:</p>
+            <div id="progress-container">
                 <div id="progress-bar"></div>
             </div>
         </div>
@@ -330,7 +414,10 @@ title: Reading Tracker
 
 
 
-        <h2>Checklists</h2>
+        <div class="skip-in-main">
+            <h2 id="return-to-table">Checklists</h2>
+            <a href="#skip-table">Skip Table</a>
+        </div>
 
         <div class="checklists">
             <table class="suli">
@@ -340,7 +427,7 @@ title: Reading Tracker
                 </caption>
                 <thead>
                     <th>Story</th>
-                    <th class="blend-in">Subpages</th>
+                    <th><span class="blend-in">Subpages</span> </th>
                     <th>Status</th>
                 </thead>
                 <tbody>
@@ -351,7 +438,7 @@ title: Reading Tracker
                         <td rowspan="{{ post.data.pageURLs.length | plus: 1}}"><a class="target"
                                 href="{{ post.url }} ">{{
                                 post.data.title}}</a></td>
-                        <td class="blend-in">All</td>
+                        <td><span class="blend-in">All</span> </td>
                         <td class="delivery">{{ post.data.pageURLs.length }}/{{ post.data.pageURLs.length }}</td>
                     </tr>
                     {% assign number = 1 %}
@@ -397,7 +484,7 @@ title: Reading Tracker
                 </caption>
                 <thead>
                     <th>Story</th>
-                    <th class="blend-in">Subpages</th>
+                    <th><span class="blend-in">Subpages</span> </th>
                     <th>Status</th>
                 </thead>
                 <tbody>
@@ -408,7 +495,7 @@ title: Reading Tracker
                         <td rowspan="{{ post.data.pageURLs.length | plus: 1}}"><a class="target"
                                 href="{{ post.url }} ">{{
                                 post.data.title}}</a></td>
-                        <td class="blend-in">All</td>
+                        <td><span class="blend-in">All</span> </td>
                         <td class="delivery">{{ post.data.pageURLs.length }}/{{ post.data.pageURLs.length }}</td>
                     </tr>
                     {% assign number = 1 %}
@@ -432,7 +519,11 @@ title: Reading Tracker
         </div>
 
 
-        <h2>Achievements</h2>
+        <div class="skip-in-main">
+            <a href="#return-to-table">Return to Table Start</a>
+
+            <h2 tabindex="-1" id="skip-table">Achievements</h2>
+        </div>
 
         <!-- images from https://generator.opendoodles.com/ -->
 
@@ -442,7 +533,7 @@ title: Reading Tracker
         <h3>Unearned</h3>
 
         <ul role="list" class="achievements unearned">
-          
+
 
         </ul>
 
@@ -450,11 +541,13 @@ title: Reading Tracker
             <h2 id="danger-heading">DANGER ZONE</h2>
             <p id="dangerous-warning">This action cannot be reversed!</p>
 
-            <button aria-haspopup="dialog" aria-describedby="dangerous-warning" class="danger" id="wipe-data">Reset My Reading Data</button>
+            <button aria-haspopup="dialog" aria-describedby="dangerous-warning" class="danger" id="wipe-data">Reset My
+                Reading Data</button>
             <dialog id="confirmation" closedby="none">
                 <h3>Hold on There!</h3>
                 <fieldset>
-                    <p>Are you sure you want to wipe the names of all stories you have marked as 'Read' from your device's cache?</p>
+                    <p>Are you sure you want to wipe the names of all stories you have marked as 'Read' from your
+                        device's cache?</p>
                     <button autofocus id="confirm-donot-wipe">No, do not wipe my data</button>
                     <button id="confirm-wipe">Yes, wipe my data. I understand that my data cannot be retrieved.</button>
                 </fieldset>

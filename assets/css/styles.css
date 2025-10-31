@@ -62,7 +62,7 @@ header{
 
 
 
-#skip {
+.skip {
   position: absolute;
   left: -10000px;
   top: 0;
@@ -70,7 +70,7 @@ header{
   height: 1px;
   overflow: hidden;
 }
-#skip:focus {
+.skip:focus {
     background-color: var(--pimeja);
     color: var(--walo-pimeja);
   left: 0;

@@ -71,7 +71,7 @@ The contexualizing descriptions are duplicated as alt text. If using a screenrea
 
 
 
-## Notes on Language Use
+## Notes
 
 
 ### About my English Translations
@@ -163,6 +163,16 @@ Restrictions:
 
 
 
+</details>
+
+### About Creative Commons
+
+<details markdown="1">
+  <summary>
+    <h4>Non-Standard Words</h4>
+  </summary>
+  
+  In the stories, I use the same words that I 
 </details>
 
 

@@ -72,55 +72,92 @@ class Single {
 }
 class CalculatedData {
     constructor(c) {
-        let completedUnits = 0;
+
+
         let completedWords = 0
         let totalWords = 0;
-        let totalUnits = 0;
+        let completedPercentage;
+
+        let completedGroups = 0;
         let totalGroups = 0;
-        if (c instanceof CalculateOverSingles) {
-            for (let single of c.units) {
-                totalWords = totalWords + single.wordcount;
-                totalUnits = totalUnits + 1;
-                if (single.completed) {
-                    completedUnits = completedUnits + 1;
-                    completedWords = completedWords + single.wordcount;
+
+        let completedSingles = 0;
+        let totalSingles = 0;
+
+        let completedUnits = 0;
+        let totalUnits = 0;
+
+        let specialWords = [];
+
+        for (let item of c.units) {
+            if (item instanceof Single) {
+                totalWords = totalWords + item.wordcount;
+                totalSingles = totalSingles + 1;
+                if (item.completed) {
+                    completedSingles = completedSingles + 1;
+                    completedWords = completedWords + item.wordcount;
                 }
             }
+            if (item instanceof Calculator) {
+                totalSingles = totalSingles + item.calculatedData.totalSingles;
+                completedSingles = completedSingles + item.calculatedData.completedSingles;
 
 
-        }
-        if (c instanceof CalculateOverGroups) {
-            for (let group of c.units) {
-                totalGroups = totalGroups + 1;
-                totalUnits = totalUnits + group.calculatedData.totalUnits;
-                totalWords = totalWords + group.calculatedData.totalWords;
-                completedWords = completedWords + group.calculatedData.completedWords;
-                completedUnits = completedUnits + group.calculatedData.completedUnits;
-
-                if (group instanceof MultiPageStory) {
-                    let pagesCompleted = (group.calculatedData.completedWords / group.calculatedData.totalWords) * 100;
-                    if (pagesCompleted == 100) {
-                        if (this.completedGroups) this.completedGroups = this.completedGroups + 1;
-                        else this.completedGroups = 1;
+                totalWords = totalWords + item.calculatedData.totalWords;
+                completedWords = completedWords + item.calculatedData.completedWords;
+                if (item.units[0] instanceof Single) {
+                    totalGroups = totalGroups + 1;
+                    if (item.calculatedData.totalUnits == item.calculatedData.completedUnits) {
+                        completedGroups = completedGroups + 1;
                     }
-
+                } else {
+                    totalGroups = totalGroups + item.calculatedData.totalGroups;
+                    completedGroups = completedGroups + item.calculatedData.completedGroups;
                 }
             }
-            this.totalGroups = totalGroups;
+        }
+        if (totalSingles != 0) {
+            this.totalSingles = totalSingles;
+            this.completedSingles = completedSingles;
+
 
         }
-        let completedPercentage = (completedWords / totalWords) * 100;
-        this.completedUnits = completedUnits;
+        if (totalGroups != 0) {
+            this.totalGroups = totalGroups;
+            this.completedGroups = completedGroups;
+
+            totalUnits = totalUnits + totalGroups;
+            completedUnits = completedUnits + completedGroups;
+        }else{
+            totalUnits = totalUnits + totalSingles;
+            completedUnits = completedUnits + completedSingles;
+        }
+
+
+        completedPercentage = (completedWords / totalWords) * 100;
         this.completedWords = completedWords;
-        this.completedPercentage = completedPercentage;
         this.totalWords = totalWords;
+
+        if (completedPercentage == 100) {
+            this.completed = true;
+        } else {
+            this.completed = false;
+
+        }
+
+        this.completedPercentage = completedPercentage;
+
         this.totalUnits = totalUnits;
+        this.completedUnits = completedUnits;
 
     }
 }
 class Calculator {
-    constructor() {
+    constructor(url) {
         this.units = [];
+    }
+    setCalculatorUrl(url) {
+        this.url = url;
     }
     initialize() {
         for (let unit of this.units) {
@@ -155,11 +192,10 @@ class Calculator {
     getAsRead(map) {
         for (let unit of this.units) {
             if (unit instanceof Calculator) {
-                if (unit instanceof MultiPageStory) {
-                    map.set(unit.url, unit.pagesOutOf());
-                }
                 unit.getAsRead(map);
-
+                if (unit.units[0] instanceof Single) {
+                    map.set(unit.url, unit.outOf());
+                }
             }
             else {
                 map.set(unit.url, unit.completed);
@@ -167,29 +203,16 @@ class Calculator {
         }
         return map;
     }
-
-}
-class CalculateOverGroups extends Calculator {
-    constructor() {
-        super();
-    }
-}
-class CalculateOverSingles extends Calculator {
-    constructor() {
-        super();
+    outOf() {
+        let mi = {
+            string: this.calculatedData.completedUnits + "/" + this.calculatedData.totalUnits,
+            boolean: this.calculatedData.completed,
+        }
+        return mi;
     }
 
 }
-class MultiPageStory extends CalculateOverSingles {
-    constructor(url) {
-        super();
-        this.url = url;
-    }
-    pagesOutOf() {
-        return this.calculatedData.completedUnits + "/" + this.calculatedData.totalUnits;
-    }
-}
-class StoryStats extends CalculateOverGroups {
+class StoryStats extends Calculator {
     constructor() {
         super();
     }
@@ -301,12 +324,11 @@ class StoryStats extends CalculateOverGroups {
     setAchievements(counter) {
         this.achieved = counter;
     }
-    getStoriesCompleted() {
+    getStories() {
         let total = 0;
         let complete = 0;
         for (let unit of this.units) {
-            console.log(unit);
-            if (unit instanceof CalculateOverSingles) {
+            if (unit.units[0] instanceof Single) {
                 complete = complete + unit.calculatedData.completedUnits;
                 total = total + unit.calculatedData.totalUnits;
             } else {
@@ -314,9 +336,12 @@ class StoryStats extends CalculateOverGroups {
                 total = total + unit.calculatedData.totalGroups;
             }
         }
-
-        return complete + " out of " + total;
+        return {
+            total : total,
+            completed : complete,
+        };
     }
+
 
 }
 
@@ -403,9 +428,9 @@ document.addEventListener('DOMContentLoaded', () => {
     //in the future this should also pass a list of objects with words and true/false values 
     function populateCalculator(storydata) {
         let allstats = new StoryStats();
-        let bitesized = new CalculateOverSingles();
-        let theme = new CalculateOverGroups();
-        let quest = new CalculateOverGroups();
+        let bitesized = new Calculator();
+        let theme = new Calculator();
+        let quest = new Calculator();
 
         let i = 0
         while (i < storydata.length) {
@@ -416,7 +441,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (storydata[i].type.includes("suli")) {
 
-                let suli = new MultiPageStory(storydata[i].url); // hey this technically could also take story.data[i] as a total groups value
+                let suli = new Calculator();
+                suli.setCalculatorUrl(storydata[i].url);
+                // hey this technically could also take story.data[i] as a total groups value
 
                 let numberOfChildren = storydata[i].count;
                 i++;
@@ -430,7 +457,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (storydata[i].type.includes("wawa")) {
 
-                let wawa = new MultiPageStory(storydata[i].url); //this too
+                let wawa = new Calculator();
+                wawa.setCalculatorUrl(storydata[i].url);
+
                 let numberOfChildren = storydata[i].count;
                 i++;
                 for (let j = 0; j < numberOfChildren; j++) {
@@ -440,7 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     i++;
                 }
                 quest.units.push(wawa);
-                i--; 
+                i--;
             }
             i++;
         }
@@ -466,7 +495,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         for (let achievement of storyStats.achievements) {
-            console.log(achievement.name);
             let newLI = document.createElement("li");
             let newDiv = document.createElement("div");
             let newHeading = document.createElement("h3");
@@ -476,8 +504,8 @@ document.addEventListener('DOMContentLoaded', () => {
             newDiv.classList.add("img-wrap");
             newDiv.appendChild(newImg);
             newImg.src = "../assets/achievements/open-doodles/svg/" + achievement.image;
-            newImg.alt = achievement.alt; 
-            
+            newImg.alt = achievement.alt;
+
 
             newHeading.innerText = achievement.name;
             newSpan.innerText = achievement.descriptionText;
@@ -520,55 +548,49 @@ document.addEventListener('DOMContentLoaded', () => {
             let key = keys[i].attributes.href.nodeValue.trim();
             let statData = read.get(key);
             ;
-            if (typeof statData === 'string') {
-                values[i].innerText = statData;
-            } else if (typeof statData === 'boolean') {
-                if (statData){
+            if (typeof statData === 'boolean') {
+                if (statData) {
                     values[i].innerText = "Read";
                     values[i].classList.add("complete");
-                    values[i].classList.add("hidden");
 
-
-
-                } 
+                }
                 else {
                     values[i].innerText = "Unread";
                     values[i].classList.add("incomplete");
-                    values[i].classList.add("hidden");
-
+                }
+            } else { //outof must have been triggered
+                values[i].innerText = statData.string;
+                if (statData.boolean) {
+                    values[i].classList.add("complete");
+                } else {
+                    values[i].classList.add("incomplete");
 
                 }
-            } else {
-                values[i].innerText = "🙆";
             }
             //console.log(read.get(keys[i].attributes.href));
-              /*                if (statData) values[i].replaceWith(cloneNode(completedNode));
-                else values[i].replaceWith(cloneNode(incompleteNode));
+            /*                if (statData) values[i].replaceWith(cloneNode(completedNode));
+              else values[i].replaceWith(cloneNode(incompleteNode));
 
-            */
+          */
         }
 
         //all caption values populated (eg: Theme Texts 6/6)
-        let tallyType = document.getElementsByClassName("tally");
+        let tallyByType = document.getElementsByClassName("tally");
         for (let i = 0; i < storyStats.units.length; i++) {
             let type = storyStats.units[i];
             let completed = -1;
-            if (type instanceof CalculateOverSingles) {
-                completed = type.calculatedData.completedUnits;
-            }
-            if (type instanceof CalculateOverGroups) {
-                completed = type.calculatedData.completedGroups;
-            }
+            completed = type.calculatedData.completedUnits;
 
-            tallyType[i].innerText = completed + "/" + type.units.length;
+            tallyByType[i].innerText = completed + "/" + type.calculatedData.totalUnits;
         }
+
+        document.getElementById("total-pages").innerText = storyStats.calculatedData.totalSingles;
 
 
         //in the future, try turning this into a function so that it is more readable. 
 
         //various stats to be displayed
         let percentageBox = document.getElementById("progress-bar");
-        console.log(percentageBox);
         percentageBox.style.width = Math.round(storyStats.calculatedData.completedPercentage) + "%";
 
         let percentComplete = storyStats.calculatedData.completedPercentage.toFixed(2) + "%";
@@ -580,16 +602,16 @@ document.addEventListener('DOMContentLoaded', () => {
         stats.innerText = "Total Words Read:" + "\n" + storyStats.calculatedData.completedWords + " words";
 
         stats = document.getElementById("stats_pageTotal");
-        stats.innerText = "Total Pages Read:" + "\n" + storyStats.calculatedData.completedUnits + " pages";
+        stats.innerText = "Total Pages Read:" + "\n" + storyStats.calculatedData.completedSingles + " out of "+storyStats.calculatedData.totalSingles;
 
 
         stats = document.getElementById("stats_storyTotal");
-        stats.innerText = "Stories Completed: \n" + storyStats.getStoriesCompleted();
-
+        let stories = storyStats.getStories();
+        stats.innerText = "Stories Completed: \n" + stories.completed+" out of "+stories.total;
 
         stats = document.getElementById("stats_achievementsTotal");
         stats.innerText = "Achievements Secured:\n" + storyStats.achieved + " out of " + storyStats.achievements.length;
-        console.log(storyStats.achieved);
+        console.log(storyStats);
 
     }
 

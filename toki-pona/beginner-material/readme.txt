@@ -4,28 +4,26 @@ responsive:
 content:
 - finish the sp article
 - make three quest stories
+- need a tutorial page
 
 
 accessibility:
 - ensure proper language tagging throughout
 - consider making invisible headings
 - enable character key shortcuts
+- dark mode
+- styled focus links
 
 technical:
 - ensure that tok [!] can be replaced with sp [a] in sorting algo
 - rate each theme by a percentage difficulty, sort and iterate by that percentage. 
 
 reading list todo:
-- fix the group units because they are undefining HARD
-- add skiptable link
-- all group units/single units need to be calculated better. just to deal with the overall page count, for example. this should be easy data. 
-- replace emojis with something more stylish.
+- word-based achievements
 
 general ui improvements
 - all pages get a word count use word count to determine if the thing needs to not reflow as rows, so we never end up in a gross look situation
 - sp, alone on regular, should never reflow probably...
-- add some kind of quick access to the reading list
-- provide previous/next pages to the bottom of the page as well. 
 
 
 ideas for theme pages
