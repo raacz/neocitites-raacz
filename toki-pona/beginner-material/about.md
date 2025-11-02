@@ -1,75 +1,25 @@
----
-layout: _layouts/bt/texts.html
-title: Home
----
 
-
-A collection of free Beginner Texts in Toki Pona authored by jan Lakuse. 
-
-Each text features literal English translations and notes to help you follow along. Most texts also have pictures!
-
-
-<ul class="circles">
-
-<li class="circle">
-  <a href="suli/">
-  <span> Theme<span>
-  </a>
-</li>
-
-<li class="circle">
-  <a href="lili/">
-  <span> Bite-Sized<span>
-  </a>
-</li>
-
-
-<li class="circle">
-  <a href="wawa/">
-  <span>Quest<span>
-  </a>
-</li>
-</ul>
-
-
-
-
-## Types
-
-There are a few different types of texts. 
-- Each [Theme](suli/) text is a collection of very short pages. Each page has five lines of text and a contextualizing picture. As the name suggests, these texts usually discuss various aspects of a single unifying theme. 
-- [Bite-Sized](lili/) texts are short, simple, stand-alone narratives featuring one contextualizing picture. While none of them are over 250 words, some feature more advanced language. 
-- [Quest](wawa/) texts consist of multiple pages that each span over 200 words, use more advanced language, and treat more technical subject matter. 
-
-## Reading Tools
-
-The reading experience is highly customizable. The Toki Pona texts are presented in the language's two writing systems: sitelen Lasina (the latin alphabet, which English also uses), and Sitelen Pona, where each word is represented by a single pictographic character. There are four reading modes:
-
-- In **Regular Mode**, texts are presented as they are. 
-- In **Quiz Mode**, the contextualizing image is hidden and the ability to toggle English is turned off. 
-- In **Line by Line Mode**, the English translation or latin alphabet transcription for individual lines can be revealed as needed, without needing to reveal the full text. 
-- In **Table Mode**, directly compare English, toki pona, and sitelen pona lines. 
-
-Additionally, each contextualizing image also comes with a contextualizing description and attribution. The visibility of these can toggled on and off as needed. 
- <h3>More Information</h3>
-
-
-<details markdown="1">
-  <summary> <h4>Storing Your Preferences</h4></summary>
-The settings that you've configured will be saved for the duration of your session. Opening Beginner Stories in a new tab or window will reset your preferences. 
-</details>
-<details markdown="1">
-  <summary> <h4>Accessibility</h4></summary>
-
-Beginner Texts is designed with technical accessibility considerations in mind. 
-
-The contexualizing descriptions are duplicated as alt text. If using a screenreader, you may prefer to turn either the contexualizing descriptions or the images off to prevent the presentation of duplicated information. These contextualizing descriptions contain all information that the story itself might reference. 
-
-
-
-</details>
-
-
+  
+   <h3>More Information</h3>
+  
+  
+  <details markdown="1">
+    <summary> <h4>Storing Your Preferences</h4></summary>
+  The settings that you've configured will be saved for the duration of your session. Opening Beginner Stories in a new tab or window will reset your preferences.
+  </details>
+  <details markdown="1">
+    <summary> <h4>Accessibility</h4></summary>
+  
+  Beginner Texts is designed with technical accessibility considerations in mind.
+  
+  The contexualizing descriptions are duplicated as alt text. If using a screenreader, you may prefer to turn either the contexualizing descriptions or the images off to prevent the presentation of duplicated information. These contextualizing descriptions contain all information that the story itself might reference.
+  
+  
+  
+  </details>
+  
+  
+</div>
 
 ## Notes
 
@@ -165,14 +115,32 @@ Restrictions:
 
 </details>
 
-### About Creative Commons
+### Miscellaneous
 
 <details markdown="1">
   <summary>
-    <h4>Non-Standard Words</h4>
+    <h4>About Creative Commons</h4>
   </summary>
+
+The vast majority of these stories feature images that are licensed under versions of CC-BY or CC-BY-SA. The full details of what that means can be found on the [Creative Commons website](https://creativecommons.org/share-your-work/cclicenses/), or perhaps at this article, [What Are The Different Types of Creative Commons Licenses?](https://pose.open.ubc.ca/open-education/creative-commons/what-are-the-different-types-of-creative-commons-licenses/). In brief, 
+
+- CC-BY: Use in any way you want (even use it to make money) but attribute the author and link to the original license. 
+- CC-BY-SA: Use in any way you want, attributing the author and linking to the original license, but anything you make with it also has to be licensed as CC-BY-SA.
+
+CC-BY-SA is also the license that Beginner Stories uses for the vast majority of its content.
+
+For more information on my personal motivation behind using Creative Commons licenses, read [jLakuse o, Why Creative Commons](/toki-pona/beginner-material/cc/).
+
+But there are **two major exceptions.** 
+
+- In the case that a page features an image that is licensed under GFDL-1.2, the page comprises a document licensed under GFDL-1.2. Details for the GFDL license will be clearly indicated above the footer. 
+
+
+<li tabindex="-1" id="licensing-quirk">In the case that a page features an image that is licensed under CC-BY-NC, the text of that page is still licensed under CC-BY-SA, as <a href="https://pressbooks.bccampus.ca/cccertificate/chapter/collections-and-remixes">Creative Commons licenses do not recognize</a> a grouping together of discrete works into one work as an 'Adaptation'. Pages that feature a CC-BY-NC image have a note above the footer that links to this explanation.<br>
+Do be aware that the CC-BY-NC image's license remains in effect, meaning that while you <em>can</em> sell a properly reproduced version of <strong>just the CC-BY-SA text</strong>, you <em>cannot</em> reproduce <strong>the CC-BY-NC image/CC-BY-SA text combination</strong> for commercial purposes.</li>
+
+
   
-  In the stories, I use the same words that I 
 </details>
 
 
@@ -185,4 +153,4 @@ If you spot any errors, experience any bugs, or would like to request features, 
 - Not on Discord? Contact <code>tokipona.sasalin@gmail.com</code>.  
 - You can also submit corrections directly as PRs via the repo on Github (link coming soon). 
 
-Beginner Texts, in its beginning stages, is not currently accepting story contributions. 
+Beginner Texts, in its beginning stages, does not accept story contributions. 

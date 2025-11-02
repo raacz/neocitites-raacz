@@ -17,7 +17,7 @@ title: Reading Tracker
 
 
     tr {
-        border-bottom: 0.1em solid black;
+        border-bottom: 0.1em solid var(--pimeja);;
     }
 
     tr td:last-child {
@@ -104,15 +104,16 @@ title: Reading Tracker
     button {
         margin-top: 0.5em;
         display: block;
+        color: var(--pimeja);
         font-size: 1em;
-        border: 0.1em solid black;
+        border: 0.1em solid var(--pimeja);;
         border-radius: 0.25em;
         padding: 0.2em;
         background-color: var(--walo);
     }
 
     button:is(:hover, :focus-visible) {
-        border-color: var(--walo-pimeja);
+        border-color: var(--bold-outline);
     }
 
     .postchallenge {
@@ -142,7 +143,7 @@ title: Reading Tracker
 
     }
 
-    .easy-exit button:is(:hover, :focus-visible) {
+    :is(.easy-exit button, .danger):is(:hover, :focus-visible) {
         border-color: var(--ike);
 
     }
@@ -186,13 +187,14 @@ title: Reading Tracker
     .achievements img {
         max-width: 5em;
         z-index: 0;
+
     }
 
     .achievements .img-wrap {
         width: 5em;
         height: 5em;
         border-radius: 50%;
-        background-color: transparent;
+        background-color: rgb(235, 233, 225);
         border: 0.5em solid var(--walo-pimeja);
         display: grid;
         place-items: center;
@@ -205,12 +207,12 @@ title: Reading Tracker
     }
 
     .dangerous {
-        border-block-start: 0.1em dashed black;
+        border-block-start: 0.1em dashed var(--pimeja);
         margin-block-start: 3em;
     }
 
     #progress-container {
-        border: 0.2em solid black;
+        border: 0.2em solid var(--pimeja);;
         grid-column-start: 1;
         grid-column-end: 3;
 
@@ -218,7 +220,7 @@ title: Reading Tracker
 
     #progress-bar {
         height: 2em;
-        background-color: var(--walo-pimeja);
+        background-color: var(--bold-outline);
     }
 
     .stats-head {
@@ -257,12 +259,12 @@ title: Reading Tracker
     }
 
     tr:has(.complete) {
-        background-color: rgb(227, 251, 227);
+        background-color: var(--completed);
 
     }
 
     tr:has(.incomplete) {
-        background-color: rgb(247, 219, 219);
+        background-color: var(--incomplete);
 
 
     }

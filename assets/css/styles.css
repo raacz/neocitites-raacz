@@ -1,7 +1,8 @@
-*{
+* {
     box-sizing: border-box;
 }
-*:not(fieldset){
+
+*:not(fieldset) {
     padding: 0;
     margin: 0;
 
@@ -11,6 +12,7 @@
     font-family: Jost;
     src: url(/assets/Jost/Jost-VariableFont_wght.ttf);
 }
+
 @font-face {
     font-family: Atkinson;
     src: url(/assets/Atkinson_Hyperlegible_Next/AtkinsonHyperlegibleNext-VariableFont_wght.ttf);
@@ -24,60 +26,68 @@
     --laso: rgb(36, 36, 157);
     --pimeja-lili: rgb(16, 21, 40);
 
+    --footer-text: var(--walo-pimeja);
+    --footer-link: var(--walo);
+
+
     --main-padding: 2em;
     --main-max-width: 45rem;
 
 }
 
-html{
+html {
     color: var(--pimeja);
     background-color: var(--walo);
-    font-family: Jost;;
+    font-family: Jost;
+    ;
     font-size: 1.2em;
 }
 
-body{
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;  /* body always at least viewport height */
-  line-height: 1.6em;
-
-}
-
-header{
+body {
     display: grid;
-    grid-template-areas: 
-    "introtext navigation"
-    "status status";
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    /* body always at least viewport height */
+    line-height: 1.6em;
+
 }
-@media (max-width: 43em){
-    header{
-        grid-template-areas: 
+
+header {
+    display: grid;
+    grid-template-areas:
+        "introtext navigation"
+        "status status";
+}
+
+@media (max-width: 43em) {
+    header {
+        grid-template-areas:
             "introtext"
             "status"
             "navigation";
     }
-   
+
 }
 
 
 
 .skip {
-  position: absolute;
-  left: -10000px;
-  top: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+    position: absolute;
+    left: -10000px;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
+
 .skip:focus {
     background-color: var(--pimeja);
     color: var(--walo-pimeja);
-  left: 0;
-  width: auto;
-  height: auto;
+    left: 0;
+    width: auto;
+    height: auto;
 }
-    
+
 .status {
     grid-area: status;
     background-color: var(--pimeja);
@@ -85,8 +95,9 @@ header{
     display: grid;
     grid-template-areas: "statustext statuslog";
     grid-template-columns: 1fr min-content;
-    
+
 }
+
 .status p {
     margin: 0;
     grid-area: statustext;
@@ -97,22 +108,22 @@ header{
 }
 
 
-.status a:is(:visited,:not(:visited)){
+.status a:is(:visited, :not(:visited)) {
     grid-area: statuslog;
     padding-inline: 1em;
     max-width: max-content;
     color: var(--walo);
     font-size: 0.7em;
     text-decoration: none;
-    text-transform:uppercase;
-    box-shadow: inset 0 0  0.1em 0.1em var(--walo);
+    text-transform: uppercase;
+    box-shadow: inset 0 0 0.1em 0.1em var(--walo);
     height: 100%;
 
     display: flex;
     align-items: center;
 }
 
-.introtext{
+.introtext {
     grid-area: introtext;
     margin: 0 auto;
     font-size: 1.3em;
@@ -123,17 +134,20 @@ header{
 
     display: flex;
     flex-direction: column;
-   justify-content: center;
+    justify-content: center;
 }
-.introtext p:last-of-type{
+
+.introtext p:last-of-type {
     margin-block: 0;
 }
+
 nav {
     grid-area: navigation;
     background-color: var(--pimeja-lili);
     display: flex;
     align-items: center;
 }
+
 nav ul {
     display: flex;
     list-style-type: none;
@@ -145,23 +159,25 @@ nav ul {
     padding: 2em;
     justify-content: center;
 }
-nav li{
+
+nav li {
     margin: 0;
 }
-nav a:is(:visited,:not(:visited)){
+
+nav a:is(:visited, :not(:visited)) {
     color: var(--walo);
 
 }
 
-a:is(:visited,:not(:visited)){
+a:is(:visited, :not(:visited)) {
     color: var(--laso);
 }
 
-p{
+p {
     margin-block-end: 1em;
 }
 
-main{
+main {
     max-width: var(--main-max-width);
     padding: var(--main-padding);
     place-self: center;
@@ -175,31 +191,43 @@ main{
     position: absolute;
     top: 0;
     right: 1em;
-    
+
 }
-footer{
+
+footer {
     margin-block-start: auto;
-    background-color: var(--pimeja);
-    color: var(--walo-pimeja);
+    background-color: black;
+    color: var(--footer-text);
     width: 100%;
     font-size: 0.8em;
     line-height: 1.1em;
     padding-block: 0.5em;
     padding-inline: 1em;
 }
-footer a:is(:visited,:not(:visited)){
-    color: var(--walo);
+
+footer a:is(:visited, :not(:visited)) {
+    color: var(--footer-link);
+
 }
-footer p{
+
+footer p {
     margin: 0;
     display: inline;
     text-align: center;
 }
 
-h2, h3, h4, h5 {
+h2,
+h3,
+h4,
+h5 {
     margin-block-start: 1em;
 }
-h1, h2, h3, h4, h5 {
+
+h1,
+h2,
+h3,
+h4,
+h5 {
     margin-block-end: 0.5em;
     line-height: 1.2em;
 }
@@ -212,20 +240,20 @@ li {
     margin-inline-start: 2em;
     margin-block-end: 0.5em;
 }
+
 ul ul {
     margin-inline-start: 2em;
 
 }
 
 hr:not(.intro-end) {
-  border: 0;
-  height: 0.3em; /* total vertical space for both bars */
-  background: linear-gradient(
-    to bottom,
-    var(--pimeja-lili) 0 50%,
-    var(--laso) 50% 100%
-  );
-  margin-block: 3em;
+    border: 0;
+    height: 0.3em;
+    /* total vertical space for both bars */
+    background: linear-gradient(to bottom,
+            var(--pimeja-lili) 0 50%,
+            var(--laso) 50% 100%);
+    margin-block: 3em;
 }
 
 
@@ -236,7 +264,7 @@ hr.intro-end {
     height: 0.5em;
     box-shadow: inset 0 0 0 0.02em var(--pimeja-lili);
     margin-block: 1em;
-     /* background-image:
+    /* background-image:
     linear-gradient(90deg,
       #6bff9e 0% 16%,  
       #6bd7ff 16% 32%,  
@@ -248,22 +276,25 @@ hr.intro-end {
     );*/
 }
 
-body:has(.background):has(.cover){
+body:has(.background):has(.cover) {
     background-image: none;
     background-repeat: no-repeat;
     background-size: cover;
 }
-body:has(.background):has(.contain){
+
+body:has(.background):has(.contain) {
     background-image: none;
     background-repeat: repeat;
     background-size: contain;
 }
-body:has(.background):has(.contain){
+
+body:has(.background):has(.contain) {
     background-image: none;
     background-repeat: repeat;
-    background-size:auto;
+    background-size: auto;
 }
-body:has(.background) main{
+
+body:has(.background) main {
     margin-block: 2em;
 
 }
@@ -281,36 +312,56 @@ small {
     border-inline-start: 0.2em solid var(--laso);
     margin-bottom: 3em;
 }
-.toc :is(h2, h3, ul, li){
+
+.toc :is(h2, h3, ul, li) {
     font-size: 0.9em;
     margin: 0 0 0 2em;
     line-height: 1.2em;
 }
-.toc h2{
+
+.toc h2 {
     margin-block-end: 1em;
 }
-.toc ul{
-     margin-block-end: 0.5em;
+
+.toc ul {
+    margin-block-end: 0.5em;
 
 }
 
-.status-log *{
-    border: 0.1em solid black;
+.status-log * {
+    border: 0.1em solid var(--pimeja);
+    ;
     border-collapse: collapse;
     padding: 0.5em;
 }
 
 
 /*beginner text portal*/
+/* light mode
+*/
+/*dark mode
+    
+*/
 
-html:has(.back-to-main){
+
+
+
+
+
+html:has(.back-to-main) {
+
     --walo: rgb(235, 233, 225);
     --pimeja: rgb(0, 0, 0);
     --walo-lili: rgb(233, 243, 184);
     --walo-pimeja: rgb(139, 205, 103);
     --laso: rgb(36, 36, 157);
     --pimeja-lili: rgb(40, 16, 16);
+    --bold-outline: var(--walo-pimeja);
     --ike: rgb(132, 10, 10);
+    --completed: rgb(227, 251, 227);
+    --incomplete: rgb(247, 219, 219);
+    --footer-text: var(--walo-pimeja);
+    --footer-link: var(--walo);
 
 
     --main-padding: 2em;
@@ -318,10 +369,29 @@ html:has(.back-to-main){
 
     font-family: Atkinson, sans;
 }
+
+@media (prefers-color-scheme: dark) {
+    html:has(.back-to-main) {
+        --walo: rgb(29, 23, 17);
+        --pimeja: rgb(235, 233, 225);
+        --walo-lili: rgb(47, 49, 38);
+        --walo-pimeja: rgb(39, 63, 26);
+        --laso: rgb(130, 203, 234);
+        --pimeja-lili: rgb(139, 205, 103);
+        --ike: rgb(239, 4, 4);
+        --bold-outline: var(--pimeja-lili);
+        --completed: rgb(4, 40, 12);
+        --incomplete: rgb(39, 9, 9);
+        --footer-text: var(--pimeja-lili);
+        --footer-link: var(--pimeja);
+    }
+}
+
 body:has(.back-to-main) .status {
     display: block;
     text-align: center;
 }
+
 body:has(.back-to-main) .introtext {
     display: flex;
     justify-content: center;
@@ -331,7 +401,7 @@ body:has(.back-to-main) .introtext {
 
 
 
-@media (max-width: 30em){
+@media (max-width: 30em) {
     main {
         padding-inline: 0.5em;
     }

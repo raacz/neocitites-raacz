@@ -1,6 +1,7 @@
 ---
 layout: _layouts/bt/texts.html
 title: Using Sitelen Pona
+tags: article
 ---
 
 <style>

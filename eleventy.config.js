@@ -215,6 +215,16 @@ export default function (eleventyConfig) {
   //btextsite is intended to only get the 'information' pages in the beginner text site
   eleventyConfig.addCollection("btextsite", function (collectionApi) {
     let bsite = collectionApi.getFilteredByGlob("toki-pona/beginner-material/*");
+    for (let item of bsite){
+      if(item.data.tags){
+          console.log(item.data.tags);
+          if(item.data.tags.includes("article")){
+            bsite.splice(bsite.indexOf(item), 1);
+          }
+
+
+      }
+    }
 
     //"toki-pona/beginner-material/**/!({en,sp,tok}).{md,html}" (glob file that returns all beginner site pages) in the main directory (not nested in stories)
     return bsite;

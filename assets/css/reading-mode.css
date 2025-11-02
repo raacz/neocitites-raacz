@@ -514,6 +514,13 @@ h1 {
     margin-inline: 1em;
 }
 
+.complicated-license {
+    margin: 2em 2em 0 2em;
+    font-size: 0.7em;
+    line-height: 1em;
+
+}
+
 
 
 
@@ -522,7 +529,7 @@ h1 {
         padding-inline: 0;
         padding-block-end: 2em;
         margin-inline: 0;
-        border-block: 0.2em solid black;
+        border-block: 0.2em solid var(--pimeja);;
         box-shadow: none;
     }
     .pseudo-footer {

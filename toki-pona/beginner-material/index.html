@@ -1,0 +1,411 @@
+---
+layout: _layouts/bt/texts.html
+title: Home
+---
+<style>
+  .section {
+    max-width: 45rem;
+    margin-inline: auto;
+    padding-inline: 1em;
+    padding-block: 1em;
+
+  }
+
+  body {
+    font-size: 1.25em;
+  }
+
+  .wrapper:nth-of-type(2) {
+    background-color: var(--incomplete);
+
+  }
+
+  .circle {
+    background-color: var(--walo);
+  }
+
+  .wrapper:nth-of-type(3) {
+    background-color: rgb(24, 24, 57);
+    color: white;
+
+  }
+
+  .wrapper:nth-of-type(4) {
+    background-color: var(--completed);
+
+
+  }
+
+  .wrapper:nth-of-type(5) {
+    background-color: rgb(40, 16, 16);
+    color: rgb(235, 233, 225);
+  }
+
+  .wrapper:nth-of-type(5) .section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(max-content, 5);
+    align-items: center;
+    justify-items: center;
+
+  }
+
+  .wrapper:nth-of-type(5) h2 {
+    text-align: center;
+  }
+
+  .wrapper:nth-of-type(5) h3 {
+    text-align: center;
+    background-color: var(--walo);
+    color: var(--pimeja);
+    padding: 1em;
+  }
+
+  .wrapper:nth-of-type(5) h2 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+  }
+
+  .wrapper:nth-of-type(5) h3:nth-of-type(1) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+  }
+
+  .wrapper:nth-of-type(5) div:nth-of-type(2) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-self: stretch;
+  }
+
+  .wrapper:nth-of-type(5) div:nth-of-type(2) img {
+    max-width: 20em;
+    min-width: 5em;
+    width: 100%;
+    margin-block-start: -4.5em;
+  }
+
+  .grid-placeholder {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+  }
+
+  .wrapper:nth-of-type(5) img:nth-of-type(3) {
+    /*kimono*/
+    grid-column-start: 3;
+    grid-column-end: 4;
+
+  }
+
+  .wrapper:nth-of-type(5) h3:nth-of-type(2) {
+    grid-row-start: 4;
+    grid-column-start: 3;
+    grid-column-end: 5;
+  }
+
+  .wrapper:nth-of-type(5) h3:nth-of-type(3) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .wrapper:nth-of-type(5) div:nth-of-type(3) {
+    /*hamburger*/
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+    .wrapper:nth-of-type(5) div:nth-of-type(3) span{
+      max-width: 15em;
+    }
+
+
+  .wrapper:nth-of-type(5) img:nth-of-type(3) {
+    /*book planet*/
+    grid-column-start: 3;
+    grid-column-end: 5;
+  }
+
+  .wrapper:nth-of-type(5) ul {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .wrapper:nth-of-type(5) li {
+    min-width: 14em;
+  }
+  .wrapper:nth-of-type(5) span {
+    z-index: 2;
+    opacity: 95%;
+    background-color: rgb(40, 16, 16);
+
+
+  }
+  .wrapper:nth-of-type(5) a:is(:visited, :not(:visited)) {
+    color: var(--bold-outline);
+  }
+  .wrapper:nth-of-type(5) img {
+    max-width: 10em;
+    min-width: 5em;
+  }
+
+
+
+
+  details {
+    margin: 1em;
+  }
+
+  .wrapper:nth-of-type(1) h2 {
+    font-size: 1em;
+    text-align: center;
+    margin: 0;
+    display: inline;
+  }
+
+
+
+  h1 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .wrapper {
+    border-bottom: 0.3em solid var(--pimeja);
+    width: 100%;
+
+  }
+
+  main {
+    max-width: 100%;
+    padding-inline: 0;
+    width: 100%;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  @media (max-width: 24rem) {
+    .mobile {
+      display: block;
+    }
+
+    .desktop {
+      display: none;
+    }
+
+
+  }
+</style>
+
+
+
+<div class="wrapper">
+
+  <div class="section">
+    <p>
+    <h2>Welcome, or '<span lang="tok">o kama pona</span>'</h2> to a collection of free and accessible Beginner Texts in
+    Toki Pona, featuring English translations, fun pictures, Sitelen Pona hieroglyphs, and gamification. Authored by <a
+      href="/about/">jan Lakuse</a>.
+
+    <details>
+      <summary>
+        <h2 class="smaller-text">What's Toki Pona?</h2>
+      </summary>
+
+      <ul>
+
+        <li>
+          <strong><a href="https://sona.pona.la/wiki/Toki_Pona">a 24-year-old language</a></strong> whose total
+          vocabulary is made up by <strong>less than 140 words</strong>.
+
+        </li>
+        <li>
+          minimalist and <strong>consistent grammar</strong> can be learned through <strong><a
+              href="https://wasona.com/">a written course</a></strong>, a <strong><a
+              href="https://www.youtube.com/playlist?list=PLoLQoll2U6WEeCO7C2oc1LTWgkoBC8rvT">video course</a></strong>,
+          or absorbed through <strong><a
+              href="https://www.youtube.com/playlist?list=PLwYL9_SRAk8EXSZPSTm9lm2kD_Z1RzUgm">immersion</a> </strong>.
+
+        </li>
+        <li>
+          a <strong>fun and free</strong> hobby with an <strong><a href="https://pona.la/">active and
+              friendly</a></strong> hobbyist community.
+
+        </li>
+      </ul>
+
+
+
+
+
+
+    </details>
+  </div>
+</div>
+
+
+<div class="wrapper">
+  <div class="section">
+
+    <h2>Variety of Levels</h2>
+
+    <ul class="circles">
+
+      <li class="circle">
+        <a href="suli/">
+          <span> Theme<span>
+        </a>
+      </li>
+
+      <li class="circle">
+        <a href="lili/">
+          <span> Bite-Sized<span>
+        </a>
+      </li>
+
+
+      <li class="circle">
+        <a href="wawa/">
+          <span>Quest<span>
+        </a>
+      </li>
+    </ul>
+    <br>
+
+    <ul>
+      <li><a href="suli/">Theme</a> texts have several short pages. High picture-to-text ratio, simpler grammar
+      </li>
+      <li><a href="lili/">Bite-Sized</a> texts have only one page, one picture, one story. As little as 40 words, no
+        more than 250 words. Less advanced grammar.
+      </li>
+      <li><a href="wawa/">Quest</a> texts have several pages each longer than 500 words. Advanced language, elaborate
+        topics.
+      </li>
+    </ul>
+
+  </div>
+
+</div>
+<div class="wrapper">
+  <div class="section">
+
+    <h2>Customizable Reading Experience</h2>
+
+    <p>Would you prefer to read your Toki Pona using the alphabet, using Sitelen Pona hieroglyphs or both
+      simultaneously?</p>
+
+    <p>Wanna see the entire English translation, or compare the English and Toki Pona in a table, or reveal the English
+      translation only for a line you're stuck on?</p>
+
+    <p>How about hiding the image or the image's description to give yourself an extra challenge?</p>
+
+
+    <figure>
+      <img class="desktop"
+        alt="The reading interface offers paginated navigation, the text, a picture with a description, and an extensive settings menu."
+        src="/toki-pona/beginner-material/assets/tutorials/page-view.png">
+      <img class="mobile"
+        alt="The reading interface offers paginated navigation, the text, a picture with a description, and an extensive settings menu."
+        src="/toki-pona/beginner-material/assets/tutorials/page-view-mobile.png">
+
+      <figcaption>The reading interface offers options for all of these and more!
+      </figcaption>
+    </figure>
+  </div>
+</div>
+<div class="wrapper">
+
+  <div class="section">
+
+    <h2>Watch. Number. Go. Up.</h2>
+
+
+    <p>Do you prefer to gamify your language-learning?</p>
+    <figure>
+      <figcaption>
+        <p>Enable the <a href="mi/">Reading Tracker</a> to watch your checklist morph from red to green and your
+          progress bar fill up!</p>
+      </figcaption>
+
+      <img class="desktop" alt="" src="/toki-pona/beginner-material/assets/tutorials/number-up.png">
+      <img class="mobile" alt="" src="/toki-pona/beginner-material/assets/tutorials/number-up-mobile.png">
+
+    </figure>
+
+    <p>We'll even reward you with achievements :)</p>
+
+
+  </div>
+
+
+</div>
+
+<div class="wrapper">
+  <div class="section">
+    <div class="grid-placeholder"></div>
+
+    <h2>And So It Begins</h2>
+
+
+    <h3>Activate the Reading Tracker</h3>
+    <div>
+      <span><a href="mi/">Gamification is an optional feature</a> and is off by default.</span>
+      <img src="/toki-pona/beginner-material/assets/main/Checklist-icon.svg" alt="">
+    </div>
+
+    <h3>Read Your First Story</h3>
+    <img src="/toki-pona/beginner-material/assets/main/Rabbit.svg" alt="">
+    <span>
+      Encounter a cute critter with <br>"<a href="/toki-pona/beginner-material/stories/story-1/">soweli suwi</a>"<br>
+      (bite-sized)
+    </span>
+
+    <div>
+      <img src="/toki-pona/beginner-material/assets/main/Burger.svg" alt="">
+      <span>
+        Assemble a veggie-burger element by element with <br>"<a href="/toki-pona/beginner-material/stories/story-29/">insa
+          pi pan tu</a>" <br>(theme text)
+      </span>
+    </div>
+    <img src="/toki-pona/beginner-material/assets/main/japanese-woman.svg" alt="">
+
+    <span>
+      Learn about the work of Utagawa Hiroshige I in <br>"<a href="/toki-pona/beginner-material/stories/story-56/">sitelen
+        pi jan Ilosike</a>" <br>(quest text)
+    </span>
+
+
+    <h3>Peruse the Collection</h3>
+    <img src="/toki-pona/beginner-material/assets/main/book.svg" alt="">
+    <ul>
+
+      <li><a href="suli/">Browse all {{ collections.suli.length }} Theme Texts</a></li>
+      <li><a href="lili/">Browse all {{collections.liliwc.length }} Bite-Sized Texts</a></li>
+      <li><a href="wawa/">Browse all {{collections.wawa.length }} Quest Texts</a></li>
+    </ul>
+
+
+
+  </div>
+</div>

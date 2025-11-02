@@ -7,15 +7,15 @@
 .card a:is(:visited,:not(:visited)){
     display: flex;
     flex-direction: column;
-    border: 0.3em solid var(--walo-pimeja);
+    border: 0.3em solid var(--bold-outline);
     border-radius: 0.2em;
     position: relative;
     margin: 0.4em;
 }
 .card div{
     position: absolute;
-    background-color: var(--pimeja);
-    color: var(--walo);
+    background-color: black;
+    color: white;
     padding: 0.75em;
     opacity: 0.85;
     bottom: 0;
@@ -25,8 +25,6 @@
     padding-block: 0;
 }
 .card .wordcount{
-    background-color: var(--pimeja);
-    color: var(--walo);
     display: block;
     font-size: 0.7em;
 
@@ -57,6 +55,7 @@ ul.circles{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    gap: 0.25em;
     justify-content: space-evenly;
     max-width: 30em;
     margin: 0 auto;
@@ -106,7 +105,7 @@ li:has(.collage) h2{
 
 
 li:has(.collage) {
-    border: 0.3em solid var(--walo-pimeja);
+    border: 0.3em solid var(--bold-outline);
     margin: 0;
     list-style-type: none;
     border-radius: 0.2em;
@@ -131,6 +130,22 @@ details:has(:is(h3,h4,h5)) p:first-of-type{
 
 /*utility*/
 
+.smaller-text{
+    font-size: 0.9em;
+}
+
+    figure img {
+        max-height: 100%;
+        width: 100%;
+        max-width: 100%;
+        border: 0.1em solid var(--pimeja);
+
+    }
+
+    figcaption {
+        max-width: 100%;
+        width: 100%;
+    }
 
 
 .back-forth{
