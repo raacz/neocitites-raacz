@@ -60,11 +60,12 @@ main {
     align-items: flex-start;
     flex: 1;
     max-width: 35em;
+    padding-block: 0.35em 0.625em;
 }
 
 .menu legend {
     text-transform: uppercase;
-    width: fit-content;
+    width: 100%;
     flex-grow: 0;
     padding-inline-start: 1em;
 
