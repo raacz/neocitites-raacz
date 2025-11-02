@@ -1,4 +1,4 @@
-This masculine person does day-startig labour. 
+This masculine person does day-starting labour. 
 
 Many people do day starting labour using many different ways. 
 
