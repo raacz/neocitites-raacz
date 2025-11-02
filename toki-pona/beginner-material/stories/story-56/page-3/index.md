@@ -8,4 +8,5 @@ license: Public Domain
 alt:   
 media: "/toki-pona/beginner-material/assets/wawa-56c.jpg"
 tags: sequence
+eleventyExcludeFromCollections: true
 ---
