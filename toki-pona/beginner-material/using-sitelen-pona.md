@@ -118,8 +118,8 @@ sina pana kepeken sitelen Lasina la
   - Sometimes people people who have dyslexia or ADHD, or a developmental disability may want to use text-to-speech, but nearly all TTS options for toki pona don't take into account sitelen pona conventions.
 
   #### Sharing considerations
-  - Sometimes people want to copy and paste content, sharing it somewhere else, but the environment it is pasted into may not have sitelen pona support, especially if it was initially rendered into UCSUR.
-  - Sometimes members of the poki Lapo team want to preserve your work in plain text.
+  - Sometimes people want to copy and paste content, sharing it somewhere else, but the environment it is pasted into may not have sitelen pona support, especially if it was initially rendered into [<abbr title="Under-ConScript Unicode Registry">UCSUR</abbr>](https://www.kreativekorp.com/ucsur/).
+  - Sometimes members of the [poki Lapo](https://github.com/kulupu-lapo/poki) team want to preserve your work in plain text.
 
 ### Design Philosophy
 
