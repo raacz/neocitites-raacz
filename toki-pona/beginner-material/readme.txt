@@ -38,4 +38,4 @@ ideas for theme pages
 weird flashcard / multiple-choice thing maybe?
 
 
-https://commons.wikimedia.org/wiki/User:MichaelMaggs/Gallery see "mumming"
+https://commons.wikimedia.org/wiki/User:MichaelMaggs/Gallery see "[mumming](https://commons.wikimedia.org/w/index.php?title=User:MichaelMaggs/Gallery&oldid=404565957#Mumming)"
