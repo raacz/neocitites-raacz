@@ -111,6 +111,26 @@ li:has(.collage) {
     border-radius: 0.2em;
 }
 
+.broken img{
+    max-height: 8em;
+    margin: 0 auto;
+    object-fit: contain;
+}
+.broken figure{
+    max-width: 20em;
+    margin: 0 auto;
+}
+.broken figcaption{
+    font-size: 0.9em;
+    border: 0.1em solid var(--pimeja);
+    background-color: black;
+    color: rgb(161, 158, 158);
+    filter: grayscale(100);
+
+    border-block-start: none;
+    font-style:italic;
+}
+
 /*notes on language use section*/
 
 summary :is(h2, h3, h4, h5){

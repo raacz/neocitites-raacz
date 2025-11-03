@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased; /*hopefully this helps fix weird font bolding in Safari*/
+    -webkit-font-smoothing: antialiased;
+    /*hopefully this helps fix weird font bolding in Safari*/
 }
 
 *:not(fieldset) {
@@ -40,7 +41,7 @@ html {
     color: var(--pimeja);
     background-color: var(--walo);
     font-family: Jost;
-    
+
     font-size: 1.2em;
 }
 
@@ -371,6 +372,85 @@ html:has(.back-to-main) {
     font-family: Atkinson, sans;
 }
 
+html:has(.back-to-main)[data-custom-theme="dark mode"] {
+    --walo: rgb(29, 23, 17);
+    --pimeja: rgb(235, 233, 225);
+    --walo-lili: rgb(47, 49, 38);
+    --walo-pimeja: rgb(39, 63, 26);
+    --laso: rgb(130, 203, 234);
+    --pimeja-lili: rgb(139, 205, 103);
+    --ike: rgb(239, 4, 4);
+    --bold-outline: var(--pimeja-lili);
+    --completed: rgb(4, 40, 12);
+    --incomplete: rgb(39, 9, 9);
+    --footer-text: var(--pimeja-lili);
+    --footer-link: var(--pimeja);
+}
+
+html:has(.back-to-main)[data-custom-theme="light mode"] {
+    --walo: rgb(235, 233, 225);
+    --pimeja: rgb(0, 0, 0);
+    --walo-lili: rgb(233, 243, 184);
+    --walo-pimeja: rgb(139, 205, 103);
+    --laso: rgb(36, 36, 157);
+    --pimeja-lili: rgb(40, 16, 16);
+    --bold-outline: var(--walo-pimeja);
+    --ike: rgb(132, 10, 10);
+    --completed: rgb(227, 251, 227);
+    --incomplete: rgb(247, 219, 219);
+    --footer-text: var(--walo-pimeja);
+    --footer-link: var(--walo);
+}
+
+@media (prefers-color-scheme: light) {
+    html:has(.back-to-main) {
+
+        --walo: rgb(235, 233, 225);
+        --pimeja: rgb(0, 0, 0);
+        --walo-lili: rgb(233, 243, 184);
+        --walo-pimeja: rgb(139, 205, 103);
+        --laso: rgb(36, 36, 157);
+        --pimeja-lili: rgb(40, 16, 16);
+        --bold-outline: var(--walo-pimeja);
+        --ike: rgb(132, 10, 10);
+        --completed: rgb(227, 251, 227);
+        --incomplete: rgb(247, 219, 219);
+        --footer-text: var(--walo-pimeja);
+        --footer-link: var(--walo);
+    }
+
+    html:has(.back-to-main)[data-custom-theme="dark mode"] {
+        --walo: rgb(29, 23, 17);
+        --pimeja: rgb(235, 233, 225);
+        --walo-lili: rgb(47, 49, 38);
+        --walo-pimeja: rgb(39, 63, 26);
+        --laso: rgb(130, 203, 234);
+        --pimeja-lili: rgb(139, 205, 103);
+        --ike: rgb(239, 4, 4);
+        --bold-outline: var(--pimeja-lili);
+        --completed: rgb(4, 40, 12);
+        --incomplete: rgb(39, 9, 9);
+        --footer-text: var(--pimeja-lili);
+        --footer-link: var(--pimeja);
+    }
+
+    html:has(.back-to-main)[data-custom-theme="light mode"] {
+        --walo: rgb(235, 233, 225);
+        --pimeja: rgb(0, 0, 0);
+        --walo-lili: rgb(233, 243, 184);
+        --walo-pimeja: rgb(139, 205, 103);
+        --laso: rgb(36, 36, 157);
+        --pimeja-lili: rgb(40, 16, 16);
+        --bold-outline: var(--walo-pimeja);
+        --ike: rgb(132, 10, 10);
+        --completed: rgb(227, 251, 227);
+        --incomplete: rgb(247, 219, 219);
+        --footer-text: var(--walo-pimeja);
+        --footer-link: var(--walo);
+    }
+}
+
+
 @media (prefers-color-scheme: dark) {
     html:has(.back-to-main) {
         --walo: rgb(29, 23, 17);
@@ -386,6 +466,38 @@ html:has(.back-to-main) {
         --footer-text: var(--pimeja-lili);
         --footer-link: var(--pimeja);
     }
+
+    html:has(.back-to-main)[data-custom-theme="dark mode"] {
+        --walo: rgb(29, 23, 17);
+        --pimeja: rgb(235, 233, 225);
+        --walo-lili: rgb(47, 49, 38);
+        --walo-pimeja: rgb(39, 63, 26);
+        --laso: rgb(130, 203, 234);
+        --pimeja-lili: rgb(139, 205, 103);
+        --ike: rgb(239, 4, 4);
+        --bold-outline: var(--pimeja-lili);
+        --completed: rgb(4, 40, 12);
+        --incomplete: rgb(39, 9, 9);
+        --footer-text: var(--pimeja-lili);
+        --footer-link: var(--pimeja);
+    }
+
+    html:has(.back-to-main)[data-custom-theme="light mode"] {
+        --walo: rgb(235, 233, 225);
+        --pimeja: rgb(0, 0, 0);
+        --walo-lili: rgb(233, 243, 184);
+        --walo-pimeja: rgb(139, 205, 103);
+        --laso: rgb(36, 36, 157);
+        --pimeja-lili: rgb(40, 16, 16);
+        --bold-outline: var(--walo-pimeja);
+        --ike: rgb(132, 10, 10);
+        --completed: rgb(227, 251, 227);
+        --incomplete: rgb(247, 219, 219);
+        --footer-text: var(--walo-pimeja);
+        --footer-link: var(--walo);
+    }
+
+
 }
 
 body:has(.back-to-main) .status {

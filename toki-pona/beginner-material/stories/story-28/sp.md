@@ -1,4 +1,4 @@
-buona li laso li loje li jelo 
+ona li laso li loje li jelo 
 
 lipu kule musi li tawa sewi a
 

@@ -5,84 +5,107 @@ layout: _layouts/bt/texts-base.html
 
 <section class="menu" aria-labelledby="rc">
     <h2 id="rc" class="visually-hidden">Reading Controls</h2>
-    <fieldset id="rc-1" class="texts">
-        <legend>Version</legend>
-        <label for="rc-1a">
-            <input type="checkbox" name="english" id="rc-1a">
+    <div class="main-controls">
+        <fieldset id="rc-1" class="texts">
+            <legend>Version</legend>
+            <label for="rc-1a">
+                <input type="checkbox" name="english" id="rc-1a">
+                Show English</label>
+            <label for="rc-1b">
+                <input type="checkbox" name="sp-show" id="rc-1b">
+                Show Sitelen Pona</label>
+            <label for="rc-1c">
+                <input type="checkbox" name="sp-hide" id="rc-1c" checked>
+                Show Sitelen Lasina</label>
+        </fieldset>
+        <fieldset id="rc-bl-1" class="by-line">
+            <legend>Versions</legend>
+            <label for="rc-bl-1a">
+                <input type="radio" name="version" id="rc-bl-1a">
+                Toki Pona/English</label>
+            <label for="rc-bl-1b">
+                <input type="radio" name="version" id="rc-bl-1b">
+                Sitelen Pona/Sitelen Lasina</label>
+            <label for="rc-bl-1c">
+                <input type="radio" name="version" id="rc-bl-1c" checked>
+                Sitelen Pona/English</label>
+        </fieldset>
+        <fieldset id="rc-2">
+            <legend>Mode</legend>
+            <label for="rc-2a">
+                <input type="radio" name="mode" id="rc-2a" value="rc-2a" checked>
+                Regular Mode</label>
+            <label for="rc-2b">
+                <input type="radio" name="mode" id="rc-2b" value="rc-2b">
+                Quiz Mode</label>
+            <label for="rc-2c">
+                <input type="radio" name="mode" id="rc-2c" value="rc-2c">
+                Line by Line Mode</label>
+            <label for="rc-2d">
+                <input type="radio" name="mode" id="rc-2d" value="rc-2d">
+                Table Mode</label>
+        </fieldset>
+        <fieldset id="rc-3">
+            <legend>Image Settings</legend>
+            <label for="rc-3a">
+                <input type="checkbox" name="image" id="rc-3a" checked>
+                Show Image</label>
+            <label for="rc-3b">
+                <input type="checkbox" name="description" id="rc-3b" checked>
+                Show Description</label>
+            {% if external %}
+            <label for="rc-3c">
+                <input type="checkbox" name="attribution" id="rc-3c">
+                Show Attribution</label>
+            {% endif %}
+        </fieldset>
+    </div>
+    <div class="expanded-menu">
+        <fieldset>
+            <legend>UCSUR preference </legend>
+                        <label for="rc-4a">
+                <input type="radio" id="rc-4a">
+                Use ASCII
+                
+            </label>
 
-            Show English</label>
+            <label for="rc-4b">
+                <input type="radio" id="rc-4b">
+                Convert the Current Page
+                
+            </label>
+            <label for="rc-4c">
+                <input type="radio" id="rc-4c">
+                Always Use USCUR
+                
+            </label>
+        </fieldset>
+                <fieldset>
+            <legend>Theme </legend>
+                        <label for="rc-5a">
+                <input type="radio" name="theme-preferences" id="rc-5a">
+                Light Mode
+                
+            </label>
 
-        <label for="rc-1b">
-            <input type="checkbox" name="sp-show" id="rc-1b">
+            <label for="rc-5b">
+                <input type="radio" name="theme-preferences" id="rc-5b">
+                Dark Mode
+                
+            </label>
+            <label for="rc-5c">
+                <input type="radio" name="theme-preferences" id="rc-5c">
+                System Default
+                
+            </label>
+        </fieldset>
+        
+        
+    </div>
 
-            Show Sitelen Pona</label>
-
-        <label for="rc-1c">
-            <input type="checkbox" name="sp-hide" id="rc-1c" checked>
-
-            Show Sitelen Lasina</label>
-    </fieldset>
-    <fieldset id="rc-bl-1" class="by-line">
-        <legend>LIne/Script</legend>
-        <label for="rc-bl-1a">
-            <input type="radio" name="version" id="rc-bl-1a">
-
-            Toki Pona/English</label>
-
-        <label for="rc-bl-1b">
-            <input type="radio" name="version" id="rc-bl-1b">
-
-            Sitelen Pona/Sitelen Lasina</label>
-
-        <label for="rc-bl-1c">
-            <input type="radio" name="version" id="rc-bl-1c" checked>
-
-            Sitelen Pona/English</label>
-    </fieldset>
-
-
-
-    <fieldset id="rc-2">
-        <legend>Mode</legend>
-        <label for="rc-2a">
-            <input type="radio" name="mode" id="rc-2a" value="rc-2a" checked>
-
-            Regular Mode</label>
-        <label for="rc-2b">
-            <input type="radio" name="mode" id="rc-2b" value="rc-2b">
-
-            Quiz Mode</label>
-        <label for="rc-2c">
-            <input type="radio" name="mode" id="rc-2c" value="rc-2c">
-
-            Line by Line Mode</label>
-        <label for="rc-2d">
-            <input type="radio" name="mode" id="rc-2d" value="rc-2d">
-
-            Table Mode</label>
-
-    </fieldset>
-    <fieldset id="rc-3">
-        <legend>Image Settings</legend>
-        <label for="rc-3a">
-            <input type="checkbox" name="image" id="rc-3a" checked>
-
-            Show Image</label>
-
-        <label for="rc-3b">
-            <input type="checkbox" name="description" id="rc-3b" checked>
-
-            Show Description</label>
-        {% if external %}
-        <label for="rc-3c">
-            <input type="checkbox" name="attribution" id="rc-3c">
-
-            Show Attribution</label>
-        {% endif %}
-
-    </fieldset>
-
-
+<button class="expanded" id="ucsur">
+Expand
+</button>
 
 
 </section>
@@ -121,3 +144,4 @@ layout: _layouts/bt/texts-base.html
 </main>
 
 <script src="/scripts/store-reading-list.js"></script>
+<script src="/scripts/ucsur.js"></script>

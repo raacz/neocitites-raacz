@@ -39,10 +39,13 @@ main {
 /*The configurable menu.*/
 .menu {
     background-color: var(--walo-lili);
-    display: flex;
+    border-block-end: 0.1em solid var(--pimeja);
+    position: relative;
+}
+ .main-controls{
+        display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border-block-end: 0.1em solid var(--pimeja);
 
 
 }
@@ -79,6 +82,7 @@ main {
     margin: 0;
     padding: 0;
 }
+
 
 
 /*logic for hiding different versions of menu*/
@@ -216,7 +220,7 @@ body:has(input[id="rc-1b"]:not(:checked)) .table .sp {
 }
 
 /*In quiz mode, hide table, line, and english*/
-:has( :is(input[id="rc-2b"]:checked)):is(.lines, .table,
+:has(:is(input[id="rc-2b"]:checked)) :is(.lines, .table,
     label:has(input[id="rc-1a"]),
     /* as well as English toggle*/
     fieldset[id="rc-3"],
@@ -521,6 +525,34 @@ h1 {
     line-height: 1em;
 
 }
+
+
+.expanded-menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+fieldset:has(#rc-5a){
+    flex: 1;
+}
+fieldset:has(#rc-4a){
+    flex: 2;
+}
+
+
+
+
+.expanded {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    border-radius: none;
+    border: none;
+}
+.expanded[aria-pressed="true"]{
+
+}
+
 
 
 
