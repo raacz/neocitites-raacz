@@ -528,7 +528,7 @@ h1 {
 
 
 .expanded-menu {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
 }
 fieldset:has(#rc-5a){

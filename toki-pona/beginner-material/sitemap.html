@@ -1,6 +1,7 @@
 ---
 layout: _layouts/bt/texts.html
 title: Site Map
+tags: generalb
 ---
 
 <h2>General Pages</h2>
@@ -9,7 +10,7 @@ title: Site Map
 
 <ul>
 
-{% assign pages = collections.btextsite | sort: "data.title" %}
+{% assign pages = collections.generalb | sort: "data.title" %}
 {% for post in pages %}
     <li><a href="{{ post.url }} ">{{ post.data.title}}</a></li>
 

@@ -10,8 +10,7 @@ content:
 accessibility:
 - ensure proper language tagging throughout
 - consider making invisible headings
-- enable character key shortcuts
-- dark mode
+- enable character key shortcuts..?
 - styled focus links
 
 technical:
@@ -25,6 +24,12 @@ general ui improvements
 - all pages get a word count use word count to determine if the thing needs to not reflow as rows, so we never end up in a gross look situation
 - sp, alone on regular, should never reflow probably...
 
+
+ideas for quest texts:
+-alcohol page nonwithstanding
+-dragon quest nonwithstanding
+-mormon approach to coffee
+- cybertruck
 
 ideas for theme pages
 - circus

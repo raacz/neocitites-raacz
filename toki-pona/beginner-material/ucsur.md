@@ -1,7 +1,8 @@
 ---
 layout: _layouts/bt/texts.html
 title: More about UCSUR
-tags: article
+tags: 
+- article
 ---
 
 ## First, What Is It?

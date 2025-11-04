@@ -212,15 +212,17 @@ export default function (eleventyConfig) {
     return bsite;
   });
 
-  //btextsite is intended to only get the 'information' pages in the beginner text site
+  //btextsite is intended to only get the 'information' pages in the beginner text site. currently unused. 
   eleventyConfig.addCollection("btextsite", function (collectionApi) {
     let bsite = collectionApi.getFilteredByGlob("toki-pona/beginner-material/*");
     for (let item of bsite){
       if(item.data.tags){
           console.log(item.data.tags);
           if(item.data.tags.includes("article")){
+            console.log(item.data.title);
             bsite.splice(bsite.indexOf(item), 1);
           }
+          console.log(item.data.tags);
 
 
       }
