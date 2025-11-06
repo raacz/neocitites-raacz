@@ -87,6 +87,21 @@ ul.circles{
     object-fit: cover;
     filter: sepia(60%);
 }
+li:has(.collage){
+    position: relative;
+}
+
+li:has(.collage) a:is(:visited, :not(:visited))::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+
+}
 
 ul:has(.collage){
     display: flex;
@@ -95,10 +110,14 @@ ul:has(.collage){
 
 }
 
-li:has(.collage) div:not(:has(img)){
-    padding: 1em 1em 0 1em;
+li:has(.collage) p{
+    padding: 0 1em 0 1em;
+    position: relative;
+    z-index: 3;
+
 }
 li:has(.collage) h2{
+    padding: 1em 1em 0 1em;
     font-size: 1em;
     margin: 0;
 }

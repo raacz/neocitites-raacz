@@ -4,7 +4,11 @@ title: Bite-Sized Texts
 tags: generalb
 ---
 
-These texts are short, simple, stand-alone narratives featuring a single contextualizing picture. Generally, bites-sized texts with a higher word count are more complex. 
+These texts are short, simple, stand-alone narratives. Generally, Bites-Sized Texts with a higher word count are more complex. 
+
+One story: One pages.  
+One page: One picture.  
+One picture: 34-216 words in Toki Pona.
 
 
 <ul class="cards">

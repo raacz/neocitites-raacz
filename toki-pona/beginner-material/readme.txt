@@ -1,12 +1,8 @@
 kala asi feedback:
 - quiz bar displacement solution?
-- padding to image caption
-- marking as read footer set as flex 1 to children
-- fix high contrast
 - image attribution perhaps under the image
 - understand the weird english+sp+sl behaviour on certain viewports
 - ability to trigger indenteless sp mode
-- sequence previews need to be fully clickable
 
 
 responsive:
@@ -17,6 +13,9 @@ content:
 - need a tutorial page
 
 NAME: should 'theme' texts actually be 'topic' texts? probably. i should change it. 
+
+bugs:
+- reading tracker is currently not always remembering when the challenge is on or off
 
 
 accessibility:
@@ -36,7 +35,11 @@ reading list todo:
 general ui improvements
 - all pages get a word count use word count to determine if the thing needs to not reflow as rows, so we never end up in a gross look situation
 - sp, alone on regular, should never reflow probably...
+- hover styling
 
+
+theme changer:
+- consider changing it from saying 'Theme' to an icons
 
 
 ideas for quest texts:

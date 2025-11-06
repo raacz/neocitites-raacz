@@ -312,11 +312,6 @@ figcaption a:is(:visited, :not(:visited)) {
     color: var(--pimeja);
 }
 
-figcaption .attr {
-    display: block;
-}
-
-figcaption {}
 
 p:last-of-type {
     margin-bottom: 0;
@@ -327,6 +322,13 @@ p:last-of-type {
     background-color: var(--walo-lili);
     font-size: 0.8em;
     line-height: 1em;
+    display: block;
+    padding: 0.5em;
+
+}
+.caption{
+    padding: 0.5em;
+    display: block;
 }
 
 nav ul {
@@ -495,6 +497,7 @@ h1 {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    padding-block: 0.15em;
 }
 .if-enabled{
     display: none;
@@ -503,7 +506,6 @@ h1 {
         color: var(--contrast-white);
         text-decoration: underline;
 }
-.hidden
 .pseudo-footer *{
     flex: 1;
     text-align: center;
@@ -514,10 +516,10 @@ h1 {
     text-align: center;
     line-height: 1em;
 }
-
-.reading-list-checkbox input {
-    margin-inline: 1em;
+.reading-list-checkbox label{
+    margin-block: 3em;
 }
+
 
 .complicated-license {
     margin: 2em 2em 0 2em;
