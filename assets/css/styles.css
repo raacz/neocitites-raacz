@@ -55,6 +55,7 @@ body {
 }
 
 header {
+    position: relative;
     display: grid;
     grid-template-areas:
         "introtext navigation"
@@ -169,6 +170,9 @@ nav li {
 nav a:is(:visited, :not(:visited)) {
     color: var(--walo);
 
+}
+.second-header{
+    position: relative;
 }
 
 a:is(:visited, :not(:visited)) {
@@ -331,19 +335,93 @@ small {
 }
 
 .status-log * {
-    border: 0.1em solid var(--pimeja);
-    ;
+    border: var(--thin, 0.1em) solid var(--pimeja);
     border-collapse: collapse;
     padding: 0.5em;
 }
 
 
+
+
+
+
 /*beginner text portal*/
 /* light mode
+
+
+        --walo: rgb(235, 233, 225);
+        --pimeja: rgb(0, 0, 0);
+        --walo-lili: rgb(233, 243, 184);
+        --walo-pimeja: rgb(139, 205, 103);
+        --laso: rgb(36, 36, 157);
+        --pimeja-lili: rgb(40, 16, 16);
+        --bold-outline: var(--walo-pimeja);
+        --ike: rgb(132, 10, 10);
+        --completed: rgb(227, 251, 227);
+        --incomplete: rgb(247, 219, 219);
+        --footer-text: var(--walo-pimeja);
+        --footer-link: var(--walo);
+                --contrast-white: white;
+
+
 */
 /*dark mode
-    
+        --walo: rgb(29, 23, 17);
+    --pimeja: rgb(235, 233, 225);
+    --walo-lili: rgb(47, 49, 38);
+    --walo-pimeja: rgb(39, 63, 26);
+    --laso: rgb(130, 203, 234);
+    --pimeja-lili: rgb(139, 205, 103);
+    --ike: rgb(239, 4, 4);
+    --bold-outline: var(--pimeja-lili);
+    --completed: rgb(4, 40, 12);
+    --incomplete: rgb(39, 9, 9);
+    --footer-text: var(--pimeja-lili);
+    --footer-link: var(--pimeja);
+            --contrast-white: white;
 */
+
+/* low contrast light mode 
+
+--walo: rgb(189, 159, 110);
+        --pimeja: rgb(0, 0, 0);
+        --walo-lili: rgb(159, 167, 114);
+        --walo-pimeja: rgb(122, 135, 114);
+        --laso: rgb(36, 36, 135);
+        --pimeja-lili: rgb(40, 16, 16);
+        --bold-outline: var(--walo-pimeja);
+        --ike: rgb(132, 10, 10);
+        --completed: rgb(115, 139, 115);
+        --incomplete: rgb(164, 128, 128);
+        --footer-text: var(--walo-pimeja);
+        --footer-link: var(--walo);
+        --contrast-white: rgb(214, 212, 190);
+        --brightness: 70%;
+        --thin : 0.05em;
+*/
+
+/* low contrast dark mode
+ --walo: rgb(29, 23, 17);
+        --pimeja: rgb(190, 190, 149);
+        --walo-lili: rgb(47, 49, 38);
+        --walo-pimeja: rgb(39, 63, 26);
+        --laso: rgb(122, 179, 203);
+        --pimeja-lili: rgb(102, 154, 77);
+        --ike: rgb(239, 4, 4);
+        --bold-outline: var(--pimeja-lili);
+        --completed: rgb(4, 40, 12);
+        --incomplete: rgb(39, 9, 9);
+        --footer-text: var(--pimeja-lili);
+        --footer-link: var(--pimeja);
+        --contrast-white: rgb(226, 226, 208);
+        --brightness: 100%;
+        --thin : 0.05em;
+
+
+*/
+
+
+
 
 
 
@@ -364,6 +442,8 @@ html:has(.back-to-main) {
     --incomplete: rgb(247, 219, 219);
     --footer-text: var(--walo-pimeja);
     --footer-link: var(--walo);
+    --contrast-white: white;
+
 
 
     --main-padding: 2em;
@@ -385,6 +465,8 @@ html:has(.back-to-main)[data-custom-theme="dark mode"] {
     --incomplete: rgb(39, 9, 9);
     --footer-text: var(--pimeja-lili);
     --footer-link: var(--pimeja);
+    --contrast-white: white;
+
 }
 
 html:has(.back-to-main)[data-custom-theme="light mode"] {
@@ -400,6 +482,8 @@ html:has(.back-to-main)[data-custom-theme="light mode"] {
     --incomplete: rgb(247, 219, 219);
     --footer-text: var(--walo-pimeja);
     --footer-link: var(--walo);
+    --contrast-white: white;
+
 }
 
 @media (prefers-color-scheme: light) {
@@ -417,37 +501,25 @@ html:has(.back-to-main)[data-custom-theme="light mode"] {
         --incomplete: rgb(247, 219, 219);
         --footer-text: var(--walo-pimeja);
         --footer-link: var(--walo);
+        --contrast-white: white;
+
+
     }
 
+    /*experimenting with a low contrast mode*/
     html:has(.back-to-main)[data-custom-theme="dark mode"] {
-        --walo: rgb(29, 23, 17);
-        --pimeja: rgb(235, 233, 225);
-        --walo-lili: rgb(47, 49, 38);
-        --walo-pimeja: rgb(39, 63, 26);
-        --laso: rgb(130, 203, 234);
-        --pimeja-lili: rgb(139, 205, 103);
-        --ike: rgb(239, 4, 4);
-        --bold-outline: var(--pimeja-lili);
-        --completed: rgb(4, 40, 12);
-        --incomplete: rgb(39, 9, 9);
-        --footer-text: var(--pimeja-lili);
-        --footer-link: var(--pimeja);
+       
     }
 
-    html:has(.back-to-main)[data-custom-theme="light mode"] {
-        --walo: rgb(235, 233, 225);
-        --pimeja: rgb(0, 0, 0);
-        --walo-lili: rgb(233, 243, 184);
-        --walo-pimeja: rgb(139, 205, 103);
-        --laso: rgb(36, 36, 157);
-        --pimeja-lili: rgb(40, 16, 16);
-        --bold-outline: var(--walo-pimeja);
-        --ike: rgb(132, 10, 10);
-        --completed: rgb(227, 251, 227);
-        --incomplete: rgb(247, 219, 219);
-        --footer-text: var(--walo-pimeja);
-        --footer-link: var(--walo);
+    .collage,
+    .card img,
+    .context img,
+    .wrapper img {
+        filter: brightness(var(--brightness));
     }
+
+    /*experimenting with a low constrast light mode*/
+    html:has(.back-to-main)[data-custom-theme="light mode"] {}
 }
 
 
@@ -465,6 +537,8 @@ html:has(.back-to-main)[data-custom-theme="light mode"] {
         --incomplete: rgb(39, 9, 9);
         --footer-text: var(--pimeja-lili);
         --footer-link: var(--pimeja);
+        --contrast-white: white;
+
     }
 
     html:has(.back-to-main)[data-custom-theme="dark mode"] {
@@ -480,6 +554,8 @@ html:has(.back-to-main)[data-custom-theme="light mode"] {
         --incomplete: rgb(39, 9, 9);
         --footer-text: var(--pimeja-lili);
         --footer-link: var(--pimeja);
+        --contrast-white: white;
+
     }
 
     html:has(.back-to-main)[data-custom-theme="light mode"] {
@@ -495,6 +571,9 @@ html:has(.back-to-main)[data-custom-theme="light mode"] {
         --incomplete: rgb(247, 219, 219);
         --footer-text: var(--walo-pimeja);
         --footer-link: var(--walo);
+        --contrast-white: white;
+
+
     }
 
 

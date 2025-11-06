@@ -18,7 +18,7 @@ tags: generalb
 
 
     tr {
-        border-bottom: 0.1em solid var(--pimeja);;
+        border-bottom: var(--thin, 0.1em) solid var(--pimeja);;
     }
 
     tr td:last-child {
@@ -107,7 +107,7 @@ tags: generalb
         display: block;
         color: var(--pimeja);
         font-size: 1em;
-        border: 0.1em solid var(--pimeja);;
+        border: var(--thin, 0.1em) solid var(--pimeja);;
         border-radius: 0.25em;
         padding: 0.2em;
         background-color: var(--walo);
@@ -196,7 +196,7 @@ tags: generalb
         height: 5em;
         border-radius: 50%;
         background-color: rgb(235, 233, 225);
-        border: 0.5em solid var(--walo-pimeja);
+        border: var(--thin, 0.5em) solid var(--walo-pimeja);
         display: grid;
         place-items: center;
         z-index: 1;
@@ -213,7 +213,7 @@ tags: generalb
     }
 
     #progress-container {
-        border: 0.2em solid var(--pimeja);;
+        border: var(--thin, 0.2em) solid var(--pimeja);
         grid-column-start: 1;
         grid-column-end: 3;
 

@@ -1,3 +1,14 @@
+kala asi feedback:
+- quiz bar displacement solution?
+- padding to image caption
+- marking as read footer set as flex 1 to children
+- fix high contrast
+- image attribution perhaps under the image
+- understand the weird english+sp+sl behaviour on certain viewports
+- ability to trigger indenteless sp mode
+- sequence previews need to be fully clickable
+
+
 responsive:
 - ensure mobile styling works.
 

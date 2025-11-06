@@ -27,7 +27,7 @@ tags: generalb
 
   .wrapper:nth-of-type(3) {
     background-color: rgb(24, 24, 57);
-    color: white;
+    color: var(--contrast-white);
 
   }
 
@@ -39,7 +39,7 @@ tags: generalb
 
   .wrapper:nth-of-type(5) {
     background-color: rgb(40, 16, 16);
-    color: rgb(235, 233, 225);
+    color: var(--contrast-white);
   }
 
   .wrapper:nth-of-type(5) .section {
@@ -201,7 +201,7 @@ tags: generalb
   .beta-notice{
     background-color: rgb(239, 239, 36);
     color: black;
-    border: 0.2em solid black;
+    border: var(--thin, 0.2em) solid black;
     max-width: 30em;
     margin: 0 auto;
   }
@@ -229,7 +229,7 @@ tags: generalb
   }
 
   .wrapper {
-    border-bottom: 0.3em solid var(--pimeja);
+    border-bottom: var(--thin,0.3em) solid var(--pimeja);
     width: 100%;
 
   }
@@ -483,8 +483,12 @@ tags: generalb
       <summary>
         <h4>Saving Your Reading Preferences</h4>
       </summary>
-      <p>The settings that you've configured will be saved for the duration of your session. Opening Beginner Stories in
-        a new tab or window will reset your preferences.</p>
+      <p>The version, mode, and image settings that you've configured will be saved only for the duration of your session. Opening Beginner Stories in a new tab or window will reset your preferences.</p>
+
+      <p>Available in the expanded menu, UCSUR Preferences for 'Using ASCII' and 'Converting page' are similarly stored only for the duration of your session.</p>
+
+
+      <p>Your selection to 'Always Use UCSUR', as well as your preference for Light Mode or Dark Mode, will persist across sessions.</p>
     </details>
     <details markdown="1">
       <summary>
