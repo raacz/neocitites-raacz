@@ -10,12 +10,13 @@ kala asi feedback:
 
 
 responsive:
-- ensure mobile styling works.
-
+- ensure mobile styling work
 content:
 - finish the sp article
 - make three quest stories
 - need a tutorial page
+
+NAME: should 'theme' texts actually be 'topic' texts? probably. i should change it. 
 
 
 accessibility:
@@ -35,6 +36,7 @@ reading list todo:
 general ui improvements
 - all pages get a word count use word count to determine if the thing needs to not reflow as rows, so we never end up in a gross look situation
 - sp, alone on regular, should never reflow probably...
+
 
 
 ideas for quest texts:

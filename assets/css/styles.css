@@ -611,25 +611,40 @@ body:not(:has(.context)) .second-header{
 body:has(.context) #home-settings-toggle{
     border: none;
     background: transparent;
-    color: red;
-        color:var(--contrast-white);
+    color:var(--contrast-white);
     position: absolute;
     z-index: 1;
-    background: transparent;
-    top: 0.5rem;
+    top: 0rem;
+    line-height: 1em;
+    height:fit-content;
     right: 0.5rem;
-    background-color: var(--pimeja-lili);
+    background-color: transparent;
     border: none;
-
 }
 
+
+
 body:has(.context) .second-header{
-    display: grid;
     position: relative;
 }
 body:has(.context) nav {
     grid-area: navigation;
     height: 100%;
+    width: 100%;
+}
+
+@media(max-width: 40em){
+    body:has(.context) #home-settings-toggle{
+        margin-top: -1.5em;
+        color:var(--pimeja);
+        top: 1.25rem;
+        right: 0.25rem;
+
+    }
+    body:has(.context) .second-header{
+        position: static;
+    }
+
 }
 
 

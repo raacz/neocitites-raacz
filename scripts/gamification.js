@@ -222,8 +222,8 @@ class StoryStats extends Calculator {
         let achievements = [];
 
         let thematic = {
-            name: "Well-Travelled Thematic",
-            descriptionText: "Complete all the Theme Stories",
+            name: "Topically Well-Travelled",
+            descriptionText: "Complete all the Topic Stories",
             image: "StrollingDoodle.svg",
             alt: "Strollin' round town, your arms a-swingin,' you've seen some things and your confidence is growin'",
             logic: function (parent) {
