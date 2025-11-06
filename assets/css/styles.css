@@ -171,9 +171,6 @@ nav a:is(:visited, :not(:visited)) {
     color: var(--walo);
 
 }
-.second-header{
-    position: relative;
-}
 
 a:is(:visited, :not(:visited)) {
     color: var(--laso);
@@ -589,6 +586,103 @@ body:has(.back-to-main) .introtext {
     justify-content: center;
     background-color: var(--walo-pimeja);
 }
+
+
+/*exclusive to bt*/
+
+
+body:not(:has(.context)) #home-settings-toggle{
+    color:var(--contrast-white);
+    position: absolute;
+    z-index: 1;
+    background: transparent;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: var(--pimeja-lili);
+    border: none;
+}
+body:not(:has(.context)) .second-header{
+    position: relative;
+    
+}
+
+
+/*added to page view*/
+body:has(.context) #home-settings-toggle{
+    border: none;
+    background: transparent;
+    color: red;
+        color:var(--contrast-white);
+    position: absolute;
+    z-index: 1;
+    background: transparent;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: var(--pimeja-lili);
+    border: none;
+
+}
+
+body:has(.context) .second-header{
+    display: grid;
+    position: relative;
+}
+body:has(.context) nav {
+    grid-area: navigation;
+    height: 100%;
+}
+
+
+
+.light-dark-modes{
+    margin: auto 0em auto auto;
+    font-size: 0.9em;
+    background-color: var(--pimeja);
+    color: var(--contrast-white);
+    max-width: fit-content;
+    width: 100%;
+    z-index: -100;
+    font-size: 0.8em;
+    max-height: 100%;
+    padding-block-start: 1.5em;
+}
+
+.light-dark-modes-header{
+    font-size: inherit;
+    font-weight: inherit;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0.05em solid var(--contrast-white);
+    padding: 0.25em;
+    line-height: 1em;
+    margin: 0 auto 0 auto;
+}
+
+
+.light-dark-modes fieldset fieldset legend{
+    text-decoration: underline;
+}
+.light-dark-modes fieldset{
+    max-width: 20em;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.light-dark-modes button{
+    color: inherit;
+    background-color: inherit;
+    border: none;
+    position: absolute;
+    margin-inline: 0em auto;
+    inset: 0.10em 0.5em auto auto;
+}
+.light-dark-modes button span{
+        font-size: 0.6em;
+}
+
+
 
 
 

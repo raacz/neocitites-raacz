@@ -23,6 +23,7 @@ accessibility:
 - consider making invisible headings
 - enable character key shortcuts..?
 - styled focus links
+- it appears that tabbing to form controls are broken when fieldsets are nested. firefox vanilla is fine, orca skips em but can access with form control toggle, chromium vanilla skips em.
 
 technical:
 - ensure that tok [!] can be replaced with sp [a] in sorting algo

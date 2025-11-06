@@ -49,35 +49,39 @@
             </button>
 
         </div>
-        <div id="targettheme" class="light-dark-modes" popover>
-            <div>
+        <div aria-labeledby="input-6" id="targettheme" class="light-dark-modes" popover>
                 <button><span>Dismiss</span></button>
-                <h2 id="input-6">Select Theme</h2>
-            </div>
-            <div>
-                <fieldset aria-describedby="input-6">
-                    <legend>Higher Contrast</legend>
-                    <label for="6a">
-                        <input type="radio" name="darklightmode" id="6a">
-                        Light Mode
-                    </label>
-                    <label for="6b">
-                        <input type="radio" name="darklightmode" id="6b">
-                        Dark Mode
-                    </label>
-                </fieldset>
-                <fieldset aria-describedby="input-6">
-                    <legend>Lower Contrast</legend>
-                    <label for="6c">
-                        <input type="radio" name="darklightmode" id="6c">
-                        Light Mode
-                    </label>
-                    <label for="6d">
-                        <input type="radio" name="darklightmode" id="6d">
-                        Dark Mode
-                    </label>
-                </fieldset>
-            </div>
+                <form>
+                    <fieldset>
+                        <legend class="light-dark-modes-header" id="input-6">Select Theme</legend>
+                            <label for="6e">
+                                <input type="radio" name="darklightmode" id="6e">
+                                System Default
+                            </label>
+                        <fieldset aria-describedby="input-6">
+                            <legend>Higher Contrast</legend>
+                            <label for="6a">
+                                <input type="radio" name="darklightmode" id="6a">
+                                Light Mode
+                            </label>
+                            <label for="6b">
+                                <input type="radio" name="darklightmode" id="6b">
+                                Dark Mode
+                            </label>
+                        </fieldset>
+                        <fieldset aria-describedby="input-6">
+                            <legend>Lower Contrast</legend>
+                            <label for="6c">
+                                <input type="radio" name="darklightmode" id="6c">
+                                Light Mode
+                            </label>
+                            <label for="6d">
+                                <input type="radio" name="darklightmode" id="6d">
+                                Dark Mode
+                            </label>
+                        </fieldset>
+                    </fieldset>
+                </form>
             <!--<select name="header-theme-selector" id="header-theme-selector">
 <option value="mercedes">System Default</option>
   <optgroup label="Higher Contrast">
