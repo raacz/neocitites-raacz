@@ -102,7 +102,7 @@ tags: generalb
         font-size: 1em;
     }
 
-    button {
+    button:not(:has(svg)) {
         margin-top: 0.5em;
         display: block;
         color: var(--pimeja);
@@ -113,7 +113,7 @@ tags: generalb
         background-color: var(--walo);
     }
 
-    button:is(:hover, :focus-visible) {
+    button:not(:has(svg)):is(:hover, :focus-visible) {
         border-color: var(--bold-outline);
     }
 

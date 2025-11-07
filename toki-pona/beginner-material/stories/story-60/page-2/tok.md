@@ -18,7 +18,7 @@ alternate: see https://www.flickr.com/photos/kenlund/54012089096/in/photolist-2q
 
 # telo wawa en nasin sewi Momon
 
-jan Sosa Si pi moli ala li toki lon tenpo mute e ni: sewi li pana e sona sin tawa mi. 
+jan Sosa Si pi moli ala li toki e ni lon tenpo mute: sewi li pana e sona sin tawa mi. 
 
 tenpo sike mute luka tu wan li lon jan Sosa Si la jan sewi li toki e ni tawa ona: 
 

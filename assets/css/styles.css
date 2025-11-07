@@ -599,64 +599,71 @@ body:has(.back-to-main) .introtext {
 
 /*exclusive to bt*/
 
+ #home-settings-toggle:focus-visible{
+    outline: none;
+ }
+  #home-settings-toggle:focus-visible svg {
+    outline: 0.1em solid var(--contrast-white);
+    box-shadow: inset 0 0 0 0.1em var(--bold-outline);
+  }
 
-body:not(:has(.context)) #home-settings-toggle {
-    color: var(--contrast-white);
-    position: absolute;
-    z-index: 1;
+
+ #home-settings-toggle{
+    border: none;
     background: transparent;
-    top: 0.5rem;
-    right: 0.5rem;
+    display: block;
+ }
+ #home-settings-toggle svg{
+    max-width: 3.5em;
+    max-height: 3.5em;
     background-color: var(--pimeja-lili);
-    border: none;
-}
+    border-radius: 50%;
+    padding: 0.3em;
+ }
 
-body:not(:has(.context)) .second-header {
-    position: relative;
-
-}
-
-
-/*added to page view*/
-body:has(.context) #home-settings-toggle {
-    border: none;
-    background: transparent;
-    color: var(--contrast-white);
-    position: absolute;
-    z-index: 1;
-    top: 0rem;
-    line-height: 1em;
-    height: fit-content;
-    right: 0.5rem;
-    background-color: transparent;
-    border: none;
-}
+ :has(.context)  #home-settings-toggle svg{
+    max-width: 2em;
+    max-height: 2em;
 
 
+ }
 
-body:has(.context) .second-header {
-    position: relative;
-}
+ #home-settings-toggle span{
+    opacity: 0;
+    font-size: 0.1em;
+
+ }
+ .second-header{
+    display: flex;
+    background-color: var(--pimeja-lili);
+    padding-inline-end: 1em;
+    padding-block: 0.25em;
+ }
+ body:has(.second-header) nav {
+    flex: 1;
+ }
+  body:has(.second-header) nav ul {
+    padding-inline-start: 1em;
+ }
+
+
+
+
+
+
+
+
+
 
 body:has(.context) nav {
     grid-area: navigation;
     height: 100%;
-    width: 100%;
 }
 
 @media(max-width: 40em) {
-    body:has(.context) #home-settings-toggle {
-        margin-top: -1.5em;
-        color: var(--pimeja);
-        top: 1.25rem;
-        right: 0.25rem;
+   
 
-    }
-
-    body:has(.context) .second-header {
-        position: static;
-    }
-
+    
 }
 
 
