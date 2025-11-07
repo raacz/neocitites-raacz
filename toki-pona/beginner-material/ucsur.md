@@ -72,7 +72,7 @@ What Sitelen Pona font makers have done is assigned new combo-letter characters 
 
 ### Second Option: Make Your Own Standard
 
-Unicode is able to encode over a million characters, but it currently only uses a fraction of that. There are many combinations which are simply unassigned, and there's actually a whole bunch of them that have been declared as being 'for private use. Anyone, including a Sitelen Pona enthusiast, can go ahead and just... pick a few to use for their private needs. 
+Unicode is able to encode over a million characters, but it currently only uses a fraction of that. There are many combinations which are simply unassigned, and there's actually a whole bunch of them that have been declared as being for private use. Anyone, including a Sitelen Pona enthusiast, can go ahead and just... pick a few to use for their private needs. 
 
 There is more than one Sitelen Pona font-making enthusiast. How do we ensure that they pick the same ones to use for Sitelen Pona?
 
