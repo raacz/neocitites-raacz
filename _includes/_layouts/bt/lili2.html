@@ -73,8 +73,17 @@ stylesheet: "/assets/css/reading-mode.css"
         </div>
         {% endif %}
         {% if sp_item %}
-        <div class="sp">
+        <div class="indented sp">
           {{ sp_item.content }}
+        </div>
+        <div class="unindented sp">
+          {% for paragraph in story.spFlattened %}
+          <p>
+            {% for sentence in paragraph %}
+            {{ sentence | remove: '<br>' | remove: 'zz' | remove: '^>' | remove: '>^' | remove: '^' }}.
+            {% endfor %}
+          </p>
+          {% endfor %}
         </div>
         {% endif %}
 
@@ -94,7 +103,10 @@ stylesheet: "/assets/css/reading-mode.css"
             <tr>
               <td lang="tok">{{ story.tokLines[i] }}</td>
               <td lang="en">{{ story.enLines[i] }}</td>
-              <td class="sp">{{ story.spLines[i] }}</td>
+              <td class="indented sp">{{ story.spLines[i] }}</td>
+              <td class="unindented sp">{{ story.spLines[i]| remove: '<br>' | remove: 'zz' | remove: '^>' | remove: '>^' | remove: '^' }}.</td>
+
+
             </tr>
             {% endfor %}
 
@@ -112,7 +124,8 @@ stylesheet: "/assets/css/reading-mode.css"
 
         <div class="line">
           <p lang="tok">{{ story.tokLines[i] }}</p>
-          <p class="sp">{{ story.spLines[i] }}</p>
+          <p class="indented sp">{{ story.spLines[i] }}</p>
+          <p class="unindented sp">{{ story.spLines[i] | remove: '<br>' | remove: 'zz' | remove: '^>' | remove: '>^' | remove: '^' }}.</p>
           <details lang="en">
             <summary>en</summary>
             <p>{{ story.enLines[i] }}</p>
@@ -133,5 +146,5 @@ stylesheet: "/assets/css/reading-mode.css"
 <script src="/scripts/mode-configure2.js"></script>
 
 <script>
-    console.log("{{ page }}");
+  console.log("{{ page }}");
 </script>

@@ -104,7 +104,7 @@ function wordCount(str) {
     let combined = frags[fragIndex] || '';
     let combinedCount = wordCount(combined);
     console.log(combined, combinedCount);
-
+ 
     // Merge until we reach threshold or run out
     while (combinedCount < baseCount * threshold && fragIndex + 1 < frags.length) {
       fragIndex++;
@@ -197,7 +197,7 @@ function pairByWordCount(baseSents, frags, options = {}) {
 
     if (fragIndex >= frags.length) {
       // no fragments left — produce empty string for this base sentence
-      console.warn(`Warning: Ran out of fragments at base sentence ${b}. Remaining base sentences: ${baseSents.length - b} \n${baseSents}`);
+      //console.warn(`Warning: Ran out of fragments at base sentence ${b}. Remaining base sentences: ${baseSents.length - b} \n${baseSents}`);
       pairs.push('');
       continue;
     }
@@ -268,15 +268,16 @@ function pairTokEnSpByParagraph(tokText, enText, spText) {
   const spPars = splitParagraphs(spText);
 
   if (tokPars.length !== enPars.length || tokPars.length !== spPars.length) {
-    console.warn(
+    /*console.warn(
       `⚠️ Paragraph-count mismatch (tok=${tokPars.length}, en=${enPars.length}, sp=${spPars.length}) ${tokPars}`
-    );
+    );*/
 
   }
 
   const triples = [];
 
   // iterate over paragraphs (using tok count as anchor)
+  const spFlat = [];
   for (let pi = 0; pi < tokPars.length; pi++) {
     const tokPara = tokPars[pi] || "";
     const enPara = enPars[pi] || "";
@@ -305,7 +306,11 @@ function pairTokEnSpByParagraph(tokText, enText, spText) {
 
     // step 2: merge SP fragments into the existing tokEnPairs
     const spFrags = splitSpFragments(spPara);
+
     const spMerged = pairByWordCount(tokSents, spFrags, { threshold: 0.7, overshoot: 1.8 });
+    spFlat.push(spMerged);
+
+
 
     // assign sp into the same indexes as tok/en
     for (let si = 0; si < tokEnPairs.length; si++) {
@@ -316,10 +321,17 @@ function pairTokEnSpByParagraph(tokText, enText, spText) {
     // warning if sp doesn’t align
     if (tokEnPairs.length !== spMerged.length) {
       console.warn(`⚠️ Tok/SP mismatch in paragraph ${pi}: tokEnPairs=${tokEnPairs.length}, spMerged=${spMerged.length}`);
-    }
-  }
+    }    
 
-  return triples;
+  }
+  const bundle = {
+      triples: triples, 
+      spFlattened: spFlat,
+    }
+  return bundle;
+
+
+
 }
 
 //--------------------------------------------------------------------------//
@@ -374,12 +386,12 @@ module.exports = function () {
                   entry[slug] = fs.readFileSync(path.join(dir, f), "utf8");
                 }
               }
-              let triples = pairTokEnSpByParagraph(entry["tok"], entry["en"], entry["sp"]);
+              let bundle = pairTokEnSpByParagraph(entry["tok"], entry["en"], entry["sp"]);
               let [tokLines, enLines, spLines] = [
-                triples.map(t => t.tok),
-                triples.map(t => t.en),
-                triples.map(t => t.sp)
-              ];
+                bundle.triples.map(t => t.tok),
+                bundle.triples.map(t => t.en),
+                bundle.triples.map(t => t.sp)
+              ];  
               const allData = {
                 en: entry["en"] || "",
                 sp: entry["sp"] || "",
@@ -387,7 +399,9 @@ module.exports = function () {
                 enLines: enLines || "",
                 spLines: spLines || "",
                 tokLines: tokLines || "",
+                spFlattened: bundle.spFlattened,
               };
+              console.log(allData.spFlattened)
               return allData;
             }
             else {

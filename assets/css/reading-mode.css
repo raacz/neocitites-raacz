@@ -249,6 +249,23 @@ body:has(input[id="rc-1b"]:not(:checked)) .table .sp {
 }
 
 
+:has([id="rc-5a"]:checked) .indented{
+    display: block;
+}
+:has([id="rc-5a"]:checked) .unindented{
+    display: none;
+}
+
+:has([id="rc-5b"]:checked) .indented{
+    display: none;
+}
+:has([id="rc-5b"]:checked) .unindented{
+    display: block;
+}
+
+
+
+
 
 
 
