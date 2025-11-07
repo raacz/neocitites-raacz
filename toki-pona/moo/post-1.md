@@ -18,8 +18,8 @@ proliferations!
 
 significations!
 
-Saphir-Whorf chuckles as he stares down at me as I lay flowers at his tombstone.
+Sapir–Whorf chuckles as he stares down at me as I lay flowers at his tombstone.
 
-I slap his face and spit in it, woof at a sapphic, horf a saphire down, gulp, and SCREAM at this doubled anti-plural:
+I slap his face and spit in it, woof at a sapphic, horf a sapphire down, gulp, and SCREAM at this doubled anti-plural:
 
 "YOU STUPID RICH WHITE MONOLINGUALS WILL NEVER CATCH ME NOW!" 
