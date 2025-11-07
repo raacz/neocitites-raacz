@@ -12,7 +12,6 @@ content:
 - make three quest stories
 - need a tutorial page
 
-NAME: should 'theme' texts actually be 'topic' texts? probably. i should change it. 
 
 bugs:
 - reading tracker is currently not always remembering when the challenge is on or off

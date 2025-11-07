@@ -337,6 +337,15 @@ small {
     padding: 0.5em;
 }
 
+.collage,
+.card img,
+.context img,
+.wrapper img {
+    filter: brightness(var(--brightness));
+}
+
+
+
 
 
 
@@ -417,16 +426,7 @@ small {
 
 */
 
-
-
-
-
-
-
-
-
 html:has(.back-to-main) {
-
     --walo: rgb(235, 233, 225);
     --pimeja: rgb(0, 0, 0);
     --walo-lili: rgb(233, 243, 184);
@@ -440,6 +440,9 @@ html:has(.back-to-main) {
     --footer-text: var(--walo-pimeja);
     --footer-link: var(--walo);
     --contrast-white: white;
+    --contrast-black: black;
+
+
 
 
 
@@ -449,43 +452,9 @@ html:has(.back-to-main) {
     font-family: Atkinson, sans;
 }
 
-html:has(.back-to-main)[data-custom-theme="dark mode"] {
-    --walo: rgb(29, 23, 17);
-    --pimeja: rgb(235, 233, 225);
-    --walo-lili: rgb(47, 49, 38);
-    --walo-pimeja: rgb(39, 63, 26);
-    --laso: rgb(130, 203, 234);
-    --pimeja-lili: rgb(139, 205, 103);
-    --ike: rgb(239, 4, 4);
-    --bold-outline: var(--pimeja-lili);
-    --completed: rgb(4, 40, 12);
-    --incomplete: rgb(39, 9, 9);
-    --footer-text: var(--pimeja-lili);
-    --footer-link: var(--pimeja);
-    --contrast-white: white;
-
-}
-
-html:has(.back-to-main)[data-custom-theme="light mode"] {
-    --walo: rgb(235, 233, 225);
-    --pimeja: rgb(0, 0, 0);
-    --walo-lili: rgb(233, 243, 184);
-    --walo-pimeja: rgb(139, 205, 103);
-    --laso: rgb(36, 36, 157);
-    --pimeja-lili: rgb(40, 16, 16);
-    --bold-outline: var(--walo-pimeja);
-    --ike: rgb(132, 10, 10);
-    --completed: rgb(227, 251, 227);
-    --incomplete: rgb(247, 219, 219);
-    --footer-text: var(--walo-pimeja);
-    --footer-link: var(--walo);
-    --contrast-white: white;
-
-}
 
 @media (prefers-color-scheme: light) {
     html:has(.back-to-main) {
-
         --walo: rgb(235, 233, 225);
         --pimeja: rgb(0, 0, 0);
         --walo-lili: rgb(233, 243, 184);
@@ -499,26 +468,10 @@ html:has(.back-to-main)[data-custom-theme="light mode"] {
         --footer-text: var(--walo-pimeja);
         --footer-link: var(--walo);
         --contrast-white: white;
-
+        --contrast-black: black;
 
     }
-
-    /*experimenting with a low contrast mode*/
-    html:has(.back-to-main)[data-custom-theme="dark mode"] {
-       
-    }
-
-    .collage,
-    .card img,
-    .context img,
-    .wrapper img {
-        filter: brightness(var(--brightness));
-    }
-
-    /*experimenting with a low constrast light mode*/
-    html:has(.back-to-main)[data-custom-theme="light mode"] {}
 }
-
 
 @media (prefers-color-scheme: dark) {
     html:has(.back-to-main) {
@@ -535,46 +488,102 @@ html:has(.back-to-main)[data-custom-theme="light mode"] {
         --footer-text: var(--pimeja-lili);
         --footer-link: var(--pimeja);
         --contrast-white: white;
-
-    }
-
-    html:has(.back-to-main)[data-custom-theme="dark mode"] {
-        --walo: rgb(29, 23, 17);
-        --pimeja: rgb(235, 233, 225);
-        --walo-lili: rgb(47, 49, 38);
-        --walo-pimeja: rgb(39, 63, 26);
-        --laso: rgb(130, 203, 234);
-        --pimeja-lili: rgb(139, 205, 103);
-        --ike: rgb(239, 4, 4);
-        --bold-outline: var(--pimeja-lili);
-        --completed: rgb(4, 40, 12);
-        --incomplete: rgb(39, 9, 9);
-        --footer-text: var(--pimeja-lili);
-        --footer-link: var(--pimeja);
-        --contrast-white: white;
-
-    }
-
-    html:has(.back-to-main)[data-custom-theme="light mode"] {
-        --walo: rgb(235, 233, 225);
-        --pimeja: rgb(0, 0, 0);
-        --walo-lili: rgb(233, 243, 184);
-        --walo-pimeja: rgb(139, 205, 103);
-        --laso: rgb(36, 36, 157);
-        --pimeja-lili: rgb(40, 16, 16);
-        --bold-outline: var(--walo-pimeja);
-        --ike: rgb(132, 10, 10);
-        --completed: rgb(227, 251, 227);
-        --incomplete: rgb(247, 219, 219);
-        --footer-text: var(--walo-pimeja);
-        --footer-link: var(--walo);
-        --contrast-white: white;
+        --contrast-black: black;
 
 
     }
+}
+
+html:has(.back-to-main)[data-custom-theme="dark mode with higher contrast"] {
+    --walo: rgb(29, 23, 17);
+    --pimeja: rgb(235, 233, 225);
+    --walo-lili: rgb(47, 49, 38);
+    --walo-pimeja: rgb(39, 63, 26);
+    --laso: rgb(130, 203, 234);
+    --pimeja-lili: rgb(139, 205, 103);
+    --ike: rgb(239, 4, 4);
+    --bold-outline: var(--pimeja-lili);
+    --completed: rgb(4, 40, 12);
+    --incomplete: rgb(39, 9, 9);
+    --footer-text: var(--pimeja-lili);
+    --footer-link: var(--pimeja);
+    --contrast-white: white;
+    --contrast-black: black;
+
+
+
+
 
 
 }
+
+html:has(.back-to-main)[data-custom-theme="light mode with higher contrast"] {
+    --walo: rgb(235, 233, 225);
+    --pimeja: rgb(0, 0, 0);
+    --walo-lili: rgb(233, 243, 184);
+    --walo-pimeja: rgb(139, 205, 103);
+    --laso: rgb(36, 36, 157);
+    --pimeja-lili: rgb(40, 16, 16);
+    --bold-outline: var(--walo-pimeja);
+    --ike: rgb(132, 10, 10);
+    --completed: rgb(227, 251, 227);
+    --incomplete: rgb(247, 219, 219);
+    --footer-text: var(--walo-pimeja);
+    --footer-link: var(--walo);
+    --contrast-white: white;
+    --contrast-black: black;
+
+
+}
+
+html:has(.back-to-main)[data-custom-theme="dark mode with lower contrast"] {
+
+    --walo: rgb(29, 23, 17);
+    --pimeja: rgb(190, 190, 149);
+    --walo-lili: rgb(47, 49, 38);
+    --walo-pimeja: rgb(39, 63, 26);
+    --laso: rgb(122, 179, 203);
+    --pimeja-lili: rgb(102, 154, 77);
+    --ike: rgb(239, 4, 4);
+    --bold-outline: var(--pimeja-lili);
+    --completed: rgb(4, 40, 12);
+    --incomplete: rgb(39, 9, 9);
+    --footer-text: var(--pimeja-lili);
+    --footer-link: var(--pimeja);
+    --contrast-white: rgb(226, 226, 208);
+    --brightness: 60%;
+    --thin: 0.05em;
+    --contrast-black: var(--walo-lili);
+
+
+
+}
+
+html:has(.back-to-main)[data-custom-theme="light mode with lower contrast"] {
+    --walo: rgb(189, 159, 110);
+    --pimeja: rgb(0, 0, 0);
+    --walo-lili: rgb(159, 167, 114);
+    --walo-pimeja: rgb(122, 135, 114);
+    --laso: rgb(36, 36, 135);
+    --pimeja-lili: rgb(40, 16, 16);
+    --bold-outline: var(--walo-pimeja);
+    --ike: rgb(132, 10, 10);
+    --completed: rgb(115, 139, 115);
+    --incomplete: rgb(164, 128, 128);
+    --footer-text: var(--walo-pimeja);
+    --footer-link: var(--walo);
+    --contrast-white: rgb(214, 212, 190);
+    --brightness: 70%;
+    --thin: 0.05em;
+    --contrast-black: var(--pimeja-lili);
+
+
+
+}
+
+
+
+
 
 body:has(.back-to-main) .status {
     display: block;
@@ -591,8 +600,8 @@ body:has(.back-to-main) .introtext {
 /*exclusive to bt*/
 
 
-body:not(:has(.context)) #home-settings-toggle{
-    color:var(--contrast-white);
+body:not(:has(.context)) #home-settings-toggle {
+    color: var(--contrast-white);
     position: absolute;
     z-index: 1;
     background: transparent;
@@ -601,22 +610,23 @@ body:not(:has(.context)) #home-settings-toggle{
     background-color: var(--pimeja-lili);
     border: none;
 }
-body:not(:has(.context)) .second-header{
+
+body:not(:has(.context)) .second-header {
     position: relative;
-    
+
 }
 
 
 /*added to page view*/
-body:has(.context) #home-settings-toggle{
+body:has(.context) #home-settings-toggle {
     border: none;
     background: transparent;
-    color:var(--contrast-white);
+    color: var(--contrast-white);
     position: absolute;
     z-index: 1;
     top: 0rem;
     line-height: 1em;
-    height:fit-content;
+    height: fit-content;
     right: 0.5rem;
     background-color: transparent;
     border: none;
@@ -624,24 +634,26 @@ body:has(.context) #home-settings-toggle{
 
 
 
-body:has(.context) .second-header{
+body:has(.context) .second-header {
     position: relative;
 }
+
 body:has(.context) nav {
     grid-area: navigation;
     height: 100%;
     width: 100%;
 }
 
-@media(max-width: 40em){
-    body:has(.context) #home-settings-toggle{
+@media(max-width: 40em) {
+    body:has(.context) #home-settings-toggle {
         margin-top: -1.5em;
-        color:var(--pimeja);
+        color: var(--pimeja);
         top: 1.25rem;
         right: 0.25rem;
 
     }
-    body:has(.context) .second-header{
+
+    body:has(.context) .second-header {
         position: static;
     }
 
@@ -649,10 +661,11 @@ body:has(.context) nav {
 
 
 
-.light-dark-modes{
+.light-dark-modes {
     margin: auto 0em auto auto;
+    opacity: 0.90;
     font-size: 0.9em;
-    background-color: var(--pimeja);
+    background-color: var(--contrast-black);
     color: var(--contrast-white);
     max-width: fit-content;
     width: 100%;
@@ -662,7 +675,7 @@ body:has(.context) nav {
     padding-block-start: 1.5em;
 }
 
-.light-dark-modes-header{
+.light-dark-modes-header {
     font-size: inherit;
     font-weight: inherit;
     text-align: center;
@@ -674,10 +687,11 @@ body:has(.context) nav {
 }
 
 
-.light-dark-modes fieldset fieldset legend{
+.light-dark-modes fieldset fieldset legend {
     text-decoration: underline;
 }
-.light-dark-modes fieldset{
+
+.light-dark-modes fieldset {
     max-width: 20em;
     border: none;
     display: flex;
@@ -685,7 +699,8 @@ body:has(.context) nav {
     flex-wrap: wrap;
     align-items: center;
 }
-.light-dark-modes button{
+
+.light-dark-modes button {
     color: inherit;
     background-color: inherit;
     border: none;
@@ -693,8 +708,9 @@ body:has(.context) nav {
     margin-inline: 0em auto;
     inset: 0.10em 0.5em auto auto;
 }
-.light-dark-modes button span{
-        font-size: 0.6em;
+
+.light-dark-modes button span {
+    font-size: 0.6em;
 }
 
 
