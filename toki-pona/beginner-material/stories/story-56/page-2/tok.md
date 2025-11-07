@@ -27,7 +27,7 @@ tenpo pini la, jan Ilosike li kama jo e lipu ken li tawa tan ma tomo Eto tawa ma
 
 ni la "lukin mute pi nasin suli Tokato" li kulupu pi sitelen mute musi. ona li pona mute a tawa jan mute li kama e mani tawa jan Ilosike. 
 
-ni la jan Ilosike li pali e "lukin mute nanpa tu pi nasin suli Tokato" e "lukin mute nanpa tu wan pi nasin suli Tokato" e... a, wawa. 
+ni la jan Ilosike li pali e "lukin mute nanpa tu pi nasin suli Tokato" e "lukin mute nanpa tu wan pi nasin suli Tokato" e… a, wawa. 
 
 jan Ilosike li pali e kulupu sitelen mute luka luka luka wan pi nasin suli Tokato. 
 

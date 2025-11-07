@@ -26,6 +26,6 @@ In the finished time, Hiroshige came to be having a possibility document and mov
 
 Therefore "Many sights of Big Road Tōkaidō" is a group of many amusing depictions. It is very good ah from the persepctive of many people and brought money to Hiroshige. 
 
-Therefore Hiroshige made "Many sights #2 of Big Road Tōkaidō" and "Many sights #3 of Big Road Tōkaidō" and... ah, amazing. 
+Therefore Hiroshige made "Many sights #2 of Big Road Tōkaidō" and "Many sights #3 of Big Road Tōkaidō" and… ah, amazing. 
 
 Hiroshige made 36 Big Road Tōkaidō depiction groups. 
