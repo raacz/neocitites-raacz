@@ -1,7 +1,9 @@
 ---
-layout: _layouts/bt/texts.html
+layout: _layouts/bt/landing.html
 title: Topic Texts
 tags: generalb
+stylesheet: /assets/css/tp.css
+
 ---
 
 <style>
@@ -19,24 +21,25 @@ tags: generalb
   
 </style>
 
-<p>{{ content }}</p>
-
-{{ sequenceName | loadCollection }}
-<!-- if you want this to work you need a custom filter 
- or turn it into a partial instead. -->
-
-<ul class="stories">
-  {% for item in collections[sequenceName] %}
-  <li>
-    <a href="{{ item.url }}">
-      <h2 lang="tok">{{ item.data.title }}</h2>
-    </a>
-    <p>{{ item.content }}</p>
-    <div tabindex="-1" role="img" aria-label="{{ item.data.alt }}" class="collage">
-      {% for link in item.data.mediaFiles %}
-      <div class="chromium-fix"><img aria-hidden="true" src="{{ link }}" alt=""></div>
-      {% endfor %}
-    </div>
-  </li>
-  {% endfor %}
-</ul>
+{{ content }}
+  
+  {{ sequenceName | loadCollection }}
+  <!-- if you want this to work you need a custom filter
+   or turn it into a partial instead. -->
+  
+  <ul class="stories">
+    {% for item in collections[sequenceName] %}
+    <li>
+      <a href="{{ item.url }}">
+        <h2 lang="tok">{{ item.data.title }}</h2>
+      </a>
+      <p>{{ item.content }}</p>
+      <div tabindex="-1" role="img" aria-label="{{ item.data.alt }}" class="collage">
+        {% for link in item.data.mediaFiles %}
+        <div class="chromium-fix"><img aria-hidden="true" src="{{ link }}" alt=""></div>
+        {% endfor %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</main>

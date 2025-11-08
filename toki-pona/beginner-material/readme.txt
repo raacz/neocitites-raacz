@@ -1,51 +1,59 @@
-kala asi feedback:
-- quiz bar displacement solution?
-- image attribution perhaps under the image
-- understand the weird english+sp+sl behaviour on certain viewports
-- ability to trigger indenteless sp mode
+# Lakuse's Checklist
 
+## kala Asi outstanding 
+- potentially move image attr under the image
+    > currently quiz mode creates weird diplacement (also note lbl does this too)
+- feature: indentless sp mode
+    > support switching interpunct with CJK Final (need to write a whole new script)
+    > support UCSUR
 
-responsive:
-- ensure mobile styling work
-content:
+## fixing broken things
+- fix: mobile styling
+    > rewrite flex logic for sp/eng/l to accommodate indentless sp and to adjust to stories where the text is under a certain height
+    > ensure spaces do not get weirdly collapsed aka kala Asi's bugs
+    > adjust breakpoints on homepage to ensure the mobile screenshots are shown and collage moves to flex earlier
+- fix: reading tracker currently does not display proper mode dep. whether the challenge is active or inactive
+- feature: fully implement SP expanded controls menu, UCSUR switcher. 
+
+## accessibility
+- fix: nested fieldset
+- feature: invisible headings
+- fix: proper lang tagging
+- feature: styled focus links
+
+## new material 
+
+### stories
+- quest stories mvp
+    > finish the alcohol story
+    > finish the dragon story
+    > finish the hiroshige story
+    > finish the mormon story
+- theme mvp
+    > rewrite sacred underwear+kirpan references Bastian's feedback
+
+### non-stories
 - finish the sp article
-- make three quest stories
-- need a tutorial page
+
+## post-mvp technical
+- feature: quiz mode actually being more like a quiz
+- feature: hover styles
+- fix: expanded line pair/sp-tok matching for inside quotations
+- feature: ratings of story by percentage difficulty
+- feature: word-based achievements
+- feature: sentence miner flashcard thingamabob
+- feature: a tutorial for using the sp interface
+
+## post-mvp texts:
+- quest 'cybertruck' 
 
 
-bugs:
-- reading tracker is currently not always remembering when the challenge is on or off
 
 
-accessibility:
-- ensure proper language tagging throughout
-- consider making invisible headings
-- enable character key shortcuts..?
-- styled focus links
-- it appears that tabbing to form controls are broken when fieldsets are nested. firefox vanilla is fine, orca skips em but can access with form control toggle, chromium vanilla skips em.
-
-technical:
-- ensure that tok [!] can be replaced with sp [a] in sorting algo
-- rate each theme by a percentage difficulty, sort and iterate by that percentage. 
-
-reading list todo:
-- word-based achievements
-
-general ui improvements
-- all pages get a word count use word count to determine if the thing needs to not reflow as rows, so we never end up in a gross look situation
-- sp, alone on regular, should never reflow probably...
-- hover styling
 
 
-theme changer:
-- consider changing it from saying 'Theme' to an icons
 
-
-ideas for quest texts:
--alcohol page nonwithstanding
--dragon quest nonwithstanding
--mormon approach to coffee
-- cybertruck
+--- OLD---
 
 ideas for theme pages
 - circus
