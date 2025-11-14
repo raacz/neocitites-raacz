@@ -4,7 +4,7 @@ I am on a sleeping surface. I want to sleep. But I cannot sleep.
 
 I feel broken. I do not know the source. 
 
-My body's insides roar. Ah, I want to eat!
+My bodily insides roar. Ah, I want to eat!
 
 I move from my room. 
 

@@ -30,7 +30,7 @@ lipu pi jan Momon li toki e ni:
 
 tenpo pini la jan mute li weka tan ma sewi Jelusalen li tawa ma pi kulupu Mewika. jan sewi lili li moli ike pi nasa esun pona lon palisa li kama sin tan moli la ona li tawa ma pi ma Mewika li pali ante mute lon ni. 
 
-lipu pi jan Momon li toki e pali ale pi tenpo ni lon jan nanpa wan ni: ona li kama lon ma pi kulupu Mewika.
+lipu pi jan Momon li toki e pali ale pi tenpo ni lon jan ni: ona li kama lon ma pi kulupu Mewika lon tenpo nanpa wan.
 
 tenpo lon la, jan pi alasa sona li sona mute e kulupu pi tenpo pini tan ni: ona li lukin mute e ma li alasa mute e ijo pi tenpo pini lon anpa pi ma ni. jan pi alasa sona li toki e ni: 
 
