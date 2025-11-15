@@ -85,7 +85,7 @@ jan mije en meli mute li wan la kulupu mi li ken suli mute. ni li pona tawa mi. 
 
 ## nasin pi tenpo lon
 
-tenpo lon la, jan pi nasin sewi Momon li weka e nasin pi tenpo pini. jan meli wan en jan mije was la ona taso li ken wan olin. 
+tenpo lon la, jan pi nasin sewi Momon li weka e nasin pi tenpo pini. jan meli wan en jan mije wan la ona taso li ken wan olin. 
 
 taso jan meli li moli la, jan mije li wan olin sin tawa jan sin la, jan mije li ken lon poka pi meli tu lon ma sewi moli. 
 
