@@ -1,4 +1,4 @@
-## Joseph Smith opened the path
+### Joseph Smith opened the path
 
 Joseph Smith's divine path is a slightly-new divine path. 
 
@@ -6,7 +6,7 @@ Joseph Smith's parent emitted him at the 1805th year at the section-land Vermont
 
 In the time of Joseph Smith many people of American-land created new divine paths. Truly, the work of Joseph Smith was not very abnormal. 
 
-### Two sights of Joseph Smith
+#### Two sights of Joseph Smith
 
 For Joseph Smith, two important things came and existed. 
 
@@ -24,7 +24,7 @@ Joseph Smith made a hole and came to have the divine book. The divine book was f
 
 But the Divine gave the power of language changing to Joseph Smith so he could come to be able to look at the communication. He languagely transformed the book. This is Mormon's book. 
 
-### Mormon's Book
+#### Mormon's Book
 
 Mormon's book says this:
 
@@ -38,7 +38,7 @@ The first people of this land were not from the divine land Jerusalem. Joseph Sm
 
 However truly many people believe this: Joseph Smith communicated true. Joseph Smith became a ruling person of his divine path. People not of this divine path communicated Joseph Smith's divine path using words "Mormon divine path", from the the name of the divine book. 
 
-### Joseph Smith's death
+#### Joseph Smith's death
 
 Joseph Smith was a ruling person not just of a divine path. He became a ruling person of land. He wanted to come to be the first ruler of America land. 
 
@@ -48,7 +48,7 @@ Understand this: Joseph Smith was bad. One of his bad projects, he horribly had 
 
 Joseph Smith came to be located at a bad-people container. Many people felt bad and came to be knowing this: Joseph Smith was located where. A large group of people of bad feelings came and killed Joseph Smith. 
 
-### The continuation method
+#### The continuation method
 
 In Joseph Smith's death, the Mormon divine path community continued and continues at this time. 
 

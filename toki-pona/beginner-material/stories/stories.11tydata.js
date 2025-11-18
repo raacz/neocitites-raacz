@@ -401,7 +401,6 @@ module.exports = function () {
                 tokLines: tokLines || "",
                 spFlattened: bundle.spFlattened,
               };
-              console.log(allData.spFlattened)
               return allData;
             }
             else {
@@ -410,6 +409,15 @@ module.exports = function () {
           }
         }
       },
+      genre: data => {
+        if (data.media){
+        const match = data.media.match(/\/([^\/]+)-[a-zA-Z0-9]+\.jpg$/);
+        return match ? match[1] : 'nomedia';
+
+        }else{
+          return 'nomedia';
+        }
+      }
     }
   };
 };

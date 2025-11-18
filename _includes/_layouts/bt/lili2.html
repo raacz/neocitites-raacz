@@ -1,6 +1,5 @@
 ---
 layout: _layouts/bt/reading-mode.html
-stylesheet: "/assets/css/reading-mode.css"
 ---
 
 {% assign folderPath = page.inputPath | split: "/" | slice: 0, -1 | join: "/" %}
@@ -27,12 +26,10 @@ stylesheet: "/assets/css/reading-mode.css"
     <div class="content">
 
       <figure class="context">
-        <img alt="{{ alt }}" src="{{ media }}">
+        <img alt="{{ alt }}" class="{{ genre }}" src="{{ media }}">
         <figcaption>
           <p>
             <span class="caption">{{ alt }}</span>
-
-
             {% if external %}
             <span class="attr">
               <a href="{{ external }}">Image: {{ name }}</a>
@@ -65,19 +62,24 @@ stylesheet: "/assets/css/reading-mode.css"
 
       <div class="regular">
         <div class="tok">
+          <h2>sitelen Lasina</h2>
           {{ tok_item.content }}
         </div>
         {% if en_item %}
         <div class="en">
+          <h2>English</h2>
           {{ en_item.content }}
         </div>
         {% endif %}
         {% if sp_item %}
         <div class="indented sp">
+          <h2>sitelen pona</h2>
           {{ sp_item.content }}
         </div>
         <div class="unindented sp">
           {% for paragraph in story.spFlattened %}
+          <h2>sitelen pona</h2>
+
           <p>
             {% for sentence in paragraph %}
             {{ sentence | remove: '<br>' | remove: 'zz' | remove: '^>' | remove: '>^' | remove: '^' }}.
@@ -86,10 +88,8 @@ stylesheet: "/assets/css/reading-mode.css"
           {% endfor %}
         </div>
         {% endif %}
-
       </div>
       <div class="inject1 table">
-
         <table>
           <thead>
             <tr>
@@ -104,28 +104,21 @@ stylesheet: "/assets/css/reading-mode.css"
               <td lang="tok">{{ story.tokLines[i] }}</td>
               <td lang="en">{{ story.enLines[i] }}</td>
               <td class="indented sp">{{ story.spLines[i] }}</td>
-              <td class="unindented sp">{{ story.spLines[i]| remove: '<br>' | remove: 'zz' | remove: '^>' | remove: '>^' | remove: '^' }}.</td>
-
-
+              <td class="unindented sp">{{ story.spLines[i]| remove: '<br>' | remove: 'zz' | remove: '^>' | remove: '>^'
+                | remove: '^' }}.</td>
             </tr>
             {% endfor %}
 
           </tbody>
         </table>
-
-
-
-
       </div>
       <div class="inject2 lines">
-
         {% for i in (0..size) %}
-
-
         <div class="line">
           <p lang="tok">{{ story.tokLines[i] }}</p>
           <p class="indented sp">{{ story.spLines[i] }}</p>
-          <p class="unindented sp">{{ story.spLines[i] | remove: '<br>' | remove: 'zz' | remove: '^>' | remove: '>^' | remove: '^' }}.</p>
+          <p class="unindented sp">{{ story.spLines[i] | remove: '<br>' | remove: 'zz' | remove: '^>' | remove: '>^' |
+            remove: '^' }}.</p>
           <details lang="en">
             <summary>en</summary>
             <p>{{ story.enLines[i] }}</p>

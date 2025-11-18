@@ -1,4 +1,4 @@
-## jan [sona ona suli ala] [sinpin ike] li open e nasin  
+### jan [sona ona suli ala] [sinpin ike] li open e nasin  
   
 nasin sewi   
 zz pi jan [sona] [sinpin]  
@@ -18,7 +18,7 @@ lon la
 zz pali pi jan [sona] [sinpin]  
 zz zz li nasa mute ala  
   
-### lukin tu pi jan [sona ona suli ala] [sinpin ike]  
+#### lukin tu pi jan [sona ona suli ala] [sinpin ike]  
   
 jan [sona] [sinpin] la   
 zz ijo tu suli li kama li lon  
@@ -71,7 +71,7 @@ zz zz ona li kama ken lukin e toki
 zz zz ona li ante toki e lipu  
 ni^ li lipu pi jan [mi ona ma ona ni]  
   
-### lipu pi nasin [mi ona ma ona ni]  
+#### lipu pi nasin [mi ona ma ona ni]  
   
 lipu pi jan [mi ona ma ona ni]   
 zz li toki e ni>  
@@ -117,7 +117,7 @@ zz li toki e nasin sewi pi jan [sona] [sinpin]
 zz zz kepeken nimi zz te nasin sewi [mi ona ma ona ni] to  
 zz zz zz tan nimi pi lipu sewi   
   
-### moli pi jan [sona ona suli ala] [sinpin ike]  
+#### moli pi jan [sona ona suli ala] [sinpin ike]  
   
 jan [sona] [sinpin]   
 zz li jan lawa pi nasin sewi taso ala  
@@ -155,7 +155,7 @@ kulupu suli jan pi pilin ike
 zz li kama   
 zz li moli e jan [sina o sijelo ala] [sewi ike]  
   
-### nasin awen   
+#### nasin awen   
   
 moli pi jan [sona] [sinpin] la   
 zz kulupu pi nasin sewi [mi ona ma ona ni]   

@@ -279,12 +279,16 @@ body:has(input[id="rc-1b"]:not(:checked)) .table .sp {
 
     display: inline-flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     column-gap: 1em;
     row-gap: 1em;
     width: fit-content;
 
+}
+.content-wrap{
+    display: flex;
+    justify-content: center;
 }
 
 h1 {
@@ -365,11 +369,11 @@ nav ul {
     flex-wrap: wrap;
 }
 
-.regular div:is(.en, .tok) {
+.regular div:is(.en, .tok, .unindented) {
     min-width: 9em;
 }
 
-.regular div:is(.sp) {
+.regular div:is(.indented) {
     width: fit-content;
     min-width: 6em;
     max-width: max-content;
@@ -380,29 +384,81 @@ nav ul {
     display: none;
 }
 
-.regular :is(.tok, .en) {
+.regular :is(.tok, .en, .unindented) {
     flex: 1.5;
     max-width: 20em;
 }
+:has(.wawa) .regular {
+    flex-direction: column;
+}
+:has(.wawa) .regular :is(.tok, .en, .unindented){
+    max-width: 40em;
+}
+:has(.wawa) figure{
+    width: 100%;
+}
+h2 { /*visually hidden*/
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+
+}
+:has(.wawa) .regular p:first-of-type::before {
+    content: '';
+    height: 0.2em;
+    width: 100%;
+    display: block;
+    background-color: var(--pimeja);
+    margin-block: 2em;
+}
+
+
+
+
 
 
 
 
 /*line mode styling*/
 
-.line {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    column-gap: 1em;
-    border-bottom: 0.1em solid var(--pimeja);
-    position: relative;
+:has(#rc-2c:checked) .content{
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
 }
 
-.line details[open] summary {
+.line {
+    display: block;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    column-gap: 1em;
+    border-block-end: 0.1em solid var(--pimeja);
+    position: relative;
+    padding-top: 1.5em;
+}
+.line:first-of-type {
+    border-block-start: 0.1em solid var(--pimeja);
+
+}
+
+.lines{
+    width: 100%;
+    max-width: 30em;
+}
+
+.line details summary {
     position: absolute;
     right: 0;
     top: 0;
+}
+.line details[closed] *{
+    display: block;
+    visibility: hidden;
 }
 
 .line summary::after {
@@ -430,23 +486,17 @@ nav ul {
     outline: 0.2em solid var(--pimeja);
     border-radius: 0.1em;
 }
+.line p{
+    margin: 0em;
+}
 
 summary:focus {
     outline: none;
 }
 
-.line p:not(.detail p) {
-    position: relative;
-}
-
-.line details[open] {
-    padding-top: 2em;
-    flex: 50%;
-}
-
-.line:has(details[open]) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.line details p {
+    text-align: end;
+    padding-block-start: 0.5em;
 }
 
 /*table mode styling*/

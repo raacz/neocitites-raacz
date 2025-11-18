@@ -10,6 +10,7 @@
 ## fixing broken things
 - fix: mobile styling
     > rewrite flex logic for sp/eng/l to accommodate indentless sp and to adjust to stories where the text is under a certain height
+    > make a new disclosure widget to resolve spacing issues
     > ensure spaces do not get weirdly collapsed aka kala Asi's bugs
     > adjust breakpoints on homepage to ensure the mobile screenshots are shown and collage moves to flex earlier
 - fix: reading tracker currently does not display proper mode dep. whether the challenge is active or inactive

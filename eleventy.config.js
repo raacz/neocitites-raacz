@@ -222,12 +222,9 @@ export default function (eleventyConfig) {
     let bsite = collectionApi.getFilteredByGlob("toki-pona/beginner-material/*");
     for (let item of bsite){
       if(item.data.tags){
-          console.log(item.data.tags);
           if(item.data.tags.includes("article")){
-            console.log(item.data.title);
             bsite.splice(bsite.indexOf(item), 1);
           }
-          console.log(item.data.tags);
 
 
       }

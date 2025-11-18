@@ -1,0 +1,613 @@
+/*mode-agnostic styles*/
+.selo {
+    box-shadow: 0 0 0 var(--thin, 0.1em) var(--pimeja);
+    padding: 2em;
+}
+
+.content {
+    /*TODO*/
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 1em;
+    row-gap: 1em;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.content-wrap {
+    margin: 0 auto;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    margin-block: 0.5em 1em;
+    font-size: 1.1em;
+    font-family: Jost;
+}
+
+figure {
+    display: inline-flex;
+    flex-direction: column-reverse;
+    flex-grow: 0;
+    align-items: center;
+    row-gap: 1em;
+
+}
+
+figure img {
+    max-width: 80%;
+    max-height: 20em;
+    min-width: 10em;
+    height: 100%;
+    border: var(--thin, 0.1em) solid var(--pimeja);
+
+
+}
+
+figcaption {
+    width: 100%;
+    max-width: 20em;
+    border-bottom: none;
+
+
+}
+
+figcaption p {
+    background-color: var(--walo-pimeja);
+    margin: 0;
+    line-height: 1.6em;
+}
+
+figcaption a:is(:visited, :not(:visited)) {
+    color: var(--pimeja);
+}
+
+
+p:last-of-type {
+    margin-bottom: 0;
+
+}
+
+.attr {
+    background-color: var(--walo-lili);
+    font-size: 0.8em;
+    line-height: 1em;
+    display: block;
+    padding: 0.5em;
+
+}
+
+.caption {
+    padding: 0.5em;
+    display: block;
+}
+
+.regular p:empty {
+    display: none;
+}
+
+
+/*line mode styling*/
+
+.line {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    column-gap: 1em;
+    border-bottom: 0.1em solid var(--pimeja);
+    position: relative;
+}
+
+.line details[open] summary {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.line summary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    content: '';
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/*.line details[open] summary::after {
+    content: 'Close';
+    text-align: right;
+    position: static;
+    display: block;
+    width: 200vw;
+    height: 5em;
+    margin-block-start:-2em;
+    background: transparent; 
+}*/
+.line:focus-within {
+    outline: 0.2em solid var(--pimeja);
+    border-radius: 0.1em;
+}
+
+summary:focus {
+    outline: none;
+}
+
+.line p:not(.detail p) {
+    position: relative;
+}
+
+.line details[open] {
+    padding-top: 2em;
+    flex: 50%;
+}
+
+.line:has(details[open]) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+
+/*regular mode styling*/
+
+@media (max-width: 900em) {
+    .regular {
+        color: green;
+    }
+}
+
+@media(max-width: 80em) {
+
+    .regular {
+        color: red;
+    }
+
+
+}
+
+@media(max-width: 25em) {
+
+    .regular {
+        color: yellow;
+    }
+
+}
+
+
+
+/*.regular{
+    display: flex;
+    --sp-max-width: 10em;
+    --en-max-width: 30em;
+    --tok-max-width: 30em;
+    gap: 0.75em;
+}
+.regular div.tok {
+    max-width: var(--tok-max-width);
+}
+.regular div.en {
+    max-width: var(--en-max-width);
+}
+.regular div.sp {
+    max-width: var(--sp-max-width);
+}
+.regular div{
+    width: 100%;
+}
+
+:has(#rc-1a:not(:checked)) .regular{
+    --en-max-width: 0em;
+}
+:has(#rc-1b:not(:checked)) .regular{
+    --sp-max-width: 0em;
+}
+:has(#rc-1c:not(:checked)) .regular{
+    --tok-max-width: 0em;
+}
+.regular {
+    max-width: calc(var(--en-max-width) + var(--tok-max-width) + var(--sp-max-width));
+
+}*/
+
+
+
+
+
+
+.table {
+    --sp-max-width: 10em;
+    --en-max-width: 20em;
+    --tok-max-width: 20em;
+}
+
+
+/*table mode styling*/
+.table tbody,
+.table thead {
+    max-width: 100%;
+}
+
+.table :is(tr) {
+    display: grid;
+    column-gap: 1em;
+    border-bottom: 0.1em solid var(--pimeja);
+}
+
+:has(#rc-1a:not(:checked)) .table {
+    --en-max-width: 0em;
+}
+
+:has(#rc-1b:not(:checked)) .table {
+    --sp-max-width: 0em;
+}
+
+:has(#rc-1c:not(:checked)) .table {
+    --tok-max-width: 0em;
+}
+
+.table :is(tr) {
+    max-width: calc(var(--en-max-width) + var(--tok-max-width) + var(--sp-max-width));
+
+}
+
+
+
+/* Exactly 1 checked - each individual case */
+:has(#rc-1a:checked):not(:has(#rc-1b:checked)):not(:has(#rc-1c:checked)) .table tr,
+:has(#rc-1b:checked):not(:has(#rc-1a:checked)):not(:has(#rc-1c:checked)) .table tr,
+:has(#rc-1c:checked):not(:has(#rc-1a:checked)):not(:has(#rc-1b:checked)) .table tr {
+    grid-template-columns: 1fr;
+}
+
+/* Exactly 2 checked - all combinations */
+:has(#rc-1a:checked):has(#rc-1b:checked):not(:has(#rc-1c:checked)) .table tr,
+:has(#rc-1a:checked):has(#rc-1c:checked):not(:has(#rc-1b:checked)) .table tr,
+:has(#rc-1b:checked):has(#rc-1c:checked):not(:has(#rc-1a:checked)) .table tr {
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Exactly 2 checked - with sp indented*/
+:has(#rc-1a:checked):has(#rc-1b:checked):not(:has(#rc-1c:checked)) :has(#rc-5a:checked) .table tr,
+:has(#rc-1a:checked):has(#rc-1c:checked):not(:has(#rc-1b:checked)) :has(#rc-5a:checked) .table tr {
+    grid-template-columns: 1fr minmax(5em, 0.5fr);
+}
+
+
+/* All 3 checked */
+:has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) .table tr {
+    grid-template-columns: 0.95fr 1fr 0.75fr;
+}
+
+
+
+
+
+
+
+/*
+
+All the behaviours that I want for tables in this redraft:
+
+just one thing displayed:
+- item has an aesthetic width
+
+two things displayed: things are 50/50
+
+three things displayed:
+indented sitelen pona fits width, the others grow to fill container. 
+nonindented sp splits three ways.
+
+additional requirements:
+columns must all match. 
+
+
+*/
+
+
+
+
+.back-forth {
+    display: flex;
+    justify-content: space-between;
+    margin-block-start: -3em;
+}
+
+.back-forth a:is(:visited, :not(:visited)) {
+    background-color: var(--walo);
+    color: var(--pimeja);
+    text-decoration: none;
+    box-shadow: 0 0 0 var(--thin, 0.1em) var(--pimeja);
+    text-transform: uppercase;
+    padding-inline: 0.25em;
+
+}
+
+@media (max-width: 32em) {
+    .selo {
+        padding-inline: 0;
+        padding-block-end: 2em;
+        margin-inline: 0;
+        border-block: var(--thin, 0.2em) solid var(--pimeja);
+        ;
+        box-shadow: none;
+    }
+
+    figure img {
+        max-height: 100%;
+        width: 100%;
+        max-width: 100%;
+
+    }
+
+    figcaption {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .back-forth {
+        justify-content: center;
+    }
+
+}
+
+/*
+if suli
+    if large screen size
+        flex, disable flex-wrap //ROW
+    if midsize screen size OR
+        grid columns, failsafe for sitelen pona //SPLIT
+    if small
+        flex-column, min/max widths removed //COLUMN
+if lili
+    if large screen size
+        if two or three active
+            sitelen pona as an 'aside' on the right, enlarged picture //WORK
+        if only one active
+            under picture //SPLIT
+    if midsize screen
+        figure flex direction shifted to row, caption styls modified //SPLIT
+
+    if small
+        flex-direction column, min-max widths removed //COLUMN
+if wawa
+    if large screen size
+        if two or three active
+            sitelen pona as an 'aside' on the right, enlarged picture //WORK
+        if only one active
+            flex-direction column, min-max widths removed //COLUMN
+    if midsize screen
+        flex-direction column, min-max widths removed //COLUMN
+*/
+.regular h2 {
+    font-size: 1em;
+    text-decoration: underline;
+}
+
+/*WAWA regular STYLES*/
+
+.content:has(.wawa) {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+:has(.wawa) .regular {
+    max-width: 40em;
+    justify-self: center;
+}
+
+:has(.wawa) h2 {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+
+}
+
+:has(.wawa) .regular p:first-of-type::before {
+    content: '';
+    height: 0.2em;
+    width: 100%;
+    display: block;
+    background-color: var(--pimeja);
+    margin-block: 2em;
+
+
+}
+
+@media(min-width: 45em) {
+    :has(.wawa) :has(#rc-3a:checked) figure {
+        max-width: max-content;
+        flex-direction: row;
+        justify-content: space-evenly;
+        background: linear-gradient(to bottom,
+                var(--walo-pimeja) 0%,
+                var(--walo-pimeja) 50%,
+                var(--walo-lili) 50%,
+                var(--walo-lili) 100%);
+        margin-inline: 0px;
+        margin-block: 0px;
+        grid-column: span;
+        justify-self: center;
+    }
+
+}
+
+/*LILI regular STYLES*/
+@media (max-width: 900em) {
+    :has(.lili) .content {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        column-gap: 1em;
+        row-gap: 1em;
+        width: fit-content
+    }
+    :has(.lili) .regular :is(.en, .tok){
+        max-width: 20em;
+        min-width: 9em;
+        flex: 1.5;
+    }
+    :has(.lili) .regular :is(.sp){
+        max-width: max-content;
+        min-width: 6em;
+        flex: 1;
+    }
+
+
+
+}
+
+@media(max-width: 80em) {
+
+    .regular {
+        color: red;
+    }
+
+
+}
+
+@media(max-width: 25em) {
+
+    .regular {
+        color: yellow;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+/*
+COLUMN
+
+
+.content{
+    display: grid;
+    grid-template-columns: 1fr;
+}*/
+
+/*
+ROW
+
+
+.content{
+    display: grid;
+grid-template-columns: repeat( auto-fit, minmax(0, 1fr) );
+}
+
+/*
+SPLIT
+
+
+.content{
+    display: grid;
+    justify-content: space-between;
+}
+
+
+/* Exactly 1 checked - each individual case ?
+:has(#rc-1a:checked):not(:has(#rc-1b:checked)):not(:has(#rc-1c:checked)) .content,
+:has(#rc-1b:checked):not(:has(#rc-1a:checked)):not(:has(#rc-1c:checked)) .content,
+:has(#rc-1c:checked):not(:has(#rc-1a:checked)):not(:has(#rc-1b:checked)) .content {
+    grid-template-columns: 1fr;
+}
+
+/* Exactly 2 checked - all combinations ?
+:has(#rc-1a:checked):has(#rc-1b:checked):not(:has(#rc-1c:checked)) .content,
+:has(#rc-1a:checked):has(#rc-1c:checked):not(:has(#rc-1b:checked)) .content,
+:has(#rc-1b:checked):has(#rc-1c:checked):not(:has(#rc-1a:checked)) .content {
+    grid-template-columns: 1fr 1fr;
+}
+/* Exactly 2 checked - with sp indented?
+:has(#rc-1a:checked):has(#rc-1b:checked):not(:has(#rc-1c:checked)) :has(#rc-5a:checked) .content,
+:has(#rc-1c:checked):has(#rc-1b:checked):not(:has(#rc-1a:checked)) :has(#rc-5a:checked) .content{
+    grid-template-columns: 1fr minmax(5em, 0.5fr);
+}
+/* All 3 checked ?
+:has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) .content {
+    grid-template-columns: 0.95fr 1fr minmax(5em, 0.6fr);
+}
+.context {
+    grid-column: 1 / -1;
+}
+
+:has(#rc-3a:checked) figure{
+    max-width: max-content;
+    flex-direction: row;
+    justify-content: space-evenly;
+   background: linear-gradient(to bottom,
+    var(--walo-pimeja) 0%, 
+    var(--walo-pimeja) 50%, 
+    var(--walo-lili) 50%, 
+    var(--walo-lili) 100%
+);    
+        margin-inline: 0px;
+        margin-block: 0px;
+            grid-column:span;
+            justify-self: center;
+}*/
+
+
+/*
+WORK
+
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr minmax(fit, 0.6fr);
+    grid-template-rows: auto 1fr;
+}
+:has(#rc-1a:checked):not(:has(#rc-1c:checked)) :is(.regular.tok, .regular.en), :has(#rc-1c:checked):not(:has(#rc-1a:checked)) :is(.regular.tok, .regular.en){
+    grid-column: span 2;
+
+}
+.regular{
+    justify-self: center;
+}
+
+
+
+.regular.sp{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+.context{
+    grid-column: span 2;
+}
+:has(#rc-3a:checked) figure{
+    flex-direction: row;
+    justify-content: space-evenly;
+   background: linear-gradient(to bottom,
+    var(--walo-pimeja) 0%, 
+    var(--walo-pimeja) 50%, 
+    var(--walo-lili) 50%, 
+    var(--walo-lili) 100%
+);    
+        margin-inline: 0px;
+        margin-block: 0px;
+}
+.regular.sp{
+    align-self: center;
+    justify-self: center;
+}
+.regular.tok, .regular.en{    grid-column: 1 / -1;
+
+    grid-row: 2;
+
+}*/
