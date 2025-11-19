@@ -407,7 +407,7 @@ h2:not(.visible-heading h2) { /*visually hidden*/
     width: 1px;
 
 }
-:has(.wawa) .regular p:first-of-type::before {
+:has(.wawa) .regular div p:nth-of-type(1)::before {
     content: '';
     height: 0.2em;
     width: 100%;
@@ -416,8 +416,10 @@ h2:not(.visible-heading h2) { /*visually hidden*/
     margin-block: 2em;
 }
 
-/*specifically dealing with styling h2 headings in quest lbl and tables*/
+/*specifically dealing with headings in quest texts*/
 
+
+    /*table mode*/
 :has(.wawa) .table .visible-heading :is(h2,h3) {
     font-size: inherit;
     padding: 1em 0.25em;
@@ -430,7 +432,7 @@ h2:not(.visible-heading h2) { /*visually hidden*/
     color: var(--contrast-white);
 }
 
-
+    /*lbl*/
 :has(.wawa) .line.visible-heading :is(h3,h4):is(details *) {
     font-size: inherit;
     padding: 0;
@@ -443,6 +445,24 @@ h2:not(.visible-heading h2) { /*visually hidden*/
     margin: 1em 0em;
     font-weight: normal;
 }
+    /*regular*/
+
+:has(.wawa) .regular :is(h3,h4){
+    padding: 0;
+    font-weight: inherit;
+}
+:has(.wawa) .regular h3{
+    font-size: 1.2em;
+}
+:has(.wawa) .regular h4{
+    font-size: 1.1em;
+    margin-block: 2.5em 1em;
+}
+:has(.wawa) .regular:has(h3) div{
+    margin-block-end: 2.5em;
+}
+
+
 
 
 
