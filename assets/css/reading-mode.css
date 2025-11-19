@@ -397,7 +397,7 @@ nav ul {
 :has(.wawa) figure{
     width: 100%;
 }
-tr:not(.visible-heading) h2 { /*visually hidden*/
+h2:not(.visible-heading h2) { /*visually hidden*/
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
     height: 1px;
@@ -444,8 +444,6 @@ tr:not(.visible-heading) h2 { /*visually hidden*/
     font-weight: normal;
 }
 
-:has(.wawa) .line.visible-heading {
-}
 
 
 
