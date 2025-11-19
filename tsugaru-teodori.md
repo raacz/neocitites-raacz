@@ -11,7 +11,7 @@ Welcome to the homepage for my nichest fixation.
 
 ## Origins
 
-Tsugaru Teodori literally translates to 'Hand-Dancing from Tsugaru.' Tsugaru is a region in Aomori prefecture, which is located in northern Japan. The weather in Tsugaru is not unlike the weather I experience in my homeland. For half of the year, it is cold in Aomori. There is snow everywhere. But perhaps Aomori's cold seaside breeze chills one to the bone more than the regular prarie freezes I am used to. I am speculating, for I have never been there.
+Tsugaru Teodori literally translates to 'Hand-Dancing from Tsugaru.' Tsugaru is a region in Aomori prefecture, which is located in northern Japan. The weather in Tsugaru is not unlike the weather I experience in my homeland. For half of the year, it is cold in Aomori. There is snow everywhere. But perhaps Aomori's cold seaside breeze chills one to the bone more than the regular prairie freezes I am used to. I am speculating, for I have never been there.
 
 Once there was a group of labourers who were waiting for coals to melt, or for the weather to turn, or for something to happen, and they were bored. They were bored out of their minds. One man's gaze fixated on the leaves falling from the trees that signalled the approach of winter. He watched as a leaf fluttered to the left, then to the right, then left again before landing gracefully. He thought about how dainty and feminine this leaf was, how elegantly it decided to find its final resting place on the forest floor where it would break down to nurture the tree the was her mother. And then he imitated it, and created Tsugaru Teodori, a feminine dance that was initially danced exclusively by man, where one fluttered like a falling leaf, constantly in motion, drifting to the ground.
 
