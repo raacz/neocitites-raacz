@@ -1,4 +1,4 @@
-## telo wawa en nasin sewi Momon
+### telo wawa en nasin sewi Momon
 
 jan Sosa Si pi moli ala li toki e ni lon tenpo mute: sewi li pana e sona sin tawa mi. 
 
@@ -10,7 +10,7 @@ jan Sosa Si li toki sama jan mute pi sona sijelo. ken suli la jan Sosa Si li kut
 
 toki mute ona li pona anu seme? telo nasa li pona ala tawa sijelo. jan li moku e kon tan seli kasi la ni li ken a pakala e ken moku pi kon pona. taso... telo seli li seme? seme la telo seli li ike?
 
-### telo seli li telo seli ala
+#### telo seli li telo seli ala
 
 "telo seli" li toki ala e telo seli ale. suli la nimi ni li toki e telo tu: nanpa wan la telo wawa pimeja li tan kili lili kiwen pimeja. sina moku e ona la pilin lape li weka. nanpa tu la telo wawa kasi li tan lipu kasi. sina moku e ona la pilin lape li weka. telo tu ni li lili e pilin lape la 'telo seli' li nimi pona ala. ken la 'telo ike pi weka lape' li nimi pona. 
 
@@ -18,7 +18,7 @@ telo ike pi weka lape li ike ala ike tawa sijelo? sina moku mute mute mute mute 
 
 taso sewi li toki e ike pi telo tu ni tawa jan Sosa Si li ken ala e moku pi telo ni la jan pi nasin sewi Momon li awen moku ala a e ona. jan li moku e telo ike la ona li ken ala kama lon tomo sewi wawa pi nasin sewi Momon. ona li ken ala kama wan olin lon nasin sewi Momon. ona li ken ala lukin e wan olin pi jan ante lon nasin sewi Momon. jan li moku e telo ni la, nasin sewi ni la jan ni li jaki.
 
-### seme li ken li ken ala
+#### seme li ken li ken ala
 
 telo seli pi weka lape la jan pi nasin sewi Momon li ken ala moku. taso telo lete pi weka lape la jan pi nasin sewi Momon li ken ala ken?
 
@@ -32,7 +32,7 @@ ijo lili nasa pi weka lape li lon telo taso ala. ona li lon moku mute suwi kin. 
 
 moku pi ijo lili nasa ni li ike ala ike tawa jan pi nasin sewi Momon? tenpo wan la, jan mute pi nasin Momon li toki e ni: o weka e ijo ale pi weka lape. ona ale li ike a. taso tenpo lon la, jan ala li pilin sama ni. jan mute pi nasin Momon li moku e ijo lili nasa ni lon telo lete suwi lon kiwen misikeke lon moku suwi pi telo ala kin. 
 
-### esun pi telo wawa
+#### esun pi telo wawa
 
 lon kulupu pi nasin sewi Momon ala la jan mute li tawa tomo esun pi telo wawa li moku e telo wawa pimeja seli lon poka li toki musi li pilin pona. ni li ken ala lon nasin sewi Momon. 
 
@@ -40,11 +40,11 @@ taso awen la jan pi nasin Momon li wile pilin e pilin sama. ni la jan mute mute 
 
 esun pi telo wawa suwi li pana ala a telo wawa pi kili pimeja e telo wawa pi lipu kasi. esun pi telo wawa suwi la sina ken  esun e telo suwi ni: kulupu suli Kokakola li pali.
 
-taso tan seme la jan li wile esun e telo Kokakola lon esun pi telo wawa suwi? o esun lon tomo esun pi namako ala anu seme.
+taso tan seme la jan li wile esun e telo Kokakola lon tomo esun pi telo wawa suwi taso? o esun lon tomo esun pi ijo ale anu seme.
 
 ala. esun pi telo wawa suwi li pana e telo Kokakola taso ala. esun pi telo wawa la sina ken pana e suwi namako mute mute tawa telo wawa suwi sina. 
 
 esun pi telo wawa pimeja li pali ni. sina esun e telo wawa pimeja lon ma Mewika la, tenpo mute la esun li pana e telo namako suwi mute pi kule ante mute. kule kili, anu kule kasi, anu kule pan. tenpo mute la ona li pana e telo pi soweli mama.
 
-kulupu pi nasin sewi Momon li lukin e nasin namako suwi pi telo wawa pimeja li wile e namako suwi e telo wawa pimeja ala. ni la esun pi telo wawa suwi li kama lon. 
+kulupu pi nasin sewi Momon li lukin e nasin namako suwi pi telo wawa pimeja li wile e namako suwi e telo wawa pi pimeja ala. ni la esun pi telo wawa suwi li kama lon. 
 

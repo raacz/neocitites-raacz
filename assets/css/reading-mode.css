@@ -496,7 +496,7 @@ summary:focus {
 
 .line details p {
     text-align: end;
-    padding-block-start: 0.5em;
+    padding-block: 0.5em;
 }
 
 /*table mode styling*/

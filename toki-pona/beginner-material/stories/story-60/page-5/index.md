@@ -9,3 +9,5 @@ alt:  Old, black-and-white photograph of a man on a porch posing with family. A 
 media: "/toki-pona/beginner-material/assets/wawa-60e.jpg"
 tags: sequence
 ---
+
+https://commons.wikimedia.org/wiki/File:Mormons_for_Marriage_Equality,_San_Francisco_Pride_2013_(9221791188).jpg (for the future)

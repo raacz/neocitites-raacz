@@ -18,7 +18,17 @@ stylesheet: /assets/css/tp.css
   .collage{
     overflow-y: hidden;
   }
-  
+  .stories details{
+    position: relative;
+    z-index: 3;
+    right: 0;
+    font-size: 0.8em;
+    padding: 0 2em;
+  }
+  .stories p:has(+ details) {    
+    margin-block-end: 0;
+  }
+
 </style>
 
 {{ content }}

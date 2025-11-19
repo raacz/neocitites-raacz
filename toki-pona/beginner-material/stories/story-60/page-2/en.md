@@ -1,4 +1,4 @@
-## Power liquid and the Mormon divine path
+### Power liquid and the Mormon divine path
 
 The not-dead Joseph Smith said this at many times: the Divine gave new knowledge to me. 
 
@@ -10,7 +10,7 @@ Joseph Smith communicated like many people of bodily knowledge. Largely possible
 
 Lots of his communication is good or what? Intoxicating liquid is bad to the body. When people consume air from the heating of plants, this is able ah to destroy the consumption ability of good air. But... hot liquid is what? In what context is hot liquid bad?
 
-## Hot liquid is not hot liquid
+#### Hot liquid is not hot liquid
 
 "Hot liquid" does not communicated all hot liquids. Importantly these words communicate two liquids: Firstly, dark power liquid is from small hard black fruits. When you consume it the sleepy feeling leaves. Secondly, plant power liquid is from plant sheets. When you consume it the sleeping feeling leaves. These two liquids minimize the sleepy feeling so 'hot liquid' is not a good name. Possibly 'evil liquid of sleepiness removal' is a good name. 
 
@@ -18,7 +18,7 @@ Is evil liquid of sleepiness removal bad to the body? When you consume a lot a l
 
 But the Divine communicated the evilness of these two liquids to Joseph Smith and impossibled the consumption of these liquids so the people of the Mormon divine path continue to not ah consume it. When people consume the evil liquid they cannot come to be located in a powerful divine building of the Mormon divine path. They cannot come to be lovingly united of another person, in the Mormon divine path. They cannot look at the loving unification of other people in the Mormon divine path. When a person consumes this liquid, in the context of this divine path, that person is dirty. 
 
-## What is possible and not possible
+#### What is possible and not possible
 
 Hot liquids of sleep removal, people of the Mormon divine path cannot consume. But cold liquids of sleep removal, are the people of the Mormon divine path able?
 
@@ -32,5 +32,21 @@ The small strange thing of sleepiness-removal is not only at liquid. It is locat
 
 Is food/eating of this small strange thing, bad to people of the Mormon divine path? At one time, many people of the Mormon divine path communicated this: leave all sleepiness-removal things. They are all bad ah. But at the present time, no person feels like this. Many people of the Mormon divine path consume this small strange thing in sweet cold liquid, in medicinal hard things, and in non-liquid sweet food too. 
 
-## Business of power liquid
+#### Trade of power liquid
+
+In groups of not the Mormon divine path, many people go to business buildings of powerful liquid and consume hot dark powerful liquid together and speak amusingly and feel good. This method is not allowed in the Mormon divine path. 
+
+But still people of the Mormon path want to feel the same feeling. Therefore when many many people of the Mormon path are at a place, possibly, you can come to be seeing a business building of sweet powerful liquid at that place. 
+
+Businesses of sweet poweful liquid do not give powerful liquid of black fruits and powerful liquid of plant sheets. At businesses of sweet powerful liquid, you can buy this sweet liquid: the large group Coca-Cola made. 
+
+But because of what, people are wanting to buy the 'Coca-Cola' liquid at a business building of only sweet powerful liquid? Go buy at a business building of all things or what. 
+
+No. A business of sweet powerful liquid gives not only the 'Coca-Cola' liquid. At a business of powerful liquid you are able to give lots and lots of additional sweets to your sweet powerful liquid. 
+
+A business of dark powerful liquid does this action. When you buy dark powerful liquid in America land, at many times, the business will put lots of and lots of additional sweet liquids of many different colours. Fruit flavours, or plant flavours, or bread flavours. At many times, they give liquid of nurturing animals. 
+
+The group of the Mormon divine path saw the additional sugar method of dark powerful liquid and wanted to apply sweet additions to powerful liquid of no darkness. Therefore the businesses of sweet powerful liquid came to be existing. 
+
+
 
