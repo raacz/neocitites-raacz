@@ -13,11 +13,11 @@ function splitParagraphs(text) {
 
 // Sentence splitter that respects double quotes and curly single quotes (‘ ’ and “ ”)
 // NOTE: ASCII apostrophe (') is NOT treated as a quote marker (so contractions are safe).
-function splitSentencesRespectQuotes(paragraph) {
+/*function splitSentencesRespectQuotes(paragraph) {
   if (!paragraph) return [];
 
   const doubleQuoteChars = new Set(['"', '\u201C', '\u201D']); // " and curly double
-  /*const singleQuoteChars = new Set(['\u2018', '\u2019']);*/      // ‘ ’ (curly single)
+  /*const singleQuoteChars = new Set(['\u2018', '\u2019']);      // ‘ ’ (curly single)
 
   let sentences = [];
   let buf = '';
@@ -48,6 +48,46 @@ function splitSentencesRespectQuotes(paragraph) {
     }
   }
 
+  if (buf.trim()) sentences.push(buf.trim());
+  return sentences;
+}*/
+
+// Revamped version by Claude, Sentence splitter that breaks on sentence-ending punctuation even inside quotes
+// NOTE: ASCII apostrophe (') is NOT treated as a quote marker (so contractions are safe).
+function splitSentencesRespectQuotes(paragraph) {
+  if (!paragraph) return [];
+  
+  const doubleQuoteChars = new Set(['"', '\u201C', '\u201D']); // " and curly double
+  
+  let sentences = [];
+  let buf = '';
+  let inDouble = false;
+  
+  for (let i = 0; i < paragraph.length; i++) {
+    const ch = paragraph[i];
+    buf += ch;
+    
+    if (doubleQuoteChars.has(ch)) {
+      inDouble = !inDouble;
+      continue;
+    }
+    
+    // Split on sentence punctuation regardless of quote state
+    if (ch === '.' || ch === '!' || ch === '?' || ch === '。') {
+      // consume any following punctuation/closing quotes/closing parens
+      let j = i + 1;
+      while (j < paragraph.length && /[.!?'""')\]]/.test(paragraph[j])) {
+        buf += paragraph[j];
+        // toggle quote states if we see curly/double closers inside the run
+        if (doubleQuoteChars.has(paragraph[j])) inDouble = !inDouble;
+        j++;
+      }
+      i = j - 1;
+      sentences.push(buf.trim());
+      buf = '';
+    }
+  }
+  
   if (buf.trim()) sentences.push(buf.trim());
   return sentences;
 }

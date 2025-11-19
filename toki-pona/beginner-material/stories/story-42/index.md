@@ -1,10 +1,7 @@
 ---
 layout: _layouts/bt/suli.html
-title: o sona e nasin mute namako pi telo nasa 
+title: akesi laso en jan utala
 tags: wawa
-alt: wawa story description test
-eleventyExcludeFromCollections: true
+alt: 
 
 ---
-
-wawa story description test

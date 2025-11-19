@@ -23,5 +23,6 @@ mama li lon supa lape ona li pilin monsuta
 ona li lukin e mi   
 ona li pilin pona 
 
-te kalama wawa pi pana telo sewi li monsuta to mama mi li toki 
+te kalama wawa pi pana telo sewi li monsuta to  
+mama mi li toki 
 

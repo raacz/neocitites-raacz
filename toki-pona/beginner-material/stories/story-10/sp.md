@@ -7,7 +7,8 @@ noka mi li alasa e kon
 
 mi kama lon tomo esun pan 
 
-te o kama pona a to jan pali li toki 
+te o kama pona a to   
+jan pali li toki 
 
 te tenpo pini poka la mi pini e pan sin 
 
@@ -31,7 +32,8 @@ mi lukin moku
 taso pan li seli  
 zz zz li pakala e uta mi 
 
-te ike to mi toki 
+te ike to 
+mi toki 
 
 te o awen lili 
 zz o pakala ala e sina to  
