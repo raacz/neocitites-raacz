@@ -397,7 +397,7 @@ nav ul {
 :has(.wawa) figure{
     width: 100%;
 }
-h2 { /*visually hidden*/
+tr:not(.visible-heading) h2 { /*visually hidden*/
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
     height: 1px;
@@ -415,6 +415,23 @@ h2 { /*visually hidden*/
     background-color: var(--pimeja);
     margin-block: 2em;
 }
+
+/*specifically dealing with styling h2 headings in quest lbl and tables*/
+
+:has(.wawa) .table .visible-heading :is(h2,h3) {
+    font-size: inherit;
+    padding: 1em 0.25em;
+    margin: inherit;
+    font-weight: inherit;
+
+}
+:has(.wawa) .table  tr.visible-heading {
+    background-color: var(--contrast-black);
+    color: var(--contrast-white);
+
+}
+
+
 
 
 

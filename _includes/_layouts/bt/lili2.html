@@ -100,14 +100,96 @@ layout: _layouts/bt/reading-mode.html
           </thead>
           <tbody>
             {% for i in (0..size) %}
-            <tr>
-              <td lang="tok">{{ story.tokLines[i] }}</td>
-              <td lang="en">{{ story.enLines[i] }}</td>
-              <td class="indented sp">{{ story.spLines[i] }}</td>
-              <td class="unindented sp">{{ story.spLines[i]| remove: '<br>' | remove: 'zz' | remove: '^>' | remove: '>^'
-                | remove: '^' }}.</td>
+
+             {% assign tokLine = story.tokLines[i] %}
+              {% assign enLine = story.enLines[i] %}
+              {% assign spLine = story.spLines[i] %}
+              {% assign element =  'span' %}
+              {% assign class =  '' %}
+
+
+              {% if tokLine contains '###' %}
+                {% assign class =  'visible-heading' %}
+
+               {% if tokLine contains '####' %}
+                  {% assign element =  'h3' %}
+                {% else %}
+                  {% assign element = 'h2' %}
+                {% endif %}
+                {% assign tokLine = story.tokLines[i] | remove: '####' | strip %}
+                {% assign enLine = story.enLines[i] | remove: '####' | strip %}
+                {% assign spLine = story.spLines[i] | remove: '####' | strip %}
+                {% if tokLine contains '###' %}
+                  {% assign tokLine = story.tokLines[i] | remove: '###' | strip %}
+                  {% assign enLine = story.enLines[i] | remove: '###' | strip %}
+                  {% assign spLine = story.spLines[i] | remove: '###' | strip %}
+                {% endif %}
+              {% endif %}
+            <tr class="{{ class }}">
+             
+              <td lang="tok">
+                <{{ element }}>{{ tokLine }}</{{ element }}>
+              </td>
+              <td lang="en">
+                <{{ element }}>{{ enLine }}</{{ element }}>
+              </td>
+              <td class="indented sp">
+                <{{ element }}>{{ spLine }}</{{ element }}>
+              </td>
+              <td class="unindented sp">
+                <div>
+                  <{{ element }}>{{ spLine | remove: '<br>' | remove: 'zz' | remove: '^>' | remove: '>^'
+                  | remove: '^' }}</{{ element }}>
+                </div>
+              </td>
             </tr>
             {% endfor %}
+<!-- 
+{% for i in (0..size) %}
+  {% assign tokLine = story.tokLines[i] %}
+  {% assign enLine = story.enLines[i] %}
+  {% assign spLine = story.spLines[i] %}
+  
+  {% if tokLine contains '####' or enLine contains '####' or spLine contains '####' %}
+    <tr>
+      <td colspan="4">
+        <h3>
+          {{ tokLine | remove: '####' | strip }} / 
+          {{ enLine | remove: '####' | strip }} / 
+          {{ spLine | remove: '####' | strip }}
+        </h3>
+      </td>
+    </tr>
+  {% elsif tokLine contains '###' or enLine contains '###' or spLine contains '###' %}
+    <tr>
+      <td colspan="4">
+        <h2>
+          {{ tokLine | remove: '###' | strip }} / 
+          {{ enLine | remove: '###' | strip }} / 
+          {{ spLine | remove: '###' | strip }}
+        </h2>
+      </td>
+    </tr>
+  {% else %}
+    <tr>
+      <td lang="tok">{{ tokLine }}</td>
+      <td lang="en">{{ enLine }}</td>
+      <td class="indented sp">{{ spLine }}</td>
+      <td class="unindented sp">{{ spLine | remove: '<br>' | remove: 'zz' | remove: '^>' | remove: '>^' | remove: '^' }}.</td>
+    </tr>
+  {% endif %}
+{% endfor %}            
+
+
+
+
+
+
+-->
+
+
+
+
 
           </tbody>
         </table>

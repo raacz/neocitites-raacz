@@ -8,7 +8,7 @@ I come to be communicating. But first, know the method of buildings.
 
 Many divine paths exist and use buildings of different customs. 
 
-Many people of not the Mormon divine path are at America-land and feel this: the small person of the parental divine person died on a stick and goodened all people using a strange exchange method. At times, people of this feeling go to divine buildings of their desire. They can go to near buildings. They can go to far buildings. Nothing controls this: a person is able to go to which divine building. 
+Many people of not the Mormon divine path are at America-land and feel this: the small person of the parental divine person died on a stick and goodened all people using a strange exchange method. At time, people of this feeling go to divine buildings at all weeks. People are able to go to divine buildings of their desire. They can go to near buildings. They can go to far buildings. Nothing controls this: a person is able to go to which divine building. 
 
 But the Mormon divine path's group controls a lot. They communicate this to all people: they are able to go to which single divine building. This is the method:
 
