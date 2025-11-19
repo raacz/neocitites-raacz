@@ -93,9 +93,9 @@ layout: _layouts/bt/reading-mode.html
         <table>
           <thead>
             <tr>
-              <th lang="tok">toki pona</th>
+              <th class="lasina" lang="tok">toki pona</th>
               <th lang="en">English</th>
-              <th class="sp">sitelen pona</th>
+              <th lang="tok" class="sp">sitelen pona</th>
             </tr>
           </thead>
           <tbody>
@@ -127,16 +127,16 @@ layout: _layouts/bt/reading-mode.html
               {% endif %}
             <tr class="{{ class }}">
              
-              <td lang="tok">
+              <td class="lasina" lang="tok">
                 <{{ element }}>{{ tokLine }}</{{ element }}>
               </td>
               <td lang="en">
                 <{{ element }}>{{ enLine }}</{{ element }}>
               </td>
-              <td class="indented sp">
+              <td lang="tok" class="indented sp">
                 <{{ element }}>{{ spLine }}</{{ element }}>
               </td>
-              <td class="unindented sp">
+              <td lang="tok" class="unindented sp">
                 <div>
                   <{{ element }}>{{ spLine | remove: '<br>' | remove: 'zz' | remove: '^>' | remove: '>^'
                   | remove: '^' }}</{{ element }}>
@@ -196,18 +196,44 @@ layout: _layouts/bt/reading-mode.html
       </div>
       <div class="inject2 lines">
         {% for i in (0..size) %}
-        <div class="line">
-          <p lang="tok">{{ story.tokLines[i] }}</p>
-          <p class="indented sp">{{ story.spLines[i] }}</p>
-          <p class="unindented sp">{{ story.spLines[i] | remove: '<br>' | remove: 'zz' | remove: '^>' | remove: '>^' |
-            remove: '^' }}.</p>
+             {% assign tokLine = story.tokLines[i] %}
+              {% assign enLine = story.enLines[i] %}
+              {% assign spLine = story.spLines[i] %}
+              {% assign element =  'p' %}
+              {% assign class =  '' %}
+
+
+              {% if tokLine contains '###' %}
+                {% assign class =  'visible-heading' %}
+
+               {% if tokLine contains '####' %}
+                  {% assign element =  'h4' %}
+                {% else %}
+                  {% assign element = 'h3' %}
+                {% endif %}
+                {% assign tokLine = story.tokLines[i] | remove: '####' | strip %}
+                {% assign enLine = story.enLines[i] | remove: '####' | strip %}
+                {% assign spLine = story.spLines[i] | remove: '####' | strip %}
+                {% if tokLine contains '###' %}
+                  {% assign tokLine = story.tokLines[i] | remove: '###' | strip %}
+                  {% assign enLine = story.enLines[i] | remove: '###' | strip %}
+                  {% assign spLine = story.spLines[i] | remove: '###' | strip %}
+                {% endif %}
+              {% endif %}
+
+
+        <div class="line {{ class }}">
+          <{{ element }} lang="tok" class="lasina">{{ tokLine }}</{{ element }}>
+          <{{ element }} lang ="tok" class="indented sp">{{ spLine }}</{{ element }}>
+          <{{ element }} lang="tok" class="unindented sp">{{ spLine | remove: '<br>' | remove: 'zz' | remove: '^>' | remove: '>^' |
+            remove: '^' }}.</{{ element }}>
           <details lang="en">
             <summary>en</summary>
-            <p>{{ story.enLines[i] }}</p>
+            <{{ element }}>{{ enLine }}</{{ element }}>
           </details>
-          <details lang="tok">
+          <details class="lasina" lang="tok">
             <summary>sitelen Lasina</summary>
-            <p>{{ story.tokLines[i] }}</p>
+            <{{ element }}>{{ tokLine }}</{{ element }}>
           </details>
         </div>
         {% endfor %}

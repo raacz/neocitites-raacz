@@ -162,14 +162,14 @@ body:has(input[id="rc-bl-1a"]:checked) .line .sp {
     display: none;
 }
 
-body:has(input[id="rc-bl-1a"]:checked) .line details[lang="tok"] {
+body:has(input[id="rc-bl-1a"]:checked) .line details.lasina {
     display: none;
 }
 
 
 /*sp/sl mode*/
 /*sitelen Lasina hidden*/
-body:has(input[id="rc-bl-1b"]:checked) .line p[lang="tok"] {
+body:has(input[id="rc-bl-1b"]:checked) .line .lasina:not(details.lasina) {
     display: none;
 }
 
@@ -181,12 +181,12 @@ body:has(input[id="rc-bl-1b"]:checked) .line details[lang="en"] {
 
 /*sp/en mode*/
 /*sitelen Lasina hidden*/
-body:has(input[id="rc-bl-1c"]:checked) .line p[lang="tok"] {
+body:has(input[id="rc-bl-1c"]:checked) .line .lasina {
     display: none;
 }
 
 /*hide tok details*/
-body:has(input[id="rc-bl-1c"]:checked) .line details[lang="tok"] {
+body:has(input[id="rc-bl-1c"]:checked) .line details.lasina {
     display: none;
 }
 
@@ -200,7 +200,7 @@ body:has(input[id="rc-1a"]:not(:checked)) .table [lang="en"] {
 }
 
 /*if box is not checked, tok hidden*/
-body:has(input[id="rc-1c"]:not(:checked)) .table [lang="tok"] {
+body:has(input[id="rc-1c"]:not(:checked)) .table .lasina {
     display: none;
 }
 
@@ -428,8 +428,27 @@ tr:not(.visible-heading) h2 { /*visually hidden*/
 :has(.wawa) .table  tr.visible-heading {
     background-color: var(--contrast-black);
     color: var(--contrast-white);
-
 }
+
+
+:has(.wawa) .line.visible-heading :is(h3,h4):is(details *) {
+    font-size: inherit;
+    padding: 0;
+    margin: 1em 0em;
+    font-weight: inherit;
+}
+:has(.wawa) .line.visible-heading :is(h3,h4):not(details *) {
+    font-size: 1.2em;
+    padding: 0;
+    margin: 1em 0em;
+    font-weight: normal;
+}
+
+:has(.wawa) .line.visible-heading {
+}
+
+
+
 
 
 
@@ -456,7 +475,8 @@ tr:not(.visible-heading) h2 { /*visually hidden*/
     column-gap: 1em;
     border-block-end: 0.1em solid var(--pimeja);
     position: relative;
-    padding-top: 1.5em;
+    padding-block-start: 1.5em;
+    padding-inline: 0.1em;
 }
 .line:first-of-type {
     border-block-start: 0.1em solid var(--pimeja);
