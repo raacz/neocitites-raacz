@@ -5,7 +5,7 @@ tags: wawa
 alt: Collage of church buildings, stained glass windows, an old photograph, a diner counter.
 ---
 
-Introducing and discussing some peculiar aspects of a relatively modern American relgion. 
+Introducing and discussing some peculiar aspects of a relatively modern American religion. 
 
 <details><summary>Content Warning for Page 5</summary>
 SA, binary gender ideology</details>
