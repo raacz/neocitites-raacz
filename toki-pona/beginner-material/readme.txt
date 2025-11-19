@@ -29,7 +29,6 @@
     > finish the alcohol story
     > finish the dragon story
     > finish the hiroshige story
-    > finish the mormon story
 - theme mvp
     > rewrite sacred underwear+kirpan references Bastian's feedback
 
@@ -44,6 +43,8 @@
 - feature: word-based achievements
 - feature: sentence miner flashcard thingamabob
 - feature: a tutorial for using the sp interface
+- qa: write a script to ensure non-capitalized tp words don't get misspelled
+- feature: content warnings integrating onto pages
 
 ## post-mvp texts:
 - quest 'cybertruck' 
