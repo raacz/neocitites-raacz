@@ -102,7 +102,7 @@ zz zz pona pi mute pona li sama seme
   
 jan pona ni   
 zz zz li pilin e ni>  
-zz zz zz nasin sewi [mi ona ma ona ni] 
+zz zz zz nasin sewi [mi ona ma ona ni]  
 zz zz zz zz li sona lon  
 zz zz zz jan lawa suli nanpa wan pi kulupu lawa   
 zz zz zz zz li wawa sewi   
