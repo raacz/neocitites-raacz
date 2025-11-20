@@ -42,8 +42,9 @@ main {
     border-block-end: var(--thin, 0.1em) solid var(--pimeja);
     position: relative;
 }
- .main-controls{
-        display: flex;
+
+.main-controls {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
@@ -249,17 +250,19 @@ body:has(input[id="rc-1b"]:not(:checked)) .table .sp {
 }
 
 
-:has([id="rc-5a"]:checked) .indented{
+:has([id="rc-5a"]:checked) .indented {
     display: block;
 }
-:has([id="rc-5a"]:checked) .unindented{
+
+:has([id="rc-5a"]:checked) .unindented {
     display: none;
 }
 
-:has([id="rc-5b"]:checked) .indented{
+:has([id="rc-5b"]:checked) .indented {
     display: none;
 }
-:has([id="rc-5b"]:checked) .unindented{
+
+:has([id="rc-5b"]:checked) .unindented {
     display: block;
 }
 
@@ -286,7 +289,8 @@ body:has(input[id="rc-1b"]:not(:checked)) .table .sp {
     width: fit-content;
 
 }
-.content-wrap{
+
+.content-wrap {
     display: flex;
     justify-content: center;
 }
@@ -347,7 +351,8 @@ p:last-of-type {
     padding: 0.5em;
 
 }
-.caption{
+
+.caption {
     padding: 0.5em;
     display: block;
 }
@@ -388,16 +393,21 @@ nav ul {
     flex: 1.5;
     max-width: 20em;
 }
+
 :has(.wawa) .regular {
     flex-direction: column;
 }
-:has(.wawa) .regular :is(.tok, .en, .unindented){
+
+:has(.wawa) .regular :is(.tok, .en, .unindented) {
     max-width: 40em;
 }
-:has(.wawa) figure{
+
+:has(.wawa) figure {
     width: 100%;
 }
-h2:not(.visible-heading h2) { /*visually hidden*/
+
+h2:not(.visible-heading h2) {
+    /*visually hidden*/
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
     height: 1px;
@@ -407,6 +417,7 @@ h2:not(.visible-heading h2) { /*visually hidden*/
     width: 1px;
 
 }
+
 :has(.wawa) .regular div p:nth-of-type(1)::before {
     content: '';
     height: 0.2em;
@@ -419,46 +430,54 @@ h2:not(.visible-heading h2) { /*visually hidden*/
 /*specifically dealing with headings in quest texts*/
 
 
-    /*table mode*/
-:has(.wawa) .table .visible-heading :is(h2,h3) {
-    font-size: inherit;
+/*table mode*/
+:has(.wawa) .table .visible-heading :is(h2, h3) {
+    font-size: 1.2em;
     padding: 1em 0.25em;
     margin: inherit;
     font-weight: inherit;
 
 }
-:has(.wawa) .table  tr.visible-heading {
-    background-color: var(--contrast-black);
-    color: var(--contrast-white);
+
+:has(.wawa) .table tr.visible-heading td {
+    text-align: center;
+    margin-block: 1em;
+    /*background-color: var(--contrast-black);
+    color: var(--contrast-white);*/
 }
 
-    /*lbl*/
-:has(.wawa) .line.visible-heading :is(h3,h4):is(details *) {
+/*lbl*/
+:has(.wawa) .line.visible-heading :is(h3, h4):is(details *) {
     font-size: inherit;
     padding: 0;
     margin: 1em 0em;
     font-weight: inherit;
 }
-:has(.wawa) .line.visible-heading :is(h3,h4):not(details *) {
+
+:has(.wawa) .line.visible-heading :is(h3, h4):not(details *) {
     font-size: 1.2em;
     padding: 0;
     margin: 1em 0em;
     font-weight: normal;
 }
-    /*regular*/
 
-:has(.wawa) .regular :is(h3,h4){
+/*regular*/
+
+:has(.wawa) .regular :is(h3, h4) {
     padding: 0;
     font-weight: inherit;
 }
-:has(.wawa) .regular h3{
+
+:has(.wawa) .regular h3 {
     font-size: 1.2em;
 }
-:has(.wawa) .regular h4{
+
+:has(.wawa) .regular h4 {
     font-size: 1.1em;
     margin-block: 2.5em 1em;
 }
-:has(.wawa) .regular:has(h3) div{
+
+:has(.wawa) .regular:has(h3) div {
     margin-block-end: 2.5em;
 }
 
@@ -479,7 +498,7 @@ h2:not(.visible-heading h2) { /*visually hidden*/
 
 /*line mode styling*/
 
-:has(#rc-2c:checked) .content{
+:has(#rc-2c:checked) .content {
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
@@ -496,12 +515,13 @@ h2:not(.visible-heading h2) { /*visually hidden*/
     padding-block-start: 1.5em;
     padding-inline: 0.1em;
 }
+
 .line:first-of-type {
     border-block-start: 0.1em solid var(--pimeja);
 
 }
 
-.lines{
+.lines {
     width: 100%;
     max-width: 30em;
 }
@@ -511,7 +531,8 @@ h2:not(.visible-heading h2) { /*visually hidden*/
     right: 0;
     top: 0;
 }
-.line details[closed] *{
+
+.line details[closed] * {
     display: block;
     visibility: hidden;
 }
@@ -541,7 +562,8 @@ h2:not(.visible-heading h2) { /*visually hidden*/
     outline: 0.2em solid var(--pimeja);
     border-radius: 0.1em;
 }
-.line p{
+
+.line p {
     margin: 0em;
 }
 
@@ -572,6 +594,116 @@ summary:focus {
     flex: 1;
     flex: auto;
 }
+
+@media (max-width: 30em) {
+    :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) .table :is(tr) {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 3em 1fr;
+        justify-items: end;
+        grid-template-areas:
+            ". td-tok"
+            ". td-en"
+            ". td-sp";
+    }
+
+    :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) .table .lasina {
+        grid-area: td-tok;
+    }
+
+    :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) .table td {
+        position: relative;
+        padding-block: 10px;
+        width: 100%;
+    }
+
+    :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) .table .lasina::before {
+        content: 'toki pona' / "";
+        position: absolute;
+        left: -5em;
+        font-size: 0.8em;
+    }
+
+    :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) .table [lang="en"] {
+        grid-area: td-en;
+    }
+
+    :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) .table [lang="en"]::before {
+        content: 'English' / "";
+        position: absolute;
+        left: -5em;
+        font-size: 0.8em;
+    }
+
+    :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) .table .sp {
+        grid-area: td-sp;
+    }
+
+    :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) .table .sp::before {
+        content: 'sitelen pona' / "";
+        position: absolute;
+        left: -5em;
+        font-size: 0.8em;
+    }
+
+
+    :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) .table tr.visible-heading :is(h2, h3) {
+        padding: inherit;
+        font-size: inherit;
+        line-height: 1.6em;
+        margin: 0;
+        display: inline;
+
+    }
+
+
+        :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) tbody:has(> :first-child.visible-heading)::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: var(--visible-heading-offset);
+    }
+        :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) :has(+ tr.visible-heading){
+        margin-block-end: var(--visible-heading-offset);
+    }
+
+    :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) .table tr.visible-heading td {
+        text-align: inherit;
+        margin-block: inherit;
+    }
+    :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) .table tr.visible-heading{
+        padding-top: 3em;
+        position: relative;
+    }
+    :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) .table tr.visible-heading::before{
+        content: 'Section Heading';
+        text-decoration: underline;
+        position: absolute;
+        left: 0;
+        top: 1em;
+    }
+
+    :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) .table th {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -621,14 +753,17 @@ h1 {
     flex-wrap: wrap;
     padding-block: 0.15em;
 }
-.if-enabled{
+
+.if-enabled {
     display: none;
 }
-.pseudo-footer a:is(:visited, :not(:visited)){
-        color: var(--contrast-white);
-        text-decoration: underline;
+
+.pseudo-footer a:is(:visited, :not(:visited)) {
+    color: var(--contrast-white);
+    text-decoration: underline;
 }
-.pseudo-footer *{
+
+.pseudo-footer * {
     flex: 1;
     text-align: center;
 }
@@ -638,7 +773,8 @@ h1 {
     text-align: center;
     line-height: 1em;
 }
-.reading-list-checkbox label{
+
+.reading-list-checkbox label {
     margin-block: 3em;
 }
 
@@ -655,10 +791,12 @@ h1 {
     display: none;
     flex-wrap: wrap;
 }
-fieldset:has(#rc-5a){
+
+fieldset:has(#rc-5a) {
     flex: 1;
 }
-fieldset:has(#rc-4a){
+
+fieldset:has(#rc-4a) {
     flex: 2;
 }
 
@@ -686,9 +824,11 @@ fieldset:has(#rc-4a){
         padding-inline: 0;
         padding-block-end: 2em;
         margin-inline: 0;
-        border-block: var(--thin, 0.2em) solid var(--pimeja);;
+        border-block: var(--thin, 0.2em) solid var(--pimeja);
+        ;
         box-shadow: none;
     }
+
     .pseudo-footer {
         margin-block-start: 0;
     }
