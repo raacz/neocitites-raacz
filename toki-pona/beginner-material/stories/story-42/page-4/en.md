@@ -18,7 +18,7 @@ Wen's father holds one large liquid container and one small liquid container.
 
 Father amused. "Valuable yellow metal!"
 
-"In the context of what could you want to destroy valuable yellow metal ah! Don't be obscene. Money is good ah. Do not destroy!"
+"In the context of what could you want to destroy valuable yellow metal ah! Don't be strange. Money is good ah. Do not destroy!"
 
 "I communicated 'destroy.' I didn't communicate this: I get rid of the yellow metal."
 

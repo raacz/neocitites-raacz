@@ -8,4 +8,5 @@ license: CC-BY-SA-4.0
 alt: 
 media: "/toki-pona/beginner-material/assets/wawa-42g.jpg"
 tags: sequence
+eleventyExcludeFromCollections: true 
 ---
