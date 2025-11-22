@@ -12,6 +12,12 @@ layout: _layouts/bt/reading-mode.html
 
 {% assign size = story.tokLines.size | minus: 1 %}
 
+{% assign titlelanguage = "tok" %}
+
+{% if genre == "suli" %}
+{% assign titlelanguage = "en" %}
+{% endif %}
+
 <div class="selo">
 
   {% if beforeText %}
@@ -21,7 +27,7 @@ layout: _layouts/bt/reading-mode.html
   </div>
   {% endif %}
 
-  <h1 id="main-content">{{ title }}</h1>
+  <h1 lang="{{ titlelanguage }}" id="main-content">{{ title }}</h1>
   <div class="content-wrap">
     <div class="content">
 
@@ -61,22 +67,22 @@ layout: _layouts/bt/reading-mode.html
       </figure>
 
       <div class="regular">
-        <div class="tok">
+        <div lang="tok" class="tok">
           <h2>sitelen Lasina</h2>
           {{ tok_item.content }}
         </div>
         {% if en_item %}
-        <div class="en">
+        <div lang="en" class="en">
           <h2>English</h2>
           {{ en_item.content }}
         </div>
         {% endif %}
         {% if sp_item %}
-        <div class="indented sp">
+        <div lang="tok" class="indented sp">
           <h2>sitelen pona</h2>
           {{ sp_item.content }}
         </div>
-        <div class="unindented sp">
+        <div lang="tok" class="unindented sp">
           {% for paragraph in story.spFlattened %}
           <h2>sitelen pona</h2>
 
