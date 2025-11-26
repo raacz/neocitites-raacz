@@ -284,7 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
         function expandMenu() {
             expandedSection.style.display = "flex";
             toggle.ariaExpanded = true;
-            toggle.innerText = "Hide Sitelen Pona Settings";
+            toggle.innerText = "Hide SP Settings";
             toggle.addEventListener("click", () => {
                 collapseMenu()
             });
@@ -292,7 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
         function collapseMenu() {
             expandedSection.style.display = "none";
             toggle.ariaExpanded = false;
-            toggle.innerText = "Show Sitelen Pona Settings";
+            toggle.innerText = "Show SP Settings";
 
             toggle.addEventListener("click", () => {
                 expandMenu()
