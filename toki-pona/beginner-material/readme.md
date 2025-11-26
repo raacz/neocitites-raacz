@@ -18,9 +18,7 @@
 - feature: fully implement SP expanded controls menu, UCSUR switcher. 
 
 ## accessibility
-- fix: nested fieldset
-- feature: invisible headings
-- fix: proper lang tagging
+- fix: proper lang tagging // neec to double check
 - feature: styled focus links
 
 ## new material 

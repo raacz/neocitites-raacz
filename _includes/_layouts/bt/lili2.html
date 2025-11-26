@@ -83,14 +83,24 @@ layout: _layouts/bt/reading-mode.html
           {{ sp_item.content }}
         </div>
         <div lang="tok" class="unindented sp">
-          {% for paragraph in story.spFlattened %}
           <h2>sitelen pona</h2>
-
-          <p>
+          {% for paragraph in story.spFlattened  %}
+              {% assign spLine = paragraph[0] | log %}
+              {% assign element =  'p' %}
+              {% if spLine contains '###' %}
+               {% if spLine contains '####' %}
+                  {% assign element =  'h4' %}
+                {% else %}
+                  {% assign element = 'h3' %}
+                {% endif %}
+               
+              {% endif %}
+          
+          <{{ element }}>
             {% for sentence in paragraph %}
-            {{ sentence | remove: '<br>' | remove: 'zz' | remove: '^>' | remove: '>^' | remove: '^' }}.
+            {{ sentence | remove: '<br>' | remove: '####' | remove: '###' | remove: 'zz' | remove: '<' | remove: '^>' | remove: '>^' | remove: '^' }} {% if element == 'p' %}<span class="interpunct">.</span><span class="cjk-final">。︁</span>{% endif %}
             {% endfor %}
-          </p>
+          </{{ element }}>
           {% endfor %}
         </div>
         {% endif %}
@@ -144,7 +154,7 @@ layout: _layouts/bt/reading-mode.html
               </td>
               <td lang="tok" class="unindented sp">
                 <div>
-                  <{{ element }}>{{ spLine | remove: '<br>' | remove: 'zz' | remove: '^>' | remove: '>^'
+                  <{{ element }}>{{ spLine | remove: '<br>' | remove: 'zz' | remove: '<' | remove: '^>' | remove: '>^'
                   | remove: '^' }}</{{ element }}>
                 </div>
               </td>
@@ -181,7 +191,7 @@ layout: _layouts/bt/reading-mode.html
       <td lang="tok">{{ tokLine }}</td>
       <td lang="en">{{ enLine }}</td>
       <td class="indented sp">{{ spLine }}</td>
-      <td class="unindented sp">{{ spLine | remove: '<br>' | remove: 'zz' | remove: '^>' | remove: '>^' | remove: '^' }}.</td>
+      <td class="unindented sp">{{ spLine | remove: '<br>' | remove: 'zz' | remove: '<' | remove: '^>' | remove: '>^' | remove: '^' }}.</td>
     </tr>
   {% endif %}
 {% endfor %}            
@@ -231,7 +241,7 @@ layout: _layouts/bt/reading-mode.html
         <div class="line {{ class }}">
           <{{ element }} lang="tok" class="lasina">{{ tokLine }}</{{ element }}>
           <{{ element }} lang ="tok" class="indented sp">{{ spLine }}</{{ element }}>
-          <{{ element }} lang="tok" class="unindented sp">{{ spLine | remove: '<br>' | remove: 'zz' | remove: '^>' | remove: '>^' |
+          <{{ element }} lang="tok" class="unindented sp">{{ spLine | remove: '<br>' | remove: 'zz' | remove: '<' | remove: '^>' | remove: '>^' |
             remove: '^' }}.</{{ element }}>
           <details lang="en">
             <summary>en</summary>
@@ -253,5 +263,4 @@ layout: _layouts/bt/reading-mode.html
 <script src="/scripts/mode-configure2.js"></script>
 
 <script>
-  console.log("{{ page }}");
 </script>

@@ -11,11 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
     for(let i of raw){
         let clean = i.innerText.replace(/zz/g, "");
         clean = clean.replace(/\s+/g, ' ').trim();
-        clean = clean + ". ";
+        clean = clean + ".";
 
-        console.log(clean);
         justAString = justAString + clean;
         flattened.push(clean);
+    }
+
+    //which punctuation ending is active
+    console.log(sona);
+
+    function CJK(){
+
     }
 
 

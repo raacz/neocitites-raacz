@@ -41,6 +41,7 @@ main {
     background-color: var(--walo-lili);
     border-block-end: var(--thin, 0.1em) solid var(--pimeja);
     position: relative;
+    padding-block-start: 1em;
 }
 
 .main-controls {
@@ -258,13 +259,23 @@ body:has(input[id="rc-1b"]:not(:checked)) .table .sp {
     display: none;
 }
 
-:has([id="rc-5b"]:checked) .indented {
+:has([id="rc-5b"]:checked, [id="rc-5c"]:checked) .indented {
     display: none;
 }
 
-:has([id="rc-5b"]:checked) .unindented {
+:has([id="rc-5b"]:checked, [id="rc-5c"]:checked) .unindented {
     display: block;
 }
+:has([id="rc-5b"]:checked) .cjk-final {
+    display: none;
+}
+:has([id="rc-5c"]:checked) .interpunct {
+    display: none;
+}
+
+
+
+
 
 
 
@@ -657,13 +668,14 @@ summary:focus {
     }
 
 
-        :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) tbody:has(> :first-child.visible-heading)::before {
+    :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) tbody:has(> :first-child.visible-heading)::before {
         content: '';
         display: block;
         width: 100%;
         height: var(--visible-heading-offset);
     }
-        :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) :has(+ tr.visible-heading){
+
+    :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) :has(+ tr.visible-heading) {
         margin-block-end: var(--visible-heading-offset);
     }
 
@@ -671,11 +683,13 @@ summary:focus {
         text-align: inherit;
         margin-block: inherit;
     }
-    :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) .table tr.visible-heading{
+
+    :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) .table tr.visible-heading {
         padding-top: 3em;
         position: relative;
     }
-    :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) .table tr.visible-heading::before{
+
+    :has(#rc-1a:checked):has(#rc-1b:checked):has(#rc-1c:checked) .table tr.visible-heading::before {
         content: 'Section Heading';
         text-decoration: underline;
         position: absolute;
@@ -803,17 +817,52 @@ fieldset:has(#rc-4a) {
 
 
 
-.expanded {
+.more-settings {
     position: absolute;
     z-index: 1;
     right: 0;
-    bottom: 0;
-    border-radius: none;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    line-height: 1em;
+}
+
+
+.more-settings button,
+#help-button {
+    margin: 0 0.5em;
+    padding: 0;
     border: none;
     color: var(--contrast-black);
-    border: 0.1em solid var(--contrast-black);
-    background-color: var(--contrast-white);
+    background-color: var(--walo-lili);
+    font-size: 0.8rem;
+    font-weight: normal;
+    text-decoration: none;
+    line-height: 1rem;
+    font-family: Atkinson, sans;
+
 }
+
+.sp-menu {
+    opacity: 0;
+    display: none;
+}
+
+:has(#rc-bl-1b:checked, #rc-bl-1c:checked, #rc-1b:checked) .sp-menu {
+    display: inline;
+    animation: fadein 0.25s 1;
+    opacity: 1;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 
 
 

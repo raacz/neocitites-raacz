@@ -1,0 +1,24 @@
+---
+layout: _layouts/bt/texts.html
+title: Help
+tags: generalb
+---
+
+<p>Describing the various options that are available in Beginner Text's reading settings. </p>
+
+<p>Skip to the section you want: </p>
+
+<ul>
+{% for item in collections.help %}
+<li><a href="#{{ item.data.title | slugify }}">{{ item.data.title }}</a></li>
+{% endfor %}
+</ul>
+
+
+
+
+{% for item in collections.help %}
+<h2 tabindex="-1" id="{{ item.data.title | slugify }}">{{ item.data.title }}</h2>
+
+{{item.content }}
+{% endfor %}

@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const popover = document.getElementById("targettheme");
     const dismiss = document.getElementById("dismiss-light-dark");
     dismiss.addEventListener("click", (event) =>{
-        console.log("FUCK");
         popover.togglePopover();
 
     });
@@ -26,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let current = "system";
 
     if (enabled) {
-        console.log("value was found");
+        console.log("Display theme preferences were retrieved successfully: "+enabled);
         if (enabled === DARK_HIGH_KEY) {
             current = "dark high";
             setTheme(DARK_HIGH_KEY);

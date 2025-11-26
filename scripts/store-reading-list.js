@@ -12,10 +12,9 @@ const ENABLE_KEY = "reading mode is active";
 
 document.addEventListener('DOMContentLoaded', () => {
     const enabled = localStorage.getItem(ENABLE_KEY);
-    console.log(enabled);
     if (enabled === "true") {
         //set display of checkbox to visible
-        console.log("hi i'm enabled");
+        console.log("Reading tracker is enabled. Link and checkbox set to visibile.");
         const label = document.getElementById("reading-list-label-content");
         const hiddenElements = document.getElementsByClassName("if-enabled");
         for (let element of hiddenElements){

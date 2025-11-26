@@ -19,6 +19,11 @@ const inputs = {
         'tok_en': document.getElementById('rc-bl-1a'),
         'sp_tok': document.getElementById('rc-bl-1b'),
         'sp_en': document.getElementById('rc-bl-1c'),
+    },
+    sp_style: {
+        'indented': document.getElementById('rc-5a'),
+        'flat-interpunct': document.getElementById('rc-5b'),
+        'flat-cjk': document.getElementById('rc-5c'),
     }
 };
 
@@ -61,12 +66,25 @@ function synchLineMode () {
     }
 }
 
+function synchSPStyle () {
+    for (let key of Object.keys(inputs.sp_style)) {
+        if(sona.sona.sp_style == key){
+            inputs.sp_style[key].checked = true;
+        }
+        else{
+            inputs.sp_style[key].checked = false;
+        }
+    }
+}
+
+
 
 
 
 function lineCalibration(){
     synchText();
     synchLineMode();  
+    synchSPStyle();
 }
 
 function synchfromStorage(){
@@ -79,8 +97,6 @@ function sendTextUpdates(){
     for (let key of Object.keys(inputs.text)) {
         inputs.text[key].addEventListener("change", (event) =>{
             sona.updateText(key, event.target.checked);
-            console.log(key, event.target.checked);
-
         });
     }
 }
@@ -97,6 +113,14 @@ function sendLBLUpdates(){
         inputs.line_mode[key].addEventListener("change", (event) =>{
             sona.updateLineMode(key);
 
+
+        });
+    }
+}
+function sendSPStyleUpdates(){
+    for (let key of Object.keys(inputs.sp_style)) {
+        inputs.sp_style[key].addEventListener("change", (event) =>{
+            sona.updateSPStyle(key);
         });
     }
 }
@@ -119,7 +143,6 @@ function initiateModeUpdates(){
 
 
 function initialize(){
-
     //grab the object from storage
     sona.restoreFromStorage();
     //if storage is there
@@ -129,6 +152,6 @@ function initialize(){
     sendTextUpdates();
     sendImageUpdates();
     sendLBLUpdates();
+    sendSPStyleUpdates()
     initiateModeUpdates();
 }
-

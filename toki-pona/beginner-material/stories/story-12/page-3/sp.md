@@ -8,4 +8,4 @@ noka nanpa tu li lape lon supa
 mi tawa musi kepeken supa la  
 zz jan ale li lukin 
 
-mi tawa!
+mi tawa

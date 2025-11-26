@@ -16,10 +16,11 @@ class Sona {
             image_settings: {
                 img: true,
                 description: true,
-                attribution: false,
+                attribution: true,
             },
             mode: REGULAR,
             line_mode: INACTIVE,
+            sp_style: "indented",
         };
     }
     updateText(newText, state = true) {
@@ -37,24 +38,26 @@ class Sona {
             }
         }
         this.updateStorage();
-
     }
     updateLineMode(newLineMode){
         this.sona.line_mode = newLineMode;
         this.updateStorage();
-
+    }
+    updateSPStyle(newSPStyle){
+        this.sona.sp_style = newSPStyle;
+        this.updateStorage();
     }
     updateMode(newMode) { //only to be used when actually clicked by the user, not updated programmatically
         if (newMode === LBL) {
             if (this.sona.mode !== LBL) {
                 this.enterLineByLine();
-                console.log("LBL entered");
+                /*console.log("LBL entered");*/
             }
         }
         else {
             if (this.sona.mode === LBL) {
                 this.exitLineByLine();
-                console.log("LBL exited");
+                /*console.log("LBL exited");*/
 
             }
             this.sona.mode = newMode;
@@ -165,8 +168,6 @@ class Sona {
 
         this.declareState();
     }
-
-
     declareState() {
         console.log("DECLARING STATES");
         console.log(this.sona);

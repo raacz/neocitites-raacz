@@ -9,5 +9,5 @@ zz jan ale li lukin pi pilin nasa e mi
 kon jaki ni li seme
 
 jaki sijelo pimeja anu seme  
-mi tawa!
+mi tawa
 

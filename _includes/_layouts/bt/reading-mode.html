@@ -65,30 +65,30 @@ stylesheet: "/assets/css/reading-mode.css"
     <div class="expanded-menu">
         <fieldset>
             <legend>UCSUR preference </legend>
-                        <label for="rc-4a">
-                <input type="radio" id="rc-4a">
+            <label for="rc-4a">
+                <input type="radio" name="encode-pref" id="rc-4a">
                 Use ASCII
-                
+
             </label>
 
             <label for="rc-4b">
-                <input type="radio" id="rc-4b">
+                <input type="radio" name="encode-pref" id="rc-4b">
                 Use UCSUR on Current Page
 
-                
+
             </label>
             <label for="rc-4c">
-                <input type="radio" id="rc-4c">
+                <input type="radio" name="encode-pref" id="rc-4c">
                 Use UCSUR Always
-                
+
             </label>
         </fieldset>
-                <fieldset>
+        <fieldset>
             <legend>SP Layout Style </legend>
-                        <label for="rc-5a">
+            <label for="rc-5a">
                 <input type="radio" name="sp-pref" id="rc-5a" checked>
                 Indented
-                
+
             </label>
 
             <label for="rc-5b">
@@ -96,25 +96,23 @@ stylesheet: "/assets/css/reading-mode.css"
                 Flat with Interpunct ·
 
             </label>
-            <label for="rc-5b">
-                <input type="radio" name="sp-pref" id="rc-5b">
-                Flat with CJK Final 。︁	
+            <label for="rc-5c">
+                <input type="radio" name="sp-pref" id="rc-5c">
+                Flat with CJK Final 。︁
             </label>
         </fieldset>
-        
-        
+
+
     </div>
-
-<button class="expanded" id="expanded-menu-toggle">
-Expand
-</button>
-
-
+    <div class="more-settings">
+        <button class="sp-menu expanded"
+            id="expanded-menu-toggle">Show Sitelen Pona Settings</button><span class="sp-menu">·</span><a href="/toki-pona/beginner-material/help/" id="help-button">Help</a>
+    </div>
 </section>
 
 <main data-story-id="{{ page.url }}">
     {{ content }}
-    
+
     <div class="pseudo-footer">
         <a class="if-enabled" href="/toki-pona/beginner-material/mi/">Tracker</a>
 
@@ -131,12 +129,18 @@ Expand
     <div class="complicated-license">
         {% if license == "GFDL-1.2" %}
         <div>
-            Permission is granted to copy, distribute and/or modify this document under the terms of the <a href="https://www.gnu.org/licenses/old-licenses/fdl-1.2.txt" target="_blank">GNU Free Documentation License, Version 1.2</a> only as published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled <a href="/toki-pona/beginner-material/GFDL/">GNU Free Documentation License</a>. 
+            Permission is granted to copy, distribute and/or modify this document under the terms of the <a
+                href="https://www.gnu.org/licenses/old-licenses/fdl-1.2.txt" target="_blank">GNU Free Documentation
+                License, Version 1.2</a> only as published by the Free Software Foundation; with no Invariant Sections,
+            no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled <a
+                href="/toki-pona/beginner-material/GFDL/">GNU Free Documentation License</a>.
         </div>
         {% endif %}
         {% if license contains "NC" %}
         <div>
-            Note: Only the text of this page is licensed under CC-BY-SA. See <a href="/toki-pona/beginner-material/index.html#licensing-quirk">About Creative Commons: CC-BY-NC</a> for details
+            Note: Only the text of this page is licensed under CC-BY-SA. See <a
+                href="/toki-pona/beginner-material/index.html#licensing-quirk">About Creative Commons: CC-BY-NC</a> for
+            details
 
         </div>
         {% endif %}

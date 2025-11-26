@@ -8,5 +8,5 @@ lili la mi tawa sinpin
 
 mi pini kepeken nasin seme
 
-mi sona ala!  
+mi sona ala  
 mi tawa

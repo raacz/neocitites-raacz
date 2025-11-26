@@ -1,4 +1,7 @@
 //code stolen from https://thedressedmolerat.github.io/juniko/ and adapted
+const UCSUR_KEY = "ucsur is now active";
+const LOCAL = "within local storage";
+
 
 const ucsur_list = {
     "kijetesantakalu": "\u{F1980}",
@@ -136,6 +139,13 @@ const ucsur_list = {
     "mi": "\u{F1934}",
     "mu": "\u{F1939}",
     "ni": "\u{F1941}",
+    "ni>": "\u{F1941}3",
+    "ni>^": "\u{F1941}6",
+    "ni^>": "\u{F1941}6",
+    "ni^": "\u{F1941}2",
+    "ni<": "\u{F1941}1",
+    "ni<^": "\u{F1941}5",
+    "ni^<": "\u{F1941}5",
     "pi": "\u{F194D}",
     "pu": "\u{F1955}",
     "tu": "\u{F196E}",
@@ -157,7 +167,7 @@ const ucsur_list = {
     ":": "\u{F199D} ",
     "zz": "\u{3000}",
     "<": "\u{300C}",
-    ">": "\u{300D}",
+    ">": "3",
     "~~": "\u{FE01}",
     "~": "\u{FE00}",
     " ": "",
@@ -167,40 +177,103 @@ const ucsur_list = {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+    const eRadios = {
+        "default": document.getElementById("rc-4a"),
+        "page": document.getElementById("rc-4b"),
+        "local": document.getElementById("rc-4c"),
+    }
+    let active = false;
+    if (localStorage.getItem(UCSUR_KEY)) {
+        active = true;
+        eRadios.local.checked = true;
+    } else {
+        eRadios.default.checked = true;
+    }
 
-    //first check localstorage
-    //if always use ucsur is set, auto convert
-    //else check session storage
-    //if no keys in session storage move on
-    //if convert is in session storage, convert
-    //add event listeners
-    //if convert the current page is clicked
-    //add key to session 
-    //remove key from local
-    //else if convert the ucsur is clicked
-    //add key to local
-    //remove key from session
-    //else if ascii is selected
-    //remove key from both
+    for (let radio of Object.keys(eRadios)) {
+        //console.log("radio is "+radio);
+        //console.log("eRadios.radio is "+eRadios[radio]);
 
-    /*const asuki = document.getElementsByClassName("sp");
-    document.getElementById("ucsur").ariaPressed = "true";
-    document.getElementById("ucsur").addEventListener("click", function () {
-        for (let element of asuki) {
-            let ucsur_output = "";
+        eRadios[radio].addEventListener("change", (event) => {
+            encodingPreference(event.target);
+        });
+    }
+    function encodingPreference(target) {
+        for (let radio of Object.keys(eRadios)) {
+            if (eRadios[radio] == target) {
+                if (radio === "local") {
+                    fromASCIItoUCSUR();
+                    localStorage.setItem(UCSUR_KEY, LOCAL);
+                }
+                else if (radio === "page") {
+                    fromASCIItoUCSUR();
+                    localStorage.removeItem(UCSUR_KEY);
 
-
-            for (const token of element.innerText.match(/\w+|[^\w]/g)) { // Thanks chatGPT for the regex :(
-                console.log(token);
-                if (token in ucsur_list) {
-                    ucsur_output += ucsur_list[token].split("\t")[0];
-                } else {
-                    ucsur_output += token;
+                } else if (radio === "default") {
+                    fromUCSURtoASCII();
+                    localStorage.removeItem(UCSUR_KEY);
                 }
             }
-            element.innerText = ucsur_output;
         }
-    });*/
+    }
+
+
+    const asuki = Array.from(document.getElementsByClassName("sp"));
+    //console.log(asuki);
+    const preserveOriginal = new Map();
+
+    if (active) {
+        fromASCIItoUCSUR();
+    }
+
+    function fromUCSURtoASCII() {
+        preserveOriginal.forEach((clone, original) => {
+        original.parentNode.replaceChild(clone, original);
+        });
+        preserveOriginal.clear();
+
+    }
+
+
+
+    function fromASCIItoUCSUR() {
+        for (let element of asuki) {
+            preserveOriginal.set(element, element.cloneNode(true));
+            let nodeList = element.childNodes;
+            findTokens(nodeList);
+            function findTokens(list) {
+                for (let node of list) {
+                    if (node.nodeName === '#text') {
+                        if (node.nodeValue !== "\n") {
+                            convertTextNode(node);
+                        }
+                    }
+                    else {
+                        findTokens(node.childNodes);
+                    }
+                }
+            }
+        }
+    }
+    function convertTextNode(textNode) {
+        let ucsur_output = "";
+        for (const token of textNode.nodeValue.match(/ni[\^><]+|\w+|[^\w]/g)) { // Thanks chatGPT for the regex :(
+            console.log("token is "+token);
+
+            if (token in ucsur_list) {
+                ucsur_output += ucsur_list[token].split("\t")[0];
+            } else {
+                ucsur_output += token;
+            }
+        }
+        textNode.nodeValue = ucsur_output;
+        //console.log("here's the output: "+ucsur_output);
+        //console.log("      or");
+
+        //console.log(textNode);
+
+        //console.log("_________________________________________")
+    }
 
     //toggle for the menu
     const toggle = document.getElementById("expanded-menu-toggle");
@@ -211,7 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
         function expandMenu() {
             expandedSection.style.display = "flex";
             toggle.ariaExpanded = true;
-            toggle.innerText = "Collapse Menu";
+            toggle.innerText = "Hide Sitelen Pona Settings";
             toggle.addEventListener("click", () => {
                 collapseMenu()
             });
@@ -219,7 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
         function collapseMenu() {
             expandedSection.style.display = "none";
             toggle.ariaExpanded = false;
-            toggle.innerText = "Expand";
+            toggle.innerText = "Show Sitelen Pona Settings";
 
             toggle.addEventListener("click", () => {
                 expandMenu()
