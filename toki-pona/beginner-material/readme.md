@@ -4,10 +4,7 @@
 ## kala Asi outstanding 
 - potentially move image attr under the image
     > currently quiz mode creates weird diplacement (also note lbl does this too)
-- feature: indentless sp mode
-    > support switching interpunct with CJK Final (need to write a whole new script)
-    > support UCSUR
-
+    
 ## fixing broken things
 - fix: mobile styling
     > rewrite flex logic for sp/eng/l to accommodate indentless sp and to adjust to stories where the text is under a certain height
@@ -15,7 +12,6 @@
     > ensure spaces do not get weirdly collapsed aka kala Asi's bugs
     > adjust breakpoints on homepage to ensure the mobile screenshots are shown and collage moves to flex earlier
 - fix: reading tracker currently does not display proper mode dep. whether the challenge is active or inactive
-- feature: fully implement SP expanded controls menu, UCSUR switcher. 
 
 ## accessibility
 - fix: proper lang tagging // neec to double check
