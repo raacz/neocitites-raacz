@@ -58,7 +58,7 @@ ilo mama suli pi ken pali en ilo mama lili pi wile pali li kama wan la pali li o
 
 #### ilo mama li ken ala awen lon tenpo suli
 
-ilo mama pi ken pali en ilo mama pi wile pali li awen lon insa pi poki pona. sijelo li weka e ilo mama ni tan poki la ilo mama li ken ala awen lon tenpo suli. tenpo lili la ilo mama ni li moli a.   
+ilo mama pi ken pali li awen lon poki pi jan lupa. ilo mama pi wile pali li awen lon poki pi jan palisa. sijelo ona li weka e ilo mama ni tan poki la ilo mama li ken ala awen lon tenpo suli. tenpo lili la ilo mama ni li moli a.   
 
 ilo pi ken pali li suli. pali ale ona en ijo ale pi jo ona li wile e wawa mute la wile moku ona li mute. tan weka moku la ona li ken awen moli ala lon tenpo suno wan taso.   
 
@@ -93,7 +93,7 @@ ijo sin li alasa e ni: lupa li ken ala ken tomo pona? moku pi mute pona li lon a
 
 toki li ike la ijo sin li moli. jan lupa li kama ala mama.   
 
-toki li pona la ijo sin en selo lupa li kama wan. tenpo ni la lupa li mama e ijo sin li wile pana e moku tawa ijo sin. taso ona li ken ala kepeken linja tan ni: linja li lon ala. ni la ona li awen pali e linja la ona li ken e ni: ijo sin li moku e selo lupa.   
+toki li pona la ijo sin en selo lupa li kama wan. tenpo ni la lupa li mama pi ijo sin li wile pana e moku tawa ijo sin. taso ona li ken ala kepeken linja tan ni: linja li lon ala. ni la ona li awen pali e linja la ona li ken e ni: ijo sin li moku e selo lupa.   
 
 
 #### selo lupa li pali e selo sin wawa li weka e ona
@@ -140,7 +140,7 @@ pana pi telo ante li toki e ijo ante.
 
 telo nanpa wan li toki e ni: o weka e selo sin o pana e telo loje o kama open e pana pi ilo mama sin. 
 
-telo nanpa tu wan li toki e ni: ilo mama li weka tan poki! o pali e selo sin wawa. 
+telo nanpa tu li toki e ni: ilo mama li weka tan poki! o pali e selo sin wawa. 
 
 telo toki tu ni li ken kama e ijo ante kin lon poka ante sijelo. 
 

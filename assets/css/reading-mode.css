@@ -438,6 +438,11 @@ h2:not(.visible-heading h2) {
     margin-block: 2em;
 }
 
+:has(.wawa) .regular .sp h4 {
+    text-decoration: underline;
+    text-underline-offset: 70%;
+}
+
 /*specifically dealing with headings in quest texts*/
 
 

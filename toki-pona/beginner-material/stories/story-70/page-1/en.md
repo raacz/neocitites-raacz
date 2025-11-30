@@ -64,7 +64,7 @@ When the large parental tool of working ability and the small parental tool of w
 
 #### Parental tools cannot remain at a large time
 
-The parental tool of working ability and the parental tool of working desire stay located at the inside of good containers. When the body removes these parental tools from containers, the parental tools are unable to remain at a large time. At a small time, these parental tools will die ah. 
+The parental tool of working ability stays in the container of the orificey person. The parental tool of working desire stays at container of the stick person. When their bodies remove these parental tools from containers, the parental tools are unable to remain at a large time. At a small time, these parental tools will die ah. 
 
 The tool of working ability is large. All of its work and all things of its carrying need a lot of energy so its food desires are many. Because of food's absence, it can continue to not be dead at only one sun time. 
 
@@ -99,7 +99,7 @@ The new thing hunts this: Is the orifice able to be a good home? Does food of a 
 
 When the communication is bad, the new thing dies. The orifice person does not come to be a parent. 
 
-When the communication is good, the new thing and the orifice's outer-layer comes to be one. At this time the orifice is parenting the new thing and want to give food to the new thing. But it can't use the cord because of this: a cord does not exist. Therefore, when it is continuing to make a cord, it makes-possible this: the new thing consumes the orifice's outer-layer. 
+When the communication is good, the new thing and the orifice's outer-layer comes to be one. At this time the orifice is the new thing's parent and wants to give food to the new thing. But it can't use the cord because of this: a cord does not exist. Therefore, when it is continuing to make a cord, it makes-possible this: the new thing consumes the orifice's outer-layer. 
 
 #### The orifice's outer-layer makes a new powerful outer-layer and removes it 
 
