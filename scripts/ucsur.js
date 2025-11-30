@@ -258,7 +258,6 @@ document.addEventListener("DOMContentLoaded", () => {
     function convertTextNode(textNode) {
         let ucsur_output = "";
         for (const token of textNode.nodeValue.match(/ni[\^><]+|\w+|[^\w]/g)) { // Thanks chatGPT for the regex :(
-            console.log("token is "+token);
 
             if (token in ucsur_list) {
                 ucsur_output += ucsur_list[token].split("\t")[0];
@@ -279,6 +278,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggle = document.getElementById("expanded-menu-toggle");
     toggle.addEventListener("click", function () {
         const expandedSection = document.getElementsByClassName("expanded-menu")[0];
+
+        const spCheckbox = document.getElementById("rc-1b");
+        spCheckbox.addEventListener("change", (event)=>{
+            if(spCheckbox.checked == false){
+                collapseMenu();
+            }
+        });
+        const entokRadio = document.getElementById("rc-bl-1a");
+        entokRadio.addEventListener("change", (event)=>{
+            if(entokRadio.checked == true){
+                collapseMenu();
+            }
+        });
+
+
 
         expandMenu();
         function expandMenu() {

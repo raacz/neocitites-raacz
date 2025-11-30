@@ -20,10 +20,5 @@ document.addEventListener("DOMContentLoaded", () => {
     //which punctuation ending is active
     console.log(sona);
 
-    function CJK(){
-
-    }
-
-
 
 });

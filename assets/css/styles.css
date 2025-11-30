@@ -585,12 +585,12 @@ html:has(.back-to-main)[data-custom-theme="light mode with lower contrast"] {
 
 
 
-body:has(.back-to-main) .status {
+.back-to-main .status {
     display: block;
     text-align: center;
 }
 
-body:has(.back-to-main) .introtext {
+.back-to-main .introtext {
     display: flex;
     justify-content: center;
     background-color: var(--walo-pimeja);

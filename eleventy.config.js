@@ -98,6 +98,8 @@ export default function (eleventyConfig) {
       sortThis[i].data.beforeText = beforeText;
       sortThis[i].data.nextText = nextText;
       sortThis[i].data.nextLink = nextLink;
+      sortThis[i].data.description = "Read '"+sortThis[i].data.title+",' a Bite-Sized Beginner Story in Toki Pona! Featuring an image, English translation, and Sitelen Pona.";
+
     }
     return sortThis;
   }
@@ -112,7 +114,6 @@ export default function (eleventyConfig) {
     for (let story of stories) {
       let storynum = story.url.match(/\d+/g)[0];
       storyNumbers.push(storynum);
-      // insert a function here to process extra data (media and child pages)
 
     }
     storyNumbers = storyNumbers.sort((a, b) => a - b);
@@ -166,7 +167,10 @@ export default function (eleventyConfig) {
           }
           stories[i].data.nextStory = "/toki-pona/beginner-material/stories/story-" + nextParent + "/";
         }
+        
         page.data.title = "Page " + childIndex;
+        page.data.description = "Read "+page.data.title+" of '"+stories[i].data.title+",' a Beginner Story in Toki Pona! Featuring images, English translations and Sitelen Pona.";
+
         page.data.parentName = stories[i].data.title;
         page.data.childIndex = childIndex;
         page.data.beforeText = beforeText;
@@ -186,6 +190,7 @@ export default function (eleventyConfig) {
 
       stories[i].data.pageURLs = pageURLs.sort();
       stories[i].data.mediaFiles = mediaFiles.sort();
+      stories[i].data.description = "Read '"+stories[i].data.title+",' a Beginner Story in Toki Pona! Featuring images, English translations and Sitelen Pona.";
     }
   }
 

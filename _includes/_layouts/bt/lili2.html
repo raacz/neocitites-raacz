@@ -85,7 +85,7 @@ layout: _layouts/bt/reading-mode.html
         <div lang="tok" class="unindented sp">
           <h2>sitelen pona</h2>
           {% for paragraph in story.spFlattened  %}
-              {% assign spLine = paragraph[0] | log %}
+              {% assign spLine = paragraph[0] %}
               {% assign element =  'p' %}
               {% if spLine contains '###' %}
                {% if spLine contains '####' %}

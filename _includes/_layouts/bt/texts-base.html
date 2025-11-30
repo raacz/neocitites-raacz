@@ -1,18 +1,18 @@
 ---
+description: "Read free and accessible Beginner Texts in Toki Pona! Featuring images, English translations and Sitelen Pona."
 ---
 <!DOCTYPE html>
 <html lang="en">
+    {% assign thisName = title %}
+    {% if parentName %}
+        {% assign thisName = thisName | append: " | " | append: parentName %}
+    {% endif %}
+    {% assign thisName = thisName | append: " | Beginner Stories" %}
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}
-
-        {% if parentName %}
-        | {{ parentName }}
-        {% endif %}
-
-        | Beginner Stories </title>
+    <title>{{ thisName }}</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
     {% if stylesheet %}
     <link rel="stylesheet" href="{{ stylesheet }}">
@@ -22,10 +22,27 @@
     {% endif %}
 
 
-
+    <!-- seo 
+     <meta
+  property="og:image"
+  content="https://developer.mozilla.org/mdn-social-share.png" />
+<meta
+  property="og:description"
+  content="The Mozilla Developer Network (MDN) provides
+information about Open Web technologies including HTML, CSS, and APIs for both websites
+and HTML Apps." />
+<meta property="og:title" content="Mozilla Developer Network" />
+    -->
+<meta property="og:title" content="{{ thisName }}" />
+<meta property="og:site_name" content="Beginner Stories" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://raacz.neocities.org{{ page.url }}" />
+<meta property="og:description" 
+  content="{{ description }}" />
+ 
 </head>
 
-<body>
+<body class="back-to-main">
 
     <header>
         <a href="#main-content" class="skip">Skip Navigation</a>
@@ -107,6 +124,7 @@
 
         </div>
     </header>
+    <script src="/scripts/dark-mode.js"></script>
     {{ content }}
     <footer>
         <div>
@@ -148,4 +166,3 @@
 </body>
 
 </html>
-<script src="/scripts/dark-mode.js"></script>
