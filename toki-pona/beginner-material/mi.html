@@ -19,7 +19,8 @@ description: "Track your progress while reading accessible Beginner Texts in Tok
 
 
     tr {
-        border-bottom: var(--thin, 0.1em) solid var(--pimeja);;
+        border-bottom: var(--thin, 0.1em) solid var(--pimeja);
+        ;
     }
 
     tr td:last-child {
@@ -108,7 +109,8 @@ description: "Track your progress while reading accessible Beginner Texts in Tok
         display: block;
         color: var(--pimeja);
         font-size: 1em;
-        border: var(--thin, 0.1em) solid var(--pimeja);;
+        border: var(--thin, 0.1em) solid var(--pimeja);
+        ;
         border-radius: 0.25em;
         padding: 0.2em;
         background-color: var(--walo);
@@ -281,13 +283,17 @@ description: "Track your progress while reading accessible Beginner Texts in Tok
         flex-direction: column;
         align-items: center;
     }
-    .postchallenge details :is(figure,p) {
+
+    .postchallenge details :is(figure, p) {
         padding-inline: 1em;
     }
+
     .postchallenge details img {
         max-width: 100%;
+        filter: brightness(var(--brightness));
     }
-    .postchallenge details h3{
+
+    .postchallenge details h3 {
         font-size: 1em;
         padding-inline: 0.75em;
 
@@ -300,11 +306,13 @@ description: "Track your progress while reading accessible Beginner Texts in Tok
     dialog fieldset {
         border: none;
     }
-    .skip-in-main{
-        position:relative;
-    
+
+    .skip-in-main {
+        position: relative;
+
     }
-    :is(.skip-in-main a:not(:focus):not(:active), .blend-in){
+
+    :is(.skip-in-main a:not(:focus):not(:active), .blend-in) {
         clip: rect(0 0 0 0);
         clip-path: inset(50%);
         height: 1px;
@@ -313,7 +321,8 @@ description: "Track your progress while reading accessible Beginner Texts in Tok
         white-space: nowrap;
         width: 1px;
     }
-    .skip-in-main a:focus-visible{
+
+    .skip-in-main a:focus-visible {
         position: absolute;
         display: block;
         right: 0;
@@ -323,6 +332,32 @@ description: "Track your progress while reading accessible Beginner Texts in Tok
         margin-block-start: -1em;
     }
 
+    .imgintro {
+        max-width: 100%;
+        width: 100%;
+        min-width: 13em;
+    }
+
+    .imgsintrosplithalves {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5em;
+        justify-content: center;
+        align-items: center;
+        padding: 1em;
+    }
+    .imgsintrosplithalves strong{
+        text-align: center;
+    }
+
+
+    .imgsintrosplithalves * {
+        flex: 1;
+    }
+
+    h1 {
+        text-align: center;
+    }
 </style>
 
 
@@ -341,21 +376,31 @@ description: "Track your progress while reading accessible Beginner Texts in Tok
 
 
     <div class="prechallenge">
-        <h2>About the Reading Tracker</h2>
-        <p><strong>Do you enjoy gamification? Need motivation to read?</strong></p>
-        <p><strong>Your challenge, should you choose to accept it, is to read every single story on this
-                website.</strong> Upon enabling the reading tracker, this page will be filled with large charts listing
-            every single text, each with an 'X' next to them.</p>
-        <p>Additionally, when you visit any beginner text, a small checkbox will appear at the bottom of every page. You
-            can check that box. Returning to this page, it update that text from an 'X' to a checkmark!</p>
-        <p>You will also be able to view exactly how many words you've read, how many texts you've read, and what
-            percentage of the website you've completed!</p>
-        <p>Progress on your reading tracker will be saved to your device. You can choose to pause the reading tracker at
-            any
-            time if you find it distracting. You can also choose to wipe out all your reading data.</p>
+        <h2>Welcome</h2>
 
-        Do you accept?
-        <button id="challenge-accepted">I accept the challenge.</button>
+        <p>The Reading Tracker, as the name suggests, provides a way to track your reading.<br>
+            When activated, you can mark stories as completed.</p>
+
+        <div class="imgsintrosplithalves">
+
+            <div><p><strong>Stats measured include:</strong></p>
+                <ul>
+                    <li>Total Words Read</li>
+                    <li>Total Pages Read</li>
+                    <li>Percentage of the Site Completed</li>
+                    <li>Achievements Earned.</li>
+                </ul>
+            </div>
+            <img class="imgintro" src="/toki-pona/beginner-material/assets/tutorials/number-up.png" alt="Preview of the reading tracker with a stats section and checklist table of story titles.">
+        </div>
+
+
+        <p>You can pause the tracker at any time without resetting your progress.<br>
+            But if you want to reset your progress, you can also do that too.</p>
+
+        <h2>Would you like to try it out?</h2>
+
+        <button id="challenge-accepted">Activate Reading Tracker</button>
     </div>
     <div class="postchallenge">
 
@@ -369,7 +414,7 @@ description: "Track your progress while reading accessible Beginner Texts in Tok
 
             </summary>
 
-             <h3>How To Track</h3>
+            <h3>How To Track</h3>
 
             <figure>
                 <figcaption>
@@ -380,24 +425,34 @@ description: "Track your progress while reading accessible Beginner Texts in Tok
                     alt="Screenshot of the reading interface, attention drawn to the bottom row of content.">
             </figure>
 
-            <p>The stories that you mark as read will be saved directly to your browser. If you view Beginner Texts in Toki Pona in incognito mode, or using a different browser, or a different device, you will not be able to access your progress.</p>
+            <p>The stories that you mark as read will be saved directly to your browser. If you view Beginner Texts in
+                Toki Pona in incognito mode, or using a different browser, or a different device, you will not be able
+                to access your progress.</p>
 
             <p>New stories being released to the site will not effect the stories that you've already read.</p>
 
-            
+
 
             <h3>Philosophy Behind the Tracker</h3>
-            <p>Please use this site however you like. The Reading Tracker encourages you to read <em>every</em> text on the site, but not all the stories may be appealing or even enjoyable for you.</p>
-            <p>I've included this because I'm the kind of person who, as a voracious reader in my youth, liked to keep lists of books that I've read as a matter of principle.</p>
-            <p>I know that if I was just starting out on my reading journey, I would have appreciated something like this. But you might be a different kind of person, and that's totally okay! Feel free to use the Reading Tracker only to the extent that is motivating and sustainable. Also, feel free to take a break from it by pressing the 'Exit the Challenge' button in the top right of this page.</p>
+            <p>Please use this site however you like. The Reading Tracker encourages you to read <em>every</em> text on
+                the site, but not all the stories may be appealing or even enjoyable for you.</p>
+            <p>I've included this because I'm the kind of person who, as a voracious reader in my youth, liked to keep
+                lists of books that I've read as a matter of principle.</p>
+            <p>I know that if I was just starting out on my reading journey, I would have appreciated something like
+                this. But you might be a different kind of person, and that's totally okay! Feel free to use the Reading
+                Tracker only to the extent that is motivating and sustainable. Also, feel free to take a break from it
+                by pressing the 'Exit the Challenge' button in the top right of this page.</p>
 
             <h3>Measuring Progress and Detailled Statistics</h3>
-            <p>Progress is measured as the amount of words you've read compared to the total amount of words available on the site.</p>
+            <p>Progress is measured as the amount of words you've read compared to the total amount of words available
+                on the site.</p>
 
-            <p>If you are techy and are itching to get even more detailed statistics, take a look at the output from the console. Also, there is likely a way for you to download and upload your own localStorage if you are super keen on not losing your progress.</p>
+            <p>If you are techy and are itching to get even more detailed statistics, take a look at the output from the
+                console. Also, there is likely a way for you to download and upload your own localStorage if you are
+                super keen on not losing your progress.</p>
 
 
-           
+
         </details>
 
 

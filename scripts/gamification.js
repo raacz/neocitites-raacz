@@ -2,65 +2,6 @@ const READ_KEY = "reading mode";
 const ENABLE_KEY = "reading mode is active";
 
 
-/*
-   So here's how this works. 
-
-   All of the keys for the various urls are passed over through local storage.
-   A list of urls and associated word counts are passed through an inline script block. 
-
-   First, using that list of urls and script block, this file makes a very complicated Story Stats object that represents all of the stories and files imaginable. 
-   Secondly, it reads in all of the files that are read. 
-   Thirdly, initializes and recursively performs all the calculations that it needs. It does so through inheritance. 
-   
-
-       A Calculator is something that has an array of something, and able to get calculatedData from that set of something that it has. 
-
-       There are two kinds of Calculator objects:
-       - Calculator objects that hold other Calculators, known as CalculateOverGroups
-       - Calculator objects that hold basic page data, known as CalculateOverSingles
-
-       The main object is called Story Stats. It is a Calculator of type CalculateOverGroups. The three Calculators that it holds each represent data from a type of text featured on the site: bite-sized, theme, and quest. 
-       
-       The Calculator holding Bite-Sized data is of type CalculateOverSingles. It's array holds page data.
-       
-       The Calculators holding Theme and Quest data are of type CalculateOverGroups. They each hold an array of MultiPageStory, a kind of CalculateOverSingles (the array of this MultiPageStory has all the page data for each story). MultiPageStories only differ in that they also have a URL identifier. 
-
-       this is how the structure might look like when populated
-
-       Story Stats
-           CalculateOverSingles
-               Single
-               Single
-               etc
-           CalculateOverGroups
-               MultiPageStories
-                   Single
-                   Single
-                   etc
-               MultiPageStories
-                   Single
-                   Single
-                   etc
-               etc
-           CalculateOverGroups
-               MultiPageStories
-                   Single
-                   Single
-                   etc
-               MultiPageStories
-                   Single
-                   Single
-                   etc
-               etc
-   
-   New story types will need to be hardcoded in. One current pitfall is that there is no 'type name' or anything associated with the highest level of CalculateOverSingles and CalculateOverGroups objects. So many of the genre checking stuff is purely done based on assuming that themes will be the first type in, bitesized will be the second, and quest will be third. 
-
-   There is also currently no way for something to have both single and group types
-
-   Additionally, StoryStats's method called tally and achieve stores the achievements (names, pictures, evaluation logic) as a set of generic objects. 
-           
-*/
-
 
 class Single {
     constructor(url, wordcount) {
@@ -369,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    if (enabled) {
+    if (enabled === "true") {
         gameIsActive();
     } else {
         gameIsInactive();

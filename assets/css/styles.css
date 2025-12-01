@@ -340,7 +340,8 @@ small {
 .collage,
 .card img,
 .context img,
-.wrapper img {
+.wrapper img,
+.imgintro {
     filter: brightness(var(--brightness));
 }
 
