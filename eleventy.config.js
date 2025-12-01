@@ -49,10 +49,7 @@ export default function (eleventyConfig) {
     return `${year}-${month}-${day}`;
   });
 
-  eleventyConfig.addFilter("loadCollection", function (collectionName)  {
-    
-
-  });
+  
 
 
   //used primarily for liliwc collection below

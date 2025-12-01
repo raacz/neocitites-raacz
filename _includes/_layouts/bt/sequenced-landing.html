@@ -31,11 +31,9 @@ stylesheet: /assets/css/tp.css
 
 </style>
 
+
 {{ content }}
-  
-  {{ sequenceName | loadCollection }}
-  <!-- if you want this to work you need a custom filter
-   or turn it into a partial instead. -->
+
   
   <ul class="stories">
     {% for item in collections[sequenceName] %}

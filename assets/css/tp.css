@@ -186,6 +186,10 @@ details:has(:is(h3,h4,h5)) p:first-of-type{
     align-items: center;
     padding-block-end: 1.5em;
 }
+#lili small{
+    margin: 0;
+    padding: 0;
+}
 
   #lili ul {
     font-size: 0.5em;
@@ -197,12 +201,38 @@ details:has(:is(h3,h4,h5)) p:first-of-type{
     max-width: 100%;
     width: 100%;
   }
+  .tracker-heading-group{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content:     space-between;
+
+    column-gap: 1em;
+    align-items: center;
+  }
+  .tracker-heading-group small{
+    max-width: 10em;
+    margin-block-end: 0.25em;
+    margin: 0;
+    padding: 0;
+
+  }
+.tracker-heading-group small a:is(:visited, :not(:visited)){
+    text-decoration-color: var(--walo-pimeja);
+    color: var(--pimeja-lili);
+
+
+}
 
 @media (max-width: 48em){
     #lili{
         grid-template-columns: auto;
 
     }
+    .tracker-heading-group{
+    flex-direction: row;
+    }
+
     #lili ul{
         font-size: 0.4em;
     }
