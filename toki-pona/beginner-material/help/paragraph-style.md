@@ -1,6 +1,7 @@
 ---
 title: SP Layout Style
 permalink: false
+index: 07
 ---
 
 Choose between two different styles of Sitelen Pona (Toki Pona hieroglphs).

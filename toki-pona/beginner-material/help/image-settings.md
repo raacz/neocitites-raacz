@@ -1,6 +1,7 @@
 ---
 title: Image Settings
 permalink: false
+index: 04
 ---
 
 Show or hide the image, the image's description, and the image's attribution.

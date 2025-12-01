@@ -3,21 +3,101 @@ layout: _layouts/bt/texts.html
 title: Help
 tags: generalb
 ---
+<style>
+    @media (min-width: 45em) and (min-height: 40em) {
+        main {
+            display: grid;
+            grid-template-columns: 10em 1fr;
+            position: relative;
+            padding-inline-start: 0;
+            max-width: 60em;
+
+        }
+
+        .help {
+            width: 8.25em;
+
+            grid-column: 1 / 2;
+            grid-row-start: span 10;
+            position: fixed;
+            width: 8.25em;
+            max-height: 80vh;
+
+        }
+
+        .help ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25em;
+
+
+        }
+
+        .help li {
+            margin: 0;
+            margin-inline-start: 0.25em;
+            padding: 0.3em;
+            line-height: 1em;
+            border: 0.1em solid var(--pimeja);
+        }
+
+        .help a:is(:visited, :not(:visited)) {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+
+        }
+
+        main * {
+            grid-column: 2 /3;
+        }
+
+
+    }
+
+    @media (min-width: 90em) and (min-height: 40em) {
+        main {
+            display: grid;
+
+            grid-template-columns: 15em 1fr;
+            max-width: 70em;
+
+        }
+
+        .help {
+            width: 13em;
+            margin-inline-start: -2.5em;
+        }
+
+        .help ul {
+            gap: 0.75em;
+        }
+
+
+    }
+</style>
+
+<!-- ATTENTION: if you add any more entries to the help menu, you will likely have to readjust the breakpoints for when the side menu is active -->
 
 <p>Describing the various options that are available in Beginner Text's reading settings. </p>
 
-<p>Skip to the section you want: </p>
 
-<ul>
-{% for item in collections.help %}
-<li><a href="#{{ item.data.title | slugify }}">{{ item.data.title }}</a></li>
-{% endfor %}
-</ul>
+{%- assign things = collections.help | sort: "data.index" -%}
 
 
+<div role="navigation" aria-labelledby="main-content" class="help">
+    <ul role="list">
+        {% for item in things %}
+        <li><a href="#{{ item.data.title | slugify }}">{{ item.data.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
 
 
-{% for item in collections.help %}
+
+
+{% for item in things %}
 <h2 tabindex="-1" id="{{ item.data.title | slugify }}">{{ item.data.title }}</h2>
 
 {{item.content }}

@@ -540,11 +540,11 @@ html:has(.back-to-main)[data-custom-theme="light mode with higher contrast"] {
 html:has(.back-to-main)[data-custom-theme="dark mode with lower contrast"] {
 
     --walo: rgb(29, 23, 17);
-    --pimeja: rgb(190, 190, 149);
+    --pimeja: rgb(164, 164, 128);
     --walo-lili: rgb(47, 49, 38);
     --walo-pimeja: rgb(39, 63, 26);
     --laso: rgb(122, 179, 203);
-    --pimeja-lili: rgb(102, 154, 77);
+    --pimeja-lili: rgb(85, 130, 64);
     --ike: rgb(239, 4, 4);
     --bold-outline: var(--pimeja-lili);
     --completed: rgb(4, 40, 12);
@@ -633,7 +633,7 @@ html:has(.back-to-main)[data-custom-theme="light mode with lower contrast"] {
 
 #home-settings-toggle span {
     opacity: 0;
-    font-size: 0.1em;
+    font-size: 0.01em;
 
 }
 

@@ -1,6 +1,7 @@
 ---
 title: Saving Your Settings
 permalink: false
+index: 01
 ---
 The website will remember your preferences as you move from page to page while you're in the same tab. 
 

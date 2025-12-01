@@ -1,6 +1,7 @@
 ---
 title: Modes
 permalink: false
+index: 03
 ---
 
 Control how different versions are presented together. 
