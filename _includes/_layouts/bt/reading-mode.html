@@ -127,6 +127,17 @@ stylesheet: "/assets/css/reading-mode.css"
     </div>
 
     <div class="complicated-license">
+        {%- if note -%}
+        <p>{{note}}</p>
+        {% endif %}
+
+
+
+
+    </div>
+
+
+    <div class="complicated-license">
         {% if license == "GFDL-1.2" %}
         <div>
             Permission is granted to copy, distribute and/or modify this document under the terms of the <a

@@ -1,10 +1,11 @@
 mi wile tawa kepeken soweli
 
-soweli li mu
+soweli li mu  
 mi pana e pan tawa soweli
 
 mi tawa la  
-zz jan ale li lukin pi pilin nasa e mi
+zz jan ale li lukin pi pilin nasa   
+zz zz e mi
 
 kon jaki ni li seme
 
