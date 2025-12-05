@@ -5,7 +5,7 @@ external: https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B5%D0%BD%D1%81%D1%82
 name: Менструальный диск и менструальная чаша (cropped)
 source:    Witchox
 license: CC-BY-SA-4.0
-alt: 
+alt: "Someone holds two silicone menstrual products: a light blue menstrual cup that resembles an upside-down bell, and a pink menstrual disc that has a thin internal cavity and a firm circumference."
 media: "/toki-pona/beginner-material/assets/wawa-70c.jpg"
 tags: sequence
 ---

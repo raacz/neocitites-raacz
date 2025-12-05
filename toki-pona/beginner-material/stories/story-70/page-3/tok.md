@@ -82,23 +82,23 @@ ona li ken kama lon insa sina li ken jo e telo loje mute a. ona li ken awen lon 
 
 o pilin monsuta ala. 
 
-tenpo pini la sina lukin pana e ilo palisa pi insa len tawa lupa sina li ken ala li pilin anpa. pakala la, ilo palisa pi insa len li ilo pi kepeken wan taso. taso ilo poki sike li ilo pi kepeken mute. sina ken kepeken tenpo suli tawa ni: sina ken pana e ilo poki sike tawa insa sina. 
+tenpo pini la sina lukin pana e ilo palisa pi insa len tawa lupa sina li ken ala li pilin anpa. pakala la, ilo palisa pi insa len li ilo pi kepeken wan taso. taso ilo poki sike li ilo pi kepeken mute. sina ken kepeken tenpo suli tawa ni: sina kama ken pana e ilo poki sike tawa insa sina. 
 
 o lukin kama sona pana e ilo ni tawa lupa sina lon tenpo pi telo loje ala. 
 
-ken suli la sina lukin pana taso e ilo la ilo li wile ala tawa insa tan ni: ona li wile e ko pi tawa pona. nasin la ko li lon ala lupa sina la ijo li wile ala tawa insa ona. 
+ken suli la sina lukin pana taso e ilo la ilo li wile ala tawa insa tan ni: ona li wile e ko pi pona tawa. nasin la ko li lon ala lupa sina la ijo li wile ala tawa insa ona. 
 
 sijelo sina li pana e telo loje la telo ni li sama ko li ken pona e tawa insa. taso sina lukin kama sona pana e ilo lon tenpo pi loje ala, la sina o kepeken ko ante. sina ken esun e ko tan tomo esun. ona li mani mute ala. 
 
 open la o lukin pana e palisa luka lili wan taso tawa lupa sina. o pana e ko tawa lupa sina tawa luka sina. 
 
-sina ken pana e palisa luka lili wan la o lape. sina ken ala la o lape kin. o alasa lon tenpo suno kama. 
+sina ken pana e palisa luka lili wan la o lape. sina ken ala la o lape kin. o alasa sin lon tenpo suno kama. 
 
 palisa luka lili wan li kama pilin ike ala tawa sina la o lukin pana e palisa luka lili tu. sina ken ni la o lape. 
 
 tenpo suno kama la o kama jo e ilo. selo sike o lon sewi. lupa sike o lon anpa. kepeken palisa luka lili tu la o wan e poka tu pi selo sike sama ni: uta jan open li kama pini. 
 
-wan pi poki tu sike li sama palisa. o lukin pana e ni tawa lupa. sina ken ala la o lape. o alasa lon tenpo suno kama. 
+wan pi poka tu sike li sama palisa. o lukin pana e ni tawa lupa. sina ken ala la o lape. o alasa sin lon tenpo suno kama. 
 
 mi toki e ni ale la lon la ni li pali suli. o sona e ni: sina kama ken kepeken ilo ni poki sike la ni li wawa mute li weka e pilin ike mute mute sina. 
 

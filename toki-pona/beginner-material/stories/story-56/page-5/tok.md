@@ -28,6 +28,28 @@ mi toki ala e ijo suli wan: kulupu pi jan pali la jan tu tu li kule walo. jan tu
 
 #### kule ante jan li tan seme
 
+o pilin ike ala. 
 
+mi sona ala. 
+
+sina sona la o toki tawa mi. 
+
+tenpo suli la mi alasa e sona mute. ken li mute. mi kama toki e ken ale. pilin sina la, ona seme li ken pi suli nanpa wan?
+
+#### ona li tan ma ante 
+
+#### ona li tan kulupu jan mama ante 
+
+#### ona li tan kulupu wawa ante
+
+#### ona li mije pi wawa ante
+
+#### sitelen pi kule ante li lon selo sijelo
+
+#### kule li suli ala
+
+lon la mi lukin la tenpo ala la mi lukin e ijo sama. nasin seme la on ali ken  ala suli a....
+
+#### 
 
 
