@@ -4,34 +4,25 @@
 ## kala Asi outstanding 
 - potentially move image attr under the image
     > currently quiz mode creates weird diplacement (also note lbl does this too)
-    
-## fixing broken things
-- fix: mobile styling
-    > rewrite flex logic for sp/eng/l to accommodate indentless sp and to adjust to stories where the text is under a certain height
-    > make a new disclosure widget to resolve spacing issues
-    > ensure spaces do not get weirdly collapsed aka kala Asi's bugs
-    > adjust breakpoints on homepage to ensure the mobile screenshots are shown and collage moves to flex earlier
 
-## accessibility
-- feature: styled focus links
-
-## new material 
+## Technical 
+- adjust breakpoints on homepage to ensure the mobile screenshots are shown and collage moves to flex earlier
+- change the figure / figcaption styling to be genre specific
+- hover and focus styles
 
 ### stories
 - quest stories mvp
-    > finish the alcohol story
-    > finish the dragon story
-    > finish the hiroshige story
+    > finish the dragon story (probably two more to go)
+    > finish the hiroshige story (one more to go)
+    > finish the menstrual story (just formatting to go), could use one more expansion to talk about trans menstrual cycles
 - theme mvp
     > rewrite sacred underwear+kirpan references Bastian's feedback
 
 ### non-stories
-- finish the sp article
 
 ## post-mvp technical
 - feature: quiz mode actually being more like a quiz
 - feature: hover styles
-- fix: expanded line pair/sp-tok matching for inside quotations
 - feature: ratings of story by percentage difficulty
 - feature: word-based achievements
 - feature: sentence miner flashcard thingamabob
@@ -42,7 +33,10 @@
 ## post-mvp texts:
 - quest 'cybertruck' 
 - jan asa li weka (this is story #64)
+- the alcohol story
 
+## post-mvp other:
+- finish the sp article
 
 
 
