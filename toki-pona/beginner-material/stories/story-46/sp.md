@@ -15,8 +15,8 @@ mama mama li wawa mute ala
   
 taso   
 mi esun   
-zz e kasi pona jelo   
-zz zz li tawa mama mama   
+zz zz e kasi pona jelo   
+zz li tawa mama mama   
   
 mi pana e kasi pona jelo   
 zz tawa mama mama   

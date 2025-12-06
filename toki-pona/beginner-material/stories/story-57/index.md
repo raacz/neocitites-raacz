@@ -5,7 +5,7 @@ external: https://commons.wikimedia.org/wiki/File:Annecy_-_Corvus_Corone_-_20111
 name: Annecy - Corvus Corone - 20111230 - 02
 source:  PierreSelim
 license: CC-BY-SA-3.0
-alt:  Two black crows perched. One crow presents some a bones from a chicken wing in its beak. 
+alt:  Two black crows perched. One crow presents a bone from a chicken wing in its beak. 
 media: "/toki-pona/beginner-material/assets/lili-57.jpg"
 tags: lili
 ---

@@ -1,6 +1,6 @@
 ### o weka tan sike
 
-nasin sewi Puta la, nasin lon li sike ike. sina moli la sina kama sin lon ma la sina moli sin li kama sin lon ma. sina kama olin e pilin pona pi tenpo lili la sina kama anpa tan pilin ike. sike ike sin ale li pilin ike sin li kama tan pilin pona sin pi tenpo lili. nasin wan taso la sina ken kama pilin pona pi tenpo ale: o weka tan sike. 
+nasin sewi Puta la, nasin lon li sike ike. sina moli la sina kama sin lon ma la sina moli sin li kama sin lon ma. sina kama olin e pilin pona pi tenpo lili la sina kama anpa tan pilin ike. sike ike sin ale la pilin ike sin li kama tan pilin pona sin pi tenpo lili. nasin wan taso la sina ken kama pilin pona pi tenpo ale: o weka tan sike. 
 
 #### sona wawa
 
@@ -26,7 +26,7 @@ sina sona ala sona e ni: ilo pi weka mama li pali seme tawa sijelo pi jan Mopi?
 
 ala a. sona sina pi tenpo pini li ike. mi pana e sona lon.
 
-sona lon la, ilo pi weka mama ni li weka e jan Mopi tan sike loje. sijelo ona li kama pana ala e telo lon nasin sike. 
+sona lon la, ilo ni pi weka mama li weka e jan Mopi tan sike loje. sijelo ona li kama pana ala e telo lon nasin sike. 
 
 #### ken pi weka sike
 
@@ -54,17 +54,17 @@ jan li moku e sike kepeken nasin ni lon tenpo suno ale la, ona li awen pana e te
 
 taso jan li moku e sike misikeke taso lon tenpo ale la, telo ala li pana. 
 
-ni la tan seme a la sike pi misikeke ala li lon a?  ni li tan ijo tu ike tan ijo wan pona. 
+ni la tan seme a la sike pi misikeke ala li lon a?  ni li tan ijo tu ike li tan ijo wan pona pi pona lili. 
 
 ike nanpa wan la, tenpo pini la sike misikeke ale li jo e misikeke mute mute mute mute mute a. mute misikeke pi tenpo pini li suli tawa tu tu la mute misikeke pi tenpo ni li lili tawa wan. sijelo li pilin e telo toki lon tenpo ale la ni li ken ike. ni la tenpo pini la, lape lili li ken pona. tenpo lon la mute misikeke li lili. lape li kama wile ala li kama pona ala. 
 
-ike nanpa tu la, jan mute pi nasin sewi li pilin sama ni: pana pi telo loje li wile sewi. meli li pana e telo loje la ni li tan wile sewi. o utala ala e sewi. ale o anpa tawa sewi. meli o anpa tawa sewi. 
+ike nanpa tu la, jan mute pi nasin sewi li pilin sama ni: "pana pi telo loje li wile sewi. meli li pana e telo loje la ni li tan wile sewi. o utala ala e sewi. ale o anpa tawa sewi. meli o anpa tawa sewi." jan sona li kute e toki pi jan ni li ante e nasin pali misikeke tawa ni: sike pi telo loje li weka ala. 
 
-pona nanpa wan la, tenpo la ilo pi weka mama li pali pona ala. sina weka e sona pi sike misikeke wan la, sina ken a kama mama. jan li ken sona pona e ni tan pana pi telo loje: ona li kama ala mama. ken la jan li wile a sona e sona ni, la pana pi telo loje li ken pona. 
+pona lili wan la, tenpo la ilo pi weka mama li pali pona ala. sina weka e sona pi sike misikeke wan la, sina ken a kama mama. jan li ken sona pona e ni tan pana pi telo loje: ona li kama ala mama. ken la jan li wile a sona e sona ni, la pana pi telo loje li ken pona. 
 
 taso lon la jan sona mute li kama pilin e ni lon tenpo poka: jan li moku e sike misikeke lon tenpo suno ale li pana ala e telo loje, la ni li pona. ni li ike ala. 
 
-mi pi jan lili o, nasin ni li pona mute ala tawa sina. pali nasin la sina jan pi wawa lili. sina o pali e ijo lon tenpo suno ale, la tenpo mute la sina weka e sona li ken ala pali pona. 
+mi pi jan lili o, nasin ni li pona mute ala tawa sina. pali nasin la sina jan pi wawa lili. sina o pali e ijo lon tenpo suno ale, la tenpo mute la sina ken ala pali pona li weka e sona ni: sina o pali. 
 
 taso mi pana e sona pi ilo ni tawa sina tan ni: sina o ken sona. jan mute a li weka tan sike loje. ni li nasa ala. jan mute pi pali wawa li weka tan sike loje. ona li wile ala kama anpa lon tenpo mun ale. ona li wile ken awen pali. ni la ona li weka tan sike. 
 
@@ -84,7 +84,9 @@ ni li pona mute a tan ni: sina wile ala a pali mute.
 
 ilo palisa pi insa luka li weka e mi tan sike. taso lon la, ni li kama tawa jan ale ala. 
 
-jan luka li kepeken palisa pi insa luka la jan wan li kama weka tan sike pi pana loje. ni li mi. kin la, jan luka li kepeken palisa pi insa luka la jan wan li kama pana e telo loje namako. 
+jan luka li kepeken palisa pi insa luka la jan wan li kama weka tan sike pi pana loje. ni li mi. 
+
+jan luka li kepeken palisa pi insa luka la jan wan li kama pana e telo loje namako. pona la ni li mi ala.
 
 ni la mi ken ala toki e ni: jan li wile weka e sike ona la nasin ni li pona mute lon tenpo ale. 
 

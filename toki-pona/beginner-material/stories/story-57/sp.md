@@ -16,7 +16,8 @@ waso nanpa wan
 zz te waso ni^> li ken ala tawa sewi to
 
 waso nanpa tu  
-zz te ni^ la kiwen  
-zz zz zz li tan soweli  
-zz zz zz li tan waso ala to
+zz te ni^ la 
+zz zz zz kiwen  
+zz zz zz zz li tan soweli  
+zz zz zz zz li tan waso ala to
 
