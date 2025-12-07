@@ -1,4 +1,10 @@
+# Hello there
 
+This place is a bit of a mess. 
+
+Currently I am doing the story-writing myself but I often make typos and errors; feel free to send in corrections if you see any of those. 
+
+---
 # Lakuse's Checklist
 
 ## kala Asi outstanding 
@@ -14,7 +20,7 @@
 - quest stories mvp
     > finish the dragon story (probably two more to go)
     > finish the hiroshige story (one more to go)
-    > finish the menstrual story (just formatting to go), could use one more expansion to talk about trans menstrual cycles
+    > finish the menstrual story (just formatting to go), could use one more expansion to talk about trans cycles
 - theme mvp
     > rewrite sacred underwear+kirpan references Bastian's feedback
 
