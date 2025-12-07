@@ -56,22 +56,22 @@ function splitParagraphs(text) {
 // NOTE: ASCII apostrophe (') is NOT treated as a quote marker (so contractions are safe).
 function splitSentencesRespectQuotes(paragraph) {
   if (!paragraph) return [];
-  
+
   const doubleQuoteChars = new Set(['"', '\u201C', '\u201D']); // " and curly double
-  
+
   let sentences = [];
   let buf = '';
   let inDouble = false;
-  
+
   for (let i = 0; i < paragraph.length; i++) {
     const ch = paragraph[i];
     buf += ch;
-    
+
     if (doubleQuoteChars.has(ch)) {
       inDouble = !inDouble;
       continue;
     }
-    
+
     // Split on sentence punctuation regardless of quote state
     if (ch === '.' || ch === '!' || ch === '?' || ch === '。') {
       // consume any following punctuation/closing quotes/closing parens
@@ -87,7 +87,7 @@ function splitSentencesRespectQuotes(paragraph) {
       buf = '';
     }
   }
-  
+
   if (buf.trim()) sentences.push(buf.trim());
   return sentences;
 }
@@ -105,10 +105,10 @@ function splitSpFragments(paragraph) {
 // Strips leading/trailing punctuation for counting but preserves square-bracket groups.
 function wordCount(str) {
   if (!str) return 0;
-  
+
   // First, replace bracketed content with a placeholder token
   const normalized = str.replace(/\[[^\]]+\]/g, 'BRACKET');
-  
+
   return normalized
     .split(/[\s+\-]+/) // split on whitespace, +, or -
     .map(tok => tok.replace(/^[^A-Za-z0-9\[]+|[^A-Za-z0-9\]]+$/g, '')) // trim punctuation except []
@@ -361,13 +361,13 @@ function pairTokEnSpByParagraph(tokText, enText, spText) {
     // warning if sp doesn’t align
     if (tokEnPairs.length !== spMerged.length) {
       console.warn(`⚠️ Tok/SP mismatch in paragraph ${pi}: tokEnPairs=${tokEnPairs.length}, spMerged=${spMerged.length}`);
-    }    
+    }
 
   }
   const bundle = {
-      triples: triples, 
-      spFlattened: spFlat,
-    }
+    triples: triples,
+    spFlattened: spFlat,
+  }
   return bundle;
 
 
@@ -431,7 +431,7 @@ module.exports = function () {
                 bundle.triples.map(t => t.tok),
                 bundle.triples.map(t => t.en),
                 bundle.triples.map(t => t.sp)
-              ];  
+              ];
               const allData = {
                 en: entry["en"] || "",
                 sp: entry["sp"] || "",
@@ -450,11 +450,16 @@ module.exports = function () {
         }
       },
       genre: data => {
-        if (data.media){
-        const match = data.media.match(/\/([^\/]+)-[a-zA-Z0-9]+\.jpg$/);
-        return match ? match[1] : 'nomedia';
+        if (data.media) {
+          //if (!data.alt && !data.eleventyExcludeFromCollections) {
+            //console.warn("No alt text for " + data.title + ", " + data.page.url);
 
-        }else{
+          //}
+          const match = data.media.match(/\/([^\/]+)-[a-zA-Z0-9]+\.jpg$/);
+          return match ? match[1] : 'nomedia';
+
+
+        } else {
           return 'nomedia';
         }
       }

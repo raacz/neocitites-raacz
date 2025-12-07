@@ -5,7 +5,7 @@ external: https://nenadstojkovicart.com/image?id=887346104685a610789a924.4632020
 name: Vintage Lawn Mower Motor Engine on Grass.
 source: Nenad Stojković
 license: CC-BY-2.0
-alt: 
+alt: Someone pushing a red lawn-mower across the backyard.
 media: "/toki-pona/beginner-material/assets/lili-69.jpg"
 tags: lili
 ---

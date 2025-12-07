@@ -5,7 +5,7 @@ external: https://commons.wikimedia.org/wiki/File:St_Albans_Mummers_production_o
 name: St Albans Mummers production of St George and the Dragon, Boxing Day 2015-1
 source: Michael Maggs
 license: CC-BY-SA-4.0
-alt: 
+alt: A green bipedal dragon steps onto the scene. 
 media: "/toki-pona/beginner-material/assets/wawa-42a.jpg"
 tags: 
 - sequence

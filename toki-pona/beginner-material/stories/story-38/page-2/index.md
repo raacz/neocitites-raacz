@@ -9,4 +9,6 @@ alt:
 media: "/toki-pona/beginner-material/assets/wawa-38b.jpg"
 tags: 
 - sequence
+eleventyExcludeFromCollections: true
+
 ---
