@@ -10,5 +10,6 @@ media: "/toki-pona/beginner-material/assets/wawa-56e.jpg"
 tags: sequence
 note: 
 - Lie, John. <a href="https://www.hup.harvard.edu/books/9780674013582">Multiethnic Japan</a>. Harvard University Press, 2001, p.116. 
+eleventyExcludeFromCollections: true
 ---
 

@@ -46,6 +46,8 @@ stylesheet: /assets/css/tp.css
   
   
   {{ content }}
+
+ 
   
   
   <ul class="cards">
@@ -60,6 +62,10 @@ stylesheet: /assets/css/tp.css
   {% endfor %}
   
   </ul>
+  <br>
+   {%- if status == false -%}
+  <p>This Quest is incomplete; new installments are forthcoming.</p>
+  {%- endif -%}
   
   
 </main>
