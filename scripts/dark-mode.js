@@ -3,17 +3,42 @@ const LIGHT_HIGH_KEY = "light mode with higher contrast";
 const DARK_HIGH_KEY = "dark mode with higher contrast";
 const LIGHT_LOW_KEY = "light mode with lower contrast";
 const DARK_LOW_KEY = "dark mode with lower contrast";
-
-
-
-
 const popovertrigger = document.getElementById("home-settings-toggle");
 const popover = document.getElementById("targettheme");
-const dismiss = document.getElementById("dismiss-light-dark");
-dismiss.addEventListener("click", (event) => {
-    popover.togglePopover();
+const dismiss = document.getElementById("dismiss-light-dark").parentElement;
 
-});
+
+if ('popover' in HTMLElement.prototype) {
+
+    dismiss.addEventListener("click", (event) => {
+        popover.togglePopover();
+
+    });
+} else {
+    popover.classList.add("unsupported-pop");
+    popovertrigger.classList.add("unsupported-trigger");
+    popovertrigger.ariaExpanded = false;
+    hideUnsupported();
+    function showUnsupported() {
+        popover.style.display = "block";
+        popovertrigger.ariaExpanded = true;
+        dismiss.addEventListener("click", function () {
+            hideUnsupported();
+        })
+    }
+    function hideUnsupported() {
+        popover.style.display = "none";
+        popovertrigger.ariaExpanded = false;
+        popovertrigger.addEventListener("click", function () {
+            showUnsupported();
+
+        });
+
+
+
+    }
+
+}
 
 
 

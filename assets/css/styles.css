@@ -667,10 +667,6 @@ body:has(.context) nav {
     height: 100%;
 }
 
-@media(max-width: 40em) {}
-
-
-
 .light-dark-modes {
     margin: auto 0em auto auto;
     opacity: 0.90;
@@ -701,7 +697,7 @@ body:has(.context) nav {
     text-decoration: underline;
 }
 
-.light-dark-modes fieldset span {
+.light-dark-modes:not(.unsupported-pop) fieldset span {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
     height: 1px;
@@ -733,6 +729,31 @@ body:has(.context) nav {
 .light-dark-modes button span {
     font-size: 0.6em;
 }
+
+header :has(.unsupportedpop){
+    position: static;
+}
+.unsupported-pop.light-dark-modes {
+    display: none;
+    position: relative;
+    margin: 0;
+    z-index: 0;
+    grid-column: 1 / -1;
+} 
+.unsupported-pop.light-dark-modes fieldset {
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 100%;
+    column-gap: 1em;
+}
+.unsupported-pop.light-dark-modes fieldset div{
+    display: none;
+}
+.unsupported-pop.light-dark-modes button{
+    font-size: 1.3em;
+}
+
+
 
 
 
