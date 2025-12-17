@@ -1,7 +1,6 @@
 ---
 title: "The past few months"
 date: 2025-09-24
-eleventyExcludeFromCollections: true;
 ---
 
 <hr class="intro-end">
