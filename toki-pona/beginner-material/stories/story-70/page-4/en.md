@@ -67,7 +67,7 @@ O Small-Person Me, this method is not very good to you. In the context of method
 
 But I am givine the knowledge of this tool to you because of this: You must be able to know. Many people ah leave from the red circle. This is not strange. Many people of powerful work leave from the red circle. They do not want to come to be lowly at all moon times. They want to be able to continue to work. Therefore, they leave from the circle. 
 
-Mopu left from the circle because of this: the circle was completely defeating her. She felt bad at all times. 
+Mopi left from the circle because of this: the circle was completely defeating her. She felt bad at all times. 
 
 The amount of your bad feeling is not like the amount of her bad feeling. But this does not communicate this: you must not remove the circle and must feel bad. 
 
