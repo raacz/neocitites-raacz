@@ -53,3 +53,24 @@ I honestly need to start putting some stuff on Anki. It's just a bit daunting to
 
 #### Vocab
 - Government 
+
+
+### Second Video
+
+[Here's a story time. Can you believe it??!](https://www.facebook.com/share/r/1AhwdYs7xD/) by Ashlene Etkie
+
+#### Notes
+- i really embarrass. i story time for you-sweep. same you-sweep know i tend bring my dog to my #workout gym. so ix-here apt have gym ix-loc1 and ix-loc 2 small room tend bring dog in when do my [upper body]. doing++ when when do go-ahead do my [shoulder] #circuit obviously #as-day not do with twenty pounds. go replace/instead-of 5 pounds. ix-the-door #was locked. cl-try-the-door can't enter. my dog, my phone, my water, my everything inside. honest [side-eye]. lucky i have people [] me. ix-they-sweep try call. one of ix-they know how lock open ix-door lock ix-door. not think do in ix-here room similar-to any more. real honest #[] real#ly embarassing. 
+- 'same' used as an adverb, calque from english 'as' 
+- 8 for story, since it's a quick one
+- tend was signed really quickly, no drop. 
+- think she fs'd workout. not sure. 
+- room signed out to in, i'm used to seeing in to out 
+- this variation for locked has two Ss. different from the V variation that i am used to. 
+- i have people around me looks like ix just around self. 
+- 'how' and 'lock' got elided i think.
+
+#### Vocab
+- Pound
+- Lock
+- Change-out

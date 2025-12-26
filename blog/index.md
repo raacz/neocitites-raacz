@@ -15,4 +15,3 @@ Bits and bobs, composed in English.
 </ul>
 
 Here's my [ASL Learning Log](/blog/asl-log/).
-

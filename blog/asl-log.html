@@ -8,9 +8,13 @@ title: ASL Learning Log
     font-family: InterTight;
     src: url(/assets/Inter_Tight/InterTight-Regular.ttf);
   }
+  body{
+    background-color: rgb(50, 50, 93);
+  }
 
   main {
     font-family: InterTight;
+    max-width: none;
 
 
   }
@@ -52,6 +56,7 @@ title: ASL Learning Log
     font-size: 0.8em;
 
   }
+  
   
 </style>
 {%- assign posts = collections["asl"] | reverse -%}
@@ -108,15 +113,17 @@ title: ASL Learning Log
 <hr class="intro-end">
 
 
-{% for item in posts %}
-
-<article class="log-entry">
-  <div>
-    <h2 tabindex="-1" id="{{ item.data.title | slugify }}">{{ item.data.title }}</h2>
-    <small>{{ item.data.date | postDate }}</small>
-  </div>
-  {{ item.content }}
-
-</article>
-
-{% endfor %}
+<div class="articles">
+  {% for item in posts %}
+  
+  <article class="log-entry">
+    <div>
+      <h2 tabindex="-1" id="{{ item.data.title | slugify }}">{{ item.data.title }}</h2>
+      <small>{{ item.data.date | postDate }}</small>
+    </div>
+    {{ item.content }}
+  
+  </article>
+  
+  {% endfor %}
+</div>
