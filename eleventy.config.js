@@ -31,27 +31,23 @@ export default function (eleventyConfig) {
   });
 
 
-  //filters a date to appear as March 16, 2020
-  eleventyConfig.addFilter("postDate", (dateObj) => {
-    return dateObj.toLocaleString(undefined, {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
+eleventyConfig.addFilter("shortDate", (dateObj) => {
+  const d = new Date(dateObj);
+  const year = d.getUTCFullYear();      // Use UTC methods
+  const month = String(d.getUTCMonth() + 1).padStart(2, "0");
+  const day = String(d.getUTCDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+});
+
+eleventyConfig.addFilter("postDate", (dateObj) => {
+  const d = new Date(dateObj);
+  return d.toLocaleString('en-US', {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: 'UTC'  // Force UTC display
   });
-
-  //filters a date to appear as 2020-20-20
-  eleventyConfig.addFilter("shortDate", (dateObj) => {
-    const d = new Date(dateObj);
-    const year = d.getFullYear();
-    const month = String(d.getMonth() + 1).padStart(2, "0");
-    const day = String(d.getDate()).padStart(2, "0");
-    return `${year}-${month}-${day}`;
-  });
-
-  
-
-
+});
   //used primarily for liliwc collection below
   eleventyConfig.addFilter("wordcount", (content) => {
     const wordCount = content

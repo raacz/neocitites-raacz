@@ -1,0 +1,122 @@
+---
+layout: _layouts/base.html
+title: ASL Learning Log
+---
+
+<style>
+  @font-face {
+    font-family: InterTight;
+    src: url(/assets/Inter_Tight/InterTight-Regular.ttf);
+  }
+
+  main {
+    font-family: InterTight;
+
+
+  }
+
+  .log-entry div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: space-between;
+    border: 0.1em solid var(--laso);
+    padding: 1em 0.25em;
+    margin-block-end: 1.5em;
+  }
+
+  .log-entry div * {
+    padding: 0;
+    margin: 0;
+  }
+
+  .log-entry small {
+    font-size: 0.7em;
+  }
+
+  .toc h2 {
+    margin: 0 0 0 1em;
+  }
+
+  article,
+  details, #almost-main {
+    max-width: 26em;
+
+  }
+
+  .vocab {
+
+    display: block;
+    column-width: 10em;    
+    line-height: 1em;
+    font-size: 0.8em;
+
+  }
+  
+</style>
+{%- assign posts = collections["asl"] | reverse -%}
+<div id="almost-main">
+  
+  <p>The learning log of a underprepared person who wants to become an ASL interpreter.</p>
+  
+  
+  <div class="toc">
+    <h2>Index</h2>
+    <ul>
+      {%- for post in posts -%}
+      <li> {{ post.data.date | shortDate }} <a href="#{{ post.data.title | slugify }}">{{ post.data.title }}</a></li>
+      {%- endfor -%}
+    </ul>
+  
+  
+  </div>
+  
+  <p>I am always just waiting to be more daunted by how daunting this undertaking is. (2025-12-26)</p>
+  
+  <details>
+    <summary>Vocab in December 2025</summary>
+    <ul class="vocab">
+      {% for post in posts | log %}
+      {% for token in post.data.vocab %}
+      <li data="{{ token.date }}">{{ token.word }}</li>
+      {% endfor %}
+      {% endfor %}
+    </ul>
+  </details>
+</div>
+
+<script>
+  
+    const list = document.querySelectorAll('.vocab')[0];
+  
+    // Get all list items
+    const items = Array.from(list.querySelectorAll('li'));
+    
+    // Sort items alphabetically (case-insensitive)
+    items.sort((a, b) => {
+      const textA = a.textContent.trim().toLowerCase();
+      const textB = b.textContent.trim().toLowerCase();
+      return textA.localeCompare(textB);
+    });
+    
+    // Clear the list and append sorted items
+    list.innerHTML = '';
+    items.forEach(item => list.appendChild(item));
+
+</script>
+
+<hr class="intro-end">
+
+
+{% for item in posts %}
+
+<article class="log-entry">
+  <div>
+    <h2 tabindex="-1" id="{{ item.data.title | slugify }}">{{ item.data.title }}</h2>
+    <small>{{ item.data.date | postDate }}</small>
+  </div>
+  {{ item.content }}
+
+</article>
+
+{% endfor %}
