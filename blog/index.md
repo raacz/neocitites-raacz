@@ -14,4 +14,4 @@ Bits and bobs, composed in English.
   {%- endfor -%}
 </ul>
 
-Here's my [ASL Learning Log](/blog/asl-log/).
+Here's my [ASL Learning Log](/blog/asl/asl-log/).

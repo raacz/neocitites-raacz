@@ -7,7 +7,7 @@ It's christmas day and I'm at family's and bored. So let's watch some FB Reels.
 
 ### First Video
 
-[There are many different holiday traditions around the world]() by Marjorie Charles Sonnenstrahl
+[There are many different holiday traditions around the world](https://www.facebook.com/share/r/15gQLbUW3gG/) by Marjorie Charles Sonnenstrahl
 
 #### Notes
 - leaning PSE here 
@@ -18,7 +18,7 @@ It's christmas day and I'm at family's and bored. So let's watch some FB Reels.
 
 ### Second Video
 
-[Metro in CDMX is cheap!]() by Marcelino Sanders
+[Metro in CDMX is cheap!](https://www.facebook.com/share/r/1APSynW3bn/) by Marcelino Sanders
 
 #### Notes
 - impress, is it an A-palm facing out against a flat hand (like YT), the unit moved backwards?
@@ -36,7 +36,7 @@ It's christmas day and I'm at family's and bored. So let's watch some FB Reels.
 
 ### Third Video
 
-[Today I awaken planners are back in stock, just in time for the year 2026!]() by Today I Awaken
+[Today I awaken planners are back in stock, just in time for the year 2026!](https://www.facebook.com/share/r/1AiknkSGqR/) by Today I Awaken
 
 #### Notes
 - now+day i wake-up plan official #back in #stock. ready start thinking-deeply new year? feel itchy waiting rolling-up-sleeves [] (its translated as 'tackle') your goal? want [] (looks like win) start holiday shopping and [](translated as 'ditch') big #corp you want prefer [] shop smaller deaf woman #bipoc own business? come, now+day i wake-up store now open again ready for year 2026. inform-you-all, less (mouthed 'limited') time, less( mouthed 'limited') things (mouthed 'supply') start now through #nov, #dec, #jan month [] (looks like tying a knot) shop close, #unless plan all-gone first. i no-way #restock until next year. wait_no. make ix-here year #the year you feel [] (translated as aligned) with your life. 

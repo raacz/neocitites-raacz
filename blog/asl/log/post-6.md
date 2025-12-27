@@ -22,7 +22,9 @@ I honestly need to start putting some stuff on Anki. It's just a bit daunting to
 - Three days ago is the same handshape for reception, unclawed and flicked back
 - Exaggerate and boringly-prolong are NMMed diffrentiated. 
 - Printer is the same as MB Strawberry!
-- left off at 13:51
+- Medicare, fingerspell but there's also a peel-off-stickers version that's older
+- Willing w/ mouth open = Confess/Admit
+
 
 
 #### Vocab
@@ -40,6 +42,10 @@ I honestly need to start putting some stuff on Anki. It's just a bit daunting to
 - In-your-face
 - Dwell-on
 - Concerned-about
+- Narrowed-Attention
+- SSRI/Welfare
+- Medicare
+- Willing
 
 ### First Video
 
