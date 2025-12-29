@@ -41,7 +41,6 @@ I honestly need to start putting some stuff on Anki. It's just a bit daunting to
 - Visually-take-it-all-in
 - In-your-face
 - Dwell-on
-- Concerned-about
 - Narrowed-Attention
 - SSRI/Welfare
 - Medicare
@@ -52,7 +51,7 @@ I honestly need to start putting some stuff on Anki. It's just a bit daunting to
 [Deaf children in BC need our help!](https://www.facebook.com/share/r/1BvCCXV7q2/)
 
 #### Notes
-- deaf children in #bc canada need our help.. recently government [](its translated as 'the govenment there') built-up #cfr resources for asl english two languages for deaf hard-of-hearing children ix-poss family. but recently(more recently) [](looks like pulled, taken up), resource cfr closed. need back. need label #petition ix-below #link ix-below for inform government #bc need back(inflected) resources+++
+- transcript: deaf children in #bc canada need our help.. recently government [](its translated as 'the govenment there') built-up #cfr resources for asl english two languages for deaf hard-of-hearing children ix-poss family. but recently(more recently) [](looks like pulled, taken up), resource cfr closed. need back. need label #petition ix-below #link ix-below for inform government #bc need back(inflected) resources+++
 - recently vs more recenty contrasted by ee nmm.
 - label being used as transitive 'sign' as in sign a document
 - the sign for 'resources' here is likely regional... couldn't find it on handspeak
@@ -66,7 +65,7 @@ I honestly need to start putting some stuff on Anki. It's just a bit daunting to
 [Here's a story time. Can you believe it??!](https://www.facebook.com/share/r/1AhwdYs7xD/) by Ashlene Etkie
 
 #### Notes
-- i really embarrass. i story time for you-sweep. same you-sweep know i tend bring my dog to my #workout gym. so ix-here apt have gym ix-loc1 and ix-loc 2 small room tend bring dog in when do my [upper body]. doing++ when when do go-ahead do my [shoulder] #circuit obviously #as-day not do with twenty pounds. go replace/instead-of 5 pounds. ix-the-door #was locked. cl-try-the-door can't enter. my dog, my phone, my water, my everything inside. honest [side-eye]. lucky i have people [] me. ix-they-sweep try call. one of ix-they know how lock open ix-door lock ix-door. not think do in ix-here room similar-to any more. real honest #[] real#ly embarassing. 
+- transcript: i really embarrass. i story time for you-sweep. same you-sweep know i tend bring my dog to my #workout gym. so ix-here apt have gym ix-loc1 and ix-loc 2 small room tend bring dog in when do my [upper body]. doing++ when when do go-ahead do my [shoulder] #circuit obviously #as-day not do with twenty pounds. go replace/instead-of 5 pounds. ix-the-door #was locked. cl-try-the-door can't enter. my dog, my phone, my water, my everything inside. honest [side-eye]. lucky i have people [] me. ix-they-sweep try call. one of ix-they know how lock open ix-door lock ix-door. not think do in ix-here room similar-to any more. real honest #[] real#ly embarassing. 
 - 'same' used as an adverb, calque from english 'as' 
 - 8 for story, since it's a quick one
 - tend was signed really quickly, no drop. 

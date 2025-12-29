@@ -27,7 +27,7 @@ Two that stick out were both from Atomic Hands.
 
 ### Second Video
 
-[Fingerprints](https://www.facebook.com/atomichands/videos/1514823059733080)
+[Fingerprints](https://www.facebook.com/atomichands/videos/1435326331932325)
 
 #### Notes:
 - MATCH as in the interlocking one, used to indicate that an almost exact matchp
@@ -36,7 +36,6 @@ Two that stick out were both from Atomic Hands.
 #### Vocab
 - Fingerprints
 - Identical
-- Human
 - Sweat
 
 ### First Lecture
@@ -111,7 +110,8 @@ Really need to get better at one-handed signing reception. I'm very bad at it.
 - Day dreaming/lost in thought is like VISION many times
 
 #### Vocab
-
 - Embarrassing
 - Singer
 - Ruminate
+
+-
