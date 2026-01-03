@@ -11,7 +11,7 @@ I had to focus on a job application and LPSL things for the past couple days. Bu
 
 #### Notes
 
-- Tornado is like Twirl, t the fingers move together, and the NMM is different. It has an alternate with an inversed A-hand
+- Tornado i  like Twirl, t the fingers move together, and the NMM is different. It has an alternate with an inversed A-hand
 - One version of ballet is like twirl, but moves up and down. A lower context version is Dance+Twirl-upwards. The same sign can mean smoothie
 - Similar with figure skating, can add the twirl to imply its
 - God, strawberry has so many versions. I was kinda desperate to find what the Manitoba version was so I found this [Eat Your Colours](https://youtu.be/YmVJLaD4Pow?t=59). It's an L-hand doing like, some file thing on an upturned b base. The - God, strawberry has so many versions. I was kinda desperate to find what the Manitoba version was so I found this [Eat Your Colours](https://youtu.be/YmVJLaD4Pow?t=59). It's an L-hand doing like, some file thing on an upturned b base. The same video has a pumpkin variation with a B flapping wildly at the mustache area. 
