@@ -6,6 +6,8 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("toki-pona/beginner-material/assets");
+  eleventyConfig.addPassthroughCopy("blog/posts/post-6/*.jpg");
+
   eleventyConfig.addPassthroughCopy("scripts");
   eleventyConfig.addDataExtension("yml", (contents) => YAML.parse(contents));
   eleventyConfig.setTemplateFormats([
