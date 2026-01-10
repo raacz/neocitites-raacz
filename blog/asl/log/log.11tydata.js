@@ -17,7 +17,6 @@ module.exports = {
             const month = String(d.getUTCMonth() + 1).padStart(2, "0");
             const day = String(d.getUTCDate()).padStart(2, "0");
             date = `${year}-${month}`;
-            console.log(date);
             //date = data.date.slice(0, 7);
             //console.log(date);
           } else if (active == true) {
@@ -40,6 +39,9 @@ module.exports = {
     },
     processedVocab: function () {
       return true;
+    },
+    slug: function (data) {
+      return this.slugify(data.title);
     }
   }
 };

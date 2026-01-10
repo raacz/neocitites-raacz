@@ -1,7 +1,7 @@
 module.exports = {
   eleventyComputed: {
     title: data => {
-      return "Review: " + data.book_title + " by " + data.author;
+      return data.book_title + " by " + data.author + " (Review)";
     },
     permalink: data => {
       return false;

@@ -37,13 +37,15 @@ eleventyImport:
 
 
     
-    {% if post.data.slug %}
+    {% if post.data.slug  %}
     <li>
         <a href="
         {%- if post.data.tags contains 'review' -%}
         /reviews/index.html
         {%- elsif post.data.tags contains 'moo' -%}
         /toki-pona/mooooooooooooooo/index.html
+        {%- elsif post.data.tags contains 'asl' -%}
+        /blog/asl/asl-log/index.html
         {%- endif -%}
         #{{ post.data.slug }}">{{ post.data.title }}</a> tagged: {{ post.data.tags | join: ", " }} </a>
     </li>

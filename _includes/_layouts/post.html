@@ -12,6 +12,21 @@ Posted:
 {% if updated %}
 | Last Updated: {{ updated | postDate }}
 {% endif %}
+{% if license %}
+    {% assign license_match = false %}
+    {% for linked_license in licenses %}
+        {% if linked_license.key == license %}
+            {% assign license_match = true %}
+            {% assign license_link = linked_license.link %}
+        {% endif %}
+    {% endfor %}
+    {% if license_match %}
+        <br>"{{ title }}" licensed under <a href="{{ license_link }}"> {{ license }}</a> Lakuse
+    {% endif %}
+{% endif %}
+
 </small>
+
+
 
 {{ content }}

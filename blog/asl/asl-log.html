@@ -69,7 +69,7 @@ title: ASL Learning Log
     <h2>Index</h2>
     <ul>
       {%- for post in posts -%}
-      <li> {{ post.data.date | shortDate }} <a href="#{{ post.data.title | slugify }}">{{ post.data.title }}</a></li>
+      <li> {{ post.data.date | shortDate }} <a href="#{{ post.data.slug }}">{{ post.data.title }}</a></li>
       {%- endfor -%}
     </ul>
   
@@ -81,7 +81,7 @@ title: ASL Learning Log
   <details>
     <summary>Vocab in December 2025</summary>
     <ul class="vocab">
-      {% for post in posts | log %}
+      {% for post in posts %}
       {% for token in post.data.vocab %}
       <li data="{{ token.date }}">{{ token.word }}</li>
       {% endfor %}
@@ -118,7 +118,7 @@ title: ASL Learning Log
   
   <article class="log-entry">
     <div>
-      <h2 tabindex="-1" id="{{ item.data.title | slugify }}">{{ item.data.title }}</h2>
+      <h2 tabindex="-1" id="{{ item.data.slug }}">{{ item.data.title }}</h2>
       <small>{{ item.data.date | postDate }}</small>
     </div>
     {{ item.content }}
