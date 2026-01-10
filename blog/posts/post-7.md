@@ -4,9 +4,6 @@ date: 2026-01-10
 license: CC-BY-NC-SA-4.0
 ---
 
-I was initially going to write this on December 31, but the day escaped me. 
-
-<hr class="intro-end">
 
 ## 2025 in Retrospect
 
