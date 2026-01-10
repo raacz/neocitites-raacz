@@ -152,7 +152,7 @@ I didn't use any of the bag's front pockets, as I was very concerned about bulge
 ![](internals.jpg)
 
 The bag's main comparment held
-- Laptop ([IdeaPadFlex 5](post-1.md))
+- Laptop ([IdeaPadFlex 5](/blog/posts/post-1))
 - One very light base layer
 - One medium-thickness base layer
 - One pair of sleeping shorts
@@ -384,7 +384,7 @@ I know. I know that I have a lot of things. I know that I tend to be very messil
 
 A little under a year ago, I was trying to book a very frugal flight. **At that time, I immediately wrote off even the idea of pursuing personal-item travel.** It was a laughable prospect to me. I ended up bringing a full carry-on and a 'personal item' backpack that far exceeded the personal item limits, stuffed to the gills. Dear Reader, I brought *podcasting equipment.* Why did I think I was going to use podcasting equipment? I didn't even wear half of the clothes I brought. 
 
-**Restricted to a personal item, I'm not going to be able to bring** my house lounger, or my little mechanical timer I use for Pomodoros, or my Thermoflask water bottle, or my second Thermoflask water bottle, or my taiko bachi that I might need in case I get invited to some taiko event, or my natural deodorant that likely does nothing anyway, or my three collapsible take-out containers, or my dedicated laptop charger, or the spacious lunch bag that I can use as a purse, or all my Luka Pona teaching materials, or my [Quest 2](post-3.md), or the planner notebook I always swear I will use but never do, or the bullet journal I always swear I will use but never do, or my Missing Link twisty puzzle game, or my clicker counter for counting various things, or my external hard drive which I use once every six months, or my razor that I use once a month, or my selfie stick, or my phone holder, or my second phone holder, or my diabolo, or my Toki Pona books, or my Esperanto books, or my keffiyeh, or my these, or my those, or my, my, my. Oh, my. Why?
+**Restricted to a personal item, I'm not going to be able to bring** my house lounger, or my little mechanical timer I use for Pomodoros, or my Thermoflask water bottle, or my second Thermoflask water bottle, or my taiko bachi that I might need in case I get invited to some taiko event, or my natural deodorant that likely does nothing anyway, or my three collapsible take-out containers, or my dedicated laptop charger, or the spacious lunch bag that I can use as a purse, or all my Luka Pona teaching materials, or my [Quest 2](/blog/posts/post-3), or the planner notebook I always swear I will use but never do, or the bullet journal I always swear I will use but never do, or my Missing Link twisty puzzle game, or my clicker counter for counting various things, or my external hard drive which I use once every six months, or my razor that I use once a month, or my selfie stick, or my phone holder, or my second phone holder, or my diabolo, or my Toki Pona books, or my Esperanto books, or my keffiyeh, or my these, or my those, or my, my, my. Oh, my. Why?
 
 **How unburdened I feel!** Literal weight off my shoulders, to point at the personal item dimensions and tell that little consumerist goblin squatting in my head to fuck right off. 
 
