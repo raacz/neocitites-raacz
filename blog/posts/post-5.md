@@ -40,7 +40,7 @@ tenpo ni la ilo lipu mute li lon. lipu mute li lon ale. sina lukin e lipu lon te
   
 tenpo pini la lipu li mute ala li mani a li lon ala jan mute.  
   
-## nasin lipu pi tenpo ni en nasin lipu pi tenpo ni li ante.  
+## nasin lipu pi tenpo ni en nasin lipu pi tenpo pini li ante.  
   
 tenpo pini la, jan a li pali e lipu.  
   
@@ -131,7 +131,7 @@ zz zz li mani a
 zz zz li lon ala jan mute  
 
 <h2>
-nasin lipu pi (tenpo ni) <br> en <br> nasin lipu pi (tenpo ni) li ante
+nasin lipu pi (tenpo ni) <br> en <br> nasin lipu pi (tenpo pini) li ante
 </h2>
 
 tenpo pini la  
