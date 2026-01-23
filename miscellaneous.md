@@ -14,7 +14,7 @@ title: Miscellaneous
 <li><a href="https://citrons.xyz/a/">citrons</a> is into... lemons?</li>
 <li><a href="https://equa.space/">equa</a> is into toki pona and artsy-techy stuff</li>
 <li><a href="https://ingwine.neocities.org/">ingwine</a> is into historical linguistics and conlanging</li>
-<li><a href="https://www.desduwij.com/home-juh">DeSDu'</a> is into <a href="https://www.youtube.com/@jatlhdesdu2308">Klingon</a>, conlanging and art</li>
+<li><a href="https://web.archive.org/web/20240417131325/https://www.desduwij.com/home-juh"> "<span lang="tlh">DeSDu'</span>"</a> is into <a href="https://www.youtube.com/@jatlhdesdu2308">Klingon</a>, conlanging and art</li>
 <li>theepicosity is into <a href="https://theepicosity.newgrounds.com/">bitpop,</a> <a href="https://theepicosity.itch.io/">game dev</a>, and <a href="https://theepicosity.github.io/lipu-pi-ijo-pi-toki-pona/">toki pona</a></li>
 <li><a href="https://tr3y.io">treyzania</a> is into <a href="https://youtu.be/tO6sfku_1b8">making minecraft sheep turn different colours</a> and computers</li>
 <li><a href="https://sobsz.github.io/">hecko</a> is into toki pona and <em>computers</em></li>
