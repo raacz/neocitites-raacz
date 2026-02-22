@@ -7,7 +7,7 @@ I'm writing this a week after the fact, but I attended a meetup in San Jose.
 
 I get so flustered in these kinds of contexts and was initially really tense. It was nearly four hours long. We stayed until the conclusion. 
 
-I had one-on-one conversations with two people: Michelle, and another individual who's name I didn't catch.
+I had one-on-one conversations with two people: M, and another individual who's name I didn't catch.
 
 We were late coming into the conversation, because we had picked up Taco Bell and there was no place to stay at the main table and eat, so we ate off to the side and then joined in when we were done. 
 
