@@ -11,11 +11,11 @@ Haven't been able to sit down and do reflective, note-style FB Reel sessions in 
 
 #### Notes
 - Urgent Care can be #UC, Emergency Room can be #ER
-- There's a sign which I will temporary gloss as Ooo-Y because it's done with an O mouth morpherem and a Y waved kinda impressively over the signing space to indicate severity.
+- There's a sign which I will temporary gloss as Ooo-Y because it's done with an O mouth morpheme and a Y waved kinda impressively over the signing space to indicate severity.
 - Reaction is just an initialized R version of Answer
 - Signer does 'Seizure here' with an index tapped on the head before the Tantrum motion
 - Symptom, I've also seen as just 'Show/Example', but the signer here initializes it. 
-- Urinary Tract Infection was UTI and then expanded as TOILET #TRACT #INFECTION. Interesting that they used T instead of pee..
+- Urinary Tract Infection was UTI and then expanded as TOILET #TRACT #INFECTION. Interesting that they used T instead of pee.
 - Version of lexicalized #ALL where hands face each other and move forward together during the motion
 - Two-handed version of TEND briefly bamboozled me. 
 
@@ -45,7 +45,7 @@ Haven't been able to sit down and do reflective, note-style FB Reel sessions in 
 [Stephanie's Grief Story](https://www.facebook.com/reel/)
 
 #### Notes
-- This on'e captioned, and longer, and heart-wrenching. 
+- This one's captioned, and longer, and heart-wrenching. 
 - CHERISH is translated as 'precious.' 
 - Depicts a mucus plug detachment using a two-hand presssed again a hole, then coming apart.
 - 'bed rest' is done as BED RELAX 
@@ -68,5 +68,5 @@ Haven't been able to sit down and do reflective, note-style FB Reel sessions in 
 - Suspect
 - Faith
 - Unplug
-- Cemetary
+- Cemetery
 - Attune
