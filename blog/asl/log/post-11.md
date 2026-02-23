@@ -5,7 +5,7 @@ date: 2026-01-22
 
 ### Class Summary
 
-An AEIP student was using the room to study. When we all filed in curiously, she started signing and asking questions to some of the people who came in (not to me). And then eventually everyone started talking. They asked me if I was comfortable with talking. I said, whatever (in sign, because I could). 
+An ASL-English Interpretation Program (<abbr>AEIP</abbr>) student was using the room to study. When we all filed in curiously, she started signing and asking questions to some of the people who came in (not to me). And then eventually everyone started talking. They asked me if I was comfortable with talking. I said, whatever (in sign, because I could). 
 
 Last week was vocab-heavy. Today was grammar-heavy. We did three activities: 
 1. Tell your peer to put a random item in a random place in relation to another object. 
