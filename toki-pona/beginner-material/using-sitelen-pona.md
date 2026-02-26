@@ -27,7 +27,7 @@ o pana kepeken sitelen pona **kepeken sitelen Lasina kin.**
 sina pana kepeken sitelen Lasina la
 
 
-
+<span lang="en-Shaw">
 ## 𐑮𐑰𐑛 𐑦𐑯 𐑦𐑙𐑜𐑤𐑦𐑖 𐑿𐑟𐑦𐑙 𐑞 𐑖𐑱𐑝𐑰𐑩𐑯 𐑕𐑒𐑮𐑦𐑐𐑑
 
 
@@ -83,7 +83,7 @@ sina pana kepeken sitelen Lasina la
 𐑕𐑴 𐑢𐑧𐑯 𐑦𐑑’𐑕 𐑑𐑧𐑒𐑯𐑦𐑒𐑩𐑤𐑰 𐑓𐑰𐑟𐑩𐑚𐑩𐑤, 𐑐𐑮𐑩𐑝𐑲𐑛 <span class="sp" lang="tok">sitelen [la sina nasin]</span> 𐑷𐑤𐑑𐑻𐑯𐑩𐑑𐑦𐑝𐑟 𐑑 𐑘𐑹 <span class="sp" lang="tok">sitelen pona</span> 𐑒𐑭𐑯𐑑𐑧𐑯𐑑. 𐑦𐑯 𐑛𐑵𐑦𐑙 𐑕𐑴, 𐑿 𐑣𐑧𐑤𐑐 <span class="sp" lang="tok">sitelen pona</span> 𐑑 𐑮𐑰𐑥𐑱𐑯 Pona, 𐑯 𐑒𐑩𐑯𐑑𐑮𐑦𐑚𐑿𐑑 𐑑 𐑱 𐑒𐑳𐑤𐑗𐑼 𐑝 𐑦𐑯𐑒𐑤𐑵𐑠𐑩𐑯 𐑢𐑦𐑞𐑦𐑯 𐑞 <span class="sp" lang="tok">toki pona</span> 𐑒𐑩𐑥𐑿𐑯𐑦𐑑𐑰.
 
 <div class="weka-suli"></div>
-
+</span>
 
 ## Read in English using the Latin Script
 
