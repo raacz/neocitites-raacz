@@ -1,0 +1,113 @@
+---
+layout: _layouts/raw-base.html
+---
+<style>
+  @font-face {
+    font-family: InterTight;
+    src: url(/assets/Atkinson_Hyperlegible_Next/AtkinsonHyperlegibleNext-VariableFont_wght.ttf);
+  }
+  :root{
+  --walo: rgb(226, 225, 207);
+  --pimeja: rgb(0, 0, 0);
+  --walo-lili: rgb(87, 134, 46);
+  --walo-pimeja: rgb(155, 228, 129);
+  --laso: rgb(62, 50, 9);
+  --pimeja-lili: rgb(47, 69, 34);
+  --footer-text: var(--walo-pimeja);
+  --footer-link: var(--walo);
+  }
+  header{
+    display: flex;
+  }
+  .introtext{
+    display:none;
+  }
+  .status {
+    display: none;
+  }
+  nav{
+    width: 100%;
+  }
+  nav ul{
+    column-gap: 0.5em;
+    font-size: 0.9em;
+
+  }
+
+  main {
+    font-family: InterTight;
+    max-width: 40em;
+
+    font-weight: 300;
+  }
+  main:has(.journal){
+    max-width: none;
+  }
+
+
+  .toggles-prev{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    font-family: 'Jost';
+  }
+  .log-entry div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: space-between;
+    border: 0.1em solid var(--laso);
+    padding: 1em 0.25em;
+    margin-block-end: 1.5em;
+  }
+
+  .log-entry div * {
+    padding: 0;
+    margin: 0;
+  }
+
+  .log-entry small {
+    font-size: 0.7em;
+  }
+
+  .toc h2 {
+    margin: 0 0 0 1em;
+  }
+
+  
+  .vocab {
+
+    display: block;
+    column-width: 10em;    
+    line-height: 1em;
+    font-size: 0.8em;
+
+  }
+
+  .journal{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0 auto;
+    
+  }
+
+  .journal li {
+    padding: 0.2em;
+    height: 8em;
+    width: 8em;
+    margin: 0;
+    border: 0.1em solid black;
+        position: relative;
+
+  }
+  .journal span{
+    position: absolute;
+    bottom: 0;
+    
+  }
+</style>
+
+<h1 id="main-content">{{ title }}</h1>
+{{ content }}

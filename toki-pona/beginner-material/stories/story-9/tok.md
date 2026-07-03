@@ -6,7 +6,7 @@ a, telo li lon. ona li lete ala lete?
 
 mi pilin e telo kepeken luka mi. telo li lete. 
 
-mi weka e len pi noka mi. tenpo ni la, noka mi len ala. 
+mi weka e len pi noka mi. tenpo ni la, noka mi li len ala. 
 
 mi pana e noka mi tawa telo. pilin suwi a! pilin pona a!
 

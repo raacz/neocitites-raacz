@@ -1,0 +1,33 @@
+---
+layout: _layouts/asl/base.html
+title: ASL Learning Log
+---
+
+<p>This section of my website documents my efforts to learn ASL.</p><p> This endeavor began in December 2025. My goal is to become an ASL interpreter.</p>
+
+<h2>Journal Entries</h2>
+<p><a href="archive/">All on one page.</a></p>
+<ul class="journal">
+{% assign posts = collections.asl | reverse %}
+{% for item in posts  %}
+    <li>
+        <a href="{{item.url}}">
+        {{ item.data.title }}<br>
+    </a>
+        <span>{{ item.date | shortDate }}</span>
+</li>
+{% endfor %}
+
+</ul>
+
+
+
+
+<h2>Vocab List</h2>
+
+<ul class="vocab">
+{% for item in collections.aslVocabSorted  %}
+    <li><a href="{{item.post}}">{{ item.word }}</a></li>
+{% endfor %}
+
+</ul>

@@ -13,7 +13,7 @@ telo li lete
   
 mi weka e len pi noka mi  
 tenpo ni la 
-zz zz noka mi len ala  
+zz zz noka mi li len ala  
   
   
 mi pana e noka mi tawa telo  

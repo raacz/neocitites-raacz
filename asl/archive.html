@@ -1,0 +1,33 @@
+---
+layout: _layouts/asl/base.html
+title: Log Archive
+---
+
+{%- assign posts = collections["asl"] | reverse -%}
+<div id="almost-main">
+
+      <div class="toc">
+    <h2>Index</h2>
+    <ul>
+      {%- for post in posts -%}
+      <li> {{ post.data.date | shortDate }} <a href="#{{ post.data.slug }}">{{ post.data.title }}</a></li>
+      {%- endfor -%}
+    </ul>
+  
+  
+</div>
+
+<div class="articles">
+  {% for item in posts %}
+  
+  <article class="log-entry">
+    <div>
+      <h2 tabindex="-1" id="{{ item.data.slug }}">{{ item.data.title }}</h2>
+      <small>{{ item.data.date | postDate }}</small>
+    </div>
+    {{ item.content }}
+  
+  </article>
+  
+  {% endfor %}
+</div>

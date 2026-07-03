@@ -1,7 +1,6 @@
 module.exports = {
   tags: "asl",
-  permalink: false,
-  layout: "_layouts/post.html",
+  layout: "_layouts/asl/post.html",
   eleventyComputed: {
     vocab: function (data) {
       if (data.processedVocab == false) {
@@ -28,6 +27,8 @@ module.exports = {
               let pair = {
                 word: string.slice(1).trim(),
                 date: date,
+                post: data.page.url,
+                
               }
               vocab.push(pair);
 

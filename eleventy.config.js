@@ -1,4 +1,7 @@
 import YAML from "yaml";
+import fs from 'fs';
+import { execSync } from 'child_process';
+import path from 'path';
 
 export default function (eleventyConfig) {
 
@@ -17,6 +20,14 @@ export default function (eleventyConfig) {
     "md",
     "json"
   ]);
+
+    eleventyConfig.addFilter("fileContent", function(filepath) {
+    try {
+      return fs.readFileSync(filepath, 'utf8');
+    } catch(e) {
+      return `<!-- File not found: ${filepath} -->`;
+    }
+  });
 
   eleventyConfig.addFilter("slugify", function (str) {
     if (!str) return "";
@@ -58,6 +69,24 @@ eleventyConfig.addFilter("postDate", (dateObj) => {
     return wordCount;
   });
 
+
+  //takes aslvocab, sorts into custom collection
+  eleventyConfig.addCollection("aslVocabSorted", function(collectionApi) {
+  const allWords = [];
+  
+  collectionApi.getFilteredByTag("asl").forEach(item => {
+    if (item.data.vocab && Array.isArray(item.data.vocab)) {
+      item.data.vocab.forEach(vocabItem => {
+        allWords.push(vocabItem);
+      });
+    }
+  });
+  
+  // Sort by the word property
+  return allWords.sort((a, b) => {
+    return a.word.localeCompare(b.word);
+  });
+});
 
   //adds pagination data to a text type with no subpages
   //hubLink is the link that the starting text and ending text should link to, hubText defines the text for this link
@@ -295,7 +324,6 @@ eleventyConfig.addFilter("postDate", (dateObj) => {
 
 
   });
-
 
 };
 

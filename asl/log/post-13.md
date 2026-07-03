@@ -32,9 +32,7 @@ During the express needs activity, our formula prescribed we do
 
 > I NEED [ITEM]. [LOCATION] where?
 
-But when the inIn my first journal entry, I mentioned that "only one other student looked comfortable expressing a simple introduction using ASL alone." L and I swapped phone numbers on the second class, and this week she approached me and signed to me over the break. It was a breath of fresh air. We continued to sign after class as well. We could have signed for longer, but her dad was waiting for her in the parking lot.
-
-It's good to get practice in. With the students I've worked with so far, I haven't managed to get in good practice. So it's good that L is here. She makes me look forward to class next week.structor came around and asked for us to show her how we signed it, I kinda naturally did a topic-comment of ITEM I NEED. LOCATION WHERE?, which she corrected and I just did. But I did want to ask her why the topic comment version didn't work. Or perhaps it works, but we were just suppposed to practice the non-topicalized version. I'm unsure. 
+But when the instructor came around and asked for us to show her how we signed it, I kinda naturally did a topic-comment of ITEM I NEED. LOCATION WHERE?, which she corrected and I just did. But I did want to ask her why the topic comment version didn't work. Or perhaps it works, but we were just suppposed to practice the non-topicalized version. I'm unsure. 
 
 And finally came the fingerspelling activities. Oh boy. We had to copy down a crossword that the instructor signed spatially, and it was painful. SO many repetitions. People in my class were really struggling. It took forever. It was unpleasant. 
 
